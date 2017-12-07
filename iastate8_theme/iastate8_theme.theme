@@ -1,0 +1,49 @@
+<?php
+
+function iastate8_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('iastate8_theme_', 'iastate_theme_', $suggestion);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Allow template suggestion based on content type.
+ */
+function iastate8_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+
+  if(\Drupal::service('path.matcher')->isFrontPage() && ($node = \Drupal::routeMatch()->getParameter('node')) ) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type . '__' . 'front';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Allow template suggestion based on if a content type is set as front.
+ */
+function iastate8_theme_theme_suggestions_node_alter(array &$suggestions, array $variables, $hook) {
+
+  if(\Drupal::service('path.matcher')->isFrontPage() && ($node = \Drupal::routeMatch()->getParameter('node')) ) {
+    $content_type = $node->bundle();
+    $suggestions[] = $hook . '__' . $content_type . '__' . 'front';
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ * Adds a class to a People image.
+ */
+
+function iastate8_theme_preprocess_field(&$vars) {
+  if ($vars['element']['#field_name'] == 'field_people_image') {
+    foreach($vars['items'] as $key => $item){
+      $vars['items'][ $key ]['content']['#item_attributes']['class'][] = 'isu-people_pic';
+    }
+  }
+}

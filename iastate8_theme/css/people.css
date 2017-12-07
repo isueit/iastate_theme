@@ -1,0 +1,295 @@
+/**
+ * @file
+ * Custom CSS styles for iastate8_theme to theme the People content type.
+ *
+ */
+
+/* ------------------- */
+/* ## PEOPLE HOMEPAGE
+/* ------------------- */
+
+.isu-people_profile-section {
+  padding: 2rem 0;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.isu-people_name {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.isu-people_pic {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+  @media (max-width: 500px) {
+    .isu-people_pic { width: 150px; }
+  }
+
+.isu-people_position-list li:not(:last-of-type):after {
+  content: ', ';
+  display: inline;
+}
+
+.isu-people_bio-summary {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.isu-people_contact-item:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.isu-people_city-state-postal > div {
+  display: inline;
+}
+
+.isu-people_email a {
+  word-break: break-word;
+}
+
+.isu-people_cv {
+  margin-bottom: 1rem;
+}
+
+.isu-people_info-section {
+  padding: 2rem 0;
+}
+
+.isu-people_info-col {
+  margin-bottom: 1rem;
+}
+
+.isu-people_info-block {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .isu-people_container-narrow {
+    max-width: 900px;
+  }
+}
+
+.isu-people-front_main-content {
+  margin-bottom: 3rem; 
+}
+
+.isu-people_education-list li,
+.isu-people_teaching-list li,
+.isu-people_affiliations-list li,
+.isu-people_interdepartment-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* --- ## Links --- */
+/* Some links don't need to be underlined.
+ */
+
+.isu-people_email a,
+.isu-people_cv a,
+.isu-people_phone a {
+  text-decoration: none;
+}
+
+/* --- ## Icons --- */
+/* Applies consistent styling across both templates
+ * and different implementations of icons.
+ */
+
+.isu-people_address,
+.isu-people_email,
+.isu-people_phone,
+.isu-people_cv,
+.isu-social-menu_people a {
+  font-size: 1rem;
+}
+
+.isu-people_address {
+  display: flex;
+  align-items: flex-start;
+}
+
+.isu-people_email,
+.isu-people_phone {
+  display: flex;
+  align-items: center;
+}
+
+.isu-people_front-page .isu-people_email {
+  margin-bottom: 0.25rem;
+}
+
+.isu-people_cv,
+.isu-social-menu_people a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.isu-people_address .fa {
+  margin-top: 2px;
+}
+
+.isu-social-menu_people {
+  margin-bottom: 0;
+}
+
+.isu-social-menu_people a {
+  color: #cc0000;
+}
+  .isu-social-menu_people a:hover {
+    color: #006ba6;
+  }
+
+.isu-social-menu_people a:before {
+  content: '\f0c1';
+  display: inline-block;
+}
+
+.isu-people_cv:before {
+  content: '\f0f6';
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.isu-people_address .fa,
+.isu-people_email .fa,
+.isu-people_phone .fa,
+.isu-people_cv:before,
+.isu-social-menu_people a:before {
+  width: 1.5rem;
+  margin-right: 5px;
+  margin-left: 0;
+  font-size: 1.25rem;
+  color: #777;
+  text-align: center;
+}
+
+/* ------------------- */
+/* ## PEOPLE PAGE
+/* ------------------- */
+
+.isu-people-page_container {
+  padding: 0;
+}
+
+.isu-people_full-page .isu-people_position-list {
+  margin-bottom: 1rem;
+}
+
+.isu-people-page_id-card {
+  margin-bottom: 2rem;
+}
+
+.isu-people-page_node .isu-people_pic {
+  margin-bottom: 0;
+}
+
+/* ------------------- */
+/* ## PEOPLE CREATE FORM
+/* ------------------- */
+
+@media (max-width: 767px) {
+
+  .node-people-form .field-multiple-table .isu-form-control {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .node-people-form .isu-form-type_textfield,
+  .node-people-form .isu-form-type_email,
+  .node-people-form .isu-form-type_url,
+  .node-people-form .isu-form-type_tel,
+  .node-people-form .isu-form-type_entity-autocomplete {
+    display: grid;
+    grid-template-columns: 125px 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .node-people-form .field--type-link .isu-form-type_url,
+  .node-people-form .field--type-link .isu-form-type_textfield,
+  .node-people-form .field--type-link .isu-form-type_entity-autocomplete {
+    grid-template-columns: 100px 1fr 1fr;
+  }
+
+  .node-people-form .isu-form-type_textfield input,
+  .node-people-form .isu-form-type_email input,
+  .node-people-form .isu-form-type_url input,
+  .node-people-form .isu-form-type_tel input,
+  .node-people-form .isu-form-type_entity-autocomplete input {
+    grid-column: span 2;
+  }
+
+  .node-people-form .isu-form-type_textfield .isu-form-element-description,
+  .node-people-form .isu-form-type_email .isu-form-element-description,
+  .node-people-form .isu-form-type_url .isu-form-element-description,
+  .node-people-form .isu-form-type_tel .isu-form-element-description,
+  .node-people-form .isu-form-type_entity-autocomplete .isu-form-element-description {
+    grid-column-start: 2;
+    padding-left: 0.75rem;
+  }
+}
+
+/* ------------------- */
+/* ## PEOPLE EDIT FORM
+/* ------------------- */
+/* Believe it or not, we must duplicate these styles because
+ * the Create and Edit fields have different page classes. C'est la vie.
+ */
+
+ @media (max-width: 767px) {
+
+  .node-people-edit-form .field-multiple-table .isu-form-control {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .node-people-edit-form .isu-form-type_textfield,
+  .node-people-edit-form .isu-form-type_email,
+  .node-people-edit-form .isu-form-type_url,
+  .node-people-edit-form .isu-form-type_tel,
+  .node-people-edit-form .isu-form-type_entity-autocomplete {
+    display: grid;
+    grid-template-columns: 125px 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .node-people-edit-form .field--type-link .isu-form-type_url,
+  .node-people-edit-form .field--type-link .isu-form-type_textfield,
+  .node-people-edit-form .field--type-link .isu-form-type_entity-autocomplete {
+    grid-template-columns: 100px 1fr 1fr;
+  }
+
+  .node-people-edit-form .isu-form-type_textfield input,
+  .node-people-edit-form .isu-form-type_email input,
+  .node-people-edit-form .isu-form-type_url input,
+  .node-people-edit-form .isu-form-type_tel input,
+  .node-people-edit-form .isu-form-type_entity-autocomplete input {
+    grid-column: span 2;
+  }
+
+  .node-people-edit-form .isu-form-type_textfield .isu-form-element-description,
+  .node-people-edit-form .isu-form-type_email .isu-form-element-description,
+  .node-people-edit-form .isu-form-type_url .isu-form-element-description,
+  .node-people-edit-form .isu-form-type_tel .isu-form-element-description,
+  .node-people-edit-form .isu-form-type_entity-autocomplete .isu-form-element-description {
+    grid-column-start: 2;
+    padding-left: 0.75rem;
+  }
+}
