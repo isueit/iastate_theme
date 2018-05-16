@@ -38,8 +38,8 @@
  *
  *   page.html.twig
  *   - page.post_nav: Full width region preceding content.
- *   - page.highlighted: Items for the highlighted content region.
  *   - page.breadcrumb: Items for the breadcrumb region.
+ *   - page.pre_content: Items for the highlighted content region.
  *   - page.content: The main content of the current page.
  *   - page.sidebar_first: Items for the first sidebar.
  *   - page.sidebar_second: Items for the second sidebar.
@@ -100,9 +100,14 @@
         </div>
       {% endif %}
 
-      {% if page.content %}
+      {% if page.content or page.pre_content %}
         <div class="isu-page-column isu-content-column {{content_classes}}">
-          {{ page.content }}
+          {% if page.pre_content %}
+            {{ page.pre_content}}
+          {% endif %}
+          {% if page.content %}
+            {{ page.content }}
+          {% endif %}
         </div>
       {% endif %}
 
