@@ -38,13 +38,13 @@
   <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label').addClass(alert_front_classes) }}>
 
     {% if type == 'status' %}
-      <div role="alert" class="alert alert-success">
+      <div role="alert" class="alert alert-success mt-3">
     {% elseif type == 'warning' %}
-      <div role="alert" class="alert alert-warning">
+      <div role="alert" class="alert alert-warning mt-3">
     {% elseif type == 'error' %}
-      <div role ="alert" class="alert alert-danger">
+      <div role="alert" class="alert alert-danger mt-3">
     {% else %}
-      <div role="alert" class="alert alert-info">
+      <div role="alert" class="alert alert-info mt-3">
     {% endif %}
 
     {% if status_headings[type] %}
