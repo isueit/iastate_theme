@@ -21,6 +21,7 @@ regions:
   menu_navbar: 'Menu Navbar'
   post_nav: 'Post Nav'
   breadcrumbs: 'Breadcrumbs'
+  pre_content: 'Pre Content'
   content: 'Page Content'
   sidebar_first: 'Sidebar First'
   sidebar_second: 'Sidebar Second'
