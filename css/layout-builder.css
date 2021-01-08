@@ -132,6 +132,12 @@
   padding-top: 0.55em;
 }
 
+ /* For red buttons */
+div[role="region"] > button.btn {
+  background-color: #ee0000;
+  border-color: #ee0000;
+}
+
 #drupal-off-canvas .inline-block-create-button {
   display: block;
   padding: 24px;
