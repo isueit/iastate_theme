@@ -243,6 +243,17 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
 }
 
 /*
+function iastate_theme_preprocess_page__node__layout(&$variables) {
+  print("<pre>");
+  foreach (array_keys($variables['page']['content']['iastate_theme_content']) as $key) {
+	print($key . "\n");
+  }
+  // print(variables['page']['content']['iastate_theme_content']['#id']);
+  print("</pre>");
+
+} */
+
+/*
 function iastate_theme_preprocess_region(&$variables) {
   unset($variables['elements']['iastate_theme_content']);
   unset($variables['elements']['iastate_theme_content']);

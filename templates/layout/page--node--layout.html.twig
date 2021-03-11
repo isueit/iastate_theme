@@ -100,7 +100,11 @@
       {% endif %}
   
       {% if page.content|render %}
-    	  {{ page.content }}
+	    {# {{ page.content }} #}
+	    {{ kint(page) }} 
+		{# {% for key in page|keys %}
+		  <pre>{{ key }}</pre>
+		{% endfor %} #}
       {% endif %}
   
       {% if page.sidebar_second|render %}
@@ -112,7 +116,6 @@
       {% endif %}
   
     </div>
-  
   
   </main>
   

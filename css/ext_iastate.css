@@ -444,12 +444,17 @@ dl {
 .node-type_layout-ct #block-iastate-theme-help,
 .node-type_layout-ct #block-iastate-theme-page-title--2,
 .node-type_layout-ct #block-iastate-theme-local-tasks,
-.node-type_layout-ct #node-layout-ct-layout-builder-form {
+.node-type_layout-ct #node-layout-ct-layout-builder-form,
+.layout-builder-discard-changes {
   margin-right: auto;
   margin-left: auto;
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 100%;
+}
+
+.layout-builder-discard-changes {
+  padding-bottom: 1rem;
 }
 
 .node-type_layout-ct #layout_builder {
@@ -462,7 +467,8 @@ dl {
   .node-type_layout-ct #block-iastate-theme-page-title--2,
   .node-type_layout-ct #block-iastate-theme-local-tasks,
   .node-type_layout-ct #node-layout-ct-layout-builder-form,
-  .node-type_layout-ct .layout--content-container--default .layout-content { max-width: 540px; }
+  .node-type_layout-ct .layout--content-container--default .layout-content,
+  .layout-builder-discard-changes { max-width: 540px; }
 }
 
 @media (min-width: 768px) {
@@ -470,7 +476,8 @@ dl {
   .node-type_layout-ct #block-iastate-theme-page-title--2,
   .node-type_layout-ct #block-iastate-theme-local-tasks,
   .node-type_layout-ct #node-layout-ct-layout-builder-form,
-  .node-type_layout-ct .layout--content-container--default .layout-content { max-width: 720px; }
+  .node-type_layout-ct .layout--content-container--default .layout-content,
+  .layout-builder-discard-changes { max-width: 720px; }
 }
 
 @media (min-width: 992px) {
@@ -478,7 +485,8 @@ dl {
   .node-type_layout-ct #block-iastate-theme-page-title--2,
   .node-type_layout-ct #block-iastate-theme-local-tasks,
   .node-type_layout-ct #node-layout-ct-layout-builder-form,
-  .node-type_layout-ct .layout--content-container--default .layout-content { max-width: 960px; }
+  .node-type_layout-ct .layout--content-container--default .layout-content,
+  .layout-builder-discard-changes { max-width: 960px; }
 }
 
 @media (min-width: 1200px) {
@@ -486,8 +494,21 @@ dl {
   .node-type_layout-ct #block-iastate-theme-page-title--2,
   .node-type_layout-ct #block-iastate-theme-local-tasks,
   .node-type_layout-ct #node-layout-ct-layout-builder-form,
-  .node-type_layout-ct .layout--content-container--default .layout-content { max-width: 1140px; }
+  .node-type_layout-ct .layout--content-container--default .layout-content,
+  .layout-builder-discard-changes { max-width: 1140px; }
 }
+
+/* For red buttons */
+div > button.btn-success {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+}
+
+/*
+div > button.btn-success:hover {
+  background-color: #ee0000;
+  border-color: #ee0000;
+} */
 
 /*- Layout Builder Base -*/
 
