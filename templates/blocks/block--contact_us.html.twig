@@ -26,33 +26,38 @@
  */
 #}
 
-{% if label %}
-  {% set block_title_classes = ['isu-footer_contact-title', 'h5'] %}
-  <h2{{ title_attributes.addClass(block_title_classes) }}>{{ label }}</h2> 
-{% endif %}
+<div{{ attributes.addClass(block_classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    {% set block_title_classes = ['isu-footer_contact-title', 'h5'] %}
+    <h2{{ title_attributes.addClass(block_title_classes) }}>
+      {{ label }}
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
   {% block content %}
-	{% if content.field_contact_creator_address[0] %}
-	  <div class="isu-footer_contact-address">
-		{{ content.field_contact_creator_address[0] }}
-      </div>  
-	{% endif %}
-	{% if content.field_contact_creator_email[0] %}
-	  <div class="isu-footer_contact-address">
-		<a href="mailto:{{ content.field_contact_creator_email[0] }}">
-		  {{ content.field_contact_creator_email[0] }}
-		</a>
-      </div> 
-	{% endif %}
+    {% if content.field_contact_creator_address[0] %}
+      <div class="isu-footer_contact-address">
+        {{ content.field_contact_creator_address[0] }}
+      </div>
+    {% endif %}
+    {% if content.field_contact_creator_email[0] %}
+      <div class="isu-footer_contact-address">
+        <a href="mailto:{{ content.field_contact_creator_email[0] }}">
+          {{ content.field_contact_creator_email[0] }}
+        </a>
+      </div>
+    {% endif %}
     {% if content.field_contact_creator_phone[0]  %}
-     <div class="isu-footer_contact-address">
-       {{ content.field_contact_creator_phone[0] }}
-     </div>
+      <div class="isu-footer_contact-address">
+        {{ content.field_contact_creator_phone[0] }}
+      </div>
     {% endif %}
     {% if content.field_contact_creator_phone_2[0] %}
       <div class="isu-footer_contact-address">
         {{ content.field_contact_creator_phone_2[0] }}
       </div>
     {% endif %}
-
   {% endblock %}
+</div>
 
