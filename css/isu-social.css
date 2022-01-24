@@ -81,6 +81,19 @@
 .isu-social-menu-red a[href*='youtube.com']:hover:before {
   color: #000;
 }
+
+
+
+.isu-social-menu a[href*='tiktok.com']:before {
+  content: "\e07b" / "TikTok";
+}
+
+.isu-social-menu a[href*='tiktok.com']:hover:before {
+
+  background: -webkit-linear-gradient(top, rgba(254,44,85,1) 0%,rgba(37,244,238,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .isu-social-menu a[href*='github.com']:before {
   content: "\f092" / "GitHub";
 }

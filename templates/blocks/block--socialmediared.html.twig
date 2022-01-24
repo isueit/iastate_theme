@@ -77,8 +77,15 @@
 		{% endif %}
 	  {% endfor %}
     {% endif %}
+	{% if content.field_tiktok_red %}
+	  {% for links in content.field_tiktok_red %}
+	    {% if links['#url'] %}
+		  <a href="{{ links['#url'] }}" title="{{ links['#title'] | split(' ')[0] }}"></a>
+		{% endif %}
+	  {% endfor %}
+    {% endif %}
 	{{ content | without('field_facebook_red', 'field_instagram_red', 'field_linked_in_red', 'field_pinterest_red',
-	'field_twitter_red', 'field_vimeo_red', 'field_youtube_red') }}
+	'field_twitter_red', 'field_vimeo_red', 'field_youtube_red', 'field_tiktok_red') }}
   {% endblock %}
 </div>
 
