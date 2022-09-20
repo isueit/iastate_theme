@@ -36,8 +36,8 @@ card:
   category: IASTATE
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
-  template: templates/layouts/card/card
-  icon: templates/layouts/card/card-icon.png
+  template: templates/layout/card/card
+  icon: templates/layout/card/card-icon.png
   regions:
     header:
 	label: Header
