@@ -891,6 +891,16 @@ a.bean-card_link {
 	font-size: 1.5rem;
 }
 
+.bean-card_bar_label {
+	justify-content: left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	min-width: 15.5625rem;
+	width: auto;
+}
+	
 .bean-card_label p {
 	margin: 0;
 	line-height: 1.45;
