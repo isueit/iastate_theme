@@ -32,7 +32,7 @@
     {% if content.field_facebook_red %}
 	  {% for links in content.field_facebook_red %}
 	    {% if links['#url'] %}
-		  <button><a href="{{ links['#url'] }}" title="{{ links['#title'] | split(' ')[0] }}"></a></button>
+		  <button aria-label="Join {{ site_name }} on Facebook"><a href="{{ links['#url'] }}" title="{{ links['#title'] | split(' ')[0] }}"></a></button>
 		{% endif %}
 	  {% endfor %}
     {% endif %}
