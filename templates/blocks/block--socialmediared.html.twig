@@ -39,7 +39,7 @@
     {% if content.field_instagram_red %}
 	  {% for links in content.field_instagram_red %}
 	    {% if links['#url'] %}
-		  <a href="{{ links['#url'] }}" aria-lable="Join {{ site_name }} on Instagram" title="{{ links['#title'] | split(' ')[0] }}"></a></button>
+		  <a href="{{ links['#url'] }}" aria-label="Join {{ site_name }} on Instagram" title="{{ links['#title'] | split(' ')[0] }}"></a></button>
 		{% endif %}
 	  {% endfor %}
     {% endif %}
