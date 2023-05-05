@@ -175,6 +175,15 @@ a.isu-dropdown-submenu {
 .isu-region_content {
 	margin: auto;
 }
+.isu-region_content .isu-block .isu-block-front {
+	padding-left: 25px;
+} /* this lines up content on homepage (strongiowa and news) with site title/county name */
+
+.isu-region_content .isu-block:not(.isu-block-front) {
+	padding-left: 25px;
+} /* this lines up content on educational pages with the page title without adding double padding to strongiowa */
+
+
 
 /* Breadcrumb Styling
 .isu-breadcrumb {
