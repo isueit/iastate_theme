@@ -1228,6 +1228,13 @@ div.fontawesome-icon i {
 /* ## Responsive
 /* --------------------------------------  */
 @media (min-width: 992px) {
+	.isu-region_content .isu-block:not(.isu-block-front) {
+		padding-left: 1%;
+		padding-right: 0%;
+		margin: auto;
+		max-width: 1199px;
+	}
+	
 	.isu-wordmark-logo {
 		max-width: 365px;
 		margin-left: -6%;
@@ -1247,7 +1254,12 @@ div.fontawesome-icon i {
 
 
 @media screen and (max-width : 1199px) {
-
+	.isu-region_content .isu-block:not(.isu-block-front) {
+		padding-left: 0%;
+		padding-right: 0%;
+		margin: auto;
+		max-width: 992px;
+	}
 	.isu-social-menu-footer{
 		margin-left: 10px;
 	}
@@ -1283,7 +1295,14 @@ div.fontawesome-icon i {
 
 
 @media screen and (max-width : 991px) {
- 	.isu-wordmark-logo {
+ 	.isu-region_content .isu-block:not(.isu-block-front) {
+		padding-left: 2.5%;
+		padding-right: 0%;
+		margin: auto;
+		max-width: 991px;
+	}
+	
+	.isu-wordmark-logo {
  		max-width: 360px;
 		margin-top: 0.5rem;
  	}
