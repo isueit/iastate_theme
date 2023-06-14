@@ -91,6 +91,10 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 /* ## Main Menu
 /* --------------------------------------  */
 
+.navbar-nav {
+	padding-left: 0.26rem;
+}
+
 /* Add hover effect to main menu links */
 .isu-nav-link:hover {
 	border-bottom: 3px solid #bbb !important;
@@ -205,6 +209,7 @@ a.isu-dropdown-submenu {
 	font-weight: 400;
 	letter-spacing: 0;
 	margin: 3.5625rem 0 0.625rem;
+	padding-left: 0.5rem;
 }
 
 /* Change Authored on information display */
