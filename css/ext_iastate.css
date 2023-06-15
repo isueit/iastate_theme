@@ -176,6 +176,11 @@ a.isu-dropdown-submenu {
 	margin: auto;
 }
 
+.layout__region--first, .layout__region--second, .layout__region--third {
+	margin: 0 auto;
+	height: 100%;
+}
+
 /* Breadcrumb Styling
 .isu-breadcrumb {
 	margin-left: 11px;
@@ -1229,8 +1234,6 @@ div.fontawesome-icon i {
 /* --------------------------------------  */
 @media (min-width: 992px) {
 	.isu-region_content .isu-block:not(.isu-block-front) {
-		padding-left: 1%;
-		padding-right: 0%;
 		margin: auto;
 		max-width: 1199px;
 	}
