@@ -665,11 +665,11 @@ img.staff_profile_smugmug {
 	transform: translateY(-50%);
 }
 
-.layout--background--red .isu-block {
+.layout--background--red {
         background-color: #c8102e;
 }
 
-.layout--background--red a {
+.layout--background--red .layout-builder-block a {
 	color: #fff;
 	text-decoration: none;
 }
