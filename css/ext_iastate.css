@@ -665,7 +665,7 @@ img.staff_profile_smugmug {
 	transform: translateY(-50%);
 }
 
-.layout--background--red {
+.layout--background--red .isu-block {
         background-color: #c8102e;
 }
 
