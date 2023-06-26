@@ -91,10 +91,6 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 /* ## Main Menu
 /* --------------------------------------  */
 
-.navbar-nav {
-	padding-left: 0.26rem;
-}
-
 /* Add hover effect to main menu links */
 .isu-nav-link:hover {
 	border-bottom: 3px solid #bbb !important;
@@ -989,7 +985,7 @@ form#node-layout-ct-layout-builder-form {
 /* Layout Builder Content Type */
 .node-type_layout-ct .row,
 .node-type_educational-programs-page .row,
-.node-type_homepage-ct .row {
+.node-type_homepage-ct .row .node-type_ .row {
 	margin-left: 0;
 	margin-right: 0;
 }
