@@ -437,7 +437,6 @@ figure.align-right {
 	padding: 1.75rem 1.25rem;
 	border-top: none;
 }
-
 /* Button Styles */
 .btn-danger {
 	background-color: #c8102e;
@@ -493,7 +492,7 @@ figure.align-right {
 
 .btn-outline-danger:hover:after {
 	width: calc(100% + 18px);
-	background: #c8102e;
+	background: #f1be48;
 }
 
 
@@ -557,7 +556,7 @@ figure.align-right {
 
 .btn-outline-primary:hover:after {
 	width: calc(100% + 18px);
-	background: #003d4c;
+	background: #f1be48;
 }
 
 .btn-success{
@@ -590,7 +589,7 @@ figure.align-right {
 
 .btn-success:hover:after {
 	width: calc(100% + 18px);
-	background: #3E4827;
+	background: #f1be48;
 }
 
 
@@ -623,7 +622,7 @@ figure.align-right {
 
 .btn-outline-success:hover:after {
 	width: calc(100% + 18px);
-	background: #00854D;
+	background: #f1be48;
 }
 
 .btn-secondary{
@@ -656,7 +655,7 @@ figure.align-right {
 
 .btn-secondary:hover:after {
 	width: calc(100% + 18px);
-	background: #ebebeb;
+	background: #f1be48;
 }
 
 .btn-outline-secondary {
@@ -688,9 +687,8 @@ figure.align-right {
 
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 18px);
-	background: #7c2529;
+	background: #f1be48;
 }
-
 /* Block Title */
 h2.isu-block-title.h4 {
 	margin-bottom: 1rem;
