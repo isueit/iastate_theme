@@ -177,6 +177,11 @@ a.isu-dropdown-submenu {
 	min-width: 100%;
 }
 
+.layout__region--first, .layout__region--second, .layout__region--third {
+	margin: 0 auto;
+	height: 100%;
+}
+
 /* Breadcrumb Styling
 .isu-breadcrumb {
 	margin-left: 11px;
@@ -204,8 +209,7 @@ a.isu-dropdown-submenu {
 	line-height: 1.32857;
 	font-weight: 400;
 	letter-spacing: 0;
-	margin: 3.5625rem 0 0.625rem;
-	padding-left: 0.5rem;
+	margin: 3.5625rem 0.6rem 0.625rem;
 }
 
 /* Change Authored on information display */
@@ -985,7 +989,7 @@ form#node-layout-ct-layout-builder-form {
 /* Layout Builder Content Type */
 .node-type_layout-ct .row,
 .node-type_educational-programs-page .row,
-.node-type_homepage-ct .row, .node-type_ .row {
+.node-type_homepage-ct .row, .node-type_ .row, .node-type_page .row {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -1319,6 +1323,12 @@ div.fontawesome-icon i {
 /* ## Responsive
 /* --------------------------------------  */
 @media (min-width: 992px) {
+	.isu-region_content .isu-block:not(.isu-block-front) {
+		margin: auto;
+		padding-left: 1%;
+		max-width: 1199px;
+	}
+	
 	.isu-wordmark-logo {
 		max-width: 365px;
 		margin-left: -6%;
@@ -1338,7 +1348,12 @@ div.fontawesome-icon i {
 
 
 @media screen and (max-width : 1199px) {
-
+	.isu-region_content .isu-block:not(.isu-block-front) {
+		padding-left: 0%;
+		padding-right: 0%;
+		margin: auto;
+		max-width: 992px;
+	}
 	.isu-social-menu-footer{
 		margin-left: 10px;
 	}
@@ -1374,7 +1389,14 @@ div.fontawesome-icon i {
 
 
 @media screen and (max-width : 991px) {
- 	.isu-wordmark-logo {
+ 	.isu-region_content .isu-block:not(.isu-block-front) {
+		padding-left: 2.5%;
+		padding-right: 0%;
+		margin: auto;
+		max-width: 991px;
+	}
+	
+	.isu-wordmark-logo {
  		max-width: 360px;
 		margin-top: 0.5rem;
  	}
