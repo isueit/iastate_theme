@@ -669,9 +669,14 @@ img.staff_profile_smugmug {
         background-color: #c8102e;
 }
 
-.layout--background--red .layout-builder-block a {
+.layout--background--red a {
 	color: #fff;
 	text-decoration: none;
+}
+
+a.layout-builder__link--add {
+	color: #686868;
+	text-decoration: underline;
 }
 
 .layout--background--red a:hover {
