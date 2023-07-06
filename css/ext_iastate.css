@@ -1150,6 +1150,10 @@ form#node-layout-ct-layout-builder-form {
 	padding-right: 6%;
 }
 
+#layout-builder-modal .button:hover:after {
+    width: 0;
+}
+
 /* Settings Tray */
 #drupal-off-canvas button, #drupal-off-canvas .button {
 	border: #006ba6;
