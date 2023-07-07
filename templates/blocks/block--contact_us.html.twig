@@ -26,19 +26,8 @@
  */
 #}
 
-{%
-  set block_classes = [
-    is_front ? 'isu-block-front' : '',
-    'isu-block'
-  ]
-%}
-
-<div{{ attributes.addClass(block_classes) }}>
-  {% if label %}
-    {% set block_title_classes = ['isu-footer_contact-title', 'h5'] %}
-    <h2{{ title_attributes.addClass(block_title_classes) }}>{{ label }}</h2>
-  {% endif %}
-  <div class="isu-footer_contact-address">
+<div {{ attributes.addClass("isu-footer_contact-address") }}>
+  {{ title_prefix }}
     {% block content %}
       {% if content.field_contact_creator_title[0]  %}
          <div class="isu-footer_contact-address-title">
@@ -71,7 +60,6 @@
           {{ content.field_contact_creator_phone_2[0] }}
         </div>
       {% endif %}
+      {{ title_suffix }}
     {% endblock %}
   </div>
-</div>
-
