@@ -186,8 +186,58 @@ a.isu-dropdown-submenu {
 /* Translation */
 .gtranslate {
 	float: right;
-	padding: 15px;
+	margin-top: -0.5em;
 }
+
+.gtranslate:before {
+  content: '\f0ac';
+  display: inline-block;
+  position: absolute;
+  border-radius: 0;
+  color: #fff;
+  width: 1.75rem;
+  font-family: FontAwesome;
+  font-size: 2em;
+  font-weight: normal;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  vertical-align: middle;
+}
+
+.gtranslate:hover:before {
+  content: '\f0ac';
+  display: inline-block;
+  position: absolute;
+  border-radius: 0;
+  color: #7c2529;
+  width: 1.75rem;
+  font-family: FontAwesome;
+  font-size: 2em;
+  font-weight: normal;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  vertical-align: middle;
+}
+
+#gtranslate_selector {
+	float: right;
+	content-visibility: hidden;
+	width: 1.75em;
+	height: 1.75em;
+	margin-top: 0.5em;
+	border: none;
+	color: #fff0;
+	background-color: #fff0;
+}
+
 
 .node--unpublished {
 	background: #fff4f4;
@@ -1637,6 +1687,15 @@ div.fontawesome-icon i {
 		margin-right: 0px;
 	}
 
+	/*Adjust Gtranslate icon */
+	.gtranslate, #gtranslate_selector {
+		margin-top: -0.25em;
+	}
+	.gtranslate:before {
+		font-size: 1.5em;
+	}
+	
+
 	div#block-iastate-theme-page-title--2 {
 		padding-left: 6%;
 		padding-right: 6%;
@@ -1715,10 +1774,6 @@ div.fontawesome-icon i {
 	.strong-iowa {
 		padding-top: 10%;
 	}
-
-	.gtranslate {
-		display: none;
-}
 
 	.strong-iowa img {
 		max-width: 90%;
