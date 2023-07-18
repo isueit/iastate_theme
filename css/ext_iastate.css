@@ -564,9 +564,9 @@ figure.align-right {
 }
 
 .btn-success {
-	background-color: ##008540;
-    	border-color: ##008540;
-	border: 1px solid ##008540;
+	background-color: #008540;
+    	border-color: #008540;
+	border: 1px solid #008540;
     	font-weight: 700;
     	border-radius: 3px;
     	cursor: pointer;
@@ -942,7 +942,7 @@ a.layout-builder__link--add {
 .upcoming-events-white.program_offering_blocks.isu-block {
 	background-color: #fff;
 	border: 3px solid #003d4c;
-	box-shadown: -5px 5px 19px -5px #003d4c;
+	box-shadow: -5px 5px 19px -5px #003d4c;
 }
 
 div.upcoming-events-white {
@@ -1227,8 +1227,8 @@ form#node-layout-ct-layout-builder-form {
 }
 
 .node-type_layout-ct form#layout-builder-discard-changes,
-.node-type_educational-programs-page form#layout-builder-discard-changes {
-.node-type_homepage-ct form#layout-builder-discard-changes,
+.node-type_educational-programs-page form#layout-builder-discard-changes,
+.node-type_homepage-ct form#layout-builder-discard-changes {
   padding-bottom: 20px;
 }
 
@@ -1850,7 +1850,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 
 .isu-social-menu-red{
 	padding-left: 73px;
-	font-size: 22px	font-size: 22px;;
+	font-size: 22px;
 }
 	
 	.ext-news-feed .header {
