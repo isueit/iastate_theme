@@ -293,16 +293,6 @@ figure.align-right {
 	border-bottom: #fff;
 }
 
-.isu-block-title:before {
-  	content: "";
- 	position: absolute;
-  	left: 0;
-  	bottom: 0;
-  	height: 1px;
-  	width: 3.125rem;
-  	border-bottom: 0.125rem solid #f1be48;
-}
-
 /* Aligns Block Title Border */
 .layout--alignment--left .isu-block-title {
 	font-weight: 700; 
@@ -310,15 +300,6 @@ figure.align-right {
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
 	border-bottom: #fff;
-}
-
-.layout--alignment--left .isu-block-title:before {
-  	content: "";
-    	border-bottom: .125rem solid #f1be48;
-    	bottom: 0;
-    	left: 0;
-    	width: 3.5rem;
-    	position: absolute;
 }
 
 .layout--alignment--right .isu-block-title {
@@ -329,32 +310,12 @@ figure.align-right {
 	border-bottom: #fff;
 }
 
-.layout--alignment--right .isu-block-title:before {
-  	content: "";
-    	border-bottom: .125rem solid #f1be48;
-    	bottom: 0;
-    	left: 100%;
-    	margin-left: -3.5rem;
-    	width: 3.5rem;
-    	position: absolute;
-}
-
 .layout--alignment--center .isu-block-title {
 	font-weight: 700; 
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
 	border-bottom: #fff;
-}
-
-.layout--alignment--center .isu-block-title:before {
-  	content: "";
-    	border-bottom: .125rem solid #f1be48;
-    	bottom: 0;
-    	left: 50%;
-    	margin-left: -1.75rem;
-    	width: 3.5rem;
-    	position: absolute;
 }
 
 .layout--alignment--justify .isu-block-title {
@@ -365,14 +326,15 @@ figure.align-right {
 	border-bottom: #fff;
 }
 
-.layout--alignment--justify .isu-block-title:before {
-  	content: "";
-    	border-bottom: .125rem solid #f1be48;
-    	bottom: 0;
-    	left: 50%;
-    	margin-left: -1.75rem;
-    	width: 3.5rem;
-    	position: absolute;
+h2.isu-block-title.h4:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 7.125rem;
+	border-bottom: 0.2rem solid #f1be48;
+	margin: auto;
 }
 
 /* Accordion Styles */
