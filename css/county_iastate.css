@@ -19,6 +19,10 @@ div.program_offering_blocks {
 	box-shadow: -5px 5px 19px -5px #003d4c;
 }
 
+div.program_offering_blocks h2.isu-block-title.h4:before {
+	border-bottom: 0px;
+}
+
 div.program_offering_blocks h2.isu-block-title.h4 {
 	color: #000000;
 }
