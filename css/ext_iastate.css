@@ -330,11 +330,9 @@ h2.isu-block-title.h4:after {
 	content: "";
 	position: absolute;
 	left: 0;
-	right: 0;
 	bottom: 0;
 	width: 7.125rem;
 	border-bottom: 0.2rem solid #f1be48;
-	margin: auto;
 }
 
 /* Accordion Styles */
