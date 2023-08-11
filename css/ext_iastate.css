@@ -69,7 +69,8 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 
 /* Reduce size of yellow bar */
 .isu-site-navbar {
-	border-bottom: 4px solid var(--gold);
+	border-bottom: none;
+	background-color: #ffffff;
 }
 
 /* Reduce space on top and bottom of wordmark and sitename */
@@ -95,6 +96,24 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 
 .isu-social-menu-red {
 	text-align: right;
+}
+
+/* Search */
+
+.form-control {
+	border-color: #eeeeee !important;
+}
+
+.isu-region_header-second .isu-search__search-field.form-control {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+
+.isu-site-navbar .isu-search__search-btn {
+	border-top: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
 }
 
 /* --------------------------------------  */
