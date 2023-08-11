@@ -120,6 +120,11 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 /* ## Main Menu
 /* --------------------------------------  */
 
+.isu-menu-navbar {
+	background: var(--lt-gray);
+	padding: 0.8rem 0;
+}
+
 /* Add hover effect to main menu links */
 .isu-nav-link:hover {
 	border-bottom: 3px solid #bbb !important;
@@ -149,12 +154,24 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	letter-spacing: .5px;
 	border-bottom: 3px solid transparent;
 	transition: all 0.1s ease;
+	line-height: 1.625;
+	color: var(--burgundy);
+	font-weight: 700;
 }
 
-/* Main Menu Link Hover Changes */
-.isu-nav-link:hover {
-	background: #eeeeee;
-	border-bottom: 3px solid #bbb;
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+	color: var(--cardinal);
+	background: transparent;
+	border-bottom: none !important;
+}
+
+.navbar-expand-lg .navbar-nav {
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+	-webkit-box-pack: end;
+	justify-content: flex-end;
+	margin: 0 0 0 auto;
 }
 
 /* Third Level Menu */
