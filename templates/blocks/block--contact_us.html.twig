@@ -60,6 +60,13 @@
           {{ content.field_contact_creator_phone_2[0] }}
         </div>
       {% endif %}
-      {{ title_suffix }}
+
+	{% if view_mode == ('about_us' or 'homepage' or 'full') and content.field_contact_creator_hours[0]  %}
+         <div class="contact-office-hours">
+           {{ content.field_contact_creator_hours[0] }}
+         </div>
+      {% endif %}
+  
+     {{ title_suffix }}
     {% endblock %}
   </div>
