@@ -1120,7 +1120,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 /* Reduce size of copyright in footer */
 .isu-copyright p {
 	margin-bottom: 0;
-	font-size: 0.875rem;
+	font-size: 0.9rem;
 }
 
 .isu-legal-menu {
@@ -1146,15 +1146,16 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 
 .isu-footer .isu-sign-off_wrapper {
   background: #ffffff;
-  color: #333333;
+  color: #000000;
+  font-weight: revert;
 }
 
 .isu-region_sign-off {
-  font-size:14px;
+  font-size: 1rem;
 }
 
 .isu-sign-off_wrapper a {
-  color:#333333;
+  color:#000000;
 }
 
 .isu-sign-off_wrapper a:hover {
