@@ -19,7 +19,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 
 /* Reduce size of h1 */
 .h1, h1 {
-	font-size: 1.75rem;
+	font-size: 3.375rem;
 }
 
 /* Reduce size of h2 */
@@ -31,6 +31,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	line-height: 1.4;
 	padding-bottom: 1rem;
 	position: relative;
+	color: var(--cardinal);
 }
 
 /*Reduce size of h3 */
@@ -41,6 +42,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	letter-spacing: 0;
 	line-height: 1.42857;
 	margin: 2rem 0 0.5625rem;
+	color: var(--cardinal);
 }
 
 /* Reduce size of h4 */
@@ -51,6 +53,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
 	line-height: 1.38889;
+	color: var(--burgundy);
 }
 
 /* Reduce size of h5 */
@@ -61,6 +64,17 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
+	color: var(--burgundy);
+}
+
+a {
+	color: var(--burgundy);
+	font-weight: 700;
+}
+
+a:hover {
+	color: var(--cardinal);
+	font-weight: 700;
 }
 
 /* --------------------------------------  */
@@ -278,12 +292,13 @@ body.cke_editable figure figcaption {
 }
 
 .caption > figcaption {
-	background-color: #eeeeee;
 	margin-top: -2.5rem;
-	padding: 14px;
-	border-left: .15rem solid var(--gold);
-	font-size: 14px;
+	padding-top: 1rem;
+	font-size: .875rem;
 	font-style: italic;
+	line-height: 1.57143;
+	position: relative;
+	color: var(--dk-gray);
 }
 
 /* Image Styles */
@@ -377,8 +392,8 @@ h2.isu-block-title.h4:after {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 7.125rem;
-	border-bottom: 0.2rem solid var(--gold);
+	width: 3.125rem;
+	border-bottom: 0.125rem solid var(--gold);
 }
 
 /* Accordion Styles */
@@ -705,9 +720,11 @@ h2.isu-block-title.h4:after {
 }
 /* Block Title */
 h2.isu-block-title.h4 {
-	margin-bottom: 1rem;
+	padding-bottom: 1.75rem;
 	line-height: 1.4;
 	font-size: 1.875rem;
+	color: var(--cardinal);
+	position: relative;
 }
 
 /* Accordion Styles */
@@ -784,7 +801,7 @@ img.staff_profile_smugmug {
 }
 
 .hero-heading h2 {
-	font-size: 6.875rem;
+	font-size: 4.375rem;
 	line-height: 1.07273;
 }
 
