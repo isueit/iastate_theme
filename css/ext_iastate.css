@@ -103,8 +103,12 @@ a:hover {
 	padding-bottom: 10px;
 }
 
+.isu-wordmark a {
+	color: var(--burgundy);
+}
+
 .isu-wordmark-sitename a:hover {
-	color: #fff;
+	color: var(--cardinal);
 	text-decoration: none;
 }
 
@@ -421,6 +425,42 @@ h2.isu-block-title.h4:after {
 	border-right: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
 	padding: 1em 2.2em 1.2em;
+}
+
+/* Table Styles */
+table {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	color: #000000;
+	border: 2rem solid var(--lt-gray);
+	overflow: auto;
+	border-top: none;
+}
+
+thead {
+	text-align: left;
+}
+
+thead tr {
+	background-color: var(--cardinal);
+	color: #ffffff;
+}
+
+thead th {
+	font-weight: 700;
+	vertical-align: top;
+}
+
+tbody {
+	border-top: none;
+}
+
+tbody tr:nth-child(even) {
+	background-color: rgba(0,0,0,.048);
+
 }
 
 
