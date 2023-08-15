@@ -57,7 +57,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 }
 
 /* Reduce size of h5 */
-.h5 {
+.h5, h5 {
 	font-size: 1rem;
 	line-height: 1.5625;
 	font-family: Nimbus Sans,sans-serif;
@@ -65,6 +65,16 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
 	color: var(--burgundy);
+}
+
+.h6, h6 {
+	color: var(--burgundy);
+	font-family: Nimbus Sans,sans-serif;
+	font-weight: 700;
+	letter-spacing: 0;
+	font-size: 1rem;
+	line-height: 1.5625;
+	margin: 2rem 0 0.5625rem;
 }
 
 a {
@@ -1156,6 +1166,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 
 .isu-sign-off_wrapper a {
   color:#000000;
+  font-weight: 400;
 }
 
 .isu-sign-off_wrapper a:hover {
