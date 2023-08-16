@@ -1051,7 +1051,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 
 .isu-sign-off_wrapper a {
-  color:#333333;
+  color:#000000;
 }
 
 .isueo-staff-links ul {
@@ -1062,12 +1062,12 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 	display: inline-block;
 }
 
-.isu-sign-off_wrapper a:hover {
-  color:#000000;
+.isueo-staff-links li:nth-child(2):after {
+	content: "|";
 }
 
-div#block-staff-links div {
-  display: inline-block;
+.isu-sign-off_wrapper a:hover {
+  color:var(--burgundy);
 }
 
 /* -------------------------------------- */
