@@ -198,6 +198,7 @@ a.isu-dropdown-submenu {
 	color: var(--burgundy);
 	background-color: #fff0;
 	margin-bottom: 10px;
+	width: 175px;
 	margin: 10px auto;
 	transition: all 0.2s ease-in-out;
 }
@@ -209,11 +210,12 @@ a.isu-dropdown-submenu {
   	content: '\f0ac';
   	display: inline-block;
   	position: absolute;
-  	margin-top: 2.5px;
+  	margin-top: 10px;
+	margin-left: 10px;
   	border-radius: 0;
   	color: var(--burgundy);
   	font-family: FontAwesome;
-  	font-size: 2em;
+  	font-size: 1.45em;
   	height: 0em;
   	width: 0em;
   	vertical-align: middle;
@@ -224,10 +226,11 @@ a.isu-dropdown-submenu {
   	content: '\f0ac';
   	display: inline-block;
   	position: absolute;
-  	margin-top: 2.5px;
+  	margin-top: 10px;
+	margin-left: 10px;
   	border-radius: 0;
   	color: var(--gold);
-  	font-size: 2em;
+  	font-size: 1.45em;
   	height: 0;
   	width: 0;
   	vertical-align: middle;
@@ -1690,13 +1693,18 @@ div.fontawesome-icon i {
 	}
 	#gtranslate_selector {
 		font-size: 12px;
+		width: 140px;
 	}
 	.gtranslate:before {
-		font-size: 1.5em;
+		font-size: 1.45em;
+		margin-left: 5.5px;
+		margin-top: 5.5px;
 	}
 
 	.gtranslate:hover:before{
-		font-size: 1.5em;
+		font-size: 1.45em;
+		margin-left: 5.5px;
+		margin-top: 5.5px;
 	}
 
 	div#block-iastate-theme-page-title--2 {
