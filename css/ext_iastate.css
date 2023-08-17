@@ -209,7 +209,7 @@ a.isu-dropdown-submenu {
 	line-height: 1.32857;
 	font-weight: 400;
 	letter-spacing: 0;
-	margin: 3.5625rem 0.6rem 0.625rem;
+	margin: 3.5625rem 0rem 0.625rem;
 }
 
 /* Change Authored on information display */
@@ -272,7 +272,7 @@ figure.align-right {
 
 /* Sidebar */
 .isu-page-column {
-	padding-left: 11px;
+	padding-left: 0px;
 	max-width: 75%;
 }
 
@@ -935,8 +935,8 @@ div#block-iastate-theme-local-tasks {
 
 div#block-iastate-theme-page-title--2 {
 	padding-left: 0%;
-	padding-right: 6%;
-	max-width: 1135px;
+	padding-right: 0;
+	max-width: 1125px;
 	margin: auto;
 }
 
@@ -1369,7 +1369,7 @@ div.fontawesome-icon i {
 	div#block-iastate-theme-page-title--2 {
 		padding-left: 0%;
 		padding-right: 6%;
-		max-width: 955px;
+		max-width: 925px;
 		margin: auto;
 	}
 
