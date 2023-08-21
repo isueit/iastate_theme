@@ -84,7 +84,6 @@ a {
 
 a:hover {
 	color: var(--cardinal);
-	font-weight: 700;
 }
 
 a:hover img {
@@ -153,7 +152,7 @@ a:hover img {
 
 .isu-menu-navbar {
 	background: var(--lt-gray);
-	padding: 0.8rem 0;
+	padding: 0;
 }
 
 /* Add hover effect to main menu links */
