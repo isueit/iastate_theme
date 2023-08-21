@@ -37,7 +37,7 @@
 }
 
 .isu-social-menu a:hover:before {
-  color: var(--burgundy);
+  color: var(--gold);
   text-decoration: none;
 }
 .isu-social-menu-red a:hover {
