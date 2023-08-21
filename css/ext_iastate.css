@@ -87,6 +87,9 @@ a:hover {
 	font-weight: 700;
 }
 
+a:hover img {
+	outline: var(--gold) auto 5px;
+}
 /* --------------------------------------  */
 /* ## Red Bar
 /* --------------------------------------  */
@@ -1114,6 +1117,13 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 
 .isu-social-menu-footer {
 	margin-left: 8%;
+}
+
+.isu-social-menu-footer:before {
+	content: "";
+	border-bottom: 0.2rem solid var(--gold);
+	width: 13.5rem;
+	position: absolute;
 }
 
 /* Adjust legal menu links */
