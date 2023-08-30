@@ -812,7 +812,6 @@ a.layout-builder__link--add {
 }
 
 .layout--background-overlay--red>* {
-	z-index: 100;
 	position: relative;
 }
 
@@ -904,6 +903,14 @@ a.layout-builder__link--add {
 	background-color: var(--midnight);
 	border-color: var(--midnight);
 	color: var(--gold);
+}
+
+.js .dropbutton a:focus, .dropbutton-toggle button:focus {
+	box-shadow: inset 0 0 1px 2px #f1be48;
+}
+
+.layout-content .dropbutton-widget {
+	padding-left: 2rem;
 }
 
 /* --------------------------------------  */

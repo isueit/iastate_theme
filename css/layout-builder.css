@@ -60,7 +60,10 @@
 .layout-builder__add-block {
   padding: 1.5em 0;
   text-align: center;
-  background-color: #eff6fc;
+}
+
+.layout-builder__add-block .dropbutton-widget {
+	border: none;
 }
 
 .layout-builder__link--remove {
