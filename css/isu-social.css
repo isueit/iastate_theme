@@ -75,7 +75,7 @@ color: #fff;
 }
 
 .isu-social-menu a[href*='twitter.com']:before {
-  content: "\f081";
+  content: "\e61a";
 }
 
 .isu-social-menu-red a[href*='twitter.com']:before {
