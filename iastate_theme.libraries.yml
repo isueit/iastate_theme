@@ -35,14 +35,14 @@ fonts:
 # Icons
 font-awesome:
   remote: https://fortawesome.github.io/Font-Awesome/
-  version: 4.5.0
+  version: 6.4.2
   license:
     name: MIT
     url: https://fortawesome.github.io/Font-Awesome/license/
     gpl-compatible: true
   css:
     theme:
-      'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css': { type: external, minified: true }
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css': { type: external, minified: true }
 
 academicons:
   remote: https://jpswalsh.github.io/academicons/
