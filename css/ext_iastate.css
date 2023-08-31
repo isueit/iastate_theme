@@ -92,24 +92,6 @@ h6 {
 
 .isu-region_content a {
 	font-weight: 700;
-.h5, h5 {
-	font-size: 1rem;
-	line-height: 1.5625;
-	font-family: Nimbus Sans,sans-serif;
-	font-weight: 700;
-	letter-spacing: 0;
-	margin: 2rem 0 0.5625rem;
-	color: var(--burgundy);
-}
-
-.h6, h6 {
-	color: var(--burgundy);
-	font-family: Nimbus Sans,sans-serif;
-	font-weight: 700;
-	letter-spacing: 0;
-	font-size: 1rem;
-	line-height: 1.5625;
-	margin: 2rem 0 0.5625rem;
 }
 
 a {
