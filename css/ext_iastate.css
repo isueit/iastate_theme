@@ -243,11 +243,10 @@ a:hover img {
 }
 
 .navbar-expand-lg .navbar-nav {
-	width: 75%;
 	display: flex;
 	-webkit-box-pack: end;
 	justify-content: flex-end;
-	margin: 0 0 0 auto;
+	margin-left: auto;
 }
 
 /* Third Level Menu */
@@ -1247,6 +1246,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 
 .isueo-staff-links ul {
 	list-style: none;
+	padding-left: 0;
 }
 
 .isueo-staff-links li {
