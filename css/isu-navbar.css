@@ -25,20 +25,33 @@
   }
 
 .isu-navbar {
-  display: block;
+  display: flex;
   font-size: 1rem;
   background: #ffffff;
+  align-items: flex-end;
 }
+
 .isu-navbar a {
-  padding-right: 1.125rem;
   color: var(--cardinal);
-  line-height: 1.71429;
+  line-height: 1.625;
   font-weight: 400;
   text-decoration: none;
   transition: 0.2s color ease-in-out;
   cursor: pointer;
-  font-size: .875rem;
 }
+
+.isu-navbar ul {
+	display: flex;
+}
+
+.isu-navbar li {
+	padding-right: 1.5rem;
+}
+
+.isu-navbar li:last-child {
+	padding-right: 0;
+}
+
   .isu-navbar a:hover,
   .isu-navbar a:focus,
   .isu-navbar_dropdown.has-focus {
