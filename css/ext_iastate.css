@@ -381,7 +381,7 @@ a.isu-dropdown-submenu {
 	margin-top: 10px;
 	margin-left: 10px;
 	border-radius: 0;
-	color: var(--burgundy);
+	color: var(--cardinal);
 	font-family: FontAwesome;
 	font-size: 1.45em;
 	height: 0em;
@@ -397,7 +397,7 @@ a.isu-dropdown-submenu {
 	margin-top: 10px;
 	margin-left: 10px;
 	border-radius: 0;
-	color: var(--gold);
+	color: var(--burgundy);
 	font-size: 1.45em;
 	height: 0;
 	width: 0;
