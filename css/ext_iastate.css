@@ -219,6 +219,10 @@ blockquote p:last-child:after {
 	border-bottom: 1px solid #eeeeee;
 }
 
+.isu-region_header-second {
+	float: right;
+}
+
 /* --------------------------------------  */
 /* ## Main Menu
 /* --------------------------------------  */
