@@ -229,7 +229,7 @@ blockquote p:last-child:after {
 
 .isu-menu-navbar {
 	background: var(--lt-gray);
-	padding: 0;
+	padding: 1rem;
 }
 
 /* Dropdown Menu */
