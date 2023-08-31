@@ -1199,15 +1199,12 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 	border-bottom: 0.2rem solid var(--gold);
 }
 
-<<<<<<< HEAD
-=======
 .isu-social-menu-footer:before {
 	content: "";
 	border-bottom: 0.2rem solid var(--gold);
 	width: 13.5rem;
 	position: absolute;
 }
->>>>>>> f529913b5fd7503a91e3e1457c75bd398bd725a3
 
 /* Adjust legal menu links */
 .isu-legal-menu a {
@@ -2085,7 +2082,8 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
     padding: 15px 49px 15px 15px !important;
   }
 
-  .ui-dialog-title {    margin: 0;
+  .ui-dialog-title {    
+	margin: 0;
     color: #fff;
     font-size: 1.231em;
     font-weight: 600;
@@ -2099,8 +2097,6 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 .fontawesome-icon-dialog {
 	max-width: 500px;
 }
-
-
 
 /* Fix Overscroll Behavior*/
 body #layout-builder-modal {
