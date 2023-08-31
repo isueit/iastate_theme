@@ -347,8 +347,57 @@ a.isu-dropdown-submenu {
 
 /* Translation */
 .gtranslate {
-	float: right;
-	padding: 15px;
+	display: inline;
+}
+
+#gtranslate_selector {
+	font-family: Nimbus sans,sans-serif;
+	padding-left: 2em;
+	height: 2em;
+	position: relative;
+	z-index: 2;
+	border: none;
+	color: var(--burgundy);
+	background-color: #fff0;
+	margin-bottom: 10px;
+	width: 175px;
+	margin: 10px auto;
+	transition: all 0.2s ease-in-out;
+}
+
+#gtranslate_selector:hover {
+	color: var(--gold);
+}
+
+.gtranslate:before {
+	content: '\f0ac';
+	display: inline-block;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 0;
+	color: var(--burgundy);
+	font-family: FontAwesome;
+	font-size: 1.45em;
+	height: 0em;
+	width: 0em;
+	vertical-align: middle;
+	transition: all 0.2s ease-in-out;
+}
+
+.gtranslate:hover:before {
+	content: '\f0ac';
+	display: inline-block;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 0;
+	color: var(--gold);
+	font-size: 1.45em;
+	height: 0;
+	width: 0;
+	vertical-align: middle;
+	transition: all 0.2s ease-in-out;
 }
 
 .node--unpublished {
