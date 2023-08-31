@@ -197,8 +197,8 @@ a:hover img {
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
 	padding: 2.5rem 3.25rem;
 	flex-wrap: wrap;
-	left: 2%;
-	right: auto;
+	left: auto;
+	right: 0;
 	position: absolute;
 	min-width: 20rem;
 	transition: max-height 1s;
