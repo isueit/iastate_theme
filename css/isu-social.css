@@ -282,8 +282,3 @@ color: #fff;
 .isu-social-menu-red a[href*='foundation.iastate.edu']:before {
 color: #fff;
 }
-
-.isu-social-menu a:hover:before {
-  color: var(--burgundy);
-  text-decoration: none;
-}
