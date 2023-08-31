@@ -1927,6 +1927,27 @@ div.fontawesome-icon i {
 		margin-right: 0px;
 	}
 
+	.gtranslate {
+		float: right;
+	}
+
+	#gtranslate_selector {
+		font-size: 12px;
+		width: 140px;
+	}
+
+	.gtranslate:before {
+		font-size: 1.45em;
+		margin-left: 5.5px;
+		margin-top: 5.5px;
+	}
+
+	.gtranslate:hover:before {
+		font-size: 1.45em;
+		margin-left: 5.5px;
+		margin-top: 5.5px;
+	}
+
 	div#block-iastate-theme-page-title--2 {
 		padding-left: 6%;
 		padding-right: 6%;
@@ -2005,10 +2026,6 @@ div.fontawesome-icon i {
 	.strong-iowa {
 		padding-top: 10%;
 	}
-
-	.gtranslate {
-		display: none;
-}
 
 	.strong-iowa img {
 		max-width: 90%;
