@@ -33,12 +33,24 @@
   ]
 %}
 
-<div {{ attributes.addClass(block_classes) }} >
+<div {{ attributes.addClass(block_classes, "isueo-staff-links") }} >
+{{ title_prefix }}
   {% block content %}
-    <span>Staff Resources: </span>
-	  <a href="{{ content.field_login_link.0['#url'] }}" title="Website Editor Login" rel="nofollow">Editor Login</a>
-	<span>|</span>
-	  <a href="{{ content.field_myextension_link.0['#url'] }}" title="MyExtension – Staff Intranet" rel="nofollow">MyExtension</a>
+    <ul>
+    <li>Staff Resources: </li>
+    {% if content.field_login_link.0['#title'] %}
+    <li><a class="isueo-login" href="{{ content.field_login_link.0['#url'] }}" title="{{ content.field_login_link.0['#title'] }}" rel="nofollow">
+    {{ content.field_login_link.0['#title'] }}
+    </a>
+    </li>
+    {% endif %}
+    {% if content.field_myextension_link.0['#title'] %}
+	  <li><a class="isueo-myextension" href="{{ content.field_myextension_link.0['#url'] }}" title="{{ content.field_myextension_link.0['#title'] }}" rel="nofollow">
+    {{ content.field_myextension_link.0['#title'] }}
+    </a>
+    </li>
+    </ul>
+    {% endif %}
+  {{ title_suffix }}
   {% endblock %}
 </div>
-

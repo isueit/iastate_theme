@@ -43,9 +43,7 @@
 
 	    {% if content.field_contact_creator_email[0] %}
         <div>
-		      <a href="mailto:{{ content.field_contact_creator_email[0] }}">
 		        {{ content.field_contact_creator_email[0] }}
-		      </a>
         </div>
 	    {% endif %}
 
@@ -60,6 +58,7 @@
           {{ content.field_contact_creator_phone_2[0] }}
         </div>
       {% endif %}
-      {{ title_suffix }}
+
+     {{ title_suffix }}
     {% endblock %}
   </div>

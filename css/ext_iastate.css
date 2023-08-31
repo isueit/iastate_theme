@@ -912,7 +912,7 @@ a.layout-builder__link--add {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: linear-gradient(to right, rgba(204,0,0,0.7), 50%, rgba(204,0,0,1));
+	background: linear-gradient(to right, rgba(200,16,46,0.7), 50%, rgba(200, 16, 46, 1));
 	z-index: 0;
 }
 
@@ -1182,8 +1182,20 @@ div.upcoming-events-white h2.isu-block-title.h4 {
   color:#000000;
 }
 
-div#block-staff-links div {
-  display: inline-block;
+.isueo-staff-links ul {
+	list-style: none;
+}
+
+.isueo-staff-links li {
+	display: inline-block;
+}
+
+.isueo-staff-links li:nth-child(2):after {
+	content: "|";
+}
+
+.isu-sign-off_wrapper a:hover {
+  color:var(--burgundy);
 }
 
 /* -------------------------------------- */
