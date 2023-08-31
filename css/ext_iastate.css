@@ -119,18 +119,11 @@ a {
 
 a:hover {
 	color: var(--cardinal);
-<<<<<<< HEAD
-}
-
-a:hover img {
-	outline: var(--gold) auto 5px;
 }
 
 .container {
 	padding-right: 0px;
 	padding-left: 0px;
-=======
->>>>>>> f529913b5fd7503a91e3e1457c75bd398bd725a3
 }
 
 a:hover img {
