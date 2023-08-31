@@ -520,6 +520,15 @@ h2.isu-block-title.h4:after {
 .table thead th, .table th {
 	background: var(--cardinal);
 	color: white;
+	padding: 1.5625rem;
+	font-size: 1.3125rem;
+	line-height: 1.42857;
+	font-weight: 700;
+	vertical-align: top;
+}
+
+.table[cellpadding], .table[cellspacing] {
+	border-collapse: collapse;
 }
 
 .table tbody {
