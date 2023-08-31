@@ -107,16 +107,21 @@ a:hover img {
 
 /* Site Name Size Change */
 .isu-wordmark-sitename {
-	font-size: 22px;
-	margin-left: -4%;
+	max-width: 16rem;
+	font-size: 1.125rem;
+	font-family: "Nimbus Sans", sans-serif;
 	font-weight: 700;
-	line-height: 24px;
-	padding-top: 13px;
-	padding-bottom: 10px;
+	line-height: 1.25;
+	margin: 0;
+	padding: 0;
 }
 
 .isu-wordmark a {
 	color: var(--burgundy);
+}
+
+.isu-wordmark-sitename a {
+	font-weight: 700;
 }
 
 .isu-wordmark-sitename a:hover {
@@ -196,7 +201,7 @@ a:hover img {
 }
 
 .navbar-expand-lg .navbar-nav {
-	width: 100%;
+	width: 75%;
 	flex-wrap: wrap;
 	display: flex;
 	-webkit-box-pack: end;
