@@ -503,6 +503,40 @@ h2.isu-block-title.h4:after {
 	transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
 }
 
+.table[border] th, .table[border] td {
+	border-bottom-color: transparent;
+	border-top-color: transparent;
+}
+
+.table thead th {
+	border-bottom: 0;
+}
+
+.table[border] {
+	border-bottom-color: transparent;
+	border: .125rem solid #ebebeb;
+}
+
+.table thead th, .table th {
+	background: var(--cardinal);
+	color: white;
+}
+
+.table tbody {
+	border-bottom: .125rem solid #ebebeb;
+}
+
+.table td {
+	line-height: 1.75;
+	padding: 1.5625rem;
+	vertical-align: top;
+	border: 0.0625rem solid #f3f3f3;
+}
+
+.table tbody tr:nth-child(2n) {
+	background-color: rgba(0,0,0,.048);
+}
+
 /* Table Styles 
 table {
 	empty-cells: show;
