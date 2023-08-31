@@ -361,7 +361,7 @@ a.isu-dropdown-submenu {
 	position: relative;
 	z-index: 2;
 	border: none;
-	color: var(--burgundy);
+	color: var(--cardinal);
 	background-color: #fff0;
 	margin-bottom: 10px;
 	width: 175px;
@@ -370,7 +370,8 @@ a.isu-dropdown-submenu {
 }
 
 #gtranslate_selector:hover {
-	color: var(--gold);
+	color: var(--burgundy);
+	cursor: pointer;
 }
 
 .gtranslate:before {
