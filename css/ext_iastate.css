@@ -111,6 +111,47 @@ a:hover {
 a:hover img {
 	outline: var(--gold) auto 5px;
 }
+
+blockquote {
+	background-color: var(--cardinal);
+	width: 150vw;
+	border-left: none;
+	color: #fff;
+	position: relative;
+	padding: 3.75rem 2.25rem 5.625rem;
+	left: -19%;
+	right: auto;
+}
+
+blockquote p {
+	font-size: 2.5rem;
+	line-height: 1.45;
+	font-weight: 700;
+	padding-left: 11%;
+}
+
+blockquote p:first-child:before {
+	content: "";
+	width: 4rem;
+	height: 3.25rem;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
+	top: 1.4375rem;
+	position: absolute;
+	left: 7rem;
+}
+
+blockquote p:last-child:after {
+	content: "";
+	width: 4rem;
+	position: absolute;
+	height: 3.25rem;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E";
+	transform: rotate(180deg);
+	bottom: 3.9375rem;
+	right: auto;
+	left: 60%;
+}
+
 /* --------------------------------------  */
 /* ## Red Bar
 /* --------------------------------------  */
