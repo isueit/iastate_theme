@@ -13,9 +13,11 @@
  * @file
  * Supplemental CSS for the ISU Theme's social icons
  */
+
  .isu-social-menu a:hover {
-  color: #d3d3d3;
+  color: var(--gold);
 }
+
 .isu-social-menu  a:before {
   content: '\f0c1';
   border-radius: 0;
