@@ -162,6 +162,10 @@ blockquote p:last-child:after {
 	background-color: #ffffff;
 }
 
+.isu-menu-navbar_wrap {
+	width: 79%;
+}
+
 .isu-site-navbar .container {
 	max-width: 1140px;
 }
