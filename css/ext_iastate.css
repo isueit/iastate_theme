@@ -24,7 +24,7 @@ html, body, .dialog-off-canvas-main-canvas, .isu-page-wrap {
 
 /* Reduce size of h2 */
 .h2, h2 {
-	font-family: Merriweather,serif;	
+	font-family: Merriweather,serif;
 	font-size: 1.875rem;
 	font-weight: 700;
 	letter-spacing: 0;
@@ -114,30 +114,37 @@ a:hover img {
 
 blockquote {
 	background-color: var(--cardinal);
-	width: 150vw;
 	border-left: none;
 	color: #fff;
 	position: relative;
 	padding: 3.75rem 2.25rem 5.625rem;
-	left: -19%;
-	right: auto;
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
 }
 
 blockquote p {
 	font-size: 2.5rem;
+	font-family: Merriweather,serif;
 	line-height: 1.45;
 	font-weight: 700;
-	padding-left: 11%;
+	padding-left: 15%;
+	max-width: 80vw;
 }
+
 
 blockquote p:first-child:before {
 	content: "";
 	width: 4rem;
 	height: 3.25rem;
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='â€œ' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
 	top: 1.4375rem;
 	position: absolute;
-	left: 7rem;
+	left: 8rem;
 }
 
 blockquote p:last-child:after {
@@ -145,12 +152,13 @@ blockquote p:last-child:after {
 	width: 4rem;
 	position: absolute;
 	height: 3.25rem;
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='â€œ' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
 	transform: rotate(180deg);
 	bottom: 3.9375rem;
 	right: auto;
-	left: 60%;
+	left: 80%;
 }
+
 
 /* --------------------------------------  */
 /* ## Red Bar
@@ -201,8 +209,36 @@ blockquote p:last-child:after {
 	text-decoration: none;
 }
 
+
 .isu-social-menu-red {
 	text-align: right;
+}
+
+.isu-social-menu-red .dropdown #dropdownMenuButton {
+	color: var(--cardinal);
+	font-family: Nimbus sans,sans-serif;
+	background: none;
+	border: none;
+}
+
+.isu-social-menu-red .dropdown #dropdownMenuButton:hover {
+	color: var(--burgundy);
+}
+
+.isu-social-menu-red .dropdown-toggle:after {
+  border: 2px solid;
+  border-top: 0;
+  border-left: 0;
+}
+
+#block-gtranslate {
+	width: 50%;
+}
+
+#block-socialmediared {
+	margin-top: -42px;
+	padding-bottom: 15px;
+	padding-right: 100px;
 }
 
 /* Search */
@@ -241,16 +277,17 @@ blockquote p:last-child:after {
 }
 
 /* Dropdown Menu */
+/* Dropdown Menu */
 .isu-dropdown-menu {
 	background: #fff;
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
 	padding: 2.5rem 3.25rem;
 	flex-wrap: wrap;
-	left: auto;
-	right: 0;
 	position: absolute;
+	max-width: 20rem;
 	min-width: 20rem;
 	transition: max-height 1s;
+	margin-right: 15%;
 }
 
 .isu-dropdown-item a {
@@ -513,7 +550,7 @@ figure.align-right {
 }
 
 .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -522,7 +559,7 @@ figure.align-right {
 
 /* Aligns Block Title Border */
 .layout--alignment--left .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -530,7 +567,7 @@ figure.align-right {
 }
 
 .layout--alignment--right .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -538,7 +575,7 @@ figure.align-right {
 }
 
 .layout--alignment--center .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -546,7 +583,7 @@ figure.align-right {
 }
 
 .layout--alignment--justify .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -650,7 +687,7 @@ h2.isu-block-title.h4:after {
 	background-color: rgba(0,0,0,.048);
 }
 
-/* Table Styles 
+/* Table Styles
 table {
 	empty-cells: show;
 	border-collapse: collapse;
@@ -1632,7 +1669,7 @@ a.bean-card_link {
 
 .bean-card_label.Partial p {
 	padding-right: 10%;
-} 
+}
 
 .bean-card_label.Partial:before {
 	content: "";
@@ -1725,36 +1762,36 @@ div.fontawesome-icon i {
 }
 
 /* Changes color of border depending on selected label color (content cards) */
-.bean-card_body.Blue, .bean-card-content_body.Blue { 
+.bean-card_body.Blue, .bean-card-content_body.Blue {
 	border-color: #006ba6;
 }
- 
-.bean-card_body.Green, .bean-card-content_body.Green { 
-	border-color: var(--green); 
+
+.bean-card_body.Green, .bean-card-content_body.Green {
+	border-color: var(--green);
 }
 
-.bean-card_body.Dark.Red, .bean-card-content_body.Dark.Red { 
-	border-color: var(--burgundy); 
+.bean-card_body.Dark.Red, .bean-card-content_body.Dark.Red {
+	border-color: var(--burgundy);
 }
 
-.bean-card_body.Dark.Blue, .bean-card-content_body.Dark.Blue { 
-	border-color: var(--midnight); 
+.bean-card_body.Dark.Blue, .bean-card-content_body.Dark.Blue {
+	border-color: var(--midnight);
 }
 
-.bean-card_body.Dark.Green { 
-	border-color: #3E4827; 
+.bean-card_body.Dark.Green {
+	border-color: #3E4827;
 }
 
-.bean-card_body.Brown { 
-	border-color: #8b5b29; 
+.bean-card_body.Brown {
+	border-color: #8b5b29;
 }
 
-.bean-card_body.Grey { 
-	border-color: #707372; 
+.bean-card_body.Grey {
+	border-color: #707372;
 }
 
-.bean-card_body.Dark.Overlay.Bottom { 
-	border-color: rgba(0,0,0,0.75); 
+.bean-card_body.Dark.Overlay.Bottom {
+	border-color: rgba(0,0,0,0.75);
 }
 
   /* Overlay */
@@ -1923,7 +1960,7 @@ div.fontawesome-icon i {
 		 padding-top: 0px;
 		 padding-bottom: 0px;
 	 }
-	
+
 
 	 /*Get rid of margins for isu site nav bar*/
 	 .isu-row-site-navbar{
@@ -2173,7 +2210,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	padding-left: 73px;
 	font-size: 22px;
 }
-	
+
 	.ext-news-feed .header {
 		max-width: 60%;
 	}
@@ -2183,7 +2220,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	.ext-news-feed .header {
 		max-width: 95%;
 	}
-	
+
 	.ext-news-feed img {
 		display: none;
 	}
@@ -2228,7 +2265,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
     padding: 15px 49px 15px 15px !important;
   }
 
-  .ui-dialog-title {    
+  .ui-dialog-title {
 	margin: 0;
     color: #fff;
     font-size: 1.231em;
