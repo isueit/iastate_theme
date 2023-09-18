@@ -165,7 +165,7 @@ blockquote p:last-child:after {
 }
 
 .isu-menu-navbar_wrap {
-	width: 79%;
+	width: 68%;
 }
 
 .isu-site-navbar .container {
@@ -210,14 +210,26 @@ blockquote p:last-child:after {
 	float: right;
 }
 
+<<<<<<< HEAD
 .isu-social-menu-red #dropdownMenuButton {
 	color: var(--cardinal);
+=======
+#block-socialmediared {
+	margin: 10px auto;
+	grid-row-end: 3;
+	width: 100%;
+}
+
+.isu-social-menu-red #dropdownMenuButton {
+	color: var(--burgundy);
+>>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 	font-family: Nimbus sans,sans-serif;
 	background: none;
 	border: none;
 }
 
 .isu-social-menu-red #dropdownMenuButton:hover {
+<<<<<<< HEAD
 	color: var(--burgundy);
 }
 
@@ -225,15 +237,35 @@ blockquote p:last-child:after {
   border: 3px solid;
   border-top: 0;
   border-left: 0;
+=======
+	color: var(--cardinal);
+}
+
+.isu-social-menu-red .dropdown-toggle:after {
+	border: 1.5px solid;
+	border-top: 0;
+	border-left: 0;
+	margin-left: 0;
+	width: 6px;
+	height: 6px;
+>>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 }
 
 .isu-social-menu-red a::before {
 	margin: 0 auto;
+<<<<<<< HEAD
 	color: var(--cardinal) !important;
 }
 
 .isu-social-menu-red a:hover::before {
 	color: var(--burgundy) !important;
+=======
+	color: var(--burgundy) !important;
+}
+
+.isu-social-menu-red a:hover::before {
+	color: var(--cardinal) !important;
+>>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 	background-color: #fff0;
 }
 
@@ -261,10 +293,19 @@ blockquote p:last-child:after {
 }
 
 #block-gtranslate {
+<<<<<<< HEAD
 	width: 50%;
 }
 
 
+=======
+	vertical-align: middle;
+	text-align: right;
+	grid-row-end: 3;
+	align-self: self-end;
+}
+
+>>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 /* Search */
 
 .form-control {
@@ -285,6 +326,14 @@ blockquote p:last-child:after {
 
 .isu-region_header-second {
 	float: right;
+	display: grid;
+	grid-template-columns: 2fr;
+}
+
+#block-csesearchblock {
+	grid-column-start: 1;
+	grid-row-end: 1;
+	grid-column-end: 3;
 }
 
 /* --------------------------------------  */
@@ -334,7 +383,7 @@ blockquote p:last-child:after {
 
 /* Main Menu link changes */
 .navbar-expand-lg .navbar-nav .nav-link {
-	padding: 10px 12px;
+	font-size: 0.875rem;
 	letter-spacing: .5px;
 	border-bottom: none;
 	transition: all 0.1s ease;
@@ -343,6 +392,18 @@ blockquote p:last-child:after {
 	font-weight: 700;
 }
 
+<<<<<<< HEAD
+=======
+.isu-dropdown-toggle:after {
+	margin: 0 0 0 4px;
+}
+
+.navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:last-child .isu-dropdown-menu {
+	left: auto;
+	right: 0;
+}
+
+>>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 .navbar-expand-lg .navbar-nav .nav-link:hover {
 	color: var(--cardinal);
 	background: transparent;
@@ -423,7 +484,7 @@ a.isu-dropdown-submenu {
 	position: relative;
 	z-index: 2;
 	border: none;
-	color: var(--cardinal);
+	color: var(--burgundy);
 	background-color: #fff0;
 	margin-bottom: 10px;
 	width: 175px;
@@ -443,7 +504,7 @@ a.isu-dropdown-submenu {
 	margin-top: 10px;
 	margin-left: 10px;
 	border-radius: 0;
-	color: var(--cardinal);
+	color: var(--burgundy);
 	font-family: FontAwesome;
 	font-size: 1.45em;
 	height: 0em;
@@ -1932,6 +1993,10 @@ div.fontawesome-icon i {
 		max-width: 955px;
 		margin: auto;
 	}
+	
+	blockquote p:first-child:before {
+		left: 3rem;
+	}
 
 	blockquote p:first-child:before {
 		left: 3rem;
@@ -2112,7 +2177,7 @@ div.fontawesome-icon i {
 		padding-left: 5%;
 	}
 
-	/* Adjust Socails*/
+	/* Adjust Socials*/
 	.isu-social-menu-red{
 		padding-right: 50px;
 	}
