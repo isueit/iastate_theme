@@ -211,6 +211,7 @@ blockquote p:last-child:after {
 #block-socialmediared {
 	margin: 10px auto;
 	grid-row-end: 3;
+	width: 100%;
 }
 
 .isu-social-menu-red #dropdownMenuButton {
@@ -270,6 +271,7 @@ blockquote p:last-child:after {
 	vertical-align: middle;
 	text-align: right;
 	grid-row-end: 3;
+	align-self: self-end;
 }
 
 /* Search */
@@ -293,12 +295,13 @@ blockquote p:last-child:after {
 .isu-region_header-second {
 	float: right;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 2fr;
 }
 
 #block-csesearchblock {
 	grid-column-start: 1;
 	grid-row-end: 1;
+	grid-column-end: 3;
 }
 
 /* --------------------------------------  */
