@@ -206,7 +206,6 @@ blockquote p:last-child:after {
 /* Social Menu Dropdown */
 .isu-social-menu-red {
 	text-align: right;
-	margin-bottom: -42px;
 	float: right;
 }
 
