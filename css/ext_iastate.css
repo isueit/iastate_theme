@@ -336,13 +336,17 @@ blockquote p:last-child:after {
 
 /* Main Menu link changes */
 .navbar-expand-lg .navbar-nav .nav-link {
-	padding: 10px 12px;
+	font-size: 0.875rem;
 	letter-spacing: .5px;
 	border-bottom: none;
 	transition: all 0.1s ease;
 	line-height: 1.625;
 	color: var(--burgundy);
 	font-weight: 700;
+}
+
+.isu-dropdown-toggle:after {
+	margin: 0 0 0 4px;
 }
 
 .navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:last-child .isu-dropdown-menu {
