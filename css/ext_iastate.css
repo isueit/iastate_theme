@@ -206,7 +206,11 @@ blockquote p:last-child:after {
 /* Social Menu Dropdown */
 .isu-social-menu-red {
 	text-align: right;
-	float: right;
+}
+
+#block-socialmediared {
+	margin: 10px auto;
+	grid-row-end: 3;
 }
 
 .isu-social-menu-red #dropdownMenuButton {
@@ -263,7 +267,9 @@ blockquote p:last-child:after {
 }
 
 #block-gtranslate {
-	width: 50%;
+	vertical-align: middle;
+	text-align: right;
+	grid-row-end: 3;
 }
 
 /* Search */
@@ -286,6 +292,13 @@ blockquote p:last-child:after {
 
 .isu-region_header-second {
 	float: right;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#block-csesearchblock {
+	grid-column-start: 1;
+	grid-row-end: 1;
 }
 
 /* --------------------------------------  */
@@ -435,7 +448,7 @@ a.isu-dropdown-submenu {
 	position: relative;
 	z-index: 2;
 	border: none;
-	color: var(--cardinal);
+	color: var(--burgundy);
 	background-color: #fff0;
 	margin-bottom: 10px;
 	width: 175px;
@@ -455,7 +468,7 @@ a.isu-dropdown-submenu {
 	margin-top: 10px;
 	margin-left: 10px;
 	border-radius: 0;
-	color: var(--cardinal);
+	color: var(--burgundy);
 	font-family: FontAwesome;
 	font-size: 1.45em;
 	height: 0em;
