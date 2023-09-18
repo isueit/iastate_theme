@@ -26,7 +26,7 @@
 
 .isu-navbar {
   display: flex;
-  font-size: 1rem;
+  font-size: 0.875rem;
   background: #ffffff;
   align-items: flex-end;
 }
@@ -45,11 +45,11 @@
 }
 
 .isu-navbar li {
-	padding-right: 1.5rem;
+	margin: 0 0.5rem;
 }
 
 .isu-navbar li:last-child {
-	padding-right: 0;
+	margin-right: 0;
 }
 
   .isu-navbar a:hover,
