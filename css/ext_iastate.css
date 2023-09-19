@@ -257,8 +257,6 @@ blockquote p:last-child:after {
 	display: block;
 	min-width: 0;
 	max-width: 100px;
-	margin-left: 325px;
-	margin-top: -5px;
 }
 
 .isu-social-menu-red .dropdown-menu {
@@ -271,7 +269,6 @@ blockquote p:last-child:after {
 	vertical-align: middle;
 	text-align: right;
 	grid-row-end: 3;
-	align-self: self-end;
 }
 
 /* Search */
@@ -1402,6 +1399,13 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 .isu-social-menu a {
 	font-size: 20px;
 	margin-right: 0px;
+}
+
+.isu-social-menu-red a {
+	font-size: 1rem;
+	margin-right: 0px;
+	margin-left: 0px;
+	color: var(--burgundy);
 }
 
 .isu-social-menu-footer:before {
