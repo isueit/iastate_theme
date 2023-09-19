@@ -44,7 +44,7 @@
   text-decoration: none;
 }
 .isu-social-menu-red a:hover {
-  color: #fff;
+  color: var(--cardinal);
 }
 
 .isu-social-menu-red li{
