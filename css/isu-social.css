@@ -67,6 +67,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   vertical-align: middle;
+  padding-top: 0px;
 }
 
 .isu-social-menu a[href*='facebook.com']:before {
