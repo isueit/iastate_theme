@@ -256,8 +256,9 @@ blockquote p:last-child:after {
 
 .isu-social-menu-red .dropdown:hover .dropdown-menu {
 	display: block;
-	min-width: 0;
-	max-width: 100px;
+	max-width: min-content;
+	right: 0;
+	left: auto;
 }
 
 .isu-social-menu-red .dropdown-menu {
