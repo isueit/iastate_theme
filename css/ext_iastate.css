@@ -246,7 +246,6 @@ blockquote p:last-child:after {
 }
 
 .isu-social-menu-red a {
-	height: 3em;
 	margin-left: 0.75rem;
 }
 
@@ -468,7 +467,7 @@ a.isu-dropdown-submenu {
 }
 
 #gtranslate_selector:hover {
-	color: var(--burgundy);
+	color: var(--cardinal);
 	cursor: pointer;
 }
 
@@ -495,7 +494,7 @@ a.isu-dropdown-submenu {
 	margin-top: 10px;
 	margin-left: 10px;
 	border-radius: 0;
-	color: var(--burgundy);
+	color: var(--cardinal);
 	font-size: 1.45em;
 	height: 0;
 	width: 0;
