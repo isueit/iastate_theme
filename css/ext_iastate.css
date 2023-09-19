@@ -212,6 +212,7 @@ blockquote p:last-child:after {
 	margin: 10px auto;
 	grid-row-end: 3;
 	width: 100%;
+	margin-top: -5px;
 }
 
 .isu-social-menu-red #dropdownMenuButton {
@@ -269,6 +270,7 @@ blockquote p:last-child:after {
 	vertical-align: middle;
 	text-align: right;
 	grid-row-end: 3;
+	margin-top: -13px;
 }
 
 /* Search */
