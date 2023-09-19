@@ -36,27 +36,27 @@
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				{% for link in content.field_social_media_links %}
 					{% if 'facebook.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us  on Facebook" class="dropdown-item" aria-label="Follow us on Facebook"></a>
+						<a href="{{link['#url'] }}" title="Join us  on Facebook" class="dropdown-item" aria-label="Follow us on Facebook">{{ link['#title'] }}</a>
 					{% elseif 'twitter.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us on Twitter" class="dropdown-item" aria-label="Follow us on Twitter"></a>
+						<a href="{{link['#url'] }}" title="Join us on Twitter" class="dropdown-item" aria-label="Follow us on Twitter">{{ link['#title'] }}</a>
 					{% elseif 'linkedin.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us on LinkedIn" class="dropdown-item" aria-label="Connect with us on Linked In"></a>
+						<a href="{{link['#url'] }}" title="Join us on LinkedIn" class="dropdown-item" aria-label="Connect with us on Linked In">{{ link['#title'] }}</a>
 					{% elseif 'instagram.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us on Instagram" class="dropdown-item" aria-label="Follow us on Instagram"></a>
+						<a href="{{link['#url'] }}" title="Join us on Instagram" class="dropdown-item" aria-label="Follow us on Instagram">{{ link['#title'] }}</a>
 					{% elseif 'pinterest.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us on Pinterest" class="dropdown-item" aria-label="Find us on Pinterest"></a>
+						<a href="{{link['#url'] }}" title="Join us on Pinterest" class="dropdown-item" aria-label="Find us on Pinterest">{{ link['#title'] }}</a>
 					{% elseif 'vimeo.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Watch us on Vimeo" class="dropdown-item" aria-label="Watch our videos on Vimeo"></a>
+						<a href="{{link['#url'] }}" title="Watch us on Vimeo" class="dropdown-item" aria-label="Watch our videos on Vimeo">{{ link['#title'] }}</a>
 					{% elseif 'youtube.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Watch our YouTube Channel" class="dropdown-item" aria-label="Watch our videos on YouTube"></a>
+						<a href="{{link['#url'] }}" title="Watch our YouTube Channel" class="dropdown-item" aria-label="Watch our videos on YouTube">{{ link['#title'] }}</a>
 					{% elseif 'snapchat.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Join us on Snapchat" class="dropdown-item" aria-label="Follow us on Snapchat"></a>
+						<a href="{{link['#url'] }}" title="Join us on Snapchat" class="dropdown-item" aria-label="Follow us on Snapchat">{{ link['#title'] }}</a>
 					{% elseif 'libsyn.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Listen on Libsyn" class="dropdown-item" aria-label="Listen to our podcast on Libsyn"></a>
+						<a href="{{link['#url'] }}" title="Listen on Libsyn" class="dropdown-item" aria-label="Listen to our podcast on Libsyn">{{ link['#title'] }}</a>
 					{% elseif 'podcasts.google.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Listen on Google Podcasts" class="dropdown-item" aria-label="Listen to our podcast on Google"></a>
+						<a href="{{link['#url'] }}" title="Listen on Google Podcasts" class="dropdown-item" aria-label="Listen to our podcast on Google">{{ link['#title'] }}</a>
 					{% elseif 'podcasts.apple.com' in link['#url']|render|render %}
-						<a href="{{link['#url'] }}" title="Listen on Apple Podcasts" class="dropdown-item" aria-label="Listen to our podcast on Apple"></a>
+						<a href="{{link['#url'] }}" title="Listen on Apple Podcasts" class="dropdown-item" aria-label="Listen to our podcast on Apple">{{ link['#title'] }}</a>
 					{% endif %}
 				{% endfor %}
 
