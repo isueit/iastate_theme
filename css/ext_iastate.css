@@ -263,6 +263,13 @@ blockquote p:last-child:after {
 	border-radius: 0;
 	border: none;
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
+	display: flex;
+	flex-direction: column;
+	left: auto;
+	right: 0;
+	flex-wrap: wrap;
+	transition: max-height 1s;
+	padding: 1.5rem 1rem;
 }
 
 #block-gtranslate {
@@ -323,6 +330,9 @@ blockquote p:last-child:after {
 	position: absolute;
 	min-width: 20rem;
 	transition: max-height 1s;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 .isu-dropdown-item a {
