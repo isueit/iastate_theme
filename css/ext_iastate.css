@@ -206,14 +206,8 @@ blockquote p:last-child:after {
 /* Social Menu Dropdown */
 .isu-social-menu-red {
 	text-align: right;
-	margin-bottom: -42px;
-	float: right;
 }
 
-<<<<<<< HEAD
-.isu-social-menu-red #dropdownMenuButton {
-	color: var(--cardinal);
-=======
 #block-socialmediared {
 	margin: 10px auto;
 	grid-row-end: 3;
@@ -222,22 +216,12 @@ blockquote p:last-child:after {
 
 .isu-social-menu-red #dropdownMenuButton {
 	color: var(--burgundy);
->>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 	font-family: Nimbus sans,sans-serif;
 	background: none;
 	border: none;
 }
 
 .isu-social-menu-red #dropdownMenuButton:hover {
-<<<<<<< HEAD
-	color: var(--burgundy);
-}
-
-.isu-social-menu-red .dropdown-toggle:after {
-  border: 3px solid;
-  border-top: 0;
-  border-left: 0;
-=======
 	color: var(--cardinal);
 }
 
@@ -248,24 +232,15 @@ blockquote p:last-child:after {
 	margin-left: 0;
 	width: 6px;
 	height: 6px;
->>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 }
 
 .isu-social-menu-red a::before {
 	margin: 0 auto;
-<<<<<<< HEAD
-	color: var(--cardinal) !important;
-}
-
-.isu-social-menu-red a:hover::before {
-	color: var(--burgundy) !important;
-=======
 	color: var(--burgundy) !important;
 }
 
 .isu-social-menu-red a:hover::before {
 	color: var(--cardinal) !important;
->>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 	background-color: #fff0;
 }
 
@@ -293,19 +268,12 @@ blockquote p:last-child:after {
 }
 
 #block-gtranslate {
-<<<<<<< HEAD
-	width: 50%;
-}
-
-
-=======
 	vertical-align: middle;
 	text-align: right;
 	grid-row-end: 3;
 	align-self: self-end;
 }
 
->>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 /* Search */
 
 .form-control {
@@ -355,6 +323,8 @@ blockquote p:last-child:after {
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
 	padding: 2.5rem 3.25rem;
 	flex-wrap: wrap;
+	left: auto;
+	right: 0;
 	position: absolute;
 	min-width: 20rem;
 	transition: max-height 1s;
@@ -392,8 +362,6 @@ blockquote p:last-child:after {
 	font-weight: 700;
 }
 
-<<<<<<< HEAD
-=======
 .isu-dropdown-toggle:after {
 	margin: 0 0 0 4px;
 }
@@ -403,7 +371,6 @@ blockquote p:last-child:after {
 	right: 0;
 }
 
->>>>>>> bb1e454a4049222fcbc47bdd34d01922114bfa06
 .navbar-expand-lg .navbar-nav .nav-link:hover {
 	color: var(--cardinal);
 	background: transparent;
@@ -414,7 +381,7 @@ blockquote p:last-child:after {
 	display: flex;
 	-webkit-box-pack: end;
 	justify-content: flex-end;
-	margin-right: auto;
+	margin-left: auto;
 }
 
 /* Third Level Menu */
@@ -1993,10 +1960,6 @@ div.fontawesome-icon i {
 		max-width: 955px;
 		margin: auto;
 	}
-	
-	blockquote p:first-child:before {
-		left: 3rem;
-	}
 
 	blockquote p:first-child:before {
 		left: 3rem;
@@ -2195,6 +2158,7 @@ div.fontawesome-icon i {
  	.isu-wordmark-sitename {
  		padding-left: 0px;
  		padding-bottom: 0px;
+		margin-left: -33%;
 	}
 
 	.isu-social-menu-footer{
