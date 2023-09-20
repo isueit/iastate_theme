@@ -227,7 +227,7 @@ blockquote p:last-child:after {
 }
 
 .isu-social-menu-red .dropdown-toggle:after {
-	border: 1.5px solid;
+	border: 1px solid;
 	border-top: 0;
 	border-left: 0;
 	margin-left: 0;
