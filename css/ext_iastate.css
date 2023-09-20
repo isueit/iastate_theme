@@ -1199,6 +1199,10 @@ a.layout-builder__link--add {
         background-color: var(--midnight);
 }
 
+.layout--color--white h2, .layout--color--white .h2, .layout--color--white h3, .layout--color--white .h3, .layout--color--white h4, .layout--color--white .h4, .layout--color--white h5, .layout--color--white .h5, .layout--color--white h6, .layout--color--white .h6 {
+	color: white;
+}
+
 .layout--background-overlay--red {
 	position: relative;
 }
