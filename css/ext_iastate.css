@@ -253,13 +253,6 @@ blockquote p:last-child:after {
 	background-color: #fff0;
 }
 
-.isu-social-menu-red .dropdown:hover .dropdown-menu {
-	display: block;
-	max-width: min-content;
-	right: 0;
-	left: auto;
-}
-
 .isu-social-menu-red .dropdown-menu {
 	border-radius: 0;
 	border: none;
