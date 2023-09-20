@@ -1977,10 +1977,118 @@ div.fontawesome-icon i {
 		max-width: 955px;
 		margin: auto;
 	}
-	
+
 	blockquote p:first-child:before {
 		left: 3rem;
 	}
+
+	.isu-menu-navbar {
+		background-color: var(--cardinal);
+	}
+	
+.isu-menu-navbar_show.isu-menu-navbar_wrap {
+		background-color: var(--cardinal);
+		height: 100%;
+	    overflow: hidden;
+	    pointer-events: none;
+	    position: absolute;
+	    top: 1rem;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    height: 100vh;
+		z-index: 999;
+		padding: 2rem;
+	}
+
+	.isu-menu-navbar_wrap {
+		width: 100%;
+	}
+
+.navbar-expand-lg .navbar-nav .nav-link  {
+	display: block;
+    border: .125rem solid #fff;
+	background-color: #fff !important;
+    border-radius: 1.875rem;
+    appearance: none;
+    margin: .625rem 0;
+    text-align: left;
+    cursor: pointer;
+    color: #7c2529;
+    font-family: Nimbus Sans,sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+	min-width: 100%;
+	}
+
+	.isu-dropdown-toggle_mobile {
+		color: var(--burgundy);
+		border: none;
+		background-color: transparent;
+		transform: rotate(-90deg);
+		margin-left: -50px;
+		z-index: 1000;
+	}
+
+	.isu-wordmark-sitename a {
+		display: none;
+		max-width: 0;
+	}
+
+	.isu-col-header-second, .isu-search_toggler, .isu-navbar {
+		position: absolute;
+		left: 0;
+		top: 100vh;
+		bottom: 0;
+		z-index: 1000;
+	}
+
+	.isu-navbar a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
+		color: #fff;
+	    font-family: Nimbus Sans,sans-serif;
+	    font-size: 18px !important;
+	    font-weight: 700;
+	    text-decoration: underline;
+		-webkit-transition: color .3s ease-in-out;
+		transition: color .3s ease-in-out;
+		padding-bottom: 20px;
+		margin: 10px;
+	}
+
+	#gtranslate_selector, .isu-social-menu-red #dropdownMenuButton{
+		margin-top: 80px;
+		color: #fff;
+		padding: 0;
+		float: left;
+	}
+
+	#gtranslate_selector {
+		width: 225px;
+	}
+
+
+	.gtranslate::before {
+		display: none;
+	}
+
+
+	.isu-search_toggler {
+		background-color: #fff;
+		height: 60px;
+	}
+
+	.search-block-form {
+		margin: 10px;
+		width: 75%;
+		float: right;
+	}
+
+
+	.isu-footer {
+		display: none;
+	}
+
 
 }
 
@@ -2030,7 +2138,7 @@ div.fontawesome-icon i {
 		 padding-top: 0px;
 		 padding-bottom: 0px;
 	 }
-	
+
 
 	 /*Get rid of margins for isu site nav bar*/
 	 .isu-row-site-navbar{
@@ -2042,32 +2150,6 @@ div.fontawesome-icon i {
 	 .isu-social-menu-red{
 		 padding-left: 85px;
 	 }
-
-	 .isu-social-menu a{
-		font-size: 15px;
-		margin-right: 0px;
-	}
-
-	.gtranslate {
-		float: right;
-	}
-
-	#gtranslate_selector {
-		font-size: 12px;
-		width: 140px;
-	}
-
-	.gtranslate:before {
-		font-size: 1em;
-		margin-left: 5.5px;
-		margin-top: 8px;
-	}
-
-	.gtranslate:hover:before {
-		font-size: 1em;
-		margin-left: 5.5px;
-		margin-top: 8px;
-	}
 
 
 	div#block-iastate-theme-page-title--2 {
@@ -2090,12 +2172,12 @@ div.fontawesome-icon i {
 	}
 
 
-	
+
 	button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
 		margin-left: 15px;
 		background-color: var(--cardinal);
 	}
-	
+
 	/* Change menu-item backgrond color for condensed menu */
 	.navbar-expand-lg .navbar-nav .nav-link {
 		background-color: var(--lt-gray);
@@ -2105,11 +2187,6 @@ div.fontawesome-icon i {
 		background-color: #fff !important;
 	}
 
-	.isu-dropdown-toggle_mobile {
-		border: none;
-		background-color: var(--lt-gray);
-		color: var(--burgundy);
-	}
 
 	ul.isu-dropdown-menu {
 		position: fixed;
@@ -2256,8 +2333,10 @@ div.fontawesome-icon i {
 
 	.ext-news-feed img {
 		float: left;
-		max-height: 50%;
-		width: 100%;
+		max-width: 35%;
+		max-height: 90%;
+		padding-left: 0%;
+		margin-right: 5%;
 		object-fit: cover;
 	}
 
@@ -2274,11 +2353,6 @@ div.fontawesome-icon i {
 
 	.ext-news-feed .card-title {
 		margin: 0px;
-		padding-bottom: 20px;
-	}
-
-	.more-news {
-		padding-top: 25px;
 	}
  }
 
@@ -2314,7 +2388,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	padding-left: 73px;
 	font-size: 22px;
 }
-	
+
 	.ext-news-feed .header {
 		max-width: 60%;
 	}
@@ -2324,7 +2398,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	.ext-news-feed .header {
 		max-width: 95%;
 	}
-	
+
 	.ext-news-feed img {
 		display: none;
 	}
@@ -2369,7 +2443,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
     padding: 15px 49px 15px 15px !important;
   }
 
-  .ui-dialog-title {    
+  .ui-dialog-title {
 	margin: 0;
     color: #fff;
     font-size: 1.231em;
