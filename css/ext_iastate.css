@@ -2178,6 +2178,10 @@ div.fontawesome-icon i {
 		padding-left: 5%;
 	}
 
+	.layout--content-container--default .layout-content {
+		max-width: 768px;
+	}
+
 	/* Adjust Socials*/
 	.isu-social-menu-red{
 		padding-right: 50px;
