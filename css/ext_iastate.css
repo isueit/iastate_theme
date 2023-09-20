@@ -2256,10 +2256,8 @@ div.fontawesome-icon i {
 
 	.ext-news-feed img {
 		float: left;
-		max-width: 35%;
-		max-height: 90%;
-		padding-left: 0%;
-		margin-right: 5%;
+		max-height: 50%;
+		width: 100%;
 		object-fit: cover;
 	}
 
@@ -2276,6 +2274,11 @@ div.fontawesome-icon i {
 
 	.ext-news-feed .card-title {
 		margin: 0px;
+		padding-bottom: 20px;
+	}
+
+	.more-news {
+		padding-top: 25px;
 	}
  }
 
