@@ -263,6 +263,10 @@ blockquote p:last-child:after {
 	flex-wrap: wrap;
 	transition: max-height 1s;
 	padding: 1.5rem 1rem;
+	display: none;
+	max-width: min-content;
+	right: 0;
+	left: auto;
 }
 
 #block-gtranslate {
