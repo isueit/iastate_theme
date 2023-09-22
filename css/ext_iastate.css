@@ -204,6 +204,10 @@ blockquote p:last-child:after {
 	text-decoration: none;
 }
 
+.isu-wordmark {
+	margin-top: 5%;
+}
+
 /* Social Menu Dropdown */
 .isu-social-menu-red {
 	text-align: right;
