@@ -205,7 +205,7 @@ blockquote p:last-child:after {
 }
 
 .isu-wordmark {
-	margin-top: 5%;
+	margin-top: -5%;
 }
 
 /* Social Menu Dropdown */
