@@ -42,6 +42,7 @@
 
 .isu-navbar ul {
 	display: flex;
+	padding-top: 10px;
 }
 
 .isu-navbar li {

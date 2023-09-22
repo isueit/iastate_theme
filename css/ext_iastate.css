@@ -162,6 +162,7 @@ blockquote p:last-child:after {
 .isu-site-navbar {
 	border-bottom: none;
 	background-color: #ffffff;
+	padding: 0.7rem 0;
 }
 
 .isu-menu-navbar_wrap {
