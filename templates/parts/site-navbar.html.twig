@@ -6,7 +6,7 @@
  * Regions:
  *  parts/site-navbar.html.twig
  *  - page.header_first: First half of headery, typically for site branding.
- *  - page.header_second: Second half of header, typically for search and 
+ *  - page.header_second: Second half of header, typically for search and
  *    site links.
  *
  */
@@ -15,26 +15,28 @@
 {% set site_navbar_classes = [
   'isu-site-navbar',
   gold_border_hidden ? 'isu-gold-border_hidden'
-  ] 
+  ]
 %}
 
 <header{{ attributes.addClass(site_navbar_classes) }} role="banner" aria-label="Site header">
   <div class="container">
     <div class="row isu-row-site-navbar">
 
-      <button class="navbar-toggler isu-menu-navbar_toggler" type="button" data-toggle="collapse" id="isu-menu-navbar_toggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon isu-menu-navbar_toggler-icon"></span>
-        <span class="isu-menu-navbar_toggler-label">Menu</span>
-      </button>
 
       <div class="col-lg isu-col-header-first">
         {{ page.header_first }}
       </div>
 
+
+      <button class="navbar-toggler isu-menu-navbar_toggler" type="button" data-toggle="collapse" id="isu-menu-navbar_toggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon isu-menu-navbar_toggler-icon"></span>
+        <span class="isu-menu-navbar_toggler-label">Menu</span>
+      </button>
+
       <button class="isu-search_toggler" id="isu-search_toggler">
         <span class="fa fa-search isu-search_toggler-icon" aria-hidden="true"></span>
         <span class="isu-search_toggler-label">Open search bar</span>
-      </button> 
+      </button>
 
       <div class="col-lg isu-col-header-second isu-col-header-second_has-search">
         {{ page.header_second }}

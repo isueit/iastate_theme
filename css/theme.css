@@ -115,17 +115,23 @@ body,
 .isu-menu-navbar_toggler:hover,
 .isu-menu-navbar_toggler:focus,
 .isu-menu-navbar_toggler.isu-menu-navbar_toggler_open {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #fff;
 }
 .isu-menu-navbar_toggler-icon {
   display: block;
   width: auto;
-  /* Borrowed from Bootstrap 4 */
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+.isu-menu-navbar_toggler-icon::before {
+  content: '\f0c9';
+  font-family: FontAwesome;
+  width: 2em;
+  height: 2em;
+  color: var(--cardinal);
+}
+
 .isu-menu-navbar_toggler-label {
   display: block;
-  color: #ffffff;
+  color: var(--cardinal);
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -187,7 +193,7 @@ body,
   font-size: 1rem;
 }
 /* If there is both a unit and site name,
- * site name gets the unit's styling and then 
+ * site name gets the unit's styling and then
  * a border.
  */
 .isu-wordmark-sitename_unit {
@@ -476,8 +482,8 @@ div#edit-search-broadness {margin:0 0 0 15px; }
 }
 
 /* --- Dropdowns --- */
-/* We are not using Bootstrap 4's Dropdown utility because it is not 
- * optimized to be accessible and keyboard navigable in the way we need. 
+/* We are not using Bootstrap 4's Dropdown utility because it is not
+ * optimized to be accessible and keyboard navigable in the way we need.
  * Our version is based on the black ISU Navbar's method, which establishes
  * a consistent behavior. Javascript can be found in isu-main-menu.js.
  */
@@ -496,7 +502,7 @@ div#edit-search-broadness {margin:0 0 0 15px; }
 }
 
 .isu-dropdown-toggle_mobile {
-  display: none; 
+  display: none;
 }
 
 .isu-dropdown-menu {
@@ -590,7 +596,7 @@ div#edit-search-broadness {margin:0 0 0 15px; }
   }
 
   .isu-dropdown-item {
-	background-color: #eeeeee !important; 
+	background-color: #eeeeee !important;
   }
 }
 
