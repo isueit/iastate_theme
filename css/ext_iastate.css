@@ -2306,7 +2306,8 @@ div.fontawesome-icon i {
 	}
 
 	button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
-		margin-left: 15px;
+		margin-right: 20px;
+		padding: 20px;
 	}
 
 	/* Adjust submenu alignment for condensed menu */
