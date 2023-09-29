@@ -671,6 +671,11 @@ h2.isu-block-title.h4:after {
 	border-bottom: 0.125rem solid #ebebeb;
 }
 
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
+	left: auto;
+	right: 11px;
+}
+
 .ckeditor-accordion-container > dl dt > a {
 	text-decoration: none;
 	color: var(--cardinal);
@@ -689,6 +694,24 @@ h2.isu-block-title.h4:after {
 .ckeditor-accordion-container > dl dd {
 	padding: 1em 2.2em 1.2em;
 	transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+}
+
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
+  left: 7px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+  right: 13px;
+  left: auto;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:before {
+  transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:after {
+  transform: rotate(180deg);
 }
 
 .table[border] th, .table[border] td {
