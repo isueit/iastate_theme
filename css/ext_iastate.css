@@ -2028,6 +2028,12 @@ div.fontawesome-icon i {
 		background-color: #fff;
 	}
 
+	.navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:last-child .isu-dropdown-menu {
+
+	padding-left: 35vw;
+	}
+
+
 	.isu-wordmark-sitename a {
 		display: none;
 		max-width: 0;
@@ -2120,14 +2126,15 @@ div.fontawesome-icon i {
 		left: -10vw;
 		top: 0;
 		height: 100vh;
-		width: 100vw;
+		width: 120vw;
+		padding-left: 10vw;
 		box-shadow: none;
 	}
 
 	 .isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
 		content: '\f100';
 		position: absolute;
-		top: -0.5em;
+		top: 0;
 		left: 0;
 		font-family: FontAwesome;
 		font-size: 2em;
@@ -2563,7 +2570,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 .fontawesome-icon-dialog {
 	max-width: 500px;
 }
-s
+
 /* Fix Overscroll Behavior*/
 body #layout-builder-modal {
 	overscroll-behavior: none;
