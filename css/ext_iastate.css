@@ -2156,8 +2156,8 @@ div.fontawesome-icon i {
 
 	#block-gtranslate {
 		position: absolute;
-		right: 0;
-		bottom: 2vh;
+		right: 10vw;
+		bottom: 4vh;
 	}
 
 	#gtranslate_selector {
