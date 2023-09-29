@@ -119,22 +119,43 @@ body,
 }
 .isu-menu-navbar_toggler-icon {
   display: block;
-  width: auto;
+  margin-top: 2em;
 }
+
 .isu-menu-navbar_toggler-icon::before {
   content: '\f0c9';
+  position: absolute;
   font-family: FontAwesome;
-  width: 2em;
-  height: 2em;
+  font-size: 2em;
   color: var(--cardinal);
+  margin-left: -1em;
+  margin-top: -0.5em;
+}
+
+.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:before,.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:after{
+    position: absolute;
+    content: '';
+    font-size: 1.5em;
+    width:1.25em;
+    height: 2px;
+    margin-left: -1.5em;
+    margin-top: -0em;
+    background-color: var(--cardinal);
+}
+
+.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:before{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:after{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
 }
 
 .isu-menu-navbar_toggler-label {
-  display: block;
-  color: var(--cardinal);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 700;
+   display: none;
 }
 .isu-menu-navbar_wrap {
   width: 100%;
