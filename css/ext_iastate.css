@@ -2124,13 +2124,15 @@ div.fontawesome-icon i {
 		box-shadow: none;
 	}
 
-	.isu-dropdown-menu::before {
+	 .isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
 		content: '\f100';
+		position: absolute;
+		top: -0.5em;
+		left: 0;
 		font-family: FontAwesome;
 		font-size: 2em;
 		color: #fff;
-		margin-top: -50px;
-		z-index: 1;
+		z-index: 10000;
 	}
 
 	.isu-dropdown-item > a.nav-link.isu-nav-link {
