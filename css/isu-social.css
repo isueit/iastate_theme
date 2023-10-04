@@ -13,18 +13,21 @@
  * @file
  * Supplemental CSS for the ISU Theme's social icons
  */
+
  .isu-social-menu a:hover {
-  color: #d3d3d3;
+  color: var(--gold);
 }
+
 .isu-social-menu  a:before {
   content: '\f0c1';
   border-radius: 0;
   color: #fff;
   width: 1.5rem;
-  margin-right: 0.25em;
+  margin-right: 0.48em;
+  padding-top: 8px;
   display: inline-block;
   font-family: FontAwesome;
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: normal;
   text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
@@ -37,11 +40,11 @@
 }
 
 .isu-social-menu a:hover:before {
-  color: var(--burgundy);
+  color: var(--gold);
   text-decoration: none;
 }
 .isu-social-menu-red a:hover {
-  color: #fff;
+  color: var(--cardinal);
 }
 
 .isu-social-menu-red li{
@@ -64,6 +67,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   vertical-align: middle;
+  padding-top: 0px;
 }
 
 .isu-social-menu a[href*='facebook.com']:before {
@@ -278,9 +282,4 @@ color: #fff;
 
 .isu-social-menu-red a[href*='foundation.iastate.edu']:before {
 color: #fff;
-}
-
-.isu-social-menu a:hover:before {
-  color: var(--burgundy);
-  text-decoration: none;
 }
