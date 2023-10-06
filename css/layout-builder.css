@@ -21,7 +21,7 @@
   padding-left: 1.3em; /* LTR */
   color: #686868;
   border-bottom: none;
-  background: url(../../../../misc/icons/787878/plus.svg) transparent center left / 1em no-repeat; /* LTR */
+  background: url(/core/misc/icons/787878/plus.svg) transparent center left / 1em no-repeat; /* LTR */
 }
 
 [dir="rtl"] .layout-builder__link--add {
@@ -87,7 +87,7 @@
 }
 
 .layout-builder__link--remove:hover {
-  background-image: url(../../../../misc/icons/787878/ex.svg);
+  background-image: url(/core/misc/icons/787878/ex.svg);
 }
 
 .layout-builder-block {
@@ -104,10 +104,10 @@
   background-repeat: no-repeat;
 }
 .layout-builder__message--defaults .messages {
-  background-image: url("../../../../misc/icons/73b355/globe.svg");
+  background-image: url(/core/misc/icons/73b355/globe.svg);
 }
 .layout-builder__message--overrides .messages {
-  background-image: url("../../../../misc/icons/73b355/location.svg");
+  background-image: url(/core/misc/icons/73b355/location.svg);
 }
 
 .layout-builder-block__content-preview-placeholder-label {
@@ -138,7 +138,7 @@
   padding-left: 44px;
   color: #eee;
   border-bottom: 1px solid #333;
-  background: url(../../../../misc/icons/bebebe/plus.svg) transparent 16px no-repeat;
+  background: url(/core/misc/icons/bebebe/plus.svg) transparent 16px no-repeat;
   font-size: 16px;
 }
 
