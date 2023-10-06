@@ -1191,6 +1191,15 @@ img.staff_profile_smugmug {
         background-color: var(--cardinal);
 }
 
+.layout--background--green {
+	background-color: var(--green);
+}
+
+.layout--background--green a {
+	color: #fff;
+	text-decoration: none;
+}
+
 .layout--background--red a {
 	color: #fff;
 	text-decoration: none;
