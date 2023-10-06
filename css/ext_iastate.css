@@ -642,6 +642,10 @@ figure.align-right {
 	margin-left: -25px;
 }
 
+.layout--color--white h2.isu-block-title.h4 {
+	color: #fff;
+}
+
 h2.isu-block-title.h4:after {
 	content: "";
 	position: absolute;
