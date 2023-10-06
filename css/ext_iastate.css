@@ -1335,6 +1335,10 @@ a.layout-builder__link--add {
 	color: var(--gold);
 }
 
+.layout--color--white a {
+  color: var(--gold);
+}
+
 /* --------------------------------------  */
 /* ## Layout Builder Styles
 /* --------------------------------------  */
