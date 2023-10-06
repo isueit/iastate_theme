@@ -1214,6 +1214,10 @@ a.layout-builder__link--add {
 	text-decoration: underline;
 }
 
+.layout--background--green a:hover {
+	text-decoration: underline;
+}
+
 .layout--background--red span.btn.btn-outline-danger a {
 	color: var(--cardinal);
 }
