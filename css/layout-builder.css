@@ -71,13 +71,13 @@
   width: 26px;
   height: 26px;
   margin-right: 6px; /* LTR */
-  margin-left: -10px; /* LTR */
+  margin-left: 6%; /* LTR */
   padding: 0;
   white-space: nowrap;
   text-indent: -9999px;
   border: 1px solid #ccc;
   border-radius: 26px;
-  background: url(../../../../misc/icons/bebebe/ex.svg) #fff center center / 16px 16px no-repeat;
+  background: url(/core/misc/icons/bebebe/ex.svg) #fff center center / 16px 16px no-repeat;
   font-size: 1rem;
 }
 
