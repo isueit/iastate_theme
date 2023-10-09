@@ -70,7 +70,7 @@
  *   in different view modes.
  */
 #}
-
+{% set dummy_force_cache_bubbling = content|render %}
 
 <div
 	class="isu-page-wrap">
@@ -100,7 +100,7 @@
 				<div class="isu-region isu-region_content">
 					<div class="flip_cards isu-block">
 						<article role="article" class="align-center">
-							<img loading="lazy" class="four-zero-four" src="https://www.extension.iastate.edu/files/styles/max_650x650/public/images/Group%20202.png?itok=ScZ0OwSN" width="650" height="264" alt="404 Page not found."/>
+							<img loading="lazy" class="four-zero-four" src="{{ base_path ~ directory }}/images/404.png" width="850" height="337" alt="404 Page not found."/>
 						</div>
 					</article>
 				</div>
