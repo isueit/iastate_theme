@@ -579,7 +579,6 @@ figure.align-right {
 /* 404 Page */
 img.four-zero-four {
 	padding-top: 5rem;
-	padding-bottom: 5rem;
 }
 
 .four-zero-four h2.isu-block-title.h4 {
@@ -627,6 +626,10 @@ img.four-zero-four {
 	overflow: hidden;
 	clip: rect(0,0,0,0);
 	border: 0;
+}
+
+.four-zero-four #block-iastate-theme-search {
+	padding-bottom: 5rem;
 }
 
 /* Sidebar */
