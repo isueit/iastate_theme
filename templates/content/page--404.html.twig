@@ -129,8 +129,31 @@
 							</form>
 						</div>
 					</div>
-
-
+				</div>
+				<div class="four-zero-four text-align-center fun-fact isu-block">
+					<b>Iowa Fun Fact:</b>
+					{% set rand = random([1, 2, 3, 4, 5, 6, 7, 8, 9, 10,]) %}
+					{% if rand == 1 %}
+						<em>More pigs live in Iowa than people.</em><br><a href="https://www.ipic.iastate.edu/">Access a variety of information on pig production</a>
+					{% elseif rand == 2 %}
+						<em>93% of all businesses in Iowa are small businesses.</em><br><a href="https://www.extension.iastate.edu/communities/iowa-retail-initiative">Support Small Businesses in Your Community</a>
+					{% elseif rand == 3 %}
+						<em>Iowa has more golf courses per capita than any other state.</em><br><a href="https://www.extension.iastate.edu/turfgrass/">Everything You've Ever Wanted to Know About Turfgrass</a>
+					{% elseif rand == 4 %}
+						<em>The Iowa State Fair features the largest state fair foods department with nearly 900 classes and hundreds of individual entries.</em><br><a href="https://www.extension.iastate.edu/4h/state-fair-4-h-static-exhibits-handbook">Find Exhibitor Information for the Iowa State Fair</a>
+					{% elseif rand == 5 %}
+						<em>On average, the typical Iowa winery produces approximately 3,000 gallons of wine annually.</em><br><a href="https://www.extension.iastate.edu/wine/industry-overview/">Map of Wineries and Vineyards in Iowa</a>
+					{% elseif rand == 6 %}
+						<em>Iowa is the home to the ice cream capital of the world.</em><br><a href="https://www.extension.iastate.edu/plymouth/">Visit Plymouth County</a>
+					{% elseif rand == 7 %}
+						<em>Sliced bread was invented in Iowa.</em><br><a href="https://spendsmart.extension.iastate.edu/">Mouth-Watering Bread Recipes</a>
+					{% elseif rand == 8 %}
+						<em>Iowa is home to one of the world's most crooked streets.</em><br><a href="https://www.extension.iastate.edu/desmoines/">Visit Des Moines County</a>
+					{% elseif rand == 9 %}
+						<em>Iowa is the only state bordered by two paralleling major rivers.</em><br><a href="https://naturalresources.extension.iastate.edu/">Learn more about Natural Resource Stewardship</a>
+					{% elseif rand == 10 %}
+						<em>Iowa is the largest producer of corn in the country.</em><br><a href="https://crops.extension.iastate.edu/">Access a variety of information on crop production</a>
+					{% endif %}
 				</div>
 			</div>
 		</main>
