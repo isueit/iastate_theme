@@ -629,6 +629,10 @@ img.four-zero-four {
 }
 
 .four-zero-four #block-iastate-theme-search {
+	padding-bottom: 1rem;
+}
+
+.four-zero-four.fun-fact {
 	padding-bottom: 5rem;
 }
 
