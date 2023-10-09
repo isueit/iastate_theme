@@ -249,6 +249,18 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
     if ($content_type == 'people' && $layout == TRUE) {
       $suggestions[] = 'page__mode__people_landing';
     }
+ //Determine error code so we can add a custom template.
+    $route_name = \Drupal::routeMatch()->getRouteName();
+  switch ($route_name) {
+
+    case 'system.404':
+      // Page Not Found.
+      $error = 404;
+      break;
+    }
+  if (isset($error)) {
+    $suggestions[] = 'page__' . $error;
+    }
   }
 
   // Template suggestions for the View (canonical) page per content type

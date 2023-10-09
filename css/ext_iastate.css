@@ -576,6 +576,67 @@ figure.align-right {
 	padding: 15px;
 }
 
+/* 404 Page */
+img.four-zero-four {
+	padding-top: 5rem;
+}
+
+.four-zero-four h2.isu-block-title.h4 {
+	letter-spacing: 0.4rem;
+	font-size: 4rem;
+	color: var(--burgundy);
+	text-align: center;
+}
+
+.four-zero-four h2.isu-block-title.h4:after {
+	left: 50%;
+	margin-left: -25px;
+}
+
+.four-zero-four .isu-search > form {
+	justify-content: center;
+}
+
+.four-zero-four .form-control {
+	width: 400px;
+	height: 2.5rem;
+	border-radius: 0.25rem 0 0 0.25rem;
+	border-left: 1px solid #eeeeee !important;
+	border-right: 0px !important;
+	border-top: 1px solid #eeeeee !important;
+	border-bottom: 1px solid #eeeeee !important;
+}
+
+.four-zero-four .isu-search__search-btn {
+	width: 2.5rem;
+	padding: 0;
+	color: #676767;
+	background-color: #fff;
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.four-zero-four .isu-search__search-btn-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.four-zero-four #block-iastate-theme-search {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+}
+
+.four-zero-four.fun-fact {
+	padding-bottom: 5rem;
+}
+
 /* Sidebar */
 .isu-page-column {
 	padding-left: 11px;
