@@ -1,0 +1,140 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+
+
+<div
+	class="isu-page-wrap">
+
+	{# The ISU Navbar may be disabled in theme settings #}
+	{% if isu_navbar %}
+		{% include '@iastate_theme/parts/isu-navbar.html.twig' %}
+	{% endif %}
+
+	{# site-navbar.html.twig contains branded ISU header #}
+	{% include '@iastate_theme/parts/site-navbar.html.twig' %}
+
+	{# menu-navbar.html.twig contains the main menu #}
+	{% include '@iastate_theme/parts/menu-navbar.html.twig' %}
+
+	<main class="isu-main" role="main">
+
+		<a id="main-content" tabindex="-1"></a>
+
+		{% if page.post_nav %}
+			{{ page.post_nav }}
+		{% endif %}
+
+		{{ page.breadcrumbs }}
+		<div class="container">
+			<div class="col-lg-12">
+				<div class="isu-region isu-region_content">
+					<div class="flip_cards isu-block">
+						<article role="article" class="align-center">
+							<img loading="lazy" class="four-zero-four" src="https://www.extension.iastate.edu/files/styles/max_650x650/public/images/Group%20202.png?itok=ScZ0OwSN" width="650" height="264" alt="404 Page not found."/>
+						</div>
+					</article>
+				</div>
+				<div class="four-zero-four isu-block">
+					<h2 class="isu-block-title h4">Page not Found</h2>
+					<div>
+						<p class="text-align-center">The page you are looking for is no longer here, or never existed in the first place (bummer).<br/>
+							You can try refining your search below, or start over at our home page.</p>
+					</div>
+				</div>
+				<div class="four-zero-four isu-block">
+					<div id="isu-search_collapse" class="isu-search_collapse">
+						<div id="block-iastate-theme-search" class="search-block-form isu-search">
+							<form class="cse-search-form" data-drupal-selector="cse-search-form" action="/search-results" method="get" id="cse-search-form" accept-charset="UTF-8">
+								<div class="form-group isu-form-type_search js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label js-form-wrapper form-wrapper" data-drupal-selector="edit-search" id="edit-search"><input data-drupal-selector="edit-search-broadness" type="hidden" name="search_broadness" value="wide"/>
+
+									<input placeholder="Search" class="form-control isu-form-control_search isu-search__search-field form-search" title="search box" data-drupal-selector="edit-as-q" type="search" id="edit-as-q" name="as_q" value="" size="60" maxlength="128"/>
+								</div>
+								<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-submit" id="edit-submit">
+									<button class="isu-search__search-btn button js-form-submit form-submit btn" data-drupal-selector="edit-submit" type="submit" id="search_edit-submit" value="submit search">
+										<span class="fas fa-search" aria-hidden="true"></span>
+										<span class="isu-search__search-btn-text">Submit Search</span>
+									</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</main>
+
+		{% include '@iastate_theme/parts/footer.html.twig' %}
+
+	</div>
