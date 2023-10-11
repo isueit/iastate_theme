@@ -2083,7 +2083,7 @@ div.fontawesome-icon i {
 	}
 
 	.isu-menu-navbar {
-		background-color: var(--cardinal);
+		background: transparent;
 	}
 
 	.isu-menu-navbar_show.isu-menu-navbar_wrap {
@@ -2153,6 +2153,10 @@ div.fontawesome-icon i {
 		bottom: 0;
 		z-index: 1000;
 		padding-top: 20px;
+	}
+
+	.isu-region_header-second {
+		padding-right: 5%;
 	}
 
 	.isu-navbar a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
@@ -2436,6 +2440,11 @@ div.fontawesome-icon i {
 
 	.isu-copyright {
 		padding-bottom: 20px;
+	}
+
+	.isu-footer .isu-sign-off_wrapper {
+		background: transparent;
+		color: #fff;
 	}
  }
 
