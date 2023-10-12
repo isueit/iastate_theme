@@ -2086,6 +2086,25 @@ div.fontawesome-icon i {
 		background: transparent;
 	}
 
+	.isu-navbar {
+		display: none;
+	}
+
+	.isu-navbar-responsive {
+		display: flex;
+		font-size: 0.875rem;
+		align-items: flex-end;
+	}
+
+	.isu-navbar-responsive ul {
+		display: flex;
+		padding-top: 10px;
+	}
+
+	.isu-navbar-responsive li {
+		margin: 0 0.5rem;
+	}
+
 	.isu-menu-navbar_show.isu-menu-navbar_wrap {
 		background-color: var(--cardinal);
 		overflow: hidden;
@@ -2145,7 +2164,7 @@ div.fontawesome-icon i {
 		padding-right: 5%;
 	}
 
-	.isu-navbar a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
+	.isu-navbar-responsive a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
 		font-family: Nimbus Sans, sans-serif;
 		font-size: 18px !important;
