@@ -157,7 +157,9 @@ blockquote p:last-child:after {
 /* --------------------------------------  */
 /* ## Red Bar
 /* --------------------------------------  */
-
+.isu-navbar-responsive {
+	display: none;
+}
 /* Reduce size of yellow bar */
 .isu-site-navbar {
 	border-bottom: none;
@@ -389,7 +391,7 @@ blockquote p:last-child:after {
 
 /* Third Level Menu */
 .isu-dropdown-submenu {
-  left: 100%;
+  left: 95%;
   margin-top: -47px;
 }
 
@@ -1428,7 +1430,7 @@ div.upcoming-events-white {
 }
 
 div.upcoming-events-white h2.isu-block-title.h4 {
-	border-bottom: 3px solid var(--gold);
+	color: #fff;
 }
 
 .upcoming-events-white div.event_date {
@@ -2034,6 +2036,11 @@ div.fontawesome-icon i {
 	.container {
 		max-width: 1140px;
 	}
+
+	.menubar > li:last-child .isu-dropdown-menu, .menubar > li:nth-last-child(2) .isu-dropdown-menu, .menubar > li:nth-last-child(3) .isu-dropdown-menu_two-col, .menubar > li:nth-last-child(4) .isu-dropdown-menu_two-col, .menubar > li:nth-last-child(5) .isu-dropdown-menu_two-col {
+		left: auto;
+		right: 0;
+	}
 }
 @media (min-width: 992px) {
 	.isu-wordmark-logo {
@@ -2113,7 +2120,7 @@ div.fontawesome-icon i {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 999;
+		z-index: 1;
 		padding: 2rem;
 		min-height: 1000px;
 		min-width: 100vw;
@@ -2325,12 +2332,16 @@ div.fontawesome-icon i {
 
 @media screen and (max-width : 991px) {
  	.isu-wordmark-logo {
- 		max-width: 60%;
-		margin-top: 4%;
+ 		max-width: 45%;
+		margin-top: 5%;
  	}
 
 	 .isu-navbar_container{
 		 width: inherit;
+	 }
+
+	 .isu-col-header-first {
+		text-align: start;
 	 }
 
 	/*change navbar width to fit screen*/
