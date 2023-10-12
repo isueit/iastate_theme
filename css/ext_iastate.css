@@ -397,7 +397,6 @@ blockquote p:last-child:after {
 
 /* Third Level Menu */
 .isu-dropdown-submenu {
-  left: 0;
   top: auto;
   margin-left: 268px;
   position: absolute;
@@ -2048,6 +2047,11 @@ div.fontawesome-icon i {
 
 	.menubar > li .isu-dropdown-menu {
 		left: auto;
+		right: 0;
+	}
+
+	.menubar > li .isu-dropdown-submenu {
+		left: 0.5rem;
 		right: 0;
 	}
 }
