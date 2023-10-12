@@ -331,7 +331,8 @@ blockquote p:last-child:after {
 	background: #fff;
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
 	padding: 1.5rem 1rem;
-	right: auto;
+	left: 0;
+	top: auto;
 	position: absolute;
 	min-width: 20rem;
 	transition: max-height 1s;
@@ -391,7 +392,10 @@ blockquote p:last-child:after {
 
 /* Third Level Menu */
 .isu-dropdown-submenu {
-  left: 95%;
+  left: 0;
+  top: auto;
+  margin-left: 268px;
+  position: absolute;
   margin-top: -47px;
 }
 
