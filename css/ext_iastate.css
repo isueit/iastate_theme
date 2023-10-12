@@ -1698,8 +1698,8 @@ form#node-layout-ct-layout-builder-form {
 .node-type_layout-ct .row,
 .node-type_educational-programs-page .row,
 .node-type_homepage-ct .row {
-	margin-left: none;
-	margin-right: none;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .node-type_layout-ct .isu-region.isu-region_content,
@@ -2139,20 +2139,6 @@ div.fontawesome-icon i {
 
 	.isu-col-header-second {
 		position: absolute;
-		left: 0;
-		top: 950px;
-		bottom: 0;
-		z-index: 1000;
-		margin: 0 auto;
-	}
-
-	.isu-navbar {
-		position: relative;
-		left: 0;
-		top: 700px;
-		bottom: 0;
-		z-index: 1000;
-		padding-top: 20px;
 	}
 
 	.isu-region_header-second {
@@ -2165,10 +2151,6 @@ div.fontawesome-icon i {
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;
-	}
-
-	.isu-navbar {
-		background-color: transparent;
 	}
 
 	/* Social Menu */
@@ -2269,7 +2251,7 @@ div.fontawesome-icon i {
 		left: 0;
 		top: 800px;
 		bottom: 0;
-		z-indexL 1000;
+		z-index: 1000;
 	}
 
 	.isu-search_toggler {
@@ -2324,8 +2306,8 @@ div.fontawesome-icon i {
 
 @media screen and (max-width : 991px) {
  	.isu-wordmark-logo {
- 		max-width: 360px;
-		margin-top: 0.5rem;
+ 		max-width: 60%;
+		margin-top: 4%;
  	}
 
 	 .isu-navbar_container{
@@ -2393,6 +2375,7 @@ div.fontawesome-icon i {
 	button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
 		margin-left: 20px;
 		padding: 20px;
+		float: right;
 	}
 	
 
@@ -2442,14 +2425,41 @@ div.fontawesome-icon i {
 		padding-bottom: 20px;
 	}
 
+	.isu-footer .col-md-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
 	.isu-footer .isu-sign-off_wrapper {
 		background: transparent;
 		color: #fff;
 	}
+
+	.isu-sign-off_wrapper a {
+		color: #fff;
+	}
+
+	.bean-card_label p, .bean-card-content_label p {
+		line-height: 1;
+	}
+	/* News from Feed */
+	#news_from_feed p {
+		padding-top: 0;
+	}
+
+	#news_from_feed .item-list {
+		padding-top: 2%;
+	}
+
+	#news_from_feed li:nth-child(3) {
+		display: none;
+	}
+
  }
 
 @media screen and (max-width : 768px) {
- 	.isu-wordmark-logo {
+	
+	.isu-wordmark-logo {
  		margin-top: 0.3rem;
 		margin-bottom: 0rem;
 		max-width: 300px;
@@ -2486,8 +2496,6 @@ div.fontawesome-icon i {
 	.isu-social-menu-footer{
 		margin-left: 0px;
 		/*max-width: 100px;*/
-	}
-
 	}
 
 	.isu-search_toggler {
