@@ -2046,7 +2046,7 @@ div.fontawesome-icon i {
 		max-width: 1140px;
 	}
 
-	.menubar > li:last-child .isu-dropdown-menu, .menubar > li:nth-last-child(2) .isu-dropdown-menu, .menubar > li:nth-last-child(3) .isu-dropdown-menu_two-col, .menubar > li:nth-last-child(4) .isu-dropdown-menu_two-col, .menubar > li:nth-last-child(5) .isu-dropdown-menu_two-col {
+	.menubar > li .isu-dropdown-menu {
 		left: auto;
 		right: 0;
 	}
