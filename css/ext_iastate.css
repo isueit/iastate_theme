@@ -2181,14 +2181,6 @@ div.fontawesome-icon i {
 		padding-right: 5%;
 	}
 
-	.isu-navbar-responsive a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
-		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
-		font-size: 18px !important;
-		font-weight: 700;
-		text-decoration: underline;
-	}
-
 	/* Social Menu */
 	.isu-social-menu-red #dropdownMenuButton:hover {
 		color: var(--burgundy);
@@ -2257,28 +2249,6 @@ div.fontawesome-icon i {
 		color: #fff;
 		margin: auto;
 		text-decoration: underline;
-	}
-
-	/* GTranslate */
-	#block-gtranslate {
-		position: absolute;
-		right: 60px;
-	}
-
-	#gtranslate_selector {
-		width: 100%;
-	}
-
-	#gtranslate_selector:hover {
-		color: var(--burgundy);
-	}
-	
-	.gtranslate::before {
-		display: none;
-	}
-	
-	.gtranslate:hover::before {
-		display: none;
 	}
 
 	/* Search */
@@ -2418,13 +2388,47 @@ div.fontawesome-icon i {
 		float: right;
 	}
 
+	/* GTranslate */	
+	#gtranslate_selector {	
+		width: 100%;
+	}
+	
+	#gtranslate_selector:hover {
+		color: var(--gold);
+	}
+		
+	.gtranslate::before {
+		color: #fff;
+	}
+		
+	.gtranslate:hover::before {
+		color: var(--gold);
+	}
+
 	.isu-socials-responsive #block-gtranslate--2 {
 		display: block;
+		position: absolute;
+		left: 3%;
+		padding-top: 5%;
 	}
 
 	#block-gtranslate--2 {
 		display: none;
 	}
+
+	.isu-navbar-responsive a, #gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
+		color: #fff;
+		font-family: Nimbus Sans, sans-serif;
+		font-size: 18px !important;
+		font-weight: 700;
+		text-decoration: underline;
+	}
+
+	.isu-navbar-responsive a:hover {
+		color: var(--gold);
+	}
+	}
+
 	
 
 	/* Adjust submenu alignment for condensed menu */
