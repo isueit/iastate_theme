@@ -508,6 +508,10 @@ a.isu-dropdown-submenu {
 	transition: all 0.2s ease-in-out;
 }
 
+.isu-socials-responsive #block-gtranslate--2 {
+	display: none;
+}
+
 .node--unpublished {
 	background: #fff4f4;
 	border: 1px dashed #fff4f4;
@@ -2419,6 +2423,14 @@ div.fontawesome-icon i {
 		margin-left: 20px;
 		padding: 20px;
 		float: right;
+	}
+
+	.isu-socials-responsive #block-gtranslate--2 {
+		display: block;
+	}
+
+	#block-gtranslate--2 {
+		display: none;
 	}
 	
 
