@@ -331,8 +331,6 @@ blockquote p:last-child:after {
 	background: #fff;
 	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
 	padding: 1rem;
-	left: 0;
-	top: 100%;
 	position: absolute;
 	min-width: 25rem;
 	transition: max-height 1s;
@@ -1442,7 +1440,7 @@ div.upcoming-events-white {
 }
 
 div.upcoming-events-white h2.isu-block-title.h4 {
-	color: #fff;
+	color: #000;
 }
 
 .upcoming-events-white div.event_date {
@@ -2047,11 +2045,6 @@ div.fontawesome-icon i {
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
-	}
-
-	.menubar > li .isu-dropdown-menu {
-		left: auto;
-		right: 0;
 	}
 
 	.menubar > li .isu-dropdown-submenu {
