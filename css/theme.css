@@ -322,11 +322,11 @@ body,
   border: 0;
   border-radius: 0.25rem;
 }
-.isu-site-navbar .isu-search__search-btn {
+.isu-site-navbar .isu-search__search-btn, .isu-header-second-responsive .isu-search__search-btn {
   display: none;
   width: 2.5rem;
   padding: 0;
-  color: #676767;
+  color: var(--cardinal);
   background-color: #ffffff;
 }
 .isu-site-navbar .isu-search__search-btn-text {
@@ -358,7 +358,7 @@ body,
 
 .isu-search_collapse {
   max-height: 0;
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
   transition: all 500ms ease;
 }

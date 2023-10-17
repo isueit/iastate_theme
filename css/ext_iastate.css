@@ -164,7 +164,6 @@ blockquote p:last-child:after {
 .isu-site-navbar {
 	border-bottom: none;
 	background-color: #ffffff;
-	padding: 0.7rem 0;
 }
 
 .isu-menu-navbar_wrap {
@@ -506,7 +505,7 @@ a.isu-dropdown-submenu {
 	transition: all 0.2s ease-in-out;
 }
 
-.isu-socials-responsive #block-gtranslate--2 {
+.isu-socials-responsive #block-gtranslate--2, .isu-socials-responsive #block-csesearchblock {
 	display: none;
 }
 
@@ -2126,7 +2125,7 @@ div.fontawesome-icon i {
 		background-color: var(--cardinal);
 		overflow: hidden;
 		position: absolute;
-		top: 1rem;
+		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -2362,7 +2361,6 @@ div.fontawesome-icon i {
 		 padding-left: 85px;
 	 }
 
-
 	div#block-iastate-theme-page-title--2 {
 		padding-left: 6%;
 		padding-right: 6%;
@@ -2427,9 +2425,6 @@ div.fontawesome-icon i {
 	.isu-navbar-responsive a:hover {
 		color: var(--gold);
 	}
-	}
-
-	
 
 	/* Adjust submenu alignment for condensed menu */
 	.isu-dropdown-submenu {
