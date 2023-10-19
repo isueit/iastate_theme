@@ -35,12 +35,6 @@
 		}
 	});
 
-	/*$('#list-items').show(function() {
-		$(!$('#list-items')).click(function() {
-				$('#list-items').hide();
-			});
-		});*/
-
   });
 
 })(jQuery, Drupal);
