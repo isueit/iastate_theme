@@ -29,7 +29,7 @@
 	{{ title_prefix }}
 	{% block content %}
 		<div class="dropdown">
-			<button onclick="show_hide()" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+			<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
 				Social Media
 			</button>
 			<ul class="dropdown-menu" id="list-items" aria-labelledby="dropdownMenuButton">
@@ -87,14 +87,3 @@
 		</ul>
 	</div>
 </div>
-<script>
-	// show and hide dropdown list item on button click
-function show_hide() {
-var click = document.getElementById("list-items");
-if (click.style.display === "block") {
-click.style.display = "none";
-} else {
-click.style.display = "block";
-}
-}
-</script>

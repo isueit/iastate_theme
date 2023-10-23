@@ -19,6 +19,22 @@
 	  $('#isu-search_collapse').toggleClass('isu-search_show');
 	});
 
+	// Social Media Dropdown
+	$('#dropdownMenuButton').click(function() {
+		if (!$('#list-items').is(':visible')) {
+			$('#list-items').show();
+		}
+		else {
+			$('#list-items').hide();
+		}
+	});
+
+	$(document).on('click', function(e) {
+		if (!$(e.target).closest('#block-socialmediared').length) {
+			$('#list-items').hide();
+		}
+	});
+
   });
 
 })(jQuery, Drupal);
