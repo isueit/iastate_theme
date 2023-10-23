@@ -18,44 +18,127 @@ body {
   -webkit-osx-font-smoothing: grayscale;
   background-color: #ffffff;
 }
-
 /* Override Bootstrap 4's typography */
 h1, .h1 {
-  font-size: 2rem;
+  font-size: 3.375rem;
 }
-
 h2, .h2 {
   margin-top: 2rem;
-  font-size: 1.75rem;
-  font-weight: 400;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: Merriweather,serif;	
+	letter-spacing: 0;
+	line-height: 1.4;
+	padding-bottom: 1rem;
+	position: relative;
 }
-
+h2 {
+	color: var(--cardinal);
+}
 h2:first-child,
 .h2:first-child,
 .sr-only + h2,
 .sr-only + .h2 {
   margin-top: 0;
 }
-
 h3, .h3 { 
   margin-bottom: 0.35rem;
-  font-size: 1.5rem; 
-  font-weight: 400;
+  font-size: 1.3125rem; 
+  font-weight: 700;
+  font-family: Nimbus Sans,sans-serif;
+	letter-spacing: 0;
+	line-height: 1.42857;
+	margin: 2rem 0 0.5625rem;
 }
-
-h4, .h4 { font-size: 1.35rem; }
-
-
+h3 {
+	color: var(--cardinal);
+}
+h4, .h4 { 
+  font-size: 1.125rem;
+	font-family: Nimbus sans,sans-serif;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin: 2rem 0 0.5625rem;
+	line-height: 1.38889;
+}
+h4 {
+	color: var(--burgundy);
+}
+.h5, h5 {
+	font-size: 1rem;
+	line-height: 1.5625;
+	font-family: Nimbus Sans,sans-serif;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin: 2rem 0 0.5625rem;
+}
+h5 {
+	color: var(--burgundy);
+}
+.h6, h6 {
+	font-family: Nimbus Sans, sans-serif;
+	font-weight: 700;
+	letter-spacing: 0;
+	margin: 2rem 0 0.5625rem;
+}
+h6 {
+	color: var(--burgundy);
+}
 dl, ol, ul { /* Overrides bootstrap-reboot.min.css */
   padding-left: 2rem;
 }
-
-blockquote { /* Duplicates Bootstrap 4's .blockquote */
-  padding: .5rem 1rem;
+/* --- ## Block quote --- */
+/* Duplicates Bootstrap 4's .blockquote */
+blockquote {
+	background-color: var(--cardinal);
+	border-left: none;
+	color: #fff;
+	position: relative;
+	padding: .5rem 1rem;
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
-  /* Although we darkened this a bit */
-  border-left: .25rem solid #dddddd;
+}
+blockquote p {
+	font-size: 2.5rem;
+	font-family: Merriweather, serif;
+	line-height: 1.45;
+	font-weight: 700;
+	padding-left: 15%;
+	max-width: 80vw;
+}
+blockquote p:first-child:before {
+	content: "";
+	width: 4rem;
+	height: 3.25rem;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
+	top: 1.4375rem;
+	position: absolute;
+	left: 8rem;
+}
+blockquote p:last-child:after {
+	content: "";
+	width: 4rem;
+	position: absolute;
+	height: 3.25rem;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='63.979' height='52'%3E%3Cg data-name='Group 416'%3E%3Cpath data-name='“' d='M27.043 52.001v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8zm36.936 0v-25h-16c-.4-10 4.8-15.8 16-17.8v-9.2c-17.6 1.4-27.8 12.8-27 30.2v21.8z' fill='%23f1be48'/%3E%3C/g%3E%3C/svg%3E");
+	transform: rotate(180deg);
+	bottom: 3.9375rem;
+	right: auto;
+	left: 80%;
+}
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
+@media screen and (max-width : 1199px) {
+	blockquote p:first-child:before {
+		left: 3rem;
+	}
 }
 
 hr { /* Overrides Bootstrap 4's hr style */
@@ -67,15 +150,15 @@ hr { /* Overrides Bootstrap 4's hr style */
 /* --------------------------------------  */
 
 a { /* Overrides bootstrap.min.css */
-  color: #c8102e; /* ISU brand standard */
+  color: var(--burgundy); /* ISU brand standard */
   text-decoration: underline; /* WCAG A standard */
-  transition: color 300ms ease;
+  transition: color .2s ease-in-out;
 }
 a:hover { /* Overrides bootstrap.min.css */
-  color: #006BA6; /* ISU brand standard */
+  color: var(--cardinal); /* ISU brand standard */
 }
 a:hover img {
-  outline: #5cb3fd auto 5px;
+  outline: var(--gold) auto 5px;
 }
 a.btn,
 a.badge,
@@ -96,28 +179,268 @@ button.btn {
 .btn-link:hover { /* Overrides bootstrap.min.css */
   color: #006BA6; /* ISU brand standard */
 }
+
+/* Green Button */
 .btn-success { /* Overrides bootstrap.min.css */
-  background-color: #218739; /* Sufficient contrast with white. */
-  border-color: #218739;
+  background-color: var(--green);
+	border-color: var(--green);
+	border: 1px solid var(--green);
+	font-weight: 700;
+	border-radius: 2rem;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
 }
-  .btn-success:hover {
-    background-color: #1A6B2D;
-    border-color: #1A6B2D;
-  }
-  .btn-success:not(:disabled):not(.disabled).active, 
-  .btn-success:not(:disabled):not(.disabled):active, 
-  .show>.btn-success.dropdown-toggle {
-    background-color: #1A6B2D;
-    border-color: #1A6B2D;
-  }
+.btn-success:hover {
+  background-color: var(--green);
+  border: 1px solid var(--green);
+  color: #fff;
+}
+.btn-success::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-success:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+.btn-success:not(:disabled):not(.disabled).active, 
+.btn-success:not(:disabled):not(.disabled):active, 
+.show>.btn-success.dropdown-toggle {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+/* Green Outline Button */
+.btn-outline-success {
+	color: var(--green);
+	border: 1px solid var(--green);
+	border-radius: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-outline-success:hover {
+	background-color: #fff;
+	color: var(--green);
+	border: 1px solid var(--green);
+}
+.btn-outline-success::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-outline-success:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+.btn-outline-success:not(:disabled):not(.disabled).active, 
+.btn-outline-success:not(:disabled):not(.disabled):active, 
+.show > .btn-outline-success.dropdown-toggle {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+/* Cardinal Button */
+.btn-danger {
+	background-color: var(--cardinal);
+	border-color: var(--cardinal);
+	border-radius: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-danger::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-danger:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+
+/* Cardinal Outline Button */
+.btn-outline-danger {
+	color: #dc3545;
+	border: 1px solid var(--cardinal);
+	border-radius: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-outline-danger:hover {
+	background-color: #fff;
+	color: var(--cardinal);
+}	
+.btn-outline-danger::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-outline-danger:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+
+/* Dark Blue Button */
+.btn-primary {
+	background-color: var(--midnight);
+	border-color: var(--midnight);
+	font-weight: 700;
+	border-radius: 2rem;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-primary:hover {
+	background-color: var(--midnight);
+	color: #fff;
+}
+.btn-primary::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-primary:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+
+/* Dark Blue Outline Button */
+.btn-outline-primary {
+	color: var(--midnight);
+	border: 1px solid var(--midnight);
+	border-radius: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-outline-primary:hover {
+	background-color: #fff;
+	color: var(--midnight);
+	border: 1px solid var(--midnight);
+}
+.btn-outline-primary::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-outline-primary:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+
+/* Dark Red Button */
+.btn-secondary {
+	background-color: var(--burgundy);
+	border-color: var(--burgundy);
+	border: 1px solid var(--burgundy);
+	font-weight: 700;
+	border-radius: 2rem;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-secondary:hover {
+	background-color: var(--burgundy);
+	border: 1px solid var(--burgundy);
+	color: #fff;
+}
+.btn-secondary::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-secondary:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
+
+/* Dark Red Outline Button */
+.btn-outline-secondary {
+	color: var(--burgundy);
+	border: 1px solid var(--burgundy);
+	border-radius: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+	white-space: break-spaces;
+	overflow: hidden;
+}
+.btn-outline-secondary:hover {
+	background-color: #fff;
+	color: var(--burgundy);
+	border: 1px solid var(--burgundy);
+}
+.btn-outline-secondary::after {
+	content: "";
+	display: block;
+	border-radius: 2rem;
+	width: 0;
+	height: 4px;
+	margin-bottom: -6px;
+	margin-top: 3px;
+	margin-left: -5px;
+	transition: width 0.3s ease-in-out;
+}
+.btn-outline-secondary:hover:after {
+	width: calc(100% + 10px);
+	background: var(--gold);
+}
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */
   border-color: #128091;
 }
-  .btn-info:hover {
-    background-color: #0F6875;
-    border-color: #0F6875;
-  }
+.btn-info:hover {
+  background-color: #0F6875;
+  border-color: #0F6875;
+}
 .btn-light {
   border-color: #ddd;
 }
@@ -132,36 +455,21 @@ button.btn {
   background-color: #ffffff;
 }
 
-.btn-outline-success { /* Overrides bootstrap.min.css */
-  color: #218739; /* Sufficient contrast with white. */
-  background-color: #ffffff;
-  border-color: #218739;
-}
-  .btn-outline-success:hover {
-    background-color: #1A6B2D;
-    border-color: #1A6B2D;
-  }
-  .btn-outline-success:not(:disabled):not(.disabled).active, 
-  .btn-outline-success:not(:disabled):not(.disabled):active, 
-  .show > .btn-outline-success.dropdown-toggle {
-    background-color: #1A6B2D;
-    border-color: #1A6B2D;
-  }
 .btn-outline-info { /* Overrides bootstrap.min.css */
   color: #128091; /* Sufficient contrast with white. */
   background-color: #ffffff;
   border-color: #128091;
 }
-  .btn-outline-info:hover {
-    background-color: #0F6875;
-    border-color: #0F6875;
-  }
-  .btn-outline-info:not(:disabled):not(.disabled).active, 
-  .btn-outline-info:not(:disabled):not(.disabled):active, 
-  .show > .btn-outline-info.dropdown-toggle {
-    background-color: #117a8b;
-    border-color: #117a8b;
-  }
+.btn-outline-info:hover {
+  background-color: #0F6875;
+  border-color: #0F6875;
+}
+.btn-outline-info:not(:disabled):not(.disabled).active, 
+.btn-outline-info:not(:disabled):not(.disabled):active, 
+.show > .btn-outline-info.dropdown-toggle {
+  background-color: #117a8b;
+  border-color: #117a8b;
+}
 .btn-outline-warning {
   color: #757575; /* Sufficient contrast with white. */
 }
@@ -170,10 +478,9 @@ button.btn {
   background-color: #ffffff;
   border-color: #888888;
 }
-  .btn-outline-light:hover {
-    border-color: #c2c2c2;
-  }
-
+.btn-outline-light:hover {
+  border-color: #c2c2c2;
+}
 .btn.disabled, 
 .btn:disabled { /* Overrides bootstrap.min.css */
   /* Sufficient contrast with white. */
@@ -182,7 +489,6 @@ button.btn {
   color: #676767;
   border: 1px solid #bbb;
 }
-
 .button:not(.btn) { /* Duplicates Bootstrap 4 btn, btn-secondary and btn-sm */
   /* btn */
   display: inline-block;
@@ -210,11 +516,11 @@ button.btn {
   line-height: 1.5;
   border-radius: 0.2rem;
 }
-  .button:not(.btn):hover {
-    color: #ffffff;
-    background-color: #575757;
-    border-color: #575757;
-  }
+.button:not(.btn):hover {
+  color: #ffffff;
+  background-color: #575757;
+  border-color: #575757;
+}
 
 /* --------------------------------------  */
 /* ## TABLES
@@ -222,20 +528,43 @@ button.btn {
 /* Overrides bootstrap.min.css */
 
 .table tbody {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: .125rem solid #ebebeb;
 }
 .table thead th,
 .table th {
-  background: #eee;
-}
-.table thead th {
-  border-bottom: 2px solid #cccccc;
+  background: var(--cardinal);
+	color: white;
+	padding: 1.5625rem;
+	font-size: 1.3125rem;
+	line-height: 1.42857;
+	font-weight: 700;
+	vertical-align: top;
 }
 caption {
   caption-side: top;
   padding: 0.5rem 0;
   color: #676767;
   border-top: 1px solid #cccccc;
+}
+.table[border] th, .table[border] td {
+	border-bottom-color: transparent;
+	border-top-color: transparent;
+}
+.table[border] {
+	border-bottom-color: transparent;
+	border: .125rem solid #ebebeb;
+}
+.table[cellpadding], .table[cellspacing] {
+	border-collapse: collapse;
+}
+.table td {
+	line-height: 1.75;
+	padding: 1.5625rem;
+	vertical-align: top;
+	border: 0.0625rem solid #f3f3f3;
+}
+.table tbody tr:nth-child(2n) {
+	background-color: rgba(0,0,0,.048);
 }
 
 /* rowspan and colspan */
@@ -265,6 +594,11 @@ table img {
   font-size: 0.9rem;
   background: #eeeeee;
 }
+.align-center img {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 /* We want to respect content-editor table styles
  * as much as possible, until we reach the responsive
@@ -285,6 +619,9 @@ table img {
   border-top-color: #808080;
 }
 
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
 @media (min-width: 799px) {
   .table[style*="width:"],
   .table:not([style*="width:"])[border] {

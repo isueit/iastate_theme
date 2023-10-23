@@ -22,7 +22,7 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
-  }
+}
 
 .isu-navbar {
   display: flex;
@@ -30,7 +30,6 @@
   background: #ffffff;
   align-items: flex-end;
 }
-
 .isu-navbar a {
   color: var(--cardinal);
   line-height: 1.625;
@@ -39,27 +38,23 @@
   transition: 0.2s color ease-in-out;
   cursor: pointer;
 }
-
 .isu-navbar ul {
 	display: flex;
 	padding-top: 10px;
 }
-
 .isu-navbar li {
 	margin: 0 0.5rem;
 }
-
 .isu-navbar li:last-child {
 	margin-right: 0;
 }
-
-  .isu-navbar a:hover,
-  .isu-navbar a:focus,
-  .isu-navbar_dropdown.has-focus {
-    color: var(--burgundy);
-    text-decoration: none;
-    background-color: transparent;
-  }
+.isu-navbar a:hover,
+.isu-navbar a:focus,
+.isu-navbar_dropdown.has-focus {
+  color: var(--burgundy);
+  text-decoration: none;
+  background-color: transparent;
+}
 .isu-navbar_container { /* This is a ul */
   display: flex;
   flex-wrap: wrap;
@@ -74,6 +69,10 @@
 .isu-navbar-responsive {
 	display: none;
 }
+
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
   /* Breakpoints mimic Bootstrap 4 */
   @media (min-width: 576px) {
     .isu-navbar_container {
@@ -124,12 +123,19 @@
 		font-weight: 700;
 		text-decoration: underline;
 	}
+  .isu-navbar-responsive a:hover {
+		color: var(--gold);
+	}
 }
 
 /* Forces list items to break */
 .isu-navbar_break {
   width: 100%;
 }
+
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
   @media screen and (min-width: 576px) {
     .isu-navbar_break {
       width: 0px;
@@ -148,6 +154,10 @@
   vertical-align: top;
   font-family: "FontAwesome";
 }
+
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
   @media screen and (max-width: 991px) {
     .isu-navbar_dropdown-toggle:after {
       display: none;
@@ -180,6 +190,10 @@
 .isu-navbar_dropdown[aria-expanded='false'] .isu-navbar_dropdown-menu {
   display: none;
 }
+
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
 @media (min-width: 992px) {
   .isu-navbar_dropdown_alpha:hover > .isu-navbar_alpha {
     display: flex;
