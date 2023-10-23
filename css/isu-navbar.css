@@ -71,6 +71,9 @@
   padding-left: 15px;
   list-style-type: none;
 }
+.isu-navbar-responsive {
+	display: none;
+}
   /* Breakpoints mimic Bootstrap 4 */
   @media (min-width: 576px) {
     .isu-navbar_container {
@@ -87,11 +90,41 @@
       width: 960px;
     }
   }
+  @media screen and (max-width : 991px) {
+    .isu-navbar_container{
+      width: inherit;
+    }
+  }
   @media (min-width: 1200px) {
     .isu-navbar_container {
       width: 1140px;
     }
   }
+
+  @media screen and (max-width : 1199px) {
+	.isu-navbar {
+		display: none;
+	}
+  .isu-navbar-responsive {
+		display: flex;
+		font-size: 0.875rem;
+		align-items: flex-end;
+	}
+	.isu-navbar-responsive ul {
+		display: flex;
+		padding-top: 10px;
+	}
+	.isu-navbar-responsive li {
+		margin: 0 0.5rem;
+	}
+  .isu-navbar-responsive a {
+		color: #fff;
+		font-family: Nimbus Sans, sans-serif;
+		font-size: 18px !important;
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}
 
 /* Forces list items to break */
 .isu-navbar_break {
