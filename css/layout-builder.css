@@ -122,17 +122,17 @@
   border-bottom: 2px dashed #979797;
 }
 
-#drupal-off-canvas .layout-selection li {
+#drupal-off-canvas-wrapper .layout-selection li {
   display: block;
   padding-bottom: 1em;
 }
 
-#drupal-off-canvas .layout-selection li a {
+#drupal-off-canvas-wrapper .layout-selection li a {
   display: block;
   padding-top: 0.55em;
 }
 
-#drupal-off-canvas .inline-block-create-button {
+#drupal-off-canvas-wrapper .inline-block-create-button {
   display: block;
   padding: 24px;
   padding-left: 44px;
@@ -142,22 +142,22 @@
   font-size: 16px;
 }
 
-#drupal-off-canvas .inline-block-create-button,
-#drupal-off-canvas .inline-block-list__item {
+#drupal-off-canvas-wrapper .inline-block-create-button,
+#drupal-off-canvas-wrapper .inline-block-list__item {
   margin: 0 -20px;
   background-color: #444;
 }
 
-#drupal-off-canvas .inline-block-create-button:hover,
-#drupal-off-canvas .inline-block-list__item:hover {
+#drupal-off-canvas-wrapper .inline-block-create-button:hover,
+#drupal-off-canvas-wrapper .inline-block-list__item:hover {
   background-color: #333;
 }
 
-#drupal-off-canvas .inline-block-list {
+#drupal-off-canvas-wrapper .inline-block-list {
   margin-bottom: 15px;
 }
 
-#drupal-off-canvas .inline-block-list__item {
+#drupal-off-canvas-wrapper .inline-block-list__item {
   display: block;
   padding: 15px 0 15px 25px;
 }
@@ -182,7 +182,7 @@
 }
 
 /* Highlight the active block in the Move Block dialog. */
-#drupal-off-canvas .layout-builder-components-table__block-label--current {
+#drupal-off-canvas-wrapper .layout-builder-components-table__block-label--current {
   padding-left: 17px;
   border-left: solid 5px;
 }
@@ -193,7 +193,7 @@
  *   maintain the background color of their container when they are hovered
  *   over or are inside the active row.
  */
-#drupal-off-canvas .layout-builder-components-table__row .form-item {
+#drupal-off-canvas-wrapper .layout-builder-components-table__row .form-item {
   background-color: transparent;
 }
 
