@@ -1675,7 +1675,7 @@ form#node-layout-ct-layout-builder-form {
 }
 
 /* Settings Tray */
-#drupal-off-canvas button, #drupal-off-canvas .button {
+#drupal-off-canvas-wrapper button, #drupal-off-canvas-wrapper .button {
 	border: #006ba6;
 	padding: 7px;
 	background: #006ba6;
@@ -1684,7 +1684,7 @@ form#node-layout-ct-layout-builder-form {
 	margin: 0 0 3px;
 }
 
-#drupal-off-canvas button:hover, #drupal-off-canvas input[type="reset"]:hover, #drupal-off-canvas input[type="submit"]:hover, #drupal-off-canvas input[type="button"]:hover {
+#drupal-off-canvas-wrapper button:hover, #drupal-off-canvas-wrapper input[type="reset"]:hover, #drupal-off-canvas-wrapper input[type="submit"]:hover, #drupal-off-canvas-wrapper input[type="button"]:hover {
 	background-color: #ffffff;
 	border-color: #006ba6;
 	color: #006ba6;
