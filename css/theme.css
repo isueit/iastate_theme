@@ -390,9 +390,6 @@ body,
 	border-bottom: 1px solid;
 	border-left: 1px solid;
 }
-.isu-socials-responsive #block-csesearchblock {
-	display: none;
-}
 .isu-region_header-second {
 	float: right;
 	display: grid;
@@ -416,11 +413,6 @@ body,
 /* Specific to Site Navbar search */
 .isu-search {
   padding: 1rem;
-}
-#block-csesearchblock {
-	grid-column-start: 1;
-	grid-row-end: 1;
-	grid-column-end: 3;
 }
 .isu-form-type_radio {
   float:left; 
@@ -528,11 +520,6 @@ div#edit-search-broadness {
 	}
 	.isu-search_toggler svg path ~ .isu-search_toggler_open {
 		fill: var(--cardinal);
-	}
-	#block-csesearchblock {
-		position: absolute;
-		left: 0;
-		bottom: 13vh;
 	}
 	.form-control.isu-form-control_search.isu-search__search-field.form-search {
 		border: none;

@@ -1,3 +1,21 @@
+/**
+ * @file
+ * CSS styles for elements that do not belong elsewhere.
+ *
+ * This file is no longer used to overwrite other styles within the theme.
+ *
+ * Other css files:
+ * - css/base.css - Used for overriding core or Bootstrap
+ * - css/theme.css - Main theme components styles
+ * - css/isu-navbar.css - Those pesky links included at the top of each site
+ * - css/county_iastate.css - For county only styles
+ * - css/isu-responsivetables.css - Responsive table styles only
+ * - css/isu-social.css - Supplemental css for social icons
+ * - css/layout-builder.css - Layout builder styles not specific to content type
+ * - css/utility.css - For font type implementation
+ * - css/print.css - Used for print output
+ */
+
 :root {
 	--cardinal: #c8102e;
 	--gold: #f1be48;
@@ -8,120 +26,6 @@
 	--midnight: #003d4c;
 	--green: #008540;
   }
-
-/* --------------------------------------  */
-/* ## SOCIAL NAVBAR DROPDOWN
-/* --------------------------------------  */
-.isu-social-menu-red {
-	text-align: right;
-}
-#block-socialmediared {
-	margin: 10px auto;
-	grid-row-end: 3;
-	width: 100%;
-	margin-top: -5px;
-}
-.isu-social-menu-red #dropdownMenuButton {
-	color: var(--burgundy);
-	font-family: Nimbus sans,sans-serif;
-	background: none;
-	border: none;
-}
-.isu-social-menu-red #dropdownMenuButton:hover {
-	color: var(--cardinal);
-}
-.isu-social-menu-red .dropdown-toggle:after {
-	border: 1px solid;
-	border-top: 0;
-	border-left: 0;
-	margin-left: 0;
-	width: 6px;
-	height: 6px;
-}
-.isu-social-menu-red a::before {
-	margin: 0 auto;
-	color: var(--burgundy) !important;
-}
-.isu-social-menu-red a:hover::before {
-	color: var(--cardinal) !important;
-	background-color: #fff0;
-}
-.isu-social-menu-red a {
-	margin-left: 0.75rem;
-}
-.isu-social-menu a:hover {
-	background-color: #fff0;
-}
-.isu-social-menu-red .dropdown-menu {
-	border-radius: 0;
-	border: none;
-	box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
-	flex-direction: column;
-	left: auto;
-	right: 0;
-	flex-wrap: wrap;
-	transition: max-height 1s;
-	padding: 1.5rem 1rem;
-	display: none;
-	max-width: min-content;
-	right: 0;
-	left: auto;
-}
-
-/* --------------------------------------  */
-/* ## SOCIAL DROPDOWN RESPONSIVE
-/* --------------------------------------  */
-@media screen and (max-width : 425px) {
-	#block-socialmediared {
-		left: -50px;
-	}
-}
-
-@media screen and (max-width : 575px) {
-	.isu-social-menu-red{
-		padding-left: 73px;
-		font-size: 22px;
-	}
-}
-
-@media screen and (max-width : 768px) {
-	.isu-social-menu-red{
-		padding-right: 50px;
-	}
-}
-
-@media screen and (max-width : 991px) {
-	.isu-social-menu-red{
-		padding-left: 85px;
-	}
-	.isu-social-menu-red #dropdownMenuButton {
-		font-size: 12px;
-	}
-}
-
-@media screen and (max-width : 1199px) {
-	.isu-social-menu-red #dropdownMenuButton:hover {
-		color: var(--burgundy);
-	}
-	.isu-social-menu-red .dropdown-menu, .isu-social-menu-red a {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		height: auto;
-		min-width: 400px;
-		min-height: 100px;
-	}
-	#block-socialmediared {
-		position: absolute;
-		z-index: 1000;
-		left: 0;
-	}
-	.isu-social-menu-red a {
-		position: relative;
-		right: auto;
-	}
-}
 
 /* --------------------------------------  */
 /* ## GOOGLE TRANSLATE
@@ -331,7 +235,7 @@ img.four-zero-four {
 }
 
 /* --------------------------------------  */
-/* ## NEWS
+/* ## NEWS HOMEPAGE BLOCK
 /* --------------------------------------  */
 .card-body svg:not(:root).svg-inline--fa {
 	display: inline-block;
@@ -359,7 +263,7 @@ img.four-zero-four {
 }
 
 /* --------------------------------------  */
-/* ## NEWS RESPONSIVE
+/* ## NEWS BLOCK RESPONSIVE
 /* --------------------------------------  */
 @media screen and (max-width : 425px) {
 	.ext-news-feed .header {
@@ -552,86 +456,8 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 
 /* --------------------------------------  */
-/* ## CUSTOM BLOCKS
-/* ## MOVE TO MODULE FOLDER
-/* --------------------------------------  */
-
-.contact_hours_title.h3 {
-	color: var(--cardinal);
-}
-/* Staff List*/
-
-/* This style can be deleted once staff views are all changed to grid */
-td.staff-view-smugmug img {
-	max-width: 100px;
-	margin: 10px 0px;
-}
-
-.views-field.views-field-field-staff-profile-pref-phone {
-	margin: 12px;
-}
-
-.views-field.views-field-field-staff-profile-pref-phone h2 {
-	padding-bottom: 0px;
-}
-
-.views-field.views-field-field-staff-profile-smugmug {
-	border: 1px solid var(--md-gray);
-}
-
-img.staff_profile_smugmug {
-	max-width: 100px;
-	margin: .75rem;
-	float: left;
-}
-.announcement {
-	font-weight: 700;
-	padding-bottom: 20px;
-	color: var(--midnight);
-	margin-left: auto;
-	margin-right: auto;
-	background: var(--gold);
-	padding-left: 11%;
-	font-size: 1.25rem;
-}
-
-/* Layout Builder Content Type */
-.node-type_layout-ct .row,
-.node-type_educational-programs-page .row,
-.node-type_homepage-ct .row {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.node-type_layout-ct .isu-region.isu-region_content,
-.node-type_educational-programs-page .isu.region.isu-region_content,
-.node-type_homepage-ct .isu-region.isu-region_content {
-  width: 100%;
-}
-
-
-.node-type_layout-ct #layout_builder,
-.node-type_educational-programs-page #layout_builder,
-.node-type_homepage-ct #layout_builder {
-  border: 3px solid #2f91da;
-  background-color: #fff;
-}
-
-.node-type_layout-ct form#layout-builder-discard-changes,
-.node-type_educational-programs-page form#layout-builder-discard-changes,
-.node-type_homepage-ct form#layout-builder-discard-changes {
-  padding-bottom: 20px;
-}
-
-/* Educational Programs Page
- * Removes ablitiy to edit the edu_prog_field description block placed layout
- */
-.layout-builder__section[aria-label="edu_field_body_section"] > a,
-.layout-builder__section[aria-label="edu_field_body_section"] .layout-builder__add-block {
-  display: none;
-}
-/* --------------------------------------  */
-/* ## Cards - Image, Content, Flip
+/* ## CARDS
+/* Styles apply to content, flip, and image
 /* --------------------------------------  */
 .bean-card {
 	position: relative;
@@ -640,13 +466,6 @@ img.staff_profile_smugmug {
 	color: #ffffff;
 	margin-bottom: 1rem;
 }
-/* Kill external link icon */
-#section-content .bean-card a.external:after { display: none; }
-
-.bean-card.bean-card_width_full {
-	display: block;
-}
-
 a.bean-card_link {
 	display: block;
 	color: #ffffff;
@@ -654,16 +473,19 @@ a.bean-card_link {
 	border-radius: 3px;
 	overflow: hidden;
 }
-
 .bean-card a:hover {
 	  box-shadow: 0 0 5px 1px #f1be48;
 }
 
-/* Used for image card */
-.bean-card_img img {
-	width: 100%;
+/* Kill external link icon */
+#section-content .bean-card a.external:after { 
+	display: none; 
 }
 
+/* Label */
+.bean-card.bean-card_width_full {
+	display: block;
+}
 .bean-card_label {
 	display: flex;
 	padding: 0.75rem 1rem;
@@ -675,30 +497,25 @@ a.bean-card_link {
 	bottom: 0;
 	right: 0;
 }
-
-.bean-card-content_label {
-	display: flex;
-	padding: 0.75rem 1rem;
-	justify-content: center;
-	background: var(--cardinal);
-	font-size: 1.5rem;
-	position: relative;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.bean-card_label p {
+	margin: 0;
+	line-height: 1.45;
+	font-family: Merriweather,serif;
+}
+.bean-card_label div {
+	margin: 0;
 }
 
+/* Partial Label */
 .bean-card_label.Partial {
 	width: 85%;
 	justify-content: left;
 	display: flex;
 	align-items: center;
 }
-
 .bean-card_label.Partial p {
 	padding-right: 10%;
 } 
-
 .bean-card_label.Partial:before {
 	content: "";
 	position: absolute;
@@ -710,30 +527,6 @@ a.bean-card_link {
 	transform: rotate(-45deg);
 	right: 9%;
 }
-
-.bean-card_label p, .bean-card-content_label p {
-	margin: 0;
-	line-height: 1.45;
-	font-family: Merriweather,serif;
-}
-
-.bean-card_label div, .bean-card-content_label div {
-	margin: 0;
-}
-
-/* Used for content card */
-.bean-card_body {
-	color: black;
-	padding: 0.5rem 0.5rem 0 0.5rem;
-	border: 3px solid var(--cardinal);
-}
-
-/* Icons */
-div.fontawesome-icon i {
-	font-style: normal;
-}
-
-/* Colors */
 .bean-card_label.Partial:after {
 	content: '';
 	position: absolute;
@@ -745,133 +538,131 @@ div.fontawesome-icon i {
 	transform: rotate(-45deg);
 	right: 9%;
 }
-.bean-card_label.Blue, .bean-card-content_label.Blue {
-	background: var(--midnight);
+
+/* Used for image card */
+.bean-card_img img {
+	width: 100%;
+}
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
+@media screen and (max-width : 991px) {
+	.bean-card_label p {
+		line-height: 1;
+	}
+ }
+
+/* Icons */
+div.fontawesome-icon i {
+	font-style: normal;
 }
 
-.bean-card_label.Green, .bean-card-content_label.Green {
+/* Card Colors */
+.bean-card_label.Green {
 	background: var(--green);
 }
-
 .bean-card_label.Partial.Green {
 	background-color: var(--green);
 }
-
-.bean-card_label.Dk.Red, .bean-card-content_label.Dark.Red {
+.bean-card_label.Dk.Red {
 	background: var(--burgundy);
 }
-
 .bean-card_label.Partial.Dk.Red {
 	background-color: var(--burgundy);
 }
-
-.bean-card_label.Dark.Blue, .bean-card-content_label.Dark.Blue {
+.bean-card_label.Dark.Blue {
 	background: var(--midnight);
 }
-
 .bean-card_label.Partial.Dk.Blue {
 	background-color: var(--midnight);
 }
 
-.bean-card_label.Dark.Green {
-	background: #3E4827;
-}
-
-.bean-card_label.Brown {
-	background: #8b5b29;
-}
-
-.bean-card_label.Grey {
-	background: #707372;
-}
-
-.bean-card_label.Dark.Overlay.Bottom {
-	background: rgba(0,0,0,0.75);
-}
-
-/* Changes color of border depending on selected label color (content cards) */
-.bean-card_body.Blue, .bean-card-content_body.Blue { 
-	border-color: #006ba6;
-}
- 
-.bean-card_body.Green, .bean-card-content_body.Green { 
+/* Changes color of border depending on selected label color) */
+.bean-card_body.Green { 
 	border-color: var(--green); 
 }
-
-.bean-card_body.Dark.Red, .bean-card-content_body.Dark.Red { 
+.bean-card_body.Dark.Red { 
 	border-color: var(--burgundy); 
 }
-
-.bean-card_body.Dark.Blue, .bean-card-content_body.Dark.Blue { 
+.bean-card_body.Dark.Blue { 
 	border-color: var(--midnight); 
 }
 
+/* 
+/* Old Color Styles 
+/* We have to keep these in case someone is using them so they don't break
+/*
+*/
+.bean-card_label.Blue {
+	background: var(--midnight);
+}
+.bean-card_label.Dark.Green {
+	background: #3E4827;
+}
+.bean-card_label.Brown {
+	background: #8b5b29;
+}
+.bean-card_label.Grey {
+	background: #707372;
+}
+.bean-card_label.Dark.Overlay.Bottom {
+	background: rgba(0,0,0,0.75);
+}
+.bean-card_body.Blue{ 
+	border-color: var(--midnight);
+}
 .bean-card_body.Dark.Green { 
 	border-color: #3E4827; 
 }
-
 .bean-card_body.Brown { 
 	border-color: #8b5b29; 
 }
-
 .bean-card_body.Grey { 
 	border-color: #707372; 
 }
-
 .bean-card_body.Dark.Overlay.Bottom { 
 	border-color: rgba(0,0,0,0.75); 
 }
-
-  /* Overlay */
-  /* Overlay needs a minimum height in case there is no image. */
-  .bean-card_label.Dark.Overlay.Left,
-  .bean-card_label.Dark.Overlay.Bottom {
+.bean-card_label.Dark.Overlay.Left,
+.bean-card_label.Dark.Overlay.Bottom {
 	background: #efefef;
 	position: absolute;
 	text-align: left;
 	background: rgba(0,0,0,0.75);
-  }
-
-
-  .bean-card_label.Dark.Overlay.Left {
+}
+.bean-card_label.Dark.Overlay.Left {
 	left: 0; bottom: 20%;
 	max-width: 90%;
-  }
-
-  .bean-card_label.Dark.Overlay.Bottom {
+}
+.bean-card_label.Dark.Overlay.Bottom {
 	left: 0; bottom: 0; right: 0;
 	width: 100%;
-  }
+}
 
 /* Text Size */
-  .fontawesome-icons {
-	font-family: FontAwesome;
-  }
-
-  .bean-card_label.Small, .bean-card-content_label.Small {
+.bean-card_label.Small {
 	font-size: 0.93rem !important;
-  }
-
-  .bean-card_label.Medium, .bean-card-content_label.Medium {
+}
+.bean-card_label.Medium {
 	font-size: 1.5rem !important;
-  }
-
-  .bean-card_label.Large, .bean-card-content_label.Large {
+}
+.bean-card_label.Large {
 	font-size: 2rem !important;
-  }
+}
 
-  .bean-card_label.Small div.fontawesome-icons, .bean-card-content_label.Small div.fontawesome-icons {
+ /* When Icons are in the Label */
+.fontawesome-icons {
+	font-family: FontAwesome;
+} 
+.bean-card_label.Small div.fontawesome-icons {
 	margin-right: 0.5rem;
 	padding-right: 5px;
-  }
-
-  .bean-card_label.Medium div.fontawesome-icons, .bean-card-content_label.Medium div.fontawesome-icons {
+}
+.bean-card_label.Medium div.fontawesome-icons {
 	margin-right: 1rem;
 	padding-right: 5px;
-  }
-
-  .bean-card_label.Large div.fontawesome-icons, .bean-card-content_label.Large div.fontawesome-icons {
+}
+.bean-card_label.Large div.fontawesome-icons {
 	margin-right: 1.25rem;
 	padding-right: 5px;
-  }
-
+}
