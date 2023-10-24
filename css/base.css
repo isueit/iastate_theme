@@ -785,3 +785,16 @@ div[id|='edit-attributes-data-align'] {
 .form-item-attributes-data-align .form-radio {
   margin-bottom: 0;
 }
+
+/* --------------------------------------  */
+/* ## VIEWS
+/* --------------------------------------  */
+.views-view-grid .views-col {
+	max-width: 90%;
+}
+.views-view-grid .views-row {
+	padding: 15px;
+}
+.views-field-description{
+  padding-bottom: 25px;
+}

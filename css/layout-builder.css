@@ -128,6 +128,22 @@ div#edit-actions {
 body #layout-builder-modal {
 	overscroll-behavior: none;
 }
+.layout--content-container--default .layout-content {
+	max-width: 1140px;
+}
+
+/* "Add a new custom block" changes */
+a.inline-block-list__item:hover {
+  text-decoration: none !important;
+}
+a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-description)   {
+  text-decoration: underline;
+}
+.inline-block-list__item-custom-block-description {
+  color: #FFF;
+  font-size: 13px;
+  margin-left: 10px;
+}
 
 /* --------------------------------------  */
 /* ## Responsive
