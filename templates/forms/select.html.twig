@@ -10,7 +10,7 @@
  * @see template_preprocess_select()
  */
 #}
-{% spaceless %}
+{% apply spaceless %}
 
   {% 
     set input_classes = [
@@ -32,4 +32,4 @@
       {% endif %}
     {% endfor %}
   </select>
-{% endspaceless %}
+{% endapply %}

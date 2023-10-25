@@ -223,15 +223,15 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 /* --------------------------------------  */
 /* ## CONFIG TRAY
 /* --------------------------------------  */
-#drupal-off-canvas .layout-selection li {
+#drupal-off-canvas-wrapper .layout-selection li {
   display: block;
   padding-bottom: 1em;
 }
-#drupal-off-canvas .layout-selection li a {
+#drupal-off-canvas-wrapper .layout-selection li a {
   display: block;
   padding-top: 0.55em;
 }
-#drupal-off-canvas .inline-block-create-button {
+#drupal-off-canvas-wrapper .inline-block-create-button {
   display: block;
   padding: 24px;
   padding-left: 44px;
@@ -240,23 +240,23 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
   background: url(/core/misc/icons/bebebe/plus.svg) transparent 16px no-repeat;
   font-size: 16px;
 }
-#drupal-off-canvas .inline-block-create-button,
-#drupal-off-canvas .inline-block-list__item {
+#drupal-off-canvas-wrapper .inline-block-create-button,
+#drupal-off-canvas-wrapper .inline-block-list__item {
   margin: 0 -20px;
   background-color: #444;
 }
-#drupal-off-canvas .inline-block-create-button:hover,
-#drupal-off-canvas .inline-block-list__item:hover {
+#drupal-off-canvas-wrapper .inline-block-create-button:hover,
+#drupal-off-canvas-wrapper .inline-block-list__item:hover {
   background-color: #333;
 }
-#drupal-off-canvas .inline-block-list {
+#drupal-off-canvas-wrapper .inline-block-list {
   margin-bottom: 15px;
 }
-#drupal-off-canvas .inline-block-list__item {
+#drupal-off-canvas-wrapper .inline-block-list__item {
   display: block;
   padding: 15px 0 15px 25px;
 }
-#drupal-off-canvas button, #drupal-off-canvas .button {
+#drupal-off-canvas-wrapper button, #drupal-off-canvas-wrapper .button {
 	border: #006ba6;
 	padding: 7px;
 	background: #006ba6;
@@ -264,7 +264,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	border-radius: 3px;
 	margin: 0 0 3px;
 }
-#drupal-off-canvas button:hover, #drupal-off-canvas input[type="reset"]:hover, #drupal-off-canvas input[type="submit"]:hover, #drupal-off-canvas input[type="button"]:hover {
+#drupal-off-canvas-wrapper button:hover, #drupal-off-canvas-wrapper input[type="reset"]:hover, #drupal-off-canvas-wrapper input[type="submit"]:hover, #drupal-off-canvas-wrapper input[type="button"]:hover {
 	background-color: #ffffff;
 	border-color: #006ba6;
 	color: #006ba6;
@@ -289,7 +289,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 }
 
 /* Highlight the active block in the Move Block dialog. */
-#drupal-off-canvas .layout-builder-components-table__block-label--current {
+#drupal-off-canvas-wrapper .layout-builder-components-table__block-label--current {
   padding-left: 17px;
   border-left: solid 5px;
 }
@@ -300,7 +300,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
  *   maintain the background color of their container when they are hovered
  *   over or are inside the active row.
  */
-#drupal-off-canvas .layout-builder-components-table__row .form-item {
+#drupal-off-canvas-wrapper .layout-builder-components-table__row .form-item {
   background-color: transparent;
 }
 .layout-builder__region-label,

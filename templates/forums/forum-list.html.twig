@@ -65,10 +65,13 @@
         {# Second Column - Board Name #}
         <td{% if forum.is_container == true %} colspan="4"{% endif %}>
         
-        {% for i in 1..forum.depth if forum.depth > 0 %}
-          <div class="isu-forum_indented">
-        {% endfor %}
-          <div><a href="{{ forum.link }}">{{ forum.label }}</a></div>
+        {% if forum.depth > 0 %}
+          {% for i in 1..forum.depth %}
+            <div class="isu-forum_indented">
+          {% endfor %}
+        {% endif %}  
+	
+	<div><a href="{{ forum.link }}">{{ forum.label }}</a></div>
         
         {% if forum.description.value %}
           <div>{{ forum.description.value }}</div>
