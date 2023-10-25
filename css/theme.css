@@ -101,12 +101,6 @@ body,
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1140px;
-	}
-}
-
 @media screen and (max-width : 991px) {
   .isu-col-header-first {
    text-align: start;
@@ -985,6 +979,20 @@ a.isu-dropdown-submenu {
 .isu-region_sidebar-second .h3 {
 	border-bottom: 1px solid #ddd;
 }
+div#block-iastate-theme-local-tasks {
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 10px;
+  max-width: 955px;
+  margin: auto;
+}
+div#block-iastate-theme-page-title--2 {
+  padding-left: 6%;
+  padding-right: 6%;
+  max-width: 955px;
+  margin: auto;
+}
+
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
@@ -992,22 +1000,6 @@ a.isu-dropdown-submenu {
   .isu-page-column {
 		max-width: 98%;
 	}
-}
-
-@media screen and (max-width : 991px) {
- div#block-iastate-theme-page-title--2 {
-   padding-left: 6%;
-   padding-right: 6%;
-   max-width: 955px;
-   margin: auto;
- }
- div#block-iastate-theme-local-tasks {
-   padding-left: 6%;
-   padding-right: 6%;
-   padding-top: 10px;
-   max-width: 955px;
-   margin: auto;
- }
 }
 
 /* --- ## Submitted By --- */
