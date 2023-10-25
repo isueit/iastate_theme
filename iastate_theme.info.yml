@@ -2,7 +2,7 @@ name: IASTATE Extension Theme
 description: Drupal 8 theme for Iowa State University Extension and Outreach websites
 type: theme
 core_version_requirement: ^8 || ^9 || ^10
-base theme: stable
+base theme: stable9
 libraries: 
   - iastate_theme/global-css
   - iastate_theme/global-js
@@ -38,5 +38,5 @@ libraries-override:
   layout_builder/drupal.layout_builder:
     css:
       theme:
-        /core/themes/stable/css/layout_builder/layout-builder.css: /themes/custom/iastate_theme/css/layout-builder.css
+        /core/themes/stable9/css/layout_builder/layout-builder.css: /themes/custom/iastate_theme/css/layout-builder.css
  
