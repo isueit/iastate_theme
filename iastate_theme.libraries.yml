@@ -10,7 +10,6 @@ global-css:
       css/theme.css: {}
       css/ext_iastate.css: {}
       css/isu-social.css: {}
-      css/isu-links_block.css: {}
       css/utility.css: {}
       css/print.css: { media: print }
 
@@ -21,7 +20,7 @@ global-js:
     js/isu-responsivetables.js: {}
     js/isu-main-menu.js: {}
     js/bootstrap/util.js: {}
-  dependencies: 
+  dependencies:
     - core/jquery
     - core/drupal
 
@@ -29,8 +28,10 @@ global-js:
 fonts:
   css:
     theme:
-      '//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css': { type: external }
-      'https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i&subset=latin-ext': { type: external }
+      "//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css":
+        { type: external }
+      "https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i&subset=latin-ext":
+        { type: external }
 
 # Icons
 font-awesome:
@@ -42,16 +43,16 @@ font-awesome:
     gpl-compatible: true
   css:
     theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css': { type: external, minified: true }
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css":
+        { type: external, minified: true }
 
 academicons:
   remote: https://jpswalsh.github.io/academicons/
   version: 1.8.6
-  license: 
+  license:
     name: MIT
     url: https://opensource.org/licenses/mit-license.html
     gpl-compatible: true
-  css: 
-    theme: 
+  css:
+    theme:
       css/icons/academicons-1.8.6/css/academicons.min.css: { minified: true }
-

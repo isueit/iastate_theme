@@ -362,7 +362,8 @@ body,
       margin-left: 0.5rem;
       padding-top: 0px;
       padding-bottom: 0px;
-    } 
+    }
+  } 
 
 @media screen and (max-width : 1199px) {
   .isu-wordmark-sitename a {
@@ -656,11 +657,11 @@ div#edit-search-broadness {
   margin-left: 0.5rem;
   color: #ffffff;
 }
-  .isu-sitelinks-link:hover,
-  .isu-sitelinks-link:focus {
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.25);
-  }
+.isu-sitelinks-link:hover,
+.isu-sitelinks-link:focus {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+}
 
 /* Large */
 @media screen and (min-width: 992px) {
@@ -835,7 +836,6 @@ div#edit-search-broadness {
   position: absolute;
   margin-top: -47px;
 }
-
 a.isu-dropdown-submenu {
   display: block;
   background: #fff;
@@ -1061,8 +1061,8 @@ span.authored-on {
 }
 /* The Full Pager uses .active for the current page */
 .page-item.active .isu-page-link { /* .page-item via Drupal 8 */
-  background-color: #c8102e;
-  border-color: #c8102e
+  background-color: var(--cardinal);
+  border-color: var(--cardinal);
 }
 .page-item.active .isu-page-link:hover {
   background-color: #a00606;
@@ -1345,7 +1345,7 @@ abbr[title].tabledrag-changed { /* Class via Drupal 8 */
 .form-required:after { /* .form-required from Drupal 8 */
   content: "*";
   margin-left: 0.25rem;
-  color: #c8102e;
+  color: var(--cardinal);
 }
 
 /* If a form-group is in a table */
@@ -1364,7 +1364,7 @@ details {
   max-width: 100%;
 }
 .isu-form-control.error { /* .error via Drupal 8 */
-  border: 1px solid #c8102e;
+  border: 1px solid var(--cardinal);
 }
 
 .container-inline.form-radio {
@@ -1424,7 +1424,6 @@ details {
   /* Hide parentheses around 'Edit summary' button */
   color: transparent;
 }
-
 .field--widget-text-textarea-with-summary .link-edit-summary {
   /*
  * Duplicates Bootstrap 4 button classes: btn btn-sm and
@@ -1451,11 +1450,11 @@ details {
   background-color: #ffffff;
   border-color: #6c757d;
 }
-  .field--widget-text-textarea-with-summary .link-edit-summary:hover {
-    color: #ffffff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
+.field--widget-text-textarea-with-summary .link-edit-summary:hover {
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
 
 .text-summary-wrapper { /* class via Drupal 8 */
   margin-bottom: 1rem;
@@ -1679,7 +1678,6 @@ a.tabledrag-handle .handle {
   user-select: none;
   border: 1px solid transparent;
   transition: all 0.15s ease-in-out;
-
   background-image: none;
   /* btn-sm */
   padding: 0.25rem 0.5rem;
@@ -1693,11 +1691,11 @@ a.tabledrag-handle .handle {
   /* Modification */
   margin-bottom: 0.5rem;
 }
-  .tabledrag-toggle-weight:hover {
-    color: #ffffff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
+.tabledrag-toggle-weight:hover {
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
 
 /* --- ## Vertical Tabs --- */
 /* Overrides vertical-tabs.module.css */
@@ -1839,12 +1837,6 @@ a.tabledrag-handle .handle {
 	margin-right: 0px;
 	margin-left: 0px;
 	color: var(--burgundy);
-}
-.isu-social-menu-footer:before {
-	content: "";
-	position: absolute;
-	width: 14.125rem;
-	border-bottom: 0.2rem solid var(--gold);
 }
 .isu-social-menu-footer:before {
 	content: "";
