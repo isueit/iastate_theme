@@ -2,8 +2,8 @@ name: IASTATE Extension Theme
 description: Drupal 8 theme for Iowa State University Extension and Outreach websites
 type: theme
 core_version_requirement: ^8 || ^9 || ^10
-base theme: stable9
-libraries: 
+base theme: stable
+libraries:
   - iastate_theme/global-css
   - iastate_theme/global-js
   - iastate_theme/fonts
@@ -21,17 +21,17 @@ stylesheets-remove:
 regions:
   header_first: "Header First"
   header_second: "Header Second"
-  menu_navbar: 'Menu Navbar'
-  post_nav: 'Post Nav'
-  breadcrumbs: 'Breadcrumbs'
-  content: 'Page Content'
-  sidebar_first: 'Sidebar First'
-  sidebar_second: 'Sidebar Second'
-  footer_first: 'Footer First'
-  footer_second: 'Footer Second'
-  footer_third: 'Footer Third'
-  footer_fourth: 'Footer Fourth'
-  sign_off: 'Sign Off'
+  menu_navbar: "Menu Navbar"
+  post_nav: "Post Nav"
+  breadcrumbs: "Breadcrumbs"
+  content: "Page Content"
+  sidebar_first: "Sidebar First"
+  sidebar_second: "Sidebar Second"
+  footer_first: "Footer First"
+  footer_second: "Footer Second"
+  footer_third: "Footer Third"
+  footer_fourth: "Footer Fourth"
+  sign_off: "Sign Off"
 logo: images/isu-wordmark-red.svg
 
 libraries-override:
@@ -39,4 +39,3 @@ libraries-override:
     css:
       theme:
         /core/themes/stable9/css/layout_builder/layout-builder.css: /themes/custom/iastate_theme/css/layout-builder.css
- 
