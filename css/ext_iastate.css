@@ -124,16 +124,6 @@
 	}
 }
 
-@media screen and (max-width : 1199px) {
-	#gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
-		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
-		font-size: 18px !important;
-		font-weight: 700;
-		text-decoration: underline;
-	}
-}
-
 /* --------------------------------------  */
 /* ## Banner Slider
 /* -------------------------------------  */
