@@ -93,7 +93,7 @@
 /* --------------------------------------  */
 /* ## GTRANSLATE RESPONSIVE
 /* --------------------------------------  */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 992px) {
 	#gtranslate_selector {	
 		width: 100%;
 	}
@@ -319,7 +319,7 @@ img.four-zero-four {
 	}
  }
 
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
 	.news-attachment table  {
 		width: 10% !important;
 	}
@@ -546,7 +546,7 @@ a.bean-card_link {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
 	.bean-card_label p {
 		line-height: 1;
 	}

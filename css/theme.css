@@ -101,7 +101,7 @@ body,
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   .isu-col-header-first {
    text-align: start;
   }
@@ -230,11 +230,11 @@ body,
   }
 }
 
-@media screen and (max-width : 991px) {
-	/*change navbar width to fit screen*/
-	.isu-site-navbar div {
-		max-width: inherit;
+@media screen and (max-width : 1199px) {
+  .isu-col-header-second {
+		position: absolute;
 	}
+  
   /*Get rid of margins for isu site nav bar*/
   .isu-row-site-navbar{
     margin-top: 0px;
@@ -247,12 +247,6 @@ body,
 	  margin-left: 20px;
 		padding: 20px;
 		float: right;
-	}
-}
-
-@media screen and (max-width : 1199px) {
-  .isu-col-header-second {
-		position: absolute;
 	}
 }
 
@@ -341,7 +335,7 @@ body,
     font-size: 1.15rem;
   }
 }
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   .isu-wordmark-logo {
     max-width: 45%;
     margin-top: 5%;
@@ -354,12 +348,6 @@ body,
     }
   } 
 
-@media screen and (max-width : 1199px) {
-  .isu-wordmark-sitename a {
-		display: none;
-		max-width: 0;
-	}
-}
 /* --- ## Search --- */
 /*
  * There are two search bars in this theme, one in the Site Navbar, the other
@@ -713,17 +701,19 @@ div#edit-search-broadness {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
 		margin-left: 20px;
 		padding: 20px;
 		float: right;
 	}
-}
-@media screen and (max-width : 1199px) {
   .isu-menu-navbar {
 		background: transparent;
+    display: table;
 	}
+  .container.isu-menu-navbar_container {
+    display: table;
+  }
   .navbar-expand-lg .navbar-nav .nav-link:hover {
 		height: auto;
 	}
@@ -740,6 +730,9 @@ div#edit-search-broadness {
 		min-height: 1000px;
 		min-width: 100vw;
 	}
+  .isu-menu-navbar_wrap {
+    width: 100%;
+  }
   .navbar-expand-lg .navbar-nav .nav-link {
 		display: block;
 		border: 0.125rem solid #fff;
@@ -850,14 +843,12 @@ a.isu-dropdown-submenu {
   }
 }
 /* Mobile Dropdown Toggles */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   	/* Adjust submenu alignment for condensed menu */
 	.isu-dropdown-submenu {
 		top: 0;
 		margin-top: 0;
 	}
-}
-@media (max-width: 992px) {
   .isu-dropdown-toggle:after {
     content: '';
   }
@@ -885,8 +876,6 @@ a.isu-dropdown-submenu {
   .isu-dropdown-item {
 	background-color: #eeeeee !important; 
   }
-}
-@media screen and (max-width : 1199px) {
 	.isu-dropdown-toggle_mobile .svg-inline--fa {
 		color: var(--burgundy);
 		border: none;
@@ -1002,7 +991,7 @@ div#block-iastate-theme-local-tasks {
 	}
 }
 
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
  div#block-iastate-theme-page-title--2 {
    padding-left: 6%;
    padding-right: 6%;
@@ -1920,7 +1909,7 @@ a.tabledrag-handle .handle {
 		margin-left: 0px;
 	}
 }
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   .isu-footer-logo {
 		margin-left: -8%;
 	}
@@ -1945,12 +1934,11 @@ a.tabledrag-handle .handle {
   .isu-copyright {
 		padding-bottom: 20px;
 	}
-}
-@media screen and (max-width : 1199px) {
   .isu-social-menu-footer{
 		margin-left: 10px;
 	}
 }
+
 /* --------------------------------------  */
 /* ## BOOK
 /* --------------------------------------  */
