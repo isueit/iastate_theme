@@ -105,6 +105,9 @@ body,
   .isu-col-header-first {
    text-align: start;
   }
+  .container {
+    max-width: 1140px;
+  }
 }
 
 /* --------------------------------------  */
@@ -230,11 +233,19 @@ body,
   }
 }
 
+@media screen and (max-width : 991px) {
+  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
+	  margin-left: 20px;
+		padding: 20px;
+		float: right;
+	}
+}
+
 @media screen and (max-width : 1199px) {
   .isu-col-header-second {
 		position: absolute;
 	}
-  
+
   /*Get rid of margins for isu site nav bar*/
   .isu-row-site-navbar{
     margin-top: 0px;
@@ -243,11 +254,6 @@ body,
   .isu-col-header-first {
 		text-align: start;
 	 }
-  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
-	  margin-left: 20px;
-		padding: 20px;
-		float: right;
-	}
 }
 
 /* --- ## ISU Wordmark --- */
@@ -702,11 +708,6 @@ div#edit-search-broadness {
 /* ## Responsive
 /* --------------------------------------  */
 @media screen and (max-width : 1199px) {
-  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
-		margin-left: 20px;
-		padding: 20px;
-		float: right;
-	}
   .isu-menu-navbar {
 		background: transparent;
     display: table;
@@ -842,6 +843,19 @@ a.isu-dropdown-submenu {
     display: block;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .isu-dropdown-menu {
+		background-color: var(--cardinal);
+		left: -10vw;
+		top: 0;
+		height: 500px;
+		width: 120vw;
+		padding-left: 10vw;
+		padding-bottom: 2px;
+		box-shadow: none;
+	}
+}
 /* Mobile Dropdown Toggles */
 @media screen and (max-width : 1199px) {
   	/* Adjust submenu alignment for condensed menu */
@@ -888,16 +902,6 @@ a.isu-dropdown-submenu {
 	}
 	.navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:last-child .isu-dropdown-menu {
 		padding-left: 35vw;
-	}
-  .isu-dropdown-menu {
-		background-color: var(--cardinal);
-		left: -10vw;
-		top: 0;
-		height: 500px;
-		width: 120vw;
-		padding-left: 10vw;
-		padding-bottom: 2px;
-		box-shadow: none;
 	}
 	.isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
 		content: "\f100";
@@ -1909,6 +1913,12 @@ a.tabledrag-handle .handle {
 		margin-left: 0px;
 	}
 }
+@media screen and (max-width: 991px) {
+  .isu-footer .col-md-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
 @media screen and (max-width : 1199px) {
   .isu-footer-logo {
 		margin-left: -8%;
@@ -1916,10 +1926,6 @@ a.tabledrag-handle .handle {
   .isu-footer {
 		padding-left: 2rem;
 		padding-right: 2rem;
-	}
-	.isu-footer .col-md-6 {
-		flex: 0 0 50%;
-		max-width: 50%;
 	}
 	.isu-footer .isu-sign-off_wrapper {
 		background: transparent;
