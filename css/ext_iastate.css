@@ -363,6 +363,10 @@ img.four-zero-four {
 	}
 }
 
+.layout--color--white a {
+  color: var(--gold);
+}
+
 /* --------------------------------------  */
 /* ## EVENTS WITH WHITE BACKGROUND
 /* ## USED ON NON-COUNTY SITES
