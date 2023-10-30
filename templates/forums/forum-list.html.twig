@@ -69,13 +69,13 @@
           {% for i in 1..forum.depth %}
             <div class="isu-forum_indented">
           {% endfor %}
-        {% endif %}  
-	
-	<div><a href="{{ forum.link }}">{{ forum.label }}</a></div>
+        {% endif %}
+
+        <div><a href="{{ forum.link }}">{{ forum.label }}</a></div>
         
         {% if forum.description.value %}
           <div>{{ forum.description.value }}</div>
-        {% endif %} 
+        {% endif %}
         </td>
 
         {% if forum.is_container == false %}
