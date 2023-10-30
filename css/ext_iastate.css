@@ -234,6 +234,27 @@ img.four-zero-four {
 	background: var(--cardinal);
 }
 
+  /* --------------------------------------  */
+  /* ## STAFF VIEWS
+  /* --------------------------------------  */
+  .views-field.views-field-field-staff-profile-pref-phone {
+    margin: 12px;
+  }
+  .views-field.views-field-field-staff-profile-pref-phone h2 {
+    padding-bottom: 0px;
+  }
+  img.staff_profile_smugmug {
+    max-width: 100px;
+    margin: .75rem;
+    float: left;
+  }
+  
+  /* This style is for staff views before they were changed to grid, eventually can be deleted */
+  td.staff-view-smugmug img {
+    max-width: 100px;
+    margin: 10px 0px;
+  }
+
 /* --------------------------------------  */
 /* ## NEWS HOMEPAGE BLOCK
 /* --------------------------------------  */
