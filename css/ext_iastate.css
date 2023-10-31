@@ -30,61 +30,22 @@
 /* --------------------------------------  */
 /* ## GOOGLE TRANSLATE
 /* --------------------------------------  */
-#block-gtranslate {
-	vertical-align: middle;
+#block-iastate-theme-gtranslate {
 	text-align: right;
 	grid-row-end: 3;
-	margin-top: -13px;
+	margin-top: 1px;
 }
-.gtranslate {
-	display: inline;
-}
-#gtranslate_selector {
+.gt_selector {
 	font-family: Nimbus sans,sans-serif;
-	padding-left: 2em;
-	height: 2em;
-	position: relative;
-	z-index: 2;
+	padding-left: 1.7em;
+	width: 100px;
 	border: none;
 	color: var(--burgundy);
-	background-color: #fff0;
-	margin-bottom: 10px;
-	width: 175px;
-	margin: 10px auto;
 	transition: all 0.2s ease-in-out;
 }
-#gtranslate_selector:hover {
+.gt_selector:hover {
 	color: var(--cardinal);
 	cursor: pointer;
-}
-.gtranslate:before {
-	content: '\f0ac';
-	display: inline-block;
-	position: absolute;
-	margin-top: 10px;
-	margin-left: 10px;
-	border-radius: 0;
-	color: var(--burgundy);
-	font-family: FontAwesome;
-	font-size: 1.45em;
-	height: 0em;
-	width: 0em;
-	vertical-align: middle;
-	transition: all 0.2s ease-in-out;
-}
-.gtranslate:hover:before {
-	content: '\f0ac';
-	display: inline-block;
-	position: absolute;
-	margin-top: 10px;
-	margin-left: 10px;
-	border-radius: 0;
-	color: var(--cardinal);
-	font-size: 1.45em;
-	height: 0;
-	width: 0;
-	vertical-align: middle;
-	transition: all 0.2s ease-in-out;
 }
 .isu-socials-responsive #block-gtranslate--2 {
 	display: none;
@@ -94,16 +55,10 @@
 /* ## GTRANSLATE RESPONSIVE
 /* --------------------------------------  */
 @media screen and (max-width : 991px) {
-	#gtranslate_selector {	
+	.gt_selector {	
 		width: 100%;
 	}
-	#gtranslate_selector:hover {
-		color: var(--gold);
-	}
-	.gtranslate::before {
-		color: #fff;
-	}
-	.gtranslate:hover::before {
+	.gt_selector:hover {
 		color: var(--gold);
 	}
 	.isu-socials-responsive #block-gtranslate--2 {
@@ -115,7 +70,7 @@
 	#block-gtranslate--2 {
 		display: none;
 	}
-	#gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
+	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
 		font-family: Nimbus Sans, sans-serif;
 		font-size: 18px !important;
@@ -125,7 +80,7 @@
 }
 
 @media screen and (max-width : 1199px) {
-	#gtranslate_selector, .isu-social-menu-red #dropdownMenuButton {
+	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
 		font-family: Nimbus Sans, sans-serif;
 		font-size: 18px !important;
