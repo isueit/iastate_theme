@@ -190,6 +190,9 @@ button.btn {
 .btn-link:hover { /* Overrides bootstrap.min.css */
   color: #006BA6; /* ISU brand standard */
 }
+button:focus {
+	outline: 5px auto #f1be48;
+}
 
 /* Green Button */
 .btn-success { /* Overrides bootstrap.min.css */

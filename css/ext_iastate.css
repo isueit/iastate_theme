@@ -270,6 +270,9 @@ img.four-zero-four {
 .card a {
 	text-decoration: none;
 }
+.card-body p {
+	color: #000;
+}
 .card-footer {
 	background-color: transparent;
 	padding: 1.75rem 1.25rem;

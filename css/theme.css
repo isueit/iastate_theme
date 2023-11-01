@@ -563,7 +563,7 @@ div#edit-search-broadness {
   display: none;
   width: 2.5rem;
   padding: 0;
-  color: var(--cardinal);
+  color: #676767;
   background-color: #ffffff;
 }
 .isu-site-navbar .isu-search__search-btn-text {
@@ -749,6 +749,13 @@ div#edit-search-broadness {
  * Our version is based on the black ISU Navbar's method, which establishes
  * a consistent behavior. Javascript can be found in isu-main-menu.js.
  */
+.isu-dropdown {
+  position: relative;
+}
+.navbar-nav > li:last-child .isu-dropdown-menu, .navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(3) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(4) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(5) .isu-dropdown-menu {
+  left: auto;
+  right: 0;
+}
 .isu-dropdown-toggle:after {
   content: "\f107";
   display: inline-block;
