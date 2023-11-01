@@ -9,7 +9,7 @@ libraries:
   - iastate_theme/fonts
   - iastate_theme/font-awesome
   - iastate_theme/academicons
-ckeditor5-stylesheets:
+ckeditor_stylesheets:
   - css/bootstrap/bootstrap.min.css
   - css/base.css
   - css/ext_iastate.css
