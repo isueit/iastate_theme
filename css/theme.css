@@ -107,9 +107,10 @@ body,
   }
 }
 
-@media screen and (max-width : 1199px) {
+@media screen and (max-width : 992px) {
   .container {
-    max-width: 1140px;
+    max-width: 960px;
+    padding-left: 2%;
   }
 }
 
@@ -217,12 +218,6 @@ body,
   }
 
 @media screen and (min-width: 992px) {
-  .isu-site-navbar {
-    padding: 1rem 0;
-  }
-  .isu-menu-navbar_toggler {
-    display: none;
-  }
   .isu-col-header-first {
     text-align: -webkit-match-parent;
   }
@@ -237,14 +232,14 @@ body,
 }
 
 @media screen and (max-width : 1199px) {
-  .isu-col-header-second {
-		position: relative;
-	}
   button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
 	  margin-left: 20px;
 		padding: 20px;
 		float: right;
 	}
+  .isu-col-header-second {
+    position: absolute;
+  }
 
   /*Get rid of margins for isu site nav bar*/
   .isu-row-site-navbar{
@@ -254,8 +249,11 @@ body,
   .isu-col-header-first {
 		text-align: start;
 	 }
-   .isu-site-navbar {
-    padding: 1rem 0 0 0;
+}
+
+@media screen and (min-width : 1200px) {
+.isu-menu-navbar_toggler {
+  display: none;
   }
 }
 
@@ -283,7 +281,7 @@ body,
   }
 .isu-wordmark-logo {
   width: 100%;
-  max-width: 250px;
+  max-width: 365px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -335,17 +333,12 @@ body,
  }
 }
 
-@media screen and (max-width : 991px) {
-  .isu-wordmark-logo {
-    max-width: 50%;
-    margin-top: 0%;
-  }
-}
 @media screen and (max-width : 1199px) {
-  .isu-wordmark-logo {
-    max-width: 50%;
-    margin-top: 2%;
-  }	 
+  .isu-wordmark-sitename {
+    width: 50%;
+    margin-top: -1%;
+
+  }
 }
 
 /* --- ## Search --- */
@@ -458,7 +451,7 @@ div#edit-search-broadness {
     width: 400px;
   }
   .isu-region_header-second {
-		padding-right: 5%;
+		padding-right: 2%;
 	}
   /*Change search text*/
   .isu-search_toggler-label {
@@ -497,10 +490,6 @@ div#edit-search-broadness {
 	.isu-search_toggler svg path ~ .isu-search_toggler_open {
 		fill: var(--cardinal);
 	}
-	.form-control.isu-form-control_search.isu-search__search-field.form-search {
-		border: none;
-		border-radius: 0;
-	}
 	.form-control.isu-form-control_search.isu-search__search-field.form-search::placeholder {
 		visibility: hidden;
 	}
@@ -509,9 +498,21 @@ div#edit-search-broadness {
 		float: right;
 	}
 }
+@media screen and (max-width: 991px) {
+	.form-control.isu-form-control_search.isu-search__search-field.form-search {
+		border: none;
+		border-radius: 0;
+	}
+  .isu-region_header-second {
+    display: none; 
+  }
+}
 @media screen and (max-width : 1199px) {
   .isu-search {
     display: none;
+  }
+  .isu-region_header-second {
+    padding-right: 5%;
   }
 }
 
@@ -590,6 +591,13 @@ div#edit-search-broadness {
     display: inline-block;
   }
 }
+@media screen and (max-width: 991px) {
+.isu-site-navbar div {
+  max-width: inherit;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+} 
 
 /* Toggle the search on mobile */
 
@@ -707,6 +715,7 @@ div#edit-search-broadness {
 @media screen and (max-width : 1199px) {
   .isu-menu-navbar {
 		background: transparent;
+    padding: 0rem;
 	}
   .navbar-expand-lg .navbar-nav .nav-link:hover {
 		height: auto;
@@ -723,6 +732,7 @@ div#edit-search-broadness {
 		padding: 2rem;
 		min-height: 1000px;
 		min-width: 100vw;
+    margin-top: 1.5%;
 	}
   .isu-menu-navbar_wrap {
     width: 100%;
@@ -742,6 +752,17 @@ div#edit-search-broadness {
 		text-decoration: none;
 		min-width: 100%;
 	}
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+}
+
+@media screen and (min-width : 1200px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    -ms-flex-direction: row;
+  }
 }
 /* --- Dropdowns --- */
 /* We are not using Bootstrap 4's Dropdown utility because it is not 
@@ -835,10 +856,6 @@ a.isu-dropdown-submenu {
 }
 /* Large */
 @media screen and (min-width: 992px) {
-  .isu-menu-navbar_collapse {
-    max-height: 100vh;
-    overflow: visible;
-  }
   .isu-dropdown:hover > .isu-dropdown-menu {
     display: block;
   }
@@ -939,6 +956,10 @@ a.isu-dropdown-submenu {
 		left: 0.5rem;
 		right: 0;
 	}
+  .isu-menu-navbar_collapse {
+    max-height: 100vh;
+    overflow: visible;
+  }
 }
 /* --------------------------------------  */
 /* ## PAGE
@@ -993,16 +1014,6 @@ div#block-iastate-theme-local-tasks {
   .isu-page-column {
 		max-width: 98%;
 	}
-}
-
-@media screen and (max-width : 991px) {
-  div#block-iastate-theme-local-tasks, div#block-iastate-theme-content--2 {
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 10px;
-    max-width: 985px;
-    margin: auto;
-  }
 }
 
 @media screen and (max-width : 1199px) {
@@ -1877,8 +1888,8 @@ a.tabledrag-handle .handle {
 
 /* --- ## SIGN OFF --- */
 .isu-footer .isu-sign-off_wrapper {
-  background: #ffffff;
-  color: #000000;
+  background: var(--burgundy);
+  color: #fff;
   font-weight: revert;
   margin-bottom: -2rem;
   padding: 1rem 0;
@@ -1887,11 +1898,11 @@ a.tabledrag-handle .handle {
   font-size: 1rem;
 }
 .isu-sign-off_wrapper a {
-  color:#000000;
+  color:#fff;
   font-weight: 400;
 }
 .isu-sign-off_wrapper a:hover {
-  color:#000000;
+  color: var(--gold);
 }
 .isueo-staff-links ul {
 	list-style: none;
@@ -1902,9 +1913,6 @@ a.tabledrag-handle .handle {
 }
 .isueo-staff-links li:nth-child(2):after {
 	content: "|";
-}
-.isu-sign-off_wrapper a:hover {
-  color:var(--burgundy);
 }
 /* --------------------------------------  */
 /* ## Responsive
@@ -1926,12 +1934,14 @@ a.tabledrag-handle .handle {
 @media screen and (max-width: 991px) {
   .isu-footer .col-md-6 {
 		flex: 0 0 50%;
-		max-width: 50%;
+		max-width: 75%;
 	}
 }
+
 @media screen and (max-width : 1199px) {
   .isu-footer-logo {
-		margin-left: -8%;
+		margin-left: -6%;
+    width: 100%;
 	}
   .isu-footer {
 		padding-left: 2rem;
@@ -1950,6 +1960,24 @@ a.tabledrag-handle .handle {
   .isu-copyright {
 		padding-bottom: 20px;
 	}
+  footer .row, .col-lg-3 {
+    display: grid; 
+    max-width: 100%;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
+    order: 1;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(2) {
+    order: 4; 
+    grid-column: span 4;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(3) {
+    order: 2;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(4) {
+    order: 3;
+    justify-content: space-evenly;
+  }
 }
 
 /* --------------------------------------  */

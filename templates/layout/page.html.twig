@@ -58,68 +58,69 @@
 
 <div class="isu-page-wrap">
 
-{# The ISU Navbar may be disabled in theme settings #}
-{% if isu_navbar %}
-  {% include '@iastate_theme/parts/isu-navbar.html.twig' %}
-{% endif %}
+		{# The ISU Navbar may be disabled in theme settings #}
+		<div class="isu_header_wrapper">
+    {% if isu_navbar %}
+			{% include '@iastate_theme/parts/isu-navbar.html.twig' %}
+		{% endif %}
 
-{# site-navbar.html.twig contains branded ISU header #}
-{% include '@iastate_theme/parts/site-navbar.html.twig' %}
+		{# site-navbar.html.twig contains branded ISU header #}
+		{% include '@iastate_theme/parts/site-navbar.html.twig' %}
 
-{# menu-navbar.html.twig contains the main menu #}
-{% include '@iastate_theme/parts/menu-navbar.html.twig' %}
+		{# menu-navbar.html.twig contains the main menu #}
+		{% include '@iastate_theme/parts/menu-navbar.html.twig' %}
+	</div>
 
-<main class="isu-main" role="main">
+	<main class="isu-main" role="main">
 
-  <a id="main-content" tabindex="-1"></a>
+		<a id="main-content" tabindex="-1"></a>
 
-  {% if page.post_nav %}
-    {{ page.post_nav }}
-  {% endif %}
+		{% if page.post_nav %}
+			{{ page.post_nav }}
+		{% endif %}
 
-    {{ page.breadcrumbs }}
+		{{ page.breadcrumbs }}
 
-  <div class="container">
-    <div class="row">
+		<div class="container">
+			<div class="row">
 
-      {% if page.sidebar_first|render and page.sidebar_second|render %}
-        {% set content_classes = 'col-lg-6' %}
-        {% set sidebar_classes = 'col-lg-3' %}
-      {% elseif page.sidebar_first|render or page.sidebar_second|render %}
-        {% set content_classes = 'col-lg-9' %}
-        {% set sidebar_classes = 'col-lg-3' %}
-      {% else %}
-        {% set content_classes = 'col-lg-12' %}
-      {% endif %}
+				{% if page.sidebar_first|render and page.sidebar_second|render %}
+					{% set content_classes = 'col-lg-6' %}
+					{% set sidebar_classes = 'col-lg-3' %}
+				{% elseif page.sidebar_first|render or page.sidebar_second|render %}
+					{% set content_classes = 'col-lg-9' %}
+					{% set sidebar_classes = 'col-lg-3' %}
+				{% else %}
+					{% set content_classes = 'col-lg-12' %}
+				{% endif %}
 
-      {% if page.sidebar_first|render %}
-        <div class="isu-page-column isu-sidebar isu-sidebar-first {{sidebar_classes}}">
-          <aside role="complementary">
-            {{ page.sidebar_first }}
-          </aside>
-        </div>
-      {% endif %}
+				{% if page.sidebar_first|render %}
+					<div class="isu-page-column isu-sidebar isu-sidebar-first {{sidebar_classes}}">
+						<aside role="complementary">
+							{{ page.sidebar_first }}
+						</aside>
+					</div>
+				{% endif %}
 
-      {% if page.content|render %}
-        <div class="isu-page-column isu-content-column {{content_classes}}">
-          {{ page.content }}
-        </div>
-      {% endif %}
+				{% if page.content|render %}
+					<div class="isu-page-column isu-content-column {{content_classes}}">
+						{{ page.content }}
+					</div>
+				{% endif %}
 
-      {% if page.sidebar_second|render %}
-        <div class="isu-page-column isu-sidebar isu-sidebar-second {{sidebar_classes}}">
-          <aside role="complementary">
-            {{ page.sidebar_second }}
-          </aside>
-        </div>
-      {% endif %}
+				{% if page.sidebar_second|render %}
+					<div class="isu-page-column isu-sidebar isu-sidebar-second {{sidebar_classes}}">
+						<aside role="complementary">
+							{{ page.sidebar_second }}
+						</aside>
+					</div>
+				{% endif %}
 
-    </div>
-  </div>
+			</div>
+		</div>
 
-</main>
+	</main>
 
-{% include '@iastate_theme/parts/footer.html.twig' %}
+	{% include '@iastate_theme/parts/footer.html.twig' %}
 
 </div>
-

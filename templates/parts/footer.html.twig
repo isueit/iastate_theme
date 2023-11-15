@@ -15,107 +15,110 @@
 
 <footer role="contentinfo" class="isu-footer" aria-label="Footer">
 
-<script type="text/javascript">
-/*<![CDATA[*/
-(function() {
-var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+	<script type="text/javascript">
+		/*<![CDATA[*/
+(function () {
+var sz = document.createElement('script');
+sz.type = 'text/javascript';
+sz.async = true;
 sz.src = '//siteimproveanalytics.com/js/siteanalyze_37570.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(sz, s);
 })();
 /*]]>*/
-</script>
+	</script>
 
-  <div class="container">
-    <div class="row">
+	<div class="container">
+		<div class="row">
 
-      <div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="col-sm-6 col-md-6 col-lg-3">
 
-        {% if page.footer_first %}
-          {{ page.footer_first }}
-        {% endif %}
+				{% if page.footer_first %}
+					{{ page.footer_first }}
+				{% endif %}
 
-		{% if default_footer_logo %}
-		  {% set iastate_footer_logo_path = 'themes/custom/iastate_theme/images/wordmark-stacked.svg' %} 
-		  {% set iastate_footer_logo_url = 'https://www.extension.iastate.edu' %}
-		  {% set iastate_footer_logo_alttext = 'Iowa State University Extension and Outreach' %}
-		{% endif %}
+				{% if default_footer_logo %}
+					{% set iastate_footer_logo_path = 'themes/custom/iastate_theme/images/wordmark-stacked.svg' %}
+					{% set iastate_footer_logo_url = 'https://www.extension.iastate.edu' %}
+					{% set iastate_footer_logo_alttext = 'Iowa State University Extension and Outreach' %}
+				{% endif %}
 
-        {% if iastate_footer_logo_path %}
-          {% if iastate_footer_logo_url %}
-            <a href="{{ iastate_footer_logo_url }}">
-          {% endif %}
-              <img class="isu-footer-logo" src="{{ base_path }}{{ iastate_footer_logo_path }}" class="wordmark-isu" alt="{{ iastate_footer_logo_alttext }}">
-            </a>
-        {% endif %}
+				{% if iastate_footer_logo_path %}
+					{% if iastate_footer_logo_url %}
+						<a href="{{ iastate_footer_logo_url }}">
+						{% endif %}
+						<img class="isu-footer-logo" src="{{ base_path }}{{ iastate_footer_logo_path }}" class="wordmark-isu" alt="{{ iastate_footer_logo_alttext }}">
+					</a>
+				{% endif %}
 
-		{% if default_social_footer %}
-		  <div class="isu-social-menu-footer isu-social-menu">
-            <a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a>
-            <a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a>
-            <a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a>
-            <a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a>
-            <a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a>
-          </div>
-		{% endif %}
+				{% if default_social_footer %}
+					<div class="isu-social-menu-footer isu-social-menu">
+						<a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a>
+						<a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a>
+						<a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a>
+						<a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a>
+						<a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a>
+					</div>
+				{% endif %}
 
-      </div>
+			</div>
 
-      <div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="col-sm-6 col-md-6 col-lg-3">
 
-        {% if page.footer_second %}
-          {{ page.footer_second }}
-        {% endif %}
+				{% if page.footer_second %}
+					{{ page.footer_second }}
+				{% endif %}
 
-		{% if default_copyright %}
-		  {# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
-		  {# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
-		  {% set copyright_subject = copyright_subject|merge({'#text': '
+				{% if default_copyright %}
+					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
+					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
+				{% set copyright_subject = copyright_subject|merge({'#text': '
 		    <p>
 			  Copyright © 1995-<script>document.write(new Date().getFullYear())</script><br>
 		  	  <strong><a href="https://www.iastate.edu/">Iowa State University of Science and Technology.</a></strong> All rights reserved.</p>
 		    <br>		   
-		    <p> 
+		    <p class="isu-copyright-links"> 
 			  <a href="https://www.iastate.edu/">Iowa State University</a><br>
 			  <a href="https://www.extension.iastate.edu/legal">Policies</a><br>
 		  	  <a href="https://nifa.usda.gov/land-grant-colleges-and-universities-partner-website-directory">State & National Extension Partners</a>
 			</p>
 		  ' }) %}
-		{% endif %}
+				{% endif %}
 
-        {% if footer2_file_exists %}
-          {% autoescape false %}
-            {{ footer2_file_contents }}
-          {% endautoescape %}
-        {% else %}
-          <div class="isu-copyright">
-			{{ copyright_subject }}
-          </div>
-        {% endif %}
-      </div>
+					{% if footer2_file_exists %}
+						{% autoescape false %}
+					{{ footer2_file_contents }}
+					{% endautoescape %}
+				{% else %}
+					<div class="isu-copyright">
+						{{ copyright_subject }}
+					</div>
+				{% endif %}
+			</div>
 
-      <div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="col-sm-6 col-md-6 col-lg-3">
 
-        {% if page.footer_third %}
-          {{ page.footer_third }}
-        {% endif %}
+				{% if page.footer_third %}
+					{{ page.footer_third }}
+				{% endif %}
 
-      </div>
+			</div>
 
-      <div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="col-sm-6 col-md-6 col-lg-3">
 
-        {% if page.footer_fourth %}
-          {{ page.footer_fourth }}
-        {% endif %}
+				{% if page.footer_fourth %}
+					{{ page.footer_fourth }}
+				{% endif %}
 
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 
-  {% if page.sign_off %}
-    <div class="isu-sign-off_wrapper">
-      <div class="container">
-        {{ page.sign_off }}
-      </div>
-    </div>
-  {% endif %}
+	{% if page.sign_off %}
+		<div class="isu-sign-off_wrapper">
+			<div class="container">
+				{{ page.sign_off }}
+			</div>
+		</div>
+	{% endif %}
 </footer>

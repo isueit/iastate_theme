@@ -150,6 +150,9 @@ blockquote p:last-child:after {
 	blockquote p:first-child:before {
 		left: 3rem;
 	}
+	h1, .h1 {
+		font-size: calc(3.375rem - 50%);
+	  }
 }
 
 hr { /* Overrides Bootstrap 4's hr style */
