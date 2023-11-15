@@ -650,6 +650,114 @@ table img {
 }
 
 /* --------------------------------------  */
+/* ## CKEditor 5 Styles
+/* -------------------------------------- */
+.ckeditor-accordion {
+	border: dashed 2px var(--cardinal);
+}
+.ckeditor-accordion .ckeditor-accordion-title, .ckeditor-accordion .ckeditor-accordion-content {
+	border: dashed 1px var(--midnight);
+}
+.ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
+	background: var(--midnight);
+}
+.ck.ck-heading_heading2 {
+	font-size: 1.875rem;
+	font-family: Merriweather,serif;
+	letter-spacing: 0;
+	color: var(--cardinal);
+}
+.ck.ck-heading_heading3 {
+	font-size: 1.3125rem;
+	font-family: Nimbus Sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--cardinal);
+}
+.ck.ck-heading_heading4 {
+	font-size: 1.125rem;
+	font-family: Nimbus sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ck.ck-heading_heading5 {
+	font-size: 1rem;
+	font-family: Nimbus sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ck.ck-heading_heading6 {
+	font-family: Nimbus Sans, sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+	text-decoration: none;
+	color: var(--cardinal);
+	background-color: inherit;
+	font-family: Nimbus Sans,sans-serif;
+	font-size: 1.3125rem;
+	font-weight: 700;
+	line-height: 1.42587;
+	padding: 1.5625rem 1.125rem;
+	position: relative;
+	cursor: pointer;
+	border-bottom: 0.125rem solid #ebebeb;
+	border-bottom: 1px solid transparent;
+}
+.ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
+	background-color: inherit;
+	color: var(--cardinal);
+	cursor: pointer;
+}
+.ckeditor-accordion-container > dl {
+	border: 1px solid transparent;
+}
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
+	background: var(--cardinal);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
+	left: 10px;
+	width: 20px;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+	right: 0px;
+	width: 20px;
+	left: auto;
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:before {
+	transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:after {
+	transform: rotate(180deg);
+}
+dl {
+	padding-left: 0rem;
+}
+.ckeditor-accordion-container > dl dd {
+	padding: 1em 2.2em 1.2em;
+	transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+}
+.ckeditor-accordion-container dt.active {
+	border-bottom: 0;
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+	background: var(--cardinal);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
+	left: auto;
+	right: 11px;
+}
+.ckeditor-accordion-container dt {
+	font-weight: inherit;
+	border-bottom: 0.125rem solid #ebebeb;
+}
+
+
+/* --------------------------------------  */
 /* ## FORMS
 /* --------------------------------------  */
 
@@ -763,6 +871,113 @@ body.cke_editable table[border] td {
   border-top-color: #808080;
 }
 
+/* --------------------------------------  */
+/* ## CKEditor 5 Styles
+/* --------------------------------------  
+.ckeditor-accordion {
+	border: dashed 2px var(--cardinal);
+}
+.ckeditor-accordion .ckeditor-accordion-title, .ckeditor-accordion .ckeditor-accordion-content {
+	border: dashed 1px var(--midnight);
+}
+.ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
+	background: var(--midnight);
+}
+.ck.ck-heading_heading2 {
+	font-size: 1.875rem;
+	font-family: Merriweather,serif;
+	letter-spacing: 0;
+	color: var(--cardinal);
+}
+.ck.ck-heading_heading3 {
+	font-size: 1.3125rem;
+	font-family: Nimbus Sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--cardinal);
+}
+.ck.ck-heading_heading4 {
+	font-size: 1.125rem;
+	font-family: Nimbus sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ck.ck-heading_heading5 {
+	font-size: 1rem;
+	font-family: Nimbus sans,sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ck.ck-heading_heading6 {
+	font-family: Nimbus Sans, sans-serif;
+	letter-spacing: 0;
+	color: var(--burgundy);
+}
+.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+	text-decoration: none;
+	color: var(--cardinal);
+	background-color: inherit;
+	font-family: Nimbus Sans,sans-serif;
+	font-size: 1.3125rem;
+	font-weight: 700;
+	line-height: 1.42587;
+	padding: 1.5625rem 1.125rem;
+	position: relative;
+	cursor: pointer;
+	border-bottom: 0.125rem solid #ebebeb;
+	border-bottom: 1px solid transparent;
+}
+.ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
+	background-color: inherit;
+	color: var(--cardinal);
+	cursor: pointer;
+}
+.ckeditor-accordion-container > dl {
+	border: 1px solid transparent;
+}
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
+	background: var(--cardinal);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
+	left: 10px;
+	width: 20px;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+	right: 0px;
+	width: 20px;
+	left: auto;
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:before {
+	transform: rotate(180deg);
+}
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:after {
+	transform: rotate(180deg);
+}
+dl {
+	padding-left: 0rem;
+}
+.ckeditor-accordion-container > dl dd {
+	padding: 1em 2.2em 1.2em;
+	transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+}
+.ckeditor-accordion-container dt.active {
+	border-bottom: 0;
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
+	background: var(--cardinal);
+}
+.ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
+	left: auto;
+	right: 11px;
+}
+.ckeditor-accordion-container dt {
+	font-weight: inherit;
+	border-bottom: 0.125rem solid #ebebeb;
+}
+*/
 /* --------------------------------------  */
 /* ## FORM
 /* --------------------------------------  */
