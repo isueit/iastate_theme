@@ -107,6 +107,13 @@ body,
   }
 }
 
+@media screen and (max-width : 992px) {
+  .container {
+    max-width: 960px;
+    padding-left: 2%;
+  }
+}
+
 /* --------------------------------------  */
 /* ## SITE NAVBAR
 /* --------------------------------------  */
@@ -211,12 +218,6 @@ body,
   }
 
 @media screen and (min-width: 992px) {
-  .isu-site-navbar {
-    padding: 1rem 0;
-  }
-  .isu-menu-navbar_toggler {
-    display: none;
-  }
   .isu-col-header-first {
     text-align: -webkit-match-parent;
   }
@@ -230,11 +231,16 @@ body,
   }
 }
 
-@media screen and (max-width : 991px) {
-	/*change navbar width to fit screen*/
-	.isu-site-navbar div {
-		max-width: inherit;
+@media screen and (max-width : 1199px) {
+  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
+	  margin-left: 20px;
+		padding: 20px;
+		float: right;
 	}
+  .isu-col-header-second {
+    position: absolute;
+  }
+
   /*Get rid of margins for isu site nav bar*/
   .isu-row-site-navbar{
     margin-top: 0px;
@@ -243,17 +249,12 @@ body,
   .isu-col-header-first {
 		text-align: start;
 	 }
-  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
-	  margin-left: 20px;
-		padding: 20px;
-		float: right;
-	}
 }
 
-@media screen and (max-width : 1199px) {
-  .isu-col-header-second {
-		position: absolute;
-	}
+@media screen and (min-width : 1200px) {
+.isu-menu-navbar_toggler {
+  display: none;
+  }
 }
 
 /* --- ## ISU Wordmark --- */
@@ -280,7 +281,7 @@ body,
   }
 .isu-wordmark-logo {
   width: 100%;
-  max-width: 250px;
+  max-width: 365px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -331,35 +332,15 @@ body,
     padding-bottom: 0px;
  }
 }
-@media screen and (min-width: 992px) {
-  .isu-wordmark-logo {
-    width: 100%;
-    max-width: 365px;
-    margin-top: 0;
-  }
-  .isu-wordmark-sitename_slogan {
-    font-size: 1.15rem;
-  }
-}
-@media screen and (max-width : 991px) {
-  .isu-wordmark-logo {
-    max-width: 45%;
-    margin-top: 5%;
-  }	 
-  /* Adjust Site Name */
-  .isu-wordmark-sitename {
-      margin-left: 0.5rem;
-      padding-top: 0px;
-      padding-bottom: 0px;
-    }
-  } 
 
 @media screen and (max-width : 1199px) {
-  .isu-wordmark-sitename a {
-		display: none;
-		max-width: 0;
-	}
+  .isu-wordmark-sitename {
+    width: 50%;
+    margin-top: -1%;
+
+  }
 }
+
 /* --- ## Search --- */
 /*
  * There are two search bars in this theme, one in the Site Navbar, the other
@@ -469,10 +450,8 @@ div#edit-search-broadness {
     /* .form-control via Bootstrap 4 */
     width: 400px;
   }
-}
-@media screen and (max-width : 1199px) {
   .isu-region_header-second {
-		padding-right: 5%;
+		padding-right: 2%;
 	}
   /*Change search text*/
   .isu-search_toggler-label {
@@ -511,10 +490,6 @@ div#edit-search-broadness {
 	.isu-search_toggler svg path ~ .isu-search_toggler_open {
 		fill: var(--cardinal);
 	}
-	.form-control.isu-form-control_search.isu-search__search-field.form-search {
-		border: none;
-		border-radius: 0;
-	}
 	.form-control.isu-form-control_search.isu-search__search-field.form-search::placeholder {
 		visibility: hidden;
 	}
@@ -522,6 +497,23 @@ div#edit-search-broadness {
 		width: 80%;
 		float: right;
 	}
+}
+@media screen and (max-width: 991px) {
+	.form-control.isu-form-control_search.isu-search__search-field.form-search {
+		border: none;
+		border-radius: 0;
+	}
+  .isu-region_header-second {
+    display: none; 
+  }
+}
+@media screen and (max-width : 1199px) {
+  .isu-search {
+    display: none;
+  }
+  .isu-region_header-second {
+    padding-right: 5%;
+  }
 }
 
 .isu-search_toggler {
@@ -572,7 +564,7 @@ div#edit-search-broadness {
   display: none;
   width: 2.5rem;
   padding: 0;
-  color: var(--cardinal);
+  color: #676767;
   background-color: #ffffff;
 }
 .isu-site-navbar .isu-search__search-btn-text {
@@ -599,6 +591,13 @@ div#edit-search-broadness {
     display: inline-block;
   }
 }
+@media screen and (max-width: 991px) {
+.isu-site-navbar div {
+  max-width: inherit;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+} 
 
 /* Toggle the search on mobile */
 
@@ -713,16 +712,10 @@ div#edit-search-broadness {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 991px) {
-  button#isu-menu-navbar_toggler.navbar-toggler.isu-menu-navbar_toggler {
-		margin-left: 20px;
-		padding: 20px;
-		float: right;
-	}
-}
 @media screen and (max-width : 1199px) {
   .isu-menu-navbar {
 		background: transparent;
+    padding: 0rem;
 	}
   .navbar-expand-lg .navbar-nav .nav-link:hover {
 		height: auto;
@@ -739,7 +732,11 @@ div#edit-search-broadness {
 		padding: 2rem;
 		min-height: 1000px;
 		min-width: 100vw;
+    margin-top: 1.5%;
 	}
+  .isu-menu-navbar_wrap {
+    width: 100%;
+  }
   .navbar-expand-lg .navbar-nav .nav-link {
 		display: block;
 		border: 0.125rem solid #fff;
@@ -755,6 +752,17 @@ div#edit-search-broadness {
 		text-decoration: none;
 		min-width: 100%;
 	}
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+}
+
+@media screen and (min-width : 1200px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    -ms-flex-direction: row;
+  }
 }
 /* --- Dropdowns --- */
 /* We are not using Bootstrap 4's Dropdown utility because it is not 
@@ -762,6 +770,13 @@ div#edit-search-broadness {
  * Our version is based on the black ISU Navbar's method, which establishes
  * a consistent behavior. Javascript can be found in isu-main-menu.js.
  */
+.isu-dropdown {
+  position: relative;
+}
+.navbar-nav > li:last-child .isu-dropdown-menu, .navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(3) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(4) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(5) .isu-dropdown-menu {
+  left: auto;
+  right: 0;
+}
 .isu-dropdown-toggle:after {
   content: "\f107";
   display: inline-block;
@@ -841,23 +856,30 @@ a.isu-dropdown-submenu {
 }
 /* Large */
 @media screen and (min-width: 992px) {
-  .isu-menu-navbar_collapse {
-    max-height: 100vh;
-    overflow: visible;
-  }
   .isu-dropdown:hover > .isu-dropdown-menu {
     display: block;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .isu-dropdown-menu {
+		background-color: var(--cardinal);
+		left: -10vw;
+		top: 0;
+		height: 500px;
+		width: 120vw;
+		padding-left: 10vw;
+		padding-bottom: 2px;
+		box-shadow: none;
+	}
+}
 /* Mobile Dropdown Toggles */
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
   	/* Adjust submenu alignment for condensed menu */
 	.isu-dropdown-submenu {
 		top: 0;
 		margin-top: 0;
 	}
-}
-@media (max-width: 992px) {
   .isu-dropdown-toggle:after {
     content: '';
   }
@@ -885,8 +907,6 @@ a.isu-dropdown-submenu {
   .isu-dropdown-item {
 	background-color: #eeeeee !important; 
   }
-}
-@media screen and (max-width : 1199px) {
 	.isu-dropdown-toggle_mobile .svg-inline--fa {
 		color: var(--burgundy);
 		border: none;
@@ -899,16 +919,6 @@ a.isu-dropdown-submenu {
 	}
 	.navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:last-child .isu-dropdown-menu {
 		padding-left: 35vw;
-	}
-  .isu-dropdown-menu {
-		background-color: var(--cardinal);
-		left: -10vw;
-		top: 0;
-		height: 500px;
-		width: 120vw;
-		padding-left: 10vw;
-		padding-bottom: 2px;
-		box-shadow: none;
 	}
 	.isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
 		content: "\f100";
@@ -946,6 +956,10 @@ a.isu-dropdown-submenu {
 		left: 0.5rem;
 		right: 0;
 	}
+  .isu-menu-navbar_collapse {
+    max-height: 100vh;
+    overflow: visible;
+  }
 }
 /* --------------------------------------  */
 /* ## PAGE
@@ -1002,18 +1016,18 @@ div#block-iastate-theme-local-tasks {
 	}
 }
 
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 1199px) {
  div#block-iastate-theme-page-title--2 {
    padding-left: 6%;
    padding-right: 6%;
-   max-width: 955px;
+   max-width: 1140px;
    margin: auto;
  }
  div#block-iastate-theme-local-tasks {
    padding-left: 6%;
    padding-right: 6%;
    padding-top: 10px;
-   max-width: 955px;
+   max-width: 1140px;
    margin: auto;
  }
 }
@@ -1874,8 +1888,8 @@ a.tabledrag-handle .handle {
 
 /* --- ## SIGN OFF --- */
 .isu-footer .isu-sign-off_wrapper {
-  background: #ffffff;
-  color: #000000;
+  background: var(--burgundy);
+  color: #fff;
   font-weight: revert;
   margin-bottom: -2rem;
   padding: 1rem 0;
@@ -1884,11 +1898,11 @@ a.tabledrag-handle .handle {
   font-size: 1rem;
 }
 .isu-sign-off_wrapper a {
-  color:#000000;
+  color:#fff;
   font-weight: 400;
 }
 .isu-sign-off_wrapper a:hover {
-  color:#000000;
+  color: var(--gold);
 }
 .isueo-staff-links ul {
 	list-style: none;
@@ -1899,9 +1913,6 @@ a.tabledrag-handle .handle {
 }
 .isueo-staff-links li:nth-child(2):after {
 	content: "|";
-}
-.isu-sign-off_wrapper a:hover {
-  color:var(--burgundy);
 }
 /* --------------------------------------  */
 /* ## Responsive
@@ -1920,17 +1931,21 @@ a.tabledrag-handle .handle {
 		margin-left: 0px;
 	}
 }
-@media screen and (max-width : 991px) {
+@media screen and (max-width: 991px) {
+  .isu-footer .col-md-6 {
+		flex: 0 0 50%;
+		max-width: 75%;
+	}
+}
+
+@media screen and (max-width : 1199px) {
   .isu-footer-logo {
-		margin-left: -8%;
+		margin-left: -6%;
+    width: 100%;
 	}
   .isu-footer {
 		padding-left: 2rem;
 		padding-right: 2rem;
-	}
-	.isu-footer .col-md-6 {
-		flex: 0 0 50%;
-		max-width: 50%;
 	}
 	.isu-footer .isu-sign-off_wrapper {
 		background: transparent;
@@ -1945,12 +1960,26 @@ a.tabledrag-handle .handle {
   .isu-copyright {
 		padding-bottom: 20px;
 	}
+  footer .row, .col-lg-3 {
+    display: grid; 
+    max-width: 100%;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
+    order: 1;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(2) {
+    order: 4; 
+    grid-column: span 4;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(3) {
+    order: 2;
+  }
+  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(4) {
+    order: 3;
+    justify-content: space-evenly;
+  }
 }
-@media screen and (max-width : 1199px) {
-  .isu-social-menu-footer{
-		margin-left: 10px;
-	}
-}
+
 /* --------------------------------------  */
 /* ## BOOK
 /* --------------------------------------  */
