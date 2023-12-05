@@ -774,7 +774,6 @@ div#edit-search-broadness {
   position: relative;
 }
 .navbar-nav > li:last-child .isu-dropdown-menu, .navbar-nav > li:nth-last-child(2) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(3) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(4) .isu-dropdown-menu, .navbar-nav > li:nth-last-child(5) .isu-dropdown-menu {
-  left: auto;
   right: 0;
 }
 .isu-dropdown-toggle:after {
