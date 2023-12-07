@@ -217,7 +217,7 @@ img.four-zero-four {
 	display: inline-block;
 }
 .ext-news-feed .card-title {
-	color: var(--burgundy);
+	color: #000;
 }
 .card-title {
 	font-weight: 700;
