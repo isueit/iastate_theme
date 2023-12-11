@@ -151,6 +151,10 @@ blockquote .author {
 	padding-right: 0;
 	font-weight: 700;
 }
+blockquote img {
+	max-width: 16.125rem;
+	margin-right: 4.12rem;
+}
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
