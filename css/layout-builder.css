@@ -525,3 +525,7 @@ background-color: var(--gold);
 .layout--color--white h2, .layout--color--white .h2, .layout--color--white h3, .layout--color--white .h3, .layout--color--white h4, .layout--color--white .h4, .layout--color--white h5, .layout--color--white .h5, .layout--color--white h6, .layout--color--white .h6 {
 	color: white;
 }
+
+.layout--color--black h2, .layout--color--black .h2, .layout--color--black h3, .layout--color--black .h3, .layout--color--black h4, .layout--color--black .h4, .layout--color--black h5, .layout--color--black .h5, .layout--color--black h6, .layout--color--black .h6 {
+	color: #000;
+}
