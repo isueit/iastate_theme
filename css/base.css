@@ -22,7 +22,7 @@
 /* --------------------------------------  */
 
 body {
-  font-size: 1rem;
+  font-size: 1.2vw;
   line-height: 1.5;
   font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,11 +31,11 @@ body {
 }
 /* Override Bootstrap 4's typography */
 h1, .h1 {
-  font-size: 3.375rem;
+  font-size: 4.375vw;
 }
 h2, .h2 {
   margin-top: 2rem;
-  font-size: 1.875rem;
+  font-size: 2.2vw;
   font-weight: 700;
   font-family: Merriweather,serif;	
 	letter-spacing: 0;
@@ -162,9 +162,6 @@ blockquote img {
 	blockquote p:first-child:before {
 		left: 3rem;
 	}
-	h1, .h1 {
-		font-size: calc(3.375rem - 50%);
-	  }
 }
 
 hr { /* Overrides Bootstrap 4's hr style */
