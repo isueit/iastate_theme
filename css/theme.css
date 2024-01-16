@@ -2038,8 +2038,7 @@ body.cke_editable figure figcaption {
 	margin-top: 0;
 }
 .caption > figcaption {
-	margin-top: -2.5rem;
-	padding-top: 1rem;
+	padding: .4rem .8rem 0 .8rem;
 	font-size: .875rem;
 	font-style: italic;
 	line-height: 1.57143;
