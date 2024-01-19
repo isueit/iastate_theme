@@ -22,7 +22,7 @@
 /* --------------------------------------  */
 
 body {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.5;
   font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,11 +31,11 @@ body {
 }
 /* Override Bootstrap 4's typography */
 h1, .h1 {
-  font-size: 4.375vw;
+  font-size: clamp(2.2rem, 4.375vw, 3.375rem);
 }
 h2, .h2 {
   margin-top: 2rem;
-  font-size: 2.2vw;
+  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
   font-weight: 700;
   font-family: Merriweather,serif;	
 	letter-spacing: 0;
@@ -54,7 +54,7 @@ h2:first-child,
 }
 h3, .h3 { 
   margin-bottom: 0.35rem;
-  font-size: 1.3125rem; 
+  font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
   font-weight: 700;
   font-family: Nimbus Sans,sans-serif;
 	letter-spacing: 0;
@@ -65,7 +65,7 @@ h3 {
 	color: var(--cardinal);
 }
 h4, .h4 { 
-  font-size: 1.125rem;
+  font-size: clamp(1rem, .9vw, 1.125rem);
 	font-family: Nimbus sans,sans-serif;
 	font-weight: 700;
 	letter-spacing: 0;
@@ -76,7 +76,7 @@ h4 {
 	color: var(--burgundy);
 }
 .h5, h5 {
-	font-size: 1rem;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
 	line-height: 1.5625;
 	font-family: Nimbus Sans,sans-serif;
 	font-weight: 700;
@@ -120,7 +120,7 @@ blockquote:before {
 	pointer-events: none;
 }
 blockquote p {
-	font-size: 2.5rem;
+	font-size: clamp(1rem, 2.1vw, 2.5rem);
 	font-family: Merriweather, serif;
 	line-height: 1.39024;
 	font-weight: 700;
@@ -528,7 +528,7 @@ button:focus {
   user-select: none;
   border: 1px solid transparent;
   padding: .5rem .75rem;
-  font-size: 1rem;
+  font-size: clamp(.8rem, 1.2vw, 1rem);;
   line-height: 1.25;
   border-radius: .25rem;
   transition: all .15s ease-in-out;
@@ -538,7 +538,7 @@ button:focus {
   border-color: #676767;
   /* btn-sm */
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: clamp(.8rem, 1vw, 0.875rem);
   line-height: 1.5;
   border-radius: 0.2rem;
 }
@@ -561,7 +561,7 @@ button:focus {
   background: var(--cardinal);
 	color: white;
 	padding: 1.5625rem;
-	font-size: 1.3125rem;
+	font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
 	line-height: 1.42857;
 	font-weight: 700;
 	vertical-align: top;
@@ -617,7 +617,7 @@ table img {
   /* Same as table caption. */
   padding: 0.5rem;
   color: #333333;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, .8vw, 0.9rem);
   background: #eeeeee;
 }
 .align-center img {

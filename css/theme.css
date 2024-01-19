@@ -1172,7 +1172,7 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 h2.isu-block-title.h4 {
 	margin-bottom: 1.75rem;
 	line-height: 1.4;
-	font-size: 1.875rem;
+	font-size: clamp(2rem, 2.2vw, 1.875rem);
 	color: var(--cardinal);
 	position: relative;
 }
