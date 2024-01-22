@@ -159,6 +159,8 @@ body,
 .isu-menu-navbar_toggler-icon {
   display: block;
   margin-top: 2em;
+  width: 1.2em;
+  height: 1.2em;
 }
 .isu-menu-navbar_toggler-icon::before {
   content: '\f0c9';
@@ -166,7 +168,7 @@ body,
   font-family: FontAwesome;
   font-size: 2em;
   color: var(--cardinal);
-  margin-left: -1em;
+  margin-left: -0.7em;
   margin-top: -0.5em;
 }
 .isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:before,.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:after{
@@ -327,7 +329,7 @@ body,
     max-width: 300px;
   }
   .isu-wordmark-sitename {
-    padding-left: 0px;
+    padding-left: 13px;
     padding-bottom: 0px;
  }
 }
@@ -593,8 +595,8 @@ div#edit-search-broadness {
 @media screen and (max-width: 991px) {
 .isu-site-navbar div {
   max-width: inherit;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
+  padding: 5px;
   }
 } 
 
@@ -731,7 +733,7 @@ div#edit-search-broadness {
 		padding: 2rem;
 		min-height: 1000px;
 		min-width: 100vw;
-    margin-top: 1.5%;
+    margin-top: 10%;
 	}
   .isu-menu-navbar_wrap {
     width: 100%;
@@ -1917,21 +1919,27 @@ a.tabledrag-handle .handle {
 /* --------------------------------------  */
 @media screen and (max-width : 575px) {
   .isu-footer-logo{
-    padding-left: 3%;
     padding-bottom: 0px;
   }
 }
 @media screen and (max-width : 768px) {
   .isu-region_footer-third {
 		margin-bottom: 1rem;
+    font-size: 1.5rem;
 	}
+  .isu-footer_contact-address-title {
+    font-size: 1.5rem;
+  }
   .isu-social-menu-footer{
-		margin-left: 0px;
+		display: none;
 	}
+  .isu-footer-logo {
+    width: 90vw;
+  }
 }
 @media screen and (max-width: 991px) {
   .isu-footer .col-md-6 {
-		flex: 0 0 50%;
+		flex: 0 0 100%;
 		max-width: 75%;
 	}
 }
@@ -1959,7 +1967,7 @@ a.tabledrag-handle .handle {
 		padding-bottom: 20px;
 	}
   footer .row, .col-lg-3 {
-    display: grid; 
+    display: flex; 
     max-width: 100%;
   }
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
@@ -1974,7 +1982,6 @@ a.tabledrag-handle .handle {
   }
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(4) {
     order: 3;
-    justify-content: space-evenly;
   }
 }
 
