@@ -151,6 +151,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 @media screen and (max-width : 768px) {
   .layout--content-container--default .layout-content {
 		max-width: 768px;
+	  	display: inline-block;
 	}
 }
 @media screen and (max-width : 1199px) {
