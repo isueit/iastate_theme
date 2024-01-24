@@ -724,7 +724,7 @@ div#edit-search-broadness {
   .isu-menu-navbar_show.isu-menu-navbar_wrap {
 		background-color: var(--cardinal);
 		overflow: hidden;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -733,7 +733,11 @@ div#edit-search-broadness {
 		padding: 2rem;
 		min-height: 1000px;
 		min-width: 100vw;
-    margin-top: 10%;
+        	margin-top: 8rem;
+	}
+
+	.isu-page-wrap:has(.isu-menu-navbar_show) {
+		position: fixed;
 	}
   .isu-menu-navbar_wrap {
     width: 100%;
