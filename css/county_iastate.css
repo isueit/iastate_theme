@@ -145,3 +145,9 @@ a.events_show_more.btn-outline-white {
 	float: left;
 	margin: 10px;
 }
+
+div.join-4h-info {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+}
