@@ -158,39 +158,23 @@ body,
 }
 .isu-menu-navbar_toggler-icon {
   display: block;
-  margin-top: 2em;
-  width: 1.2em;
-  height: 1.2em;
 }
 .isu-menu-navbar_toggler-icon::before {
   content: '\f0c9';
   position: absolute;
   font-family: FontAwesome;
   font-size: 2em;
+  left: 75vw;
   color: var(--cardinal);
-  margin-left: -0.7em;
-  margin-top: -0.5em;
 }
-.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:before,.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:after{
-    position: absolute;
-    content: '';
-    font-size: 1.5em;
-    width:1.25em;
-    height: 5px;
-    margin-left: -1.5em;
-    margin-top: -0em;
-    background-color: var(--cardinal);
+.isu-menu-navbar_toggler_open > .isu-menu-navbar_toggler-icon::before {
+  content: '\58';
+  position: absolute;
+  font-family: FontAwesome;
+  font-size: 2em;
+  color: var(--cardinal);
 }
-.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:before{
-    -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
-    transform:rotate(45deg);
-}
-.isu-menu-navbar_toggler_open .isu-menu-navbar_toggler-icon:after{
-    -webkit-transform:rotate(-45deg);
-    -moz-transform:rotate(-45deg);
-    transform:rotate(-45deg);
-}
+
 .isu-menu-navbar_toggler-label {
   display: none;
 }
