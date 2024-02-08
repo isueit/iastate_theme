@@ -28,69 +28,69 @@
 
 {% block content %}
 
-  <div {{ attributes.addClass("isu-lblock") }}>
-    {% if content.field_lblock_link01.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link01.0['#url'] }}">
-  	    {% if content.field_lblock_icon01 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon01 }} {# maybe append .0 so there are not two divs #}
-		  </div>
-  	    {% endif %}
-	  	<p>{{ content.field_lblock_link01.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {% if content.field_lblock_link02.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link02.0['#url'] }}">
-  	    {% if content.field_lblock_icon02 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon02 }}
-		  </div>
-  	    {% endif %}
-	  	<p>{{ content.field_lblock_link02.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {% if content.field_lblock_link03.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link03.0['#url'] }}">
-  	    {% if content.field_lblock_icon03 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon03 }}
-		  </div>
-  	    {% endif %}
-	  	<p>{{ content.field_lblock_link03.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {% if content.field_lblock_link04.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link04.0['#url'] }}">
-  	    {% if content.field_lblock_icon04 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon04 }}
-		  </div>
+	<div {{ attributes.addClass("isu-lblock") }}>
+		{% if content.field_lblock_link01.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link01.0['#title'] }}" id="{{ content.field_lblock_link01.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link01.0['#url'] }}">
+				{% if content.field_lblock_icon01 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon01 }}
+						{# maybe append .0 so there are not two divs #}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link01.0['#title'] }}</p>
+			</a>
 		{% endif %}
-	  	<p>{{ content.field_lblock_link04.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {% if content.field_lblock_link05.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link05.0['#url'] }}">
-  	    {% if content.field_lblock_icon05 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon05 }}
-		  </div>
-  	    {% endif %}
-	  	<p>{{ content.field_lblock_link05.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {% if content.field_lblock_link06.0['#title'] %}
-  	  <a class="links_block_field" href="{{ content.field_lblock_link06.0['#url'] }}">
-  	    {% if content.field_lblock_icon06 %}
-		  <div {{ attributes.addClass("icon_block_field") }}>
-  	        {{ content.field_lblock_icon06 }}
-		  </div>
-  	    {% endif %}
-	  	<p>{{ content.field_lblock_link06.0['#title'] }}</p>
-  	  </a>
-    {% endif %}
-    {{ title_suffix }}
-  </div>
+		{% if content.field_lblock_link02.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link02.0['#title'] }}" id="{{ content.field_lblock_link02.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link02.0['#url'] }}">
+				{% if content.field_lblock_icon02 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon02 }}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link02.0['#title'] }}</p>
+			</a>
+		{% endif %}
+		{% if content.field_lblock_link03.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link03.0['#title'] }}" id="{{ content.field_lblock_link03.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link03.0['#url'] }}">
+				{% if content.field_lblock_icon03 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon03 }}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link03.0['#title'] }}</p>
+			</a>
+		{% endif %}
+		{% if content.field_lblock_link04.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link04.0['#title'] }}" id="{{ content.field_lblock_link04.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link04.0['#url'] }}">
+				{% if content.field_lblock_icon04 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon04 }}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link04.0['#title'] }}</p>
+			</a>
+		{% endif %}
+		{% if content.field_lblock_link05.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link05.0['#title'] }}" id="{{ content.field_lblock_link05.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link05.0['#url'] }}">
+				{% if content.field_lblock_icon05 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon05 }}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link05.0['#title'] }}</p>
+			</a>
+		{% endif %}
+		{% if content.field_lblock_link06.0['#title'] %}
+			<a aria-labelledby="{{ content.field_lblock_link06.0['#title'] }}" id="{{ content.field_lblock_link06.0['#title'] }}" class="links_block_field" href="{{ content.field_lblock_link06.0['#url'] }}">
+				{% if content.field_lblock_icon06 %}
+					<div {{ attributes.addClass("icon_block_field") }}>
+						{{ content.field_lblock_icon06 }}
+					</div>
+				{% endif %}
+				<p>{{ content.field_lblock_link06.0['#title'] }}</p>
+			</a>
+		{% endif %}
+		{{ title_suffix }}
+	</div>
 
 {% endblock %}
-
