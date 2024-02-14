@@ -718,6 +718,7 @@ div#edit-search-broadness {
 		min-height: 1000px;
 		min-width: 100vw;
         	margin-top: 8rem;
+	  	overflow-y: scroll;
 	}
 
 	.isu-page-wrap:has(.isu-menu-navbar_show) {
