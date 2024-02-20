@@ -17,11 +17,19 @@
 	<div class="navbar navbar-expand-lg isu-menu-navbar">
 		<div class="container isu-menu-navbar_container">
 			<header class="isu-wordmark-sitename">
-				<a rel="home" href="{{ path('<front>') }}">{{ site_name }}</a>
+				<a rel="home" class="navbar-brand isu-navbar-brand" href="{{ path('<front>') }}">{{ site_name }}</a>
 			</header>
-			<div class="isu-menu-navbar_collapse isu-menu-navbar_wrap" id="isu-menu-navbar_collapse">
+			<div class="isu-menu-navbar_collapse collapse navbar-collapse isu-menu-navbar_wrap" id="isu-menu-navbar_collapse">
 				{{ page.menu_navbar }}
 			</div>
+			<!-- <div class="isu-header_quicklinks-search-mobile">
+												<ul class="isu-quicklinks-menu isu-menu"></ul>
+												<li class="isu-nav-item"></li>
+												<li class="isu-nav-item"></li>
+											</ul>
+											<div class="isu-region isu-region_search"></div>
+										</div> -->
+
 		</div>
 	</div>
 </div>

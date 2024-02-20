@@ -154,6 +154,11 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	  	display: inline-block;
 	}
 }
+@media screen and (max-width : 992px) {
+.layout--content-container--default .layout-content {
+	width: 94%;
+}
+}
 @media screen and (max-width : 1199px) {
   div#block-iastate-theme-local-tasks {
 		padding-left: 0%;
@@ -171,6 +176,9 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	div#edit-actions {
 		max-width: 1140px;
 		margin: auto;
+	}
+	.layout--content-container--default .layout-content {
+		width: 90%;
 	}
 }
 

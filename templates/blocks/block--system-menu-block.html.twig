@@ -41,26 +41,26 @@
   ]
 %}
 
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
-  
-  {# Label. If not displayed, we still provide it for screen readers. #}
-  {% if not configuration.label_display %}
-    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-  {% endif %}
+<nav
+	role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
+	{# Label. If not displayed, we still provide it for screen readers. #}
+	{% if not configuration.label_display %}
+		{% set title_attributes = title_attributes.addClass('visually-hidden') %}
+	{% endif %}
 
-  {% 
+	{% 
     set block_title_classes = [
     'isu-block-title', 
     'h4'
     ] 
   %}
 
-  {{ title_prefix }}
-  <h1{{ title_attributes.setAttribute('id', heading_id).addClass(block_title_classes) }}>{{ configuration.label }}</h1>
-  {{ title_suffix }}
+	{{ title_prefix }}
+	<h1{{title_attributes.setAttribute('id',heading_id).addClass(block_title_classes)}}>{{ configuration.label }}</h1>
+	{{ title_suffix }}
 
-  {# Menu #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+	{# Menu #}
+	{% block content %}
+		{{ content }}
+	{% endblock %}
 </nav>
