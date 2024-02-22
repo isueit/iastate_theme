@@ -342,6 +342,9 @@ img.four-zero-four {
 		max-width: 90%;
 		padding-left: 5%;
 	}
+	.vertical-alignment {
+		transform: none;
+	}
 }
 
 /* --------------------------------------  */
