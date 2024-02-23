@@ -107,13 +107,6 @@ form#node-layout-ct-layout-builder-form {
 #layout-builder-modal .button:hover:after {
     width: 0;
 }
-div#block-iastate-theme-local-tasks {
-	padding-left: 0%;
-	padding-right: 6%;
-	padding-top: 10px;
-	max-width: 1140px;
-	margin: auto;
-}
 div#edit-actions {
 	max-width: 1135px;
 	margin: auto;
@@ -147,6 +140,15 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 		max-width: 768px;
 	  	display: inline-block;
 	}
+}
+@media screen and (max-width : 992px) {
+.layout--column-gap--none .layout-content {
+	column-gap: 5%;
+}
+.layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content {
+    grid-template-columns: 47% 47% !important;
+	display: grid;
+  }
 }
 @media screen and (max-width : 1199px) {
 	div#edit-actions {
