@@ -212,6 +212,19 @@ img.four-zero-four {
     margin: 10px 0px;
   }
 
+/* Custodian of Public Record/About page */
+.isu-custodian-records-about {
+	max-width: 1140px;
+	margin: auto;
+	padding-bottom: 10px;
+}
+.isu-custodian-records-about .field-content:before {
+	content: "\f46c";
+	font-family: FontAwesome;
+	color: var(--cardinal);
+	font-size: 1.3rem;
+	padding-right: 5px;
+}
 /* --------------------------------------  */
 /* ## NEWS HOMEPAGE BLOCK
 /* --------------------------------------  */
