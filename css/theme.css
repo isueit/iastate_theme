@@ -1958,14 +1958,30 @@ a.tabledrag-handle .handle {
   .isu-social-menu-footer{
 		display: none;
 	}
+  .isu-footer {
+    padding: 0;
+  }
   .isu-footer-logo {
     width: 90vw;
+    position: relative;
+    margin: auto;
   }
   .isu-footer .col-md-6 { 
-    flex: 0 40%;
+    flex: 0 100% !important;
+    justify-content: flex-start;
+}
+footer .row, .col-lg-3 {
+  justify-content: start;
+}
+.isu-social-menu-footer {
+  margin: auto;
 }
 .layout--base--twocols .layout-content {
   grid-template-columns: 1fr;
+}
+.isu-social-menu a:before {
+  margin-right: 0.88em;
+  padding-top: 0;
 }
 }
 @media screen and (max-width: 991px) {
@@ -1975,6 +1991,7 @@ a.tabledrag-handle .handle {
 	}
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
     order: 1;
+    flex-wrap: wrap;
   }
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(2) {
     order: 4; 

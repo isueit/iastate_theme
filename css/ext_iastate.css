@@ -359,6 +359,10 @@ img.four-zero-four {
 	.vertical-alignment {
 		transform: none;
 	}
+	.featured-pubs {
+		max-width: 94%;
+		margin: auto;
+	}
 }
 
 /* --------------------------------------  */
