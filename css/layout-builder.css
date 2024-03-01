@@ -140,6 +140,10 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 		max-width: 768px;
 	  	display: inline-block;
 	}
+	.layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content {
+		grid-template-columns: 1fr !important;
+		display: grid;
+	  }
 }
 @media screen and (max-width : 992px) {
 .layout--column-gap--none .layout-content {

@@ -349,11 +349,12 @@ img.four-zero-four {
 /* --------------------------------------  */
 @media screen and (max-width : 768px) {
 	.strong-iowa {
-		padding-top: 10%;
+		padding: 5% 0;
 	}
 	.strong-iowa img {
-		max-width: 90%;
-		padding-left: 5%;
+		max-width: 60%;
+		display: grid;
+		margin: auto;
 	}
 	.vertical-alignment {
 		transform: none;
