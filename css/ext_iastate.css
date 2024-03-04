@@ -493,6 +493,7 @@ a.bean-card_link {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	flex-direction: column;
 }
 .bean-card_label p {
 	margin: 0;
@@ -502,7 +503,22 @@ a.bean-card_link {
 .bean-card_label div {
 	margin: 0;
 }
-
+.bean-card_title {
+	flex-direction: row;
+	display: flex;
+	justify-content: center;
+}
+.image-card_caption p {
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+	line-height: 1.5;
+	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	justify-content: center;
+	display: flex;
+}
+.image-card_caption hr {
+	border-bottom: 1px solid var(--gold);
+	width: 50%;
+}
 /* Partial Label */
 .bean-card_label.Partial {
 	width: 85%;
@@ -656,7 +672,6 @@ div.fontawesome-icon i {
 	padding-right: 5px;
 }
 .bean-card_label.Medium div.fontawesome-icons {
-	margin-right: 1rem;
 	padding-right: 5px;
 }
 .bean-card_label.Large div.fontawesome-icons {
