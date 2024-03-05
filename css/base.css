@@ -566,11 +566,11 @@ button:focus {
 	font-weight: 700;
 	vertical-align: top;
 }
-.table a {
+.table th a {
 	color: var(--lt-gray);
 }
 
-.table a:hover{
+.table th a:hover{
 	color: var(--gold);
 }
 caption {
