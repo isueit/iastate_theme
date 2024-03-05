@@ -566,6 +566,13 @@ button:focus {
 	font-weight: 700;
 	vertical-align: top;
 }
+.table th a {
+	color: var(--lt-gray);
+}
+
+.table th a:hover{
+	color: var(--gold);
+}
 caption {
   caption-side: top;
   padding: 0.5rem 0;
