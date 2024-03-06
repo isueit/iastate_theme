@@ -570,7 +570,7 @@ body.cke_editable table[border] th a, .table th a {
 	color: var(--lt-gray);
 }
 
-body.cke_editable table[border] th a: hover, .table th a:hover{
+body.cke_editable table[border] th a:hover, .table th a:hover{
 	color: var(--gold);
 }
 caption {
