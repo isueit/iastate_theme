@@ -514,10 +514,13 @@ a.bean-card_link {
 	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	justify-content: center;
 	display: flex;
+	text-align: center;
 }
 .image-card_caption hr {
-	border-bottom: 1px solid var(--gold);
+	border-bottom: 0.125rem solid var(--gold);
 	width: 50%;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 /* Partial Label */
 .bean-card_label.Partial {

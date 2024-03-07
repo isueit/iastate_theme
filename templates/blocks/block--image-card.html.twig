@@ -56,7 +56,8 @@
 							{% if content.field_image_card_caption.0 is not empty %}
 								<span class="image-card_caption">
 									<hr>
-									<p>{{ content.field_image_card_caption[0] }}</p>
+									<p>{% set text = content.field_image_card_caption|render|striptags|trim %}
+										{{ (text|length > 200 ? text|slice(0, 201) |split(' ')|slice(0, -1)|join(' ') ~ '&hellip;' : text) |raw }}</p>
 								{% endif %}
 							</span>
 						</span>
