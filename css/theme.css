@@ -1947,7 +1947,7 @@ a.tabledrag-handle .handle {
 		max-width: 94%;
 	}
 }
-@media screen and (max-width : 768px) {
+@media screen and (max-width : 767px) {
   .isu-region_footer-third {
 		margin-top: 1rem; /* 10% margin-bottom change:3*/
     font-size: 1.5rem;
@@ -1988,7 +1988,7 @@ footer .row, .col-lg-3 {
 }
 
 }
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 991px) {
   .isu-footer .col-md-6 {
 		flex: 0 0 100%;
 		max-width: 75%;
@@ -2009,13 +2009,13 @@ footer .row, .col-lg-3 {
     order: 3;
   }
 
-}
+}*/
 
 @media screen and (max-width : 1199px) {
   .isu-footer-logo {
 		margin-left: -6%;
     width: 100%;
-    position: relative; /* absolute change */
+    position: absolute; /* absolute change */
 	}
   .isu-footer {
 		padding-left: 2rem;
