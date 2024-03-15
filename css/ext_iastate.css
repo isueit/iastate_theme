@@ -99,6 +99,24 @@
 	border: none;
 }
 
+/* --------------------------------------  */
+/* ## Title Overlay for Hero
+/* -------------------------------------  */
+.ext-hero-red-overlay {
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	background: rgba(200,16,46,.8);
+	padding: 0.75rem 1rem;
+}
+.ext-hero-white-overlay {
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        background: rgba(255,255,255,.7);
+        padding: 0.75rem 1rem;
+}
+
 /* ------------------------------------- */
 /* ## 404 PAGE
 /* ------------------------------------- */
