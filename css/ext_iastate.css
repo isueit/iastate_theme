@@ -390,6 +390,57 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 
 /* --------------------------------------  */
+/* ## Horizontal Events
+/* --------------------------------------  */
+#isu-horiz-events .program_offering_blocks ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1em;
+}
+#isu-horiz-events li.event {
+    box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
+    padding: .5em;
+}
+#isu-horiz-events div.event_date {
+    border-right: none;
+    height: 100%;
+    text-align: center;
+    padding-right: 5%;
+    margin: 0;
+    min-width: auto;
+    color: var(--midnight);
+    line-height: 1.2;
+}
+#isu-horiz-events span.event_day {
+    color:var(--midnight);
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#isu-horiz-events span.event_month {
+    margin-bottom: -7px;
+    color: var(--midnight);
+}
+#isu-horiz-events div.event_title a {
+    display: block;
+    line-height: 1.2;
+    padding-bottom: .2rem;
+    margin-top: .3em;
+    font-size: clamp(.9rem, 1.1vw, .8rem);
+}
+#isu-horiz-events div.event_series {
+    font-size:clamp(.6rem, 1.1vw, .8rem);
+    color: #666;
+}
+#isu-horiz-events div.event_venue {
+    font-size: clamp(.6rem, 1.1vw, .8rem);
+}
+a#isu-horiz-events {
+    text-decoration: underline;
+    float: right;
+}
+
+/* --------------------------------------  */
 /* ## MEDIA LIBRARY
 /* --------------------------------------  */
 .media-library-item__preview {
