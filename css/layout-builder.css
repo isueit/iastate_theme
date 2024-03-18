@@ -476,28 +476,28 @@ background-color: var(--gold);
 
 /* Aligns Block Title Border */
 .layout--alignment--left .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
 	border-bottom: #fff;
 }
 .layout--alignment--right .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
 	border-bottom: #fff;
 }
 .layout--alignment--center .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
 	border-bottom: #fff;
 }
 .layout--alignment--justify .isu-block-title {
-	font-weight: 700; 
+	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
 	font-family: Merriweather,serif;
@@ -519,4 +519,7 @@ background-color: var(--gold);
 
 .layout--color--black h2, .layout--color--black .h2, .layout--color--black h3, .layout--color--black .h3, .layout--color--black h4, .layout--color--black .h4, .layout--color--black h5, .layout--color--black .h5, .layout--color--black h6, .layout--color--black .h6 {
 	color: #000;
+}
+.layout--left-right-padding--small{
+	padding-left: 20px;
 }
