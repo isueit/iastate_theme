@@ -521,11 +521,7 @@ background-color: var(--gold);
 	color: #000;
 }
 
-
 /*Table Styles*/
-.layout-builder-block >* table {
-	border-bottom: .125rem solid var(--md-gray); !important
-}
 .layout-builder-block >*  table[border] th {
 	background: var(--cardinal);
 	color: white;
@@ -544,25 +540,31 @@ background-color: var(--gold);
 	padding: 1.5625rem;
 	vertical-align: top;
 	border: 0.0625rem solid #f3f3f3;
+	
 }
 .layout-builder-block >*  table[border] tr:nth-child(2n) {
 	background-color: rgba(0,0,0,.048);
 }
 .layout-builder-block >* table[border] td {
-	border-bottom-color: transparent;
-	border: .125rem solid var(--md-gray);
+	border-collapse: inherit;
+	border-bottom-color: #808080;
+	border-top-color: #808080;
+	
 }
 .layout-builder-block >* table[border] th, table[border] td{
-	border-bottom-color: transparent;
-	border: .125rem solid var(--md-gray);
+	border-collapse: inherit;
+	border-bottom-color: #808080;
+	border-top-color: #808080;
+	
 }
-.layout-builder-block >* table[border] {
-	border-bottom-color: transparent;
-	border: .125rem solid var(--md-gray);
+
+.layout-builder-block >* table[cellpadding], table[cellspacing] {
+	border-collapse: collapse;
 }
 .layout-builder-block >* table[cellpadding], table[cellspacing] {
 	border-collapse: collapse;
 }
+
 
 .layout--left-right-padding--small{
 	padding-left: 20px;
