@@ -137,7 +137,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 /* --------------------------------------  */
 @media screen and (max-width : 768px) {
   .layout--content-container--default .layout-content {
-		max-width: 768px;
+		width: 75% !important;
 	  	display: inline-block;
 	}
 	.layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content {
@@ -150,7 +150,7 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	column-gap: 5%;
 }
 .layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content {
-    grid-template-columns: 47% 47% !important;
+    grid-template-columns: 47% 47% ;
 	display: grid;
   }
 }
