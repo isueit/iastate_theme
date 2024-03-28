@@ -212,23 +212,40 @@ img.four-zero-four {
   /* --------------------------------------  */
   /* ## STAFF VIEWS
   /* --------------------------------------  */
-  .views-field.views-field-field-staff-profile-pref-phone {
-    margin: 12px;
-  }
-  .views-field.views-field-field-staff-profile-pref-phone h2 {
-    padding-bottom: 0px;
-  }
-  img.staff_profile_smugmug {
-    max-width: 100px;
-    margin: .75rem;
-    float: left;
-  }
-
-  /* This style is for staff views before they were changed to grid, eventually can be deleted */
-  td.staff-view-smugmug img {
-    max-width: 100px;
-    margin: 10px 0px;
-  }
+.isu-people-directory-view {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.isu-horizontal-card {
+	display: flex;
+}
+.isu-people-directory-view .isu-horizontal-card_wrap {
+	display: flex;
+}
+.isu-horizontal-card_wrap {
+	align-items: flex;
+}
+.isu-horizontal-card_left {
+	margin-bottom: 0;
+	margin-right: 1rem;
+}
+.isu-horizontal-card_body {
+	flex: 1;
+	line-height: 1.75;
+}
+.people-teaser-name {
+	word-break: break-word;
+}
+.people-teaser-name h2 {
+	margin-bottom: 0.5rem;
+	font-size: clamp(1.25rem,.9vw,1.25rem);
+	padding-bottom: 0;
+}
+img.staff_profile_smugmug {
+	max-width: 150px;
+	min-width: 100px;
+}
 
 /* Custodian of Public Record/About page */
 .isu-custodian-records-about {
