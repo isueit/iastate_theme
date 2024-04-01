@@ -334,10 +334,10 @@ text-decoration: none;
 }
 .layout--background--red a {
 color: #fff;
-text-decoration: none;
+text-decoration: underline;
 }
 .layout--background--red a:hover {
-text-decoration: underline;
+color: var(--gold)
 }
 .layout--background--green a:hover {
 text-decoration: underline;
@@ -357,6 +357,14 @@ background-color: var(--gold);
 .layout--background--blue {
   background-color: var(--midnight);
 }
+.layout--background--blue a {
+	color: var(--gold);
+	text-decoration: underline;
+	}
+.layout--background--blue a:hover {
+		color: var(--gold);
+		text-decoration: none;
+	}
 
 /* Background Overlays. */
 .layout--background-overlay--red {
