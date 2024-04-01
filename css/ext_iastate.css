@@ -353,7 +353,7 @@ img.four-zero-four {
 	padding: 20% 0;
 }
 .hero-heading h2 {
-	font-size: 4.375rem;
+	font-size: clamp(2.4rem, 4.375vw, 4.375rem);
 	line-height: 1.24528;
 }
 .vertical-alignment {
