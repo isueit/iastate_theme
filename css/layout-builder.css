@@ -365,7 +365,15 @@ background-color: var(--gold);
 		color: var(--gold);
 		text-decoration: none;
 	}
+.layout--background--none a{
+	color: #fff;
+	text-decoration: underline;
+}
+.layout--background--none a:hover{
+	color: var(--gold);
+	font-weight: bold;
 
+}
 /* Background Overlays. */
 .layout--background-overlay--red {
 	position: relative;
