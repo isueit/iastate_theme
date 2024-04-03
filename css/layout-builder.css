@@ -41,8 +41,8 @@
   background: url(/core/misc/icons/787878/plus.svg) transparent center left / 1em no-repeat; /* LTR */
 }
 a.layout-builder__link--add {
-	color: #686868;
-	text-decoration: underline;
+	color: #686868!important;
+	text-decoration: underline!important;
 }
 [dir="rtl"] .layout-builder__link--add {
   padding-right: 1.3em;
@@ -52,8 +52,8 @@ a.layout-builder__link--add {
 .layout-builder__link--add:hover,
 .layout-builder__link--add:active,
 .layout-builder__link--add:focus {
-  color: #000;
-  border-bottom-style: none;
+  color: #000!important;
+  border-bottom-style: none!important;
 }
 .layout-builder__section {
   margin-bottom: 1.5em;
