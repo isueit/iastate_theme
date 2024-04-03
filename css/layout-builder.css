@@ -528,6 +528,53 @@ background-color: var(--gold);
 .layout--color--black h2, .layout--color--black .h2, .layout--color--black h3, .layout--color--black .h3, .layout--color--black h4, .layout--color--black .h4, .layout--color--black h5, .layout--color--black .h5, .layout--color--black h6, .layout--color--black .h6 {
 	color: #000;
 }
+
+/*Table Styles*/
+.layout-builder-block >*  table[border] th {
+	background: var(--cardinal);
+	color: white;
+	padding: 1.5625rem;
+	font-weight: 700;
+	vertical-align: top;
+}
+.layout-builder-block >*  table[border] th a {
+	color: var(--lt-gray);
+}
+.layout-builder-block >* th a:hover {
+	color: var(--gold);
+}
+.layout-builder-block >* table[border] td {
+	line-height: 1.75;
+	padding: 1.5625rem;
+	vertical-align: top;
+	border: 0.0625rem solid #f3f3f3;
+	
+}
+.layout-builder-block >*  table[border] tr:nth-child(2n) {
+	background-color: rgba(0,0,0,.048);
+}
+.layout-builder-block >* table[border] td {
+	border-collapse: inherit;
+	border-bottom-color: #808080;
+	border-top-color: #808080;
+	
+}
+.layout-builder-block >* table[border] th, table[border] td{
+	border-collapse: inherit;
+	border-bottom-color: #808080;
+	border-top-color: #808080;
+	
+}
+
+.layout-builder-block >* table[cellpadding], table[cellspacing] {
+	border-collapse: collapse;
+}
+.layout-builder-block >* table[cellpadding], table[cellspacing] {
+	border-collapse: collapse;
+}
+
+
 .layout--left-right-padding--small{
 	padding-left: 20px;
 }
+
