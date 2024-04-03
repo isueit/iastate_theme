@@ -337,7 +337,8 @@ color: #fff;
 text-decoration: underline;
 }
 .layout--background--red a:hover {
-color: var(--gold)
+color: var(--gold);
+text-decoration: none;
 }
 .layout--background--green a:hover {
 text-decoration: underline;
@@ -365,14 +366,13 @@ background-color: var(--gold);
 		color: var(--gold);
 		text-decoration: none;
 	}
-.layout--background--none a{
+.layout--color--white[style^="background-image"] a{
 	color: #fff;
 	text-decoration: underline;
 }
-.layout--background--none a:hover{
+.layout--color--white[style^="background-image"] a:hover{
 	color: var(--gold);
-	font-weight: bold;
-
+	text-decoration: none;
 }
 /* Background Overlays. */
 .layout--background-overlay--red {
