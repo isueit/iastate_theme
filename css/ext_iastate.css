@@ -382,7 +382,7 @@ img.four-zero-four {
 	padding: 20% 0;
 }
 .hero-heading h2 {
-	font-size: 4.375rem;
+	font-size: clamp(3rem, 4.2vw, 4.375rem);
 	line-height: 1.24528;
 }
 .vertical-alignment {
@@ -757,6 +757,24 @@ div.fontawesome-icon i {
 	font-size: clamp(.9rem, 1vw,1.5rem) !important;
 }
 .bean-card_label.Large {
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
+.bean-card-content_label.Small {
+	font-size: clamp(.8rem, 1vw, .93rem) !important;
+}
+.bean-card-content_label.Medium {
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.bean-card-content_label.Large {
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
+.flip-card_label.Small p{
+	font-size: clamp(.8rem, 1vw, 1rem) !important;
+}
+.flip-card_label.Medium p{
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.flip-card_label.Large p{
 	font-size: clamp(1rem,1.1vw,2rem)!important;
 }
 
