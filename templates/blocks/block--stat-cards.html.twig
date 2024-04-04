@@ -33,6 +33,7 @@
 %}
 
 <div{{attributes.addClass(block_classes)}}>
+	 {{ title_prefix }}
 	<div class="stat-card card">
 		{% block content %}
 	 {{ content.field_stat_background_image }}
@@ -40,7 +41,7 @@
 		<h3 class="card-title">{{ content.field_stat_percent }}</h3>
 		<p class="card-text">{{ content.field_stat_content }}</p>
   </div>
-
+{{ title_suffix }}
 		{% endblock %}
 	</div>
 </div>
