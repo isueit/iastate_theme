@@ -92,6 +92,35 @@
 }
 
 /* --------------------------------------  */
+/* ## Stat Cards
+/* --------------------------------------  */
+.stat-card .card-img img {
+	width: 100%;
+	object-fit: cover;
+	max-height: 300px;
+}
+.stat-card .card-img-overlay {
+	flex-direction: column;
+	justify-content: space-between;
+	display: flex;
+}
+.statistic__title {
+	color: #fff;
+	font-family: Merriweather, serif;
+	font-weight: 700;
+	font-size: 7.375rem;
+	line-height: 1.23636;
+	text-align: center;
+}
+.statistic__text {
+	color: #fff;
+	font-family: Nimbus Sans, sans-serif;
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.66667;
+}
+
+/* --------------------------------------  */
 /* ## Banner Slider
 /* -------------------------------------  */
 .flexslider {
