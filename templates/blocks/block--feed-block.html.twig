@@ -36,13 +36,13 @@
 <div{{ attributes.addClass(block_classes) }}>
   {{ title_prefix }}
   {% if label %}
-    {% set block_title_classes = ['isu-block-title', 'h3'] %}
+    {% set block_title_classes = ['isu-block-title', 'h4'] %}
     <h2{{ title_attributes.addClass(block_title_classes) }}>
 	  {% if thumbnail_uri|length %}
 	    <img src="{{ thumbnail_uri }}" alt="{{ label }}" style="width:5%;">
 	  {% endif %}
 	  {{ label }}
-	</h2> 
+	</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
