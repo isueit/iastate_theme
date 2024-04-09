@@ -377,7 +377,8 @@ background-color: var(--gold);
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: linear-gradient(to right, rgba(200,16,46,0.7), 50%, rgba(200, 16, 46, 1));
+	background: rgba(200, 0, 21, 1);
+	mix-blend-mode: multiply;
 	z-index: 0;
 }
 .layout--background-overlay--red>* {
@@ -427,7 +428,8 @@ background-color: var(--gold);
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: linear-gradient(to right, rgba(82,71,39,0.7), 50%, rgba(82,71,39,1));
+	background: rgba(0, 180, 71, 1);
+	mix-blend-mode: multiply;
 	z-index: 0;
 }
 .layout--background-overlay--green>* {
@@ -548,7 +550,7 @@ background-color: var(--gold);
 	padding: 1.5625rem;
 	vertical-align: top;
 	border: 0.0625rem solid #f3f3f3;
-	
+
 }
 .layout-builder-block >*  table[border] tr:nth-child(2n) {
 	background-color: rgba(0,0,0,.048);
@@ -557,13 +559,13 @@ background-color: var(--gold);
 	border-collapse: inherit;
 	border-bottom-color: #808080;
 	border-top-color: #808080;
-	
+
 }
 .layout-builder-block >* table[border] th, table[border] td{
 	border-collapse: inherit;
 	border-bottom-color: #808080;
 	border-top-color: #808080;
-	
+
 }
 
 .layout-builder-block >* table[cellpadding], table[cellspacing] {
