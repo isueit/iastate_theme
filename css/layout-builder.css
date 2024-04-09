@@ -41,8 +41,8 @@
   background: url(/core/misc/icons/787878/plus.svg) transparent center left / 1em no-repeat; /* LTR */
 }
 a.layout-builder__link--add {
-	color: #686868;
-	text-decoration: underline;
+	color: #686868!important;
+	text-decoration: underline!important;
 }
 [dir="rtl"] .layout-builder__link--add {
   padding-right: 1.3em;
@@ -52,8 +52,8 @@ a.layout-builder__link--add {
 .layout-builder__link--add:hover,
 .layout-builder__link--add:active,
 .layout-builder__link--add:focus {
-  color: #000;
-  border-bottom-style: none;
+  color: #000!important;
+  border-bottom-style: none!important;
 }
 .layout-builder__section {
   margin-bottom: 1.5em;
@@ -342,10 +342,11 @@ text-decoration: none;
 }
 .layout--background--red a {
 color: #fff;
-text-decoration: none;
+text-decoration: underline;
 }
 .layout--background--red a:hover {
-text-decoration: underline;
+color: var(--gold);
+text-decoration: none;
 }
 .layout--background--green a:hover {
 text-decoration: underline;
@@ -365,7 +366,22 @@ background-color: var(--gold);
 .layout--background--blue {
   background-color: var(--midnight);
 }
-
+.layout--background--blue a {
+	color: var(--gold);
+	text-decoration: underline;
+	}
+.layout--background--blue a:hover {
+		color: var(--gold);
+		text-decoration: none;
+	}
+.layout--color--white[style^="background-image"] a{
+	color: #fff;
+	text-decoration: underline;
+}
+.layout--color--white[style^="background-image"] a:hover{
+	color: var(--gold);
+	text-decoration: none;
+}
 /* Background Overlays. */
 .layout--background-overlay--red {
 	position: relative;
