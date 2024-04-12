@@ -390,6 +390,12 @@ img.four-zero-four {
 	top: 50%;
 	transform: translateY(-50%);
 }
+.isueo-box-shadow { 
+	margin-bottom: 20px; 
+	padding: 2rem; 
+	border-radius: 0.25rem; 
+	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
+ }
 
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER STYLES RESPONSIVE
