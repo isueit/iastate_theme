@@ -817,6 +817,11 @@ textarea.cke_source {
   font-size: 0.9rem;
 }
 
+/* Fieldset styling to match admin theme */
+.vertical-tabs__items.vertical-tabs__panes .form-wrapper {
+	margin: var(--space-l) var(--details-desktop-wrapper-padding-start);
+}
+
 /*
  * Some of these styles are partially duplicated from the live content
  * versions from theme.css.
