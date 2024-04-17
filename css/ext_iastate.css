@@ -399,6 +399,12 @@ img.four-zero-four {
 .isueo-cardinal {
 	color: var(--cardinal);
 }
+.isueo-midnight {
+	color: var(--midnight);
+}
+.isueo-burgundy {
+	color: var(--burgundy);
+}
 
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER STYLES RESPONSIVE
