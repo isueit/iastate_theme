@@ -140,10 +140,6 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
   font-size: 13px;
   margin-left: 10px;
 }
-.layout-builder-base--four-columns .layout-content{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
 
 /* --------------------------------------  */
 /* ## Responsive
