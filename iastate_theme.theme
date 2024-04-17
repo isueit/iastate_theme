@@ -292,9 +292,6 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
         if ($layout_builder_enabled) {
           array_splice($suggestions, 1, 0, 'page__node__layout__' . $type);
           array_splice($suggestions, 1, 0, 'page__node__layout');
-          if ($view_mode === "full") {
-            array_splice($suggestions, 1, 0, 'page__node__layout__full__' . $type);
-            array_splice($suggestions, 1, 0, 'page__node__layout__full');
           }
         }
       }
