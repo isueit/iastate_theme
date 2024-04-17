@@ -396,6 +396,9 @@ img.four-zero-four {
 	border-radius: 0.25rem; 
 	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
  }
+.isueo-cardinal {
+	color: var(--cardinal);
+}
 
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER STYLES RESPONSIVE
