@@ -283,20 +283,15 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
   // Template suggestions for Layout Builder enabled pages
   if (!empty($node) && $node instanceof \Drupal\node\NodeInterface) {
     $type = $node->getType();
-    try {
-      $entityTypeManager = \Drupal::service('entity_type.manager');
-      $storage = $entityTypeManager->getStorage('entity_view_display');
-      $view_display = $storage->load('node.' . $type . '.default');
-      if (!is_null($view_display)) {
-        $layout_builder_enabled = $view_display->getThirdPartySetting('layout_builder', 'enabled');
-        if ($layout_builder_enabled) {
-          array_splice($suggestions, 1, 0, 'page__node__layout__' . $type);
-          array_splice($suggestions, 1, 0, 'page__node__layout');
-          }
-        }
+    $entityTypeManager = \Drupal::service('entity_type.manager');
+    $storage = $entityTypeManager->getStorage('entity_view_display');
+    $view_display = $storage->load('node.' . $type . '.default');
+    if (!is_null($view_display)) {
+      $layout_builder_enabled = $view_display->getThirdPartySetting('layout_builder', 'enabled');
+      if ($layout_builder_enabled) {
+        array_splice($suggestions, 1, 0, 'page__node__layout__' . $type);
+        array_splice($suggestions, 1, 0, 'page__node__layout');
       }
-    } catch (Exception $e) {
-      \Drupal::logger('type')->error('Error in iastate.theme iastate_theme_theme_suggestions_page_alter' . $e->getMessage());
     }
   }
 }
