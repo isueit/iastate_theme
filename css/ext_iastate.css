@@ -390,10 +390,10 @@ img.four-zero-four {
 	top: 50%;
 	transform: translateY(-50%);
 }
-.isueo-box-shadow { 
-	margin-bottom: 20px; 
-	padding: 2rem; 
-	border-radius: 0.25rem; 
+.isueo-box-shadow {
+	margin-bottom: 20px;
+	padding: 2rem;
+	border-radius: 0.25rem;
 	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
  }
 .isueo-cardinal {
@@ -808,4 +808,24 @@ div.fontawesome-icon i {
 .bean-card_label.Large div.fontawesome-icons {
 	margin-right: 1.25rem;
 	padding-right: 5px;
+}
+
+/* ------------------------------------- */
+/* ## CATEGORIES
+/* ------------------------------------- */
+.plp-category-cards .card-body p, .plp-category-cards .card-title {
+    text-align: start;
+}
+.plp-category-cards h3.card-title {
+    font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+    margin: 0;
+}
+.plp-category-cards img {
+    border: 10px solid #fff;
+}
+.plp-category-cards .btn-danger {
+	position: absolute;
+	right: 13px;
+	border-radius: .25rem;
+	bottom: -7px;
 }
