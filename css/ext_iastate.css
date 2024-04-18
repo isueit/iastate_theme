@@ -671,11 +671,6 @@ a.bean-card_link {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 1199px) {
-	.bean-card_label p {
-		line-height: 1;
-	}
- }
 
 /* Icons */
 div.fontawesome-icon i {
