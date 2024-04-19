@@ -827,7 +827,7 @@ div.fontawesome-icon i {
 	border-radius: .25rem;
 	bottom: -7px;
 }
-.plp-category-cards .col-md-6 .col-lg-4 {
+.plp-category-cards .col-md-6.col-lg-4 {
 	padding-left: 0px;
 	padding-right: 0px;
 }
