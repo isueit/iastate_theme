@@ -817,6 +817,9 @@ div.fontawesome-icon i {
 }
 .plp-category-cards img {
     border: 10px solid #fff;
+	width: 480px;
+	height: 185px;
+	object-fit: cover;
 }
 .plp-category-cards .btn-danger {
 	position: absolute;
