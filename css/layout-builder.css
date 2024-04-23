@@ -126,6 +126,7 @@ body #layout-builder-modal {
 }
 .layout--content-container--default .layout-content {
 	max-width: 1140px;
+	min-height: inherit;
 }
 
 /* "Add a new custom block" changes */
