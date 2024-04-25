@@ -386,9 +386,9 @@ img.four-zero-four {
 	line-height: 1.24528;
 }
 .vertical-alignment {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	display: grid;
+	align-self: center;
+	justify-self: center;
 }
 .isueo-box-shadow {
 	margin-bottom: 20px;
