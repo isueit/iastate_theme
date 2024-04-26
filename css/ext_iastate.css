@@ -388,6 +388,11 @@ img.four-zero-four {
 .hero-heading.h1.isu-page-title {
 	margin: 0.625rem 0 0.625rem;
 }
+.hero-heading.h1.isu-page-title hr {
+border-top: 2px solid var(--gold);
+width: 6.125rem;
+margin-top: -14px;
+}
 .vertical-alignment {
 	display: grid;
 	align-self: center;
