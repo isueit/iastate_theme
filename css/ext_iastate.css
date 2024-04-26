@@ -385,6 +385,9 @@ img.four-zero-four {
 	font-size: clamp(3rem, 4.2vw, 4.375rem);
 	line-height: 1.24528;
 }
+.hero-heading.h1.isu-page-title {
+	margin: 0.625rem 0 0.625rem;
+}
 .vertical-alignment {
 	display: grid;
 	align-self: center;
