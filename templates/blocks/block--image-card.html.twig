@@ -45,12 +45,23 @@
 					{% if content.field_image_card_url.0['#url'].toString() is not empty %}{% endif %}
 
 					{{ title_prefix }}
-					<span class="bean-card_label {{ content.field_image_card_text_size[0] }} {{ content.field_image_card_color_style[0] }}">
-						{% if content.field_image_card_icon.0 %}
-							{{ content.field_image_card_icon.0 }}
-						{% endif %}
-						<p>{{ content.field_image_card_title[0] }}</p>
-					</span>
+					<div>
+						<span class="bean-card_label {{ content.field_image_card_text_size[0] }} {{ content.field_image_card_color_style[0] }}">
+							<span class="bean-card_title">
+								{% if content.field_image_card_icon.0 %}
+									{{ content.field_image_card_icon.0 }}
+								{% endif %}
+								<p>{{ content.field_image_card_title[0] }}</p>
+							</span>
+							{% if content.field_image_card_caption.0 is not empty %}
+								<span class="image-card_caption">
+									<hr>
+									<p>{% set text = content.field_image_card_caption|render|striptags|trim %}
+										{{ (text|length > 200 ? text|slice(0, 201) |split(' ')|slice(0, -1)|join(' ') ~ '&hellip;' : text) |raw }}</p>
+								{% endif %}
+							</span>
+						</span>
+					</div>
 				</a>
 			</div>
 			{{ title_suffix }}
