@@ -192,12 +192,6 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	padding: 1rem;
 	border: 1px solid #ddd;
 }
-.layout__region {
-	display: grid;
-}
-.layout__region .views-element-container {
-	width: 100%;
-}
 /* --------------------------------------  */
 /* ## BLOCKS
 /* --------------------------------------  */
