@@ -25,6 +25,47 @@
  * @see template_preprocess_block()
  */
 #}
+{% set has_links = false %}
+	{% for link in content.field_social_media_links %}
+		{% if 'facebook.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'twitter.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'linkedin.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'instagram.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'pinterest.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'vimeo.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'youtube.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'snapchat.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'libsyn.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'podcasts.google.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% elseif 'podcasts.apple.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
+					{% endif %}
+		{% endfor %}
+
+
+
+{% if has_links %}
 <div {{ attributes.addClass("isu-social-menu-red", "isu-social-menu") }}>
 	{{ title_prefix }}
 	{% block content %}
@@ -87,3 +128,4 @@
 		</ul>
 	</div>
 </div>
+{% endif %}

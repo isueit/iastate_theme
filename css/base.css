@@ -556,7 +556,7 @@ button:focus {
 .table tbody {
   border-bottom: .125rem solid var(--md-gray);
 }
-body.cke_editable table[border] th,
+body.cke_editable table[border] th, body.cke_editable table th,
 .table thead th, .table th {
   background: var(--cardinal);
 	color: white;
@@ -566,11 +566,11 @@ body.cke_editable table[border] th,
 	font-weight: 700;
 	vertical-align: top;
 }
-body.cke_editable table[border] th a, .table th a {
+body.cke_editable table[border] th a, body.cke_editable table th a, .table th a {
 	color: var(--lt-gray);
 }
 
-body.cke_editable table[border] th a:hover, .table th a:hover{
+body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
 	color: var(--gold);
 }
 caption {
@@ -580,24 +580,27 @@ caption {
   border-top: 1px solid #cccccc;
 }
 body.cke_editable table[border] th, body.cke_editable table[border] td,
-.table[border] th, .table[border] td {
+.table[border] th, .table[border] td,
+body.cke_editable table th, body.cke_editable table td,
+.tableth, .table td {
 	border-bottom-color: transparent;
 	border-top-color: transparent;
 }
-body.cke_editable table[border], .table[border] {
+body.cke_editable table[border], .table[border]
+body.cke_editable table, .table {
 	border-bottom-color: transparent;
 	border: .125rem solid var(--md-gray);
 }
 .table[cellpadding], .table[cellspacing] {
 	border-collapse: collapse;
 }
-body.cke_editable table[border] td, .table td {
+body.cke_editable table[border] td, body.cke_editable table td, .table td {
 	line-height: 1.75;
 	padding: 1.5625rem;
 	vertical-align: top;
 	border: 0.0625rem solid #f3f3f3;
 }
-body.cke_editable table[border] tr:nth-child(2n),
+body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth-child(2n),
 .table tbody tr:nth-child(2n) {
 	background-color: rgba(0,0,0,.048);
 }
@@ -886,12 +889,14 @@ body.cke_editable table[cellspacing] {
   border-collapse: inherit;
 }
 
-body.cke_editable table[border] {
+body.cke_editable table[border], body.cke_editable table{
   border-bottom-color: #808080;
 }
 
 body.cke_editable table[border] th,
-body.cke_editable table[border] td {
+body.cke_editable table[border] td,
+body.cke_editable table th,
+body.cke_editable table td{
   border-collapse: inherit;
   border-bottom-color: #808080;
   border-top-color: #808080;
