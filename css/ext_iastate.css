@@ -657,7 +657,6 @@ a.bean-card_link {
 	width: 85%;
 	justify-content: left;
 	display: flex;
-	align-items: center;
 }
 .bean-card_label.Partial p {
 	padding-right: 10%;
