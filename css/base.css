@@ -5,7 +5,7 @@
  * Bootstrap 4 colors with ISU brand colors, and tweaking colors to meet
  * WCAG AA color contrast guidelines.
  */
-
+/*test git add now*/
  :root {
 	--cardinal: #c8102e;
 	--gold: #f1be48;
@@ -37,7 +37,7 @@ h2, .h2 {
   margin-top: 2rem;
   font-size: clamp(1.5rem, 2.2vw, 1.875rem);
   font-weight: 700;
-  font-family: Merriweather,serif;	
+  font-family: Merriweather,serif;
 	letter-spacing: 0;
 	line-height: 1.4;
 	padding-bottom: 1rem;
@@ -52,9 +52,9 @@ h2:first-child,
 .sr-only + .h2 {
   margin-top: 0;
 }
-h3, .h3 { 
+h3, .h3 {
   margin-bottom: 0.35rem;
-  font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
+  font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
   font-weight: 700;
   font-family: Nimbus Sans,sans-serif;
 	letter-spacing: 0;
@@ -64,7 +64,7 @@ h3, .h3 {
 h3 {
 	color: var(--cardinal);
 }
-h4, .h4 { 
+h4, .h4 {
   font-size: clamp(1rem, .9vw, 1.125rem);
 	font-family: Nimbus sans,sans-serif;
 	font-weight: 700;
@@ -237,8 +237,8 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--gold);
 }
-.btn-success:not(:disabled):not(.disabled).active, 
-.btn-success:not(:disabled):not(.disabled):active, 
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
   background-color: var(--green);
   border-color: var(--green);
@@ -273,8 +273,8 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--gold);
 }
-.btn-outline-success:not(:disabled):not(.disabled).active, 
-.btn-outline-success:not(:disabled):not(.disabled):active, 
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,
 .show > .btn-outline-success.dropdown-toggle {
   background-color: var(--green);
   border-color: var(--green);
@@ -319,7 +319,7 @@ button:focus {
 .btn-outline-danger:hover {
 	background-color: #fff;
 	color: var(--cardinal);
-}	
+}
 .btn-outline-danger::after {
 	content: "";
 	display: block;
@@ -490,8 +490,8 @@ button:focus {
   background-color: #0F6875;
   border-color: #0F6875;
 }
-.btn-outline-info:not(:disabled):not(.disabled).active, 
-.btn-outline-info:not(:disabled):not(.disabled):active, 
+.btn-outline-info:not(:disabled):not(.disabled).active,
+.btn-outline-info:not(:disabled):not(.disabled):active,
 .show > .btn-outline-info.dropdown-toggle {
   background-color: #117a8b;
   border-color: #117a8b;
@@ -507,7 +507,7 @@ button:focus {
 .btn-outline-light:hover {
   border-color: #c2c2c2;
 }
-.btn.disabled, 
+.btn.disabled,
 .btn:disabled { /* Overrides bootstrap.min.css */
   /* Sufficient contrast with white. */
   opacity: 1;
@@ -556,21 +556,21 @@ button:focus {
 .table tbody {
   border-bottom: .125rem solid var(--md-gray);
 }
-.table thead th,
-.table th {
+body.cke_editable table[border] th, body.cke_editable table th,
+.table thead th, .table th {
   background: var(--cardinal);
 	color: white;
 	padding: 1.5625rem;
-	font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
+	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
 	line-height: 1.42857;
 	font-weight: 700;
 	vertical-align: top;
 }
-.table th a {
+body.cke_editable table[border] th a, body.cke_editable table th a, .table th a {
 	color: var(--lt-gray);
 }
 
-.table th a:hover{
+body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
 	color: var(--gold);
 }
 caption {
@@ -579,23 +579,28 @@ caption {
   color: #676767;
   border-top: 1px solid #cccccc;
 }
-.table[border] th, .table[border] td {
+body.cke_editable table[border] th, body.cke_editable table[border] td,
+.table[border] th, .table[border] td,
+body.cke_editable table th, body.cke_editable table td,
+.tableth, .table td {
 	border-bottom-color: transparent;
 	border-top-color: transparent;
 }
-.table[border] {
+body.cke_editable table[border], .table[border]
+body.cke_editable table, .table {
 	border-bottom-color: transparent;
 	border: .125rem solid var(--md-gray);
 }
 .table[cellpadding], .table[cellspacing] {
 	border-collapse: collapse;
 }
-.table td {
+body.cke_editable table[border] td, body.cke_editable table td, .table td {
 	line-height: 1.75;
 	padding: 1.5625rem;
 	vertical-align: top;
 	border: 0.0625rem solid #f3f3f3;
 }
+body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth-child(2n),
 .table tbody tr:nth-child(2n) {
 	background-color: rgba(0,0,0,.048);
 }
@@ -815,6 +820,11 @@ textarea.cke_source {
   font-size: 0.9rem;
 }
 
+/* Fieldset styling to match admin theme */
+.vertical-tabs__items.vertical-tabs__panes .form-wrapper {
+	margin: var(--space-l) var(--details-desktop-wrapper-padding-start);
+}
+
 /*
  * Some of these styles are partially duplicated from the live content
  * versions from theme.css.
@@ -840,7 +850,7 @@ body.cke_editable figure figcaption {
 }
 
 /*
- * Duplicate Bootstrap 4 styles in the ckeditor so table look as 
+ * Duplicate Bootstrap 4 styles in the ckeditor so table look as
  * true-to-live as possible.
  */
 
@@ -879,12 +889,14 @@ body.cke_editable table[cellspacing] {
   border-collapse: inherit;
 }
 
-body.cke_editable table[border] {
+body.cke_editable table[border], body.cke_editable table{
   border-bottom-color: #808080;
 }
 
 body.cke_editable table[border] th,
-body.cke_editable table[border] td {
+body.cke_editable table[border] td,
+body.cke_editable table th,
+body.cke_editable table td{
   border-collapse: inherit;
   border-bottom-color: #808080;
   border-top-color: #808080;
@@ -892,7 +904,7 @@ body.cke_editable table[border] td {
 
 /* --------------------------------------  */
 /* ## CKEditor 5 Styles
-/* --------------------------------------  
+/* --------------------------------------
 .ckeditor-accordion {
 	border: dashed 2px var(--cardinal);
 }

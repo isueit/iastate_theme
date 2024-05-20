@@ -92,6 +92,35 @@
 }
 
 /* --------------------------------------  */
+/* ## Stat Cards
+/* --------------------------------------  */
+.stat-card .card-img img {
+	width: 100%;
+	object-fit: cover;
+	max-height: 300px;
+}
+.stat-card .card-img-overlay {
+	flex-direction: column;
+	justify-content: space-between;
+	display: flex;
+}
+.statistic__title {
+	color: #fff;
+	font-family: Merriweather, serif;
+	font-weight: 700;
+	font-size: 7.375rem;
+	line-height: 1.23636;
+	text-align: center;
+}
+.statistic__text {
+	color: #fff;
+	font-family: Nimbus Sans, sans-serif;
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.66667;
+}
+
+/* --------------------------------------  */
 /* ## Banner Slider
 /* -------------------------------------  */
 .flexslider {
@@ -370,13 +399,36 @@ img.staff_profile_smugmug {
 	padding: 20% 0;
 }
 .hero-heading h2 {
-	font-size: 4.375rem;
+	font-size: clamp(3rem, 4.2vw, 4.375rem);
 	line-height: 1.24528;
 }
+.hero-heading.h1.isu-page-title {
+	margin: 0.625rem 0 0.625rem;
+}
+.hero-heading.h1.isu-page-title hr {
+border-top: 2px solid var(--gold);
+width: 6.125rem;
+margin-top: -14px;
+}
 .vertical-alignment {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	display: grid;
+	align-self: center;
+	justify-self: center;
+}
+.isueo-box-shadow {
+	margin-bottom: 20px;
+	padding: 2rem;
+	border-radius: 0.25rem;
+	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
+ }
+.isueo-cardinal {
+	color: var(--cardinal);
+}
+.isueo-midnight {
+	color: var(--midnight);
+}
+.isueo-burgundy {
+	color: var(--burgundy);
 }
 
 /* --------------------------------------  */
@@ -422,6 +474,16 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 .upcoming-events-white div.event_title a {
 	color: #000;
+}
+
+/* --------------------------------------  */
+/* ## Dashed Yellow Border
+/* --------------------------------------  */
+.isueo-gold-dash {
+	padding: 2rem;
+	border-radius: 0.25rem;
+	margin-bottom: 20px;
+	border: 2px dashed var(--gold);
 }
 
 /* --------------------------------------  */
@@ -577,13 +639,13 @@ a.bean-card_link {
 .bean-card_label {
 	display: flex;
 	padding: 0.75rem 1rem;
-	justify-content: center;
 	background: var(--cardinal);
 	font-size: 1.5rem;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	right: 0;
+	flex-direction: column;
 }
 .bean-card_label p {
 	margin: 0;
@@ -593,13 +655,25 @@ a.bean-card_link {
 .bean-card_label div {
 	margin: 0;
 }
-
+.image-card_caption p {
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+	line-height: 1.5;
+	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+}
+.image-card_caption hr {
+	border-bottom: 0.125rem solid var(--gold);
+	width: 50%;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
 /* Partial Label */
 .bean-card_label.Partial {
 	width: 85%;
 	justify-content: left;
 	display: flex;
-	align-items: center;
 }
 .bean-card_label.Partial p {
 	padding-right: 10%;
@@ -634,11 +708,6 @@ a.bean-card_link {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 1199px) {
-	.bean-card_label p {
-		line-height: 1;
-	}
- }
 
 /* Icons */
 div.fontawesome-icon i {
@@ -737,6 +806,24 @@ div.fontawesome-icon i {
 .bean-card_label.Large {
 	font-size: clamp(1rem,1.1vw,2rem)!important;
 }
+.bean-card-content_label.Small {
+	font-size: clamp(.8rem, 1vw, .93rem) !important;
+}
+.bean-card-content_label.Medium {
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.bean-card-content_label.Large {
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
+.flip-card_label.Small p{
+	font-size: clamp(.8rem, 1vw, 1rem) !important;
+}
+.flip-card_label.Medium p{
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.flip-card_label.Large p{
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
 
  /* When Icons are in the Label */
 .fontawesome-icons {
@@ -747,10 +834,48 @@ div.fontawesome-icon i {
 	padding-right: 5px;
 }
 .bean-card_label.Medium div.fontawesome-icons {
-	margin-right: 1rem;
 	padding-right: 5px;
 }
 .bean-card_label.Large div.fontawesome-icons {
 	margin-right: 1.25rem;
 	padding-right: 5px;
 }
+
+/* ------------------------------------- */
+/* ## CATEGORIES
+/* ------------------------------------- */
+.plp-category-cards .card-body p, .plp-category-cards .card-title {
+    text-align: start;
+}
+.plp-category-cards .card-body {
+	padding: .3rem 1.25rem 1.25rem;
+}
+.plp-category-cards h3.card-title {
+    font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+    margin: 0;
+}
+.plp-category-cards img {
+    border: 10px solid #fff;
+	width: 480px;
+	height: 185px;
+	object-fit: cover;
+}
+.plp-category-cards .btn-danger {
+	position: absolute;
+	right: 13px;
+	border-radius: .25rem;
+	bottom: -7px;
+}
+.plp-category-cards .col-md-6.col-lg-4 {
+	padding-left: 0px;
+	padding-right: 0px;
+	align-items: stretch;
+	display: flex;
+}
+.plp-category-cards .mb-3{
+	margin-bottom: 2rem !important;
+}
+
+/* --------------------------------------  */
+/* ## SLICK SLIDER
+/* --------------------------------------  */

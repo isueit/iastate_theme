@@ -1038,6 +1038,16 @@ div#block-iastate-theme-local-tasks {
   .isu-page-column {
 		max-width: 98%;
 	}
+  div#block-iastate-theme-page-title--2, div#block-iastate-theme-content--2 {
+    padding-left: 2%;
+  }
+  .row.three-col {
+    display: grid;
+    grid-template-rows:repeat(3, 1fr);
+  }
+  .row.three-col .col-md-4{
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width : 1199px) {
@@ -1052,6 +1062,10 @@ div#block-iastate-theme-local-tasks {
    max-width: 94%;
    margin: auto;
  }
+div#block-iastate-theme-content--2 {
+  margin: auto;
+  max-width: 94%;
+}
 }
 
 /* --- ## Submitted By --- */
@@ -1450,7 +1464,7 @@ details {
   display: inline-block;
   width: auto;
   padding: 0 0.5rem;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   font-weight: 700;
 }
 .isu-fieldset .isu-fieldset .isu-legend {
