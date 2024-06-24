@@ -420,7 +420,8 @@ margin-top: -14px;
 	padding: 2rem;
 	border-radius: 0.25rem;
 	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
- }
+	height: 100%; 
+}
 .isueo-cardinal {
 	color: var(--cardinal);
 }
