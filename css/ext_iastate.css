@@ -165,6 +165,10 @@ img.four-zero-four {
 .four-zero-four.fun-fact {
 	padding-bottom: 5rem;
 }
+.four-zero-four .isu-search {
+	float: initial;
+	width: inherit;
+}
 
 /* --------------------------------------  */
 /* ## ACCORDIONS
