@@ -1223,6 +1223,30 @@ h2.isu-block-title.h4:after {
 	border-bottom: 0.125rem solid var(--gold);
 }
 
+
+.stat-card {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 500px;
+}
+.stat-card_icon {
+  font-size: 5rem;
+  line-height: 1.25;
+  text-shadow: 3px 3px #cccccc;
+}
+.stat-card_primary {
+  font-size: 5rem;
+  line-height: 1.25;
+  font-weight: bold;
+  text-shadow: 3px 3px #cccccc;
+}
+.stat-card_secondary {
+  font-size: 1.5rem;
+}
+
+.stat-card_button .btn-danger {
+  white-space: normal;
+}
 /* -------------------------------------- */
 /* ## VIEWS
 /* -------------------------------------- */
