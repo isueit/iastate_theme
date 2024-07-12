@@ -225,6 +225,38 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 }
 
 /* --------------------------------------  */
+/* ## BLOCK STYLES
+/* --------------------------------------  */
+
+/* Red Feature Card */
+.isueo-callout-stat {
+	background: var(--cardinal);
+	padding: 4.0625rem 2.5rem;
+	overflow: hidden;
+	position: relative;
+}
+.isueo-callout-stat h2.isu-block-title.h4 {
+	color: #fff;
+}
+.isueo-callout-stat h2.isu-block-title.h4:after {
+	display: none;
+}
+.isueo-callout-stat .isu-block {
+	color: #fff;
+}
+.isueo-callout-stat:before {
+	border-bottom: 0.5rem solid var(--gold);
+	content: "";
+	width: 3.5rem;
+	height: 0.5rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -1.75rem;
+	top: -.15rem;
+}
+
+
+/* --------------------------------------  */
 /* ## CONFIG TRAY
 /* --------------------------------------  */
 #drupal-off-canvas-wrapper .layout-selection li {
