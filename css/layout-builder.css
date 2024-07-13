@@ -225,6 +225,13 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 }
 
 /* --------------------------------------  */
+/* ## TYPOGRAPHY STYLES
+/* --------------------------------------  */
+.text-decoration-none a {
+	text-decoration: none;
+	color: inherit;
+}
+/* --------------------------------------  */
 /* ## BLOCK STYLES
 /* --------------------------------------  */
 
