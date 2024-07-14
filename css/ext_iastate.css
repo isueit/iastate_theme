@@ -426,13 +426,13 @@ margin-top: -14px;
 	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
 	height: 100%; 
 }
-.isueo-cardinal {
+.isueo-cardinal, .isueo-cardinal p {
 	color: var(--cardinal);
 }
-.isueo-midnight {
+.isueo-midnight, .isueo-midnight p {
 	color: var(--midnight);
 }
-.isueo-burgundy {
+.isueo-burgundy, .isueo-burgundy p {
 	color: var(--burgundy);
 }
 
