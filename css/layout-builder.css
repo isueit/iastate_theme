@@ -242,6 +242,9 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 	overflow: hidden;
 	position: relative;
 }
+div.isueo-callout-stat {
+	color: #fff;
+}
 .isueo-callout-stat h2.isu-block-title.h4 {
 	color: #fff;
 }
