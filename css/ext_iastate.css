@@ -267,6 +267,9 @@ img.four-zero-four {
 	flex: 1;
 	line-height: 1.75;
 }
+.isu-horizontal-card_body p{
+	line-height: 1.3;
+}
 .people-teaser-name {
 	word-break: break-word;
 }
@@ -424,7 +427,7 @@ margin-top: -14px;
 	padding: 2rem;
 	border-radius: 0.25rem;
 	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
-	height: 100%; 
+	height: 100%;
 }
 .isueo-cardinal, .isueo-cardinal p {
 	color: var(--cardinal);
