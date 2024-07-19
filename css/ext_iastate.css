@@ -497,6 +497,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 /* --------------------------------------  */
 /* ## Horizontal Events
 /* --------------------------------------  */
+/* Remove after Events have been updated
 #isu-horiz-events .program_offering_blocks ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -543,7 +544,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 a#isu-horiz-events {
     text-decoration: underline;
     float: right;
-}
+}*/
 
 /* --------------------------------------  */
 /* ## MEDIA LIBRARY
