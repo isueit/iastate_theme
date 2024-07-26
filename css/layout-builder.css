@@ -268,12 +268,18 @@ div.isueo-callout-stat {
 /* Block backgrounds */
 .layout-block--background--gray {
 	background: var(--lt-gray);
+	border-radius: 3px;
+	padding: 1rem;
 }
 .layout-block--background--blue {
 	background: var(--midnight);
+	border-radius: 3px;
+	padding: 1rem;
 }
 .layout-block--background--green {
 	background: var(--green);
+	border-radius: 3px;
+	padding: 1rem;
 }
 
 /* --------------------------------------  */

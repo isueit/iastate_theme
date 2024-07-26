@@ -485,6 +485,17 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 
 /* --------------------------------------  */
+/* ## Dashboard
+/* --------------------------------------  */
+.isueo-dashboard {
+	max-height: 400px;
+	overflow: auto;
+}
+.isueo-dashboard.layout-block--background--gray .isu-fieldset {
+	background-color: #fff;
+}
+
+/* --------------------------------------  */
 /* ## Dashed Yellow Border
 /* --------------------------------------  */
 .isueo-gold-dash {
