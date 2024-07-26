@@ -265,6 +265,23 @@ div.isueo-callout-stat {
 	top: -.15rem;
 }
 
+/* Block backgrounds */
+.layout-block--background--gray {
+	background: var(--lt-gray);
+}
+.layout-block--background--blue {
+	background: var(--midnight);
+}
+.layout-block--background--green {
+	background: var(--green);
+}
+
+/* --------------------------------------  */
+/* ## SPACING STYLES
+/* --------------------------------------  */
+.clearfix {
+	clear: both;
+}
 
 /* --------------------------------------  */
 /* ## CONFIG TRAY
