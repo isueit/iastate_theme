@@ -28,35 +28,6 @@
   }
 
 /* --------------------------------------  */
-/* ## CARD DECK BLOCK
-/* --------------------------------------  */
-.isueo-card-deck.card {
-	text-align: left;
-	border-radius: .5rem;
-}
-.isueo-card-deck-title.h3.card-title {
-	padding: 1.25rem;
-	font-family: Merriweather,serif;
-	margin: 0;
-}
-.isueo-card-deck-body.card-body {
-	padding: 0 1rem;
-}
-.isueo-card-deck-footer.card-footer {
-	padding: 1.25rem 1.25rem;
-}
-.isueo-card-deck-footer a {
-	text-decoration: none;
-	color: var(--cardinal);
-	font-weight: 700;
-}
-.isueo-card-deck-footer a:after {
-	content: "\f061";
-	font-family: FontAwesome;
-	padding-left: .5rem;
-	vertical-align: middle;
-}
-/* --------------------------------------  */
 /* ## GOOGLE TRANSLATE
 /* --------------------------------------  */
 #block-gtranslate {

@@ -33,6 +33,7 @@
 %}
 
 <div{{attributes.addClass(block_classes)}}>
+	<div class="isueo-card-deck-wrapper">
 	<div class="isueo-card-deck card">
 		{% block content %}
 			<div class="isueo-card-deck-img">
@@ -49,6 +50,7 @@
 					{{ content.field_card_deck_link.0['#title'] }}</a>
 				</div>
 			{% endif %}
+			
 		{% else %}
 			<div class="isueo-card-deck-title h3 card-title">
 				{{ label }}
@@ -68,4 +70,5 @@
 
 		{% endblock %}
 	</div>
+</div>
 </div>
