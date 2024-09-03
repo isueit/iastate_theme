@@ -1359,7 +1359,19 @@ abbr[title].tabledrag-changed { /* Class via Drupal 8 */
   text-align: center;
   text-decoration: none;
 }
+.messages.messages--status{
+color:#856404;
+background-color: #fff3cd;
+border-color: #ffeeba;
 
+}
+.messages__wrapper{
+  padding-left: 0%;
+  padding-right: 6%;
+  padding-top: 10px;
+  max-width: 1140px;
+  margin:auto;
+}
 /* -------------------------------------- */
 /* ## COMMENTS
 /* -------------------------------------- */
