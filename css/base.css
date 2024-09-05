@@ -142,7 +142,7 @@ blockquote p:before {
 }
 blockquote p:after {
 	bottom: 2.625rem;
-	right: 0;
+	right: -22%;
 	transform: rotate(180deg);
 }
 blockquote .author {
@@ -559,7 +559,7 @@ button:focus {
 /* ## TABLES
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
-.ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus {
+.ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
   background: var(--cardinal);
 	color: white;
 	padding: 1.5625rem;
@@ -614,7 +614,20 @@ body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth
   border-right: 1px solid #dddd;
   border-left: 1px solid #ddd;
 }
-
+.table {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: .125rem solid #ebebeb !important;
+}
+.table>:not(:first-child) {
+	border-top: none;
+}
+.table tbody td {
+	padding: 1.5625rem;
+	max-width: 90vw;
+	min-width: 0;
+	border: .0625rem solid #f3f3f3;
+}
 /* --------------------------------------  */
 /* ## IMAGES
 /* --------------------------------------  */
