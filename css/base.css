@@ -126,7 +126,7 @@ blockquote p {
 	font-weight: 700;
 	max-width: 80vw;
 }
-blockquote p:before, blockquote p:after {
+blockquote p:first-child:before, blockquote p:last-child:after {
 	content: "";
 	width: 4rem;
 	height: 3.25rem;
@@ -155,6 +155,13 @@ blockquote img {
 	max-width: 16.125rem;
 	margin-right: 6.12rem;
 }
+blockquote a {
+	color: #fff;
+}
+blockquote a:hover {
+	text-decoration: underline;
+	color: var(--gold);
+}
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
@@ -172,7 +179,7 @@ hr { /* Overrides Bootstrap 4's hr style */
 /* ## LINKS and BUTTONS
 /* --------------------------------------  */
 
-a { /* Overrides bootstrap.min.css */
+a, .link { /* Overrides bootstrap.min.css */
   color: var(--burgundy); /* ISU brand standard */
   text-decoration: underline; /* WCAG A standard */
   transition: color .2s ease-in-out;
@@ -552,12 +559,7 @@ button:focus {
 /* ## TABLES
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
-
-.table tbody {
-  border-bottom: .125rem solid var(--md-gray);
-}
-body.cke_editable table[border] th, body.cke_editable table th,
-.table thead th, .table th {
+.ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus {
   background: var(--cardinal);
 	color: white;
 	padding: 1.5625rem;
@@ -569,7 +571,6 @@ body.cke_editable table[border] th, body.cke_editable table th,
 body.cke_editable table[border] th a, body.cke_editable table th a, .table th a {
 	color: var(--lt-gray);
 }
-
 body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
 	color: var(--gold);
 }
@@ -587,14 +588,14 @@ body.cke_editable table th, body.cke_editable table td,
 	border-top-color: transparent;
 }
 body.cke_editable table[border], .table[border]
-body.cke_editable table, .table {
+body.cke_editable table, .table, .table tbody {
 	border-bottom-color: transparent;
 	border: .125rem solid var(--md-gray);
 }
 .table[cellpadding], .table[cellspacing] {
 	border-collapse: collapse;
 }
-body.cke_editable table[border] td, body.cke_editable table td, .table td {
+.ck-editor__editable.ck-content .ck-widget.table table[border] td.ck-editor__nested-editable, .ck-content .table table td, .ck-content .table table th, .ck-editor__editable.ck-content .ck-widget.table td {
 	line-height: 1.75;
 	padding: 1.5625rem;
 	vertical-align: top;
@@ -685,31 +686,31 @@ table img {
 .ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
 	background: var(--midnight);
 }
-.ck.ck-heading_heading2 {
+button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
 	font-family: Merriweather,serif;
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
-.ck.ck-heading_heading3 {
+button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: Nimbus Sans,sans-serif;
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
-.ck.ck-heading_heading4 {
+button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: Nimbus sans,sans-serif;
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
-.ck.ck-heading_heading5 {
+button.ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: Nimbus sans,sans-serif;
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
-.ck.ck-heading_heading6 {
+button.ck.ck-heading_heading6 {
 	font-family: Nimbus Sans, sans-serif;
 	letter-spacing: 0;
 	color: var(--burgundy);
@@ -779,8 +780,23 @@ dl {
 	font-weight: inherit;
 	border-bottom: 0.125rem solid #ebebeb;
 }
-
-
+blockquote .ck-editor__editable.ck-editor__nested-editable.ck-editor__nested-editable_focused {
+	color: #000;
+}
+blockquote .ck-editor__editable.ck-editor__nested-editable {
+	border: 1px solid #fff;
+	padding: .5rem;
+}
+blockquote.ck-widget {
+	margin-inline: 0;
+}
+blockquote.ck-widget p:before {
+	margin-left: -2.1875rem;
+	top: 1rem;
+}
+blockquote.ck-widget p:after {
+	right: 1rem;
+}
 /* --------------------------------------  */
 /* ## FORMS
 /* --------------------------------------  */
