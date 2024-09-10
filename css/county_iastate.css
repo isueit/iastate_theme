@@ -64,10 +64,6 @@ a.events_show_more {
 	float: right;
 }
 
-.node--type-homepage-ct {
-	border-top: 10px solid var(--gold);
-}
-
 a.county_calendar {
 	border: 1px solid #ffffff;
 	color: #ffffff;
@@ -150,4 +146,10 @@ div.join-4h-info {
 	max-width: 1140px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.fa-iastate22-exclamation-point{
+	-webkit-box-flex: 0;
+	flex:0,0,auto;
+	color: var(--gold);
+	font-size: 1.875rem;
 }
