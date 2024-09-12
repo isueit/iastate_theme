@@ -1010,6 +1010,7 @@ a.isu-dropdown-submenu {
 	letter-spacing: 0;
 	margin: 3.5625rem 0 0.625rem;
 	color: var(--cardinal);
+  width: 1140px;
 }
 .isu-region.isu-region_sidebar-second {
 	margin-top: 2rem;
