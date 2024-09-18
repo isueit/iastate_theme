@@ -264,6 +264,14 @@ div.isueo-callout-stat {
 	margin-left: -1.75rem;
 	top: -.15rem;
 }
+.isueo-callout-stat li a {
+	color #fff;
+	text-decoration: underline;
+	text-decoration-color: var(--gold);
+}
+.isueo-callout-stat li a:hover {
+	text-decoration: none;
+}
 
 /* Block backgrounds */
 .layout-block--background--gray {
