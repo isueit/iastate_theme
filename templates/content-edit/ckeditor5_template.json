@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Left Align Template",
+        "icon": "/images/leftColumn.gif",
+        "description": "Image to the left with text aligned to the right.",
+        "html": "<div class='row two-col-left'><div class='col-md-3 col-sidebar'><p><img height='200px' width='200px' style='float:left;padding:10px' alt='Placeholder Image' src='themes/custom/iastate_theme/images/generic.png'></p></div><div class ='col-md-9 col-main'><h2>Left Align Template</h2><p>Remove the placeholder text and image and replace with your own content. Make sure to use the proper heading.</p><p>This is a helpful way to insert image and text with appropriate padding and alignment properties.  If you wish to have two equal columns, try using the two column template provided instead.</p></div></div><p>&nbsp;</p>"
+    },
+    {
+        "title": "Right Align Template",
+        "icon": "/images/rightColumn.gif",
+        "description": "Image to the right with text aligned to the left.",
+        "html": "<div class='row two-col-right'><div class ='col-md-9 col-main'><h2>Right Align Template</h2><p>Remove the placeholder text and image and replace with your own content. Make sure to use the proper heading.</p><p>This is a helpful way to insert image and text with appropriate padding and alignment properties.  If you wish to have two equal columns, try using the two column template provided instead.</p></div><div class='col-md-3 col-sidebar'><img height='200px' width='200px' style='float:right;padding:10px' alt='Placeholder Image' src='themes/custom/iastate_theme/images/generic.png'></div></div><p>&nbsp;</p>"
+    },
+    {
+        "title": "Two Column Template",
+        "icon": "/images/twoColumn.gif",
+        "description": "Create two columns of content.",
+        "html": "<div class='row two-col'><div class='col-md-6 col-1'><h2>Two Column Template</h2><p>This is a two column template.  Remove the placeholder text and replace with your own content.</p><p>This can be used for text or images.  The template provides the content in a responsive and accessible way.  If you wish to have an image in one column and text in the other, try using the left or right column templates provided instead.</p></div><div class='col-md-6 col-2'><h2>Two Column Template</h2><p>This is a two column template.  Remove the placeholder text and replace with your own content.</p><p>This can be used for text or images.  The template provides the content in a responsive and accessible way.  If you wish to have an image in one column and text in the other, try using the left or right column templates provided instead.</p></div></div><p>&nbsp;</p>"
+    },
+    {
+        "title": "Three Column Template",
+        "icon": "/images/threeColumn.gif",
+        "description": "Create three columns of content.",
+        "html": "<div class='row three-col'><div class='col-md-4 col-1'><h2>Three Column Template</h2><p>This is a three column template.  Remove the placeholder text and replace with your own content.</p><p>This can be used for text or images or a mixture of the two.  The template provides the content in a responsive and accessible way.</p></div><div class='col-md-4 col-2'><h2>Three Column Template</h2><p>This is a three column template.  Remove the placeholder text and replace with your own content.</p><p>This can be used for text or images or a mixture of the two.  The template provides the content in a responsive and accessible way.</p></div><div class='col-md-4 col-3'><h2>Three Column Template</h2><p>This is a three column template.  Remove the placeholder text and replace with your own content.</p><p>This can be used for text or images or a mixture of the two.  The template provides the content in a responsive and accessible way.</p></div></div><p>&nbsp;</p>"
+    }
+]
