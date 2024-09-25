@@ -56,8 +56,7 @@
 				{{ label }}
 			</div>
 			<div class="isueo-card-deck-body card-body">
-				{% set text = content.body|render|striptags|trim %}
-					{{ (text|length > 200 ? text|slice(0, 201) |split(' ')|slice(0, -1)|join(' ') ~ '&hellip;' : text) |raw }}
+			{{ content.body }}
 			</div>
 			{% if content.field_card_deck_link.0['#url'].toString() is not empty %}
 				<div class="isueo-card-deck-footer card-footer">
