@@ -57,6 +57,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+  --sans-font: 'Arial, Helvetica Neue, sans-serif';
+	--serif-font: 'Merriweather, serif';
   }
 
 /* --------------------------------------  */
@@ -302,7 +304,7 @@ body,
 	margin: 0;
 	padding: 0;
 	font-size: 1.125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	line-height: 1.25;
 }
@@ -745,7 +747,7 @@ div#edit-search-broadness {
 		text-align: left;
 		cursor: pointer;
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-weight: 700;
 		font-size: 1.125rem;
 		text-decoration: none;
@@ -908,7 +910,7 @@ a.isu-dropdown-submenu {
   }
   a.nav-link.isu-nav-link.isu-dropdown-toggle {
     font-size: 1.125rem;
-    font-family: Nimbus Sans,sans-serif;
+    font-family: var(--sans-font);
   }
   .isu-dropdown-toggle_mobile {
     display: flex;
@@ -1004,7 +1006,7 @@ a.isu-dropdown-submenu {
 	border-radius: 3px;
 }
 .isu-page-title {
-  font-family: Merriweather,serif;
+  font-family: var(--serif-font);
 	line-height: 1.32857;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -1202,7 +1204,7 @@ li article:not(.isu-user):not(.isu-search_collapse) {
   font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .isu-sidebar .isu-block-title {

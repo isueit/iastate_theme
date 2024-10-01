@@ -25,6 +25,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial, Helvetica Neue, sans-serif';
+	--serif-font: 'Merriweather, serif';
   }
 
 /* --------------------------------------  */
@@ -37,7 +39,7 @@
 	padding-bottom: 0.375rem;
 }
 .gt_selector {
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1rem;
 	padding-left: 1.7em;
 	width: 100px;
@@ -74,7 +76,7 @@
 	}
 	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;
@@ -84,7 +86,7 @@
 @media screen and (max-width : 1199px) {
 	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;
@@ -106,7 +108,7 @@
 }
 .statistic__title {
 	color: #fff;
-	font-family: Merriweather, serif;
+	font-family: var(--serif-font);
 	font-weight: 700;
 	font-size: 7.375rem;
 	line-height: 1.23636;
@@ -114,7 +116,7 @@
 }
 .statistic__text {
 	color: #fff;
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	font-size: 1.125rem;
 	line-height: 1.66667;
@@ -196,7 +198,7 @@ img.four-zero-four {
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;
@@ -618,7 +620,7 @@ a.bean-card_link {
 .bean-card_label p {
 	margin: 0;
 	line-height: 1.45;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 }
 .bean-card_label div {
 	margin: 0;
@@ -626,7 +628,7 @@ a.bean-card_link {
 .image-card_caption p {
 	font-size: clamp(1rem, 1.2vw, 1.125rem);
 	line-height: 1.5;
-	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: var(--sans-font);
 	justify-content: center;
 	display: flex;
 	text-align: center;

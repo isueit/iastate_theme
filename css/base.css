@@ -15,6 +15,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial, Helvetica Neue, sans-serif';
+	--serif-font: 'Merriweather, serif';
   }
 
 /* --------------------------------------  */
@@ -24,7 +26,7 @@
 body {
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.5;
-  font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--sans-font);
   -webkit-font-smoothing: antialiased;
   -webkit-osx-font-smoothing: grayscale;
   background-color: #ffffff;
@@ -37,7 +39,7 @@ h2, .h2 {
   margin-top: 2rem;
   font-size: clamp(1.5rem, 2.2vw, 1.875rem);
   font-weight: 700;
-  font-family: Merriweather,serif;
+  font-family: var(--serif-font);
 	letter-spacing: 0;
 	line-height: 1.4;
 	padding-bottom: 1rem;
@@ -56,7 +58,7 @@ h3, .h3 {
   margin-bottom: 0.35rem;
   font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
   font-weight: 700;
-  font-family: Nimbus Sans,sans-serif;
+  font-family: var(--sans-font);
 	letter-spacing: 0;
 	line-height: 1.42857;
 	margin: 2rem 0 0.5625rem;
@@ -66,7 +68,7 @@ h3 {
 }
 h4, .h4 {
   font-size: clamp(1rem, .9vw, 1.125rem);
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -78,7 +80,7 @@ h4 {
 .h5, h5 {
 	font-size: clamp(1rem, 1.2vw, 1.125rem);
 	line-height: 1.5625;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -87,7 +89,7 @@ h5 {
 	color: var(--burgundy);
 }
 .h6, h6 {
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -121,7 +123,7 @@ blockquote:before {
 }
 blockquote p {
 	font-size: clamp(1rem, 2.1vw, 2.5rem);
-	font-family: Merriweather, serif;
+	font-family: var(--serif-font);
 	line-height: 1.39024;
 	font-weight: 700;
 	max-width: 80vw;
@@ -701,30 +703,30 @@ table img {
 }
 button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 button.ck.ck-heading_heading5 {
 	font-size: 1rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 button.ck.ck-heading_heading6 {
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
@@ -732,7 +734,7 @@ button.ck.ck-heading_heading6 {
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;
@@ -945,30 +947,30 @@ body.cke_editable table td{
 }
 .ck.ck-heading_heading2 {
 	font-size: 1.875rem;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 .ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 .ck.ck-heading_heading4 {
 	font-size: 1.125rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 .ck.ck-heading_heading5 {
 	font-size: 1rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 .ck.ck-heading_heading6 {
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
@@ -976,7 +978,7 @@ body.cke_editable table td{
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;

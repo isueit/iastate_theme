@@ -13,6 +13,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial, Helvetica Neue, sans-serif';
+	--serif-font: 'Merriweather, serif';
 }
 
 /* --------------------------------------  */
@@ -265,7 +267,7 @@ div.isueo-callout-stat {
 	top: -.15rem;
 }
 .isueo-callout-stat li a {
-	color #fff;
+	color: #fff;
 	text-decoration: underline;
 	text-decoration-color: var(--gold);
 }
@@ -583,28 +585,28 @@ background-color: var(--gold);
 	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .layout--alignment--right .isu-block-title {
 	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .layout--alignment--center .isu-block-title {
 	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .layout--alignment--justify .isu-block-title {
 	font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .layout--alignment--center h2.isu-block-title.h4:after {
