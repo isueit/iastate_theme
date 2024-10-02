@@ -57,8 +57,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
-  --sans-font: 'Arial, Helvetica Neue, sans-serif';
-	--serif-font: 'Merriweather, serif';
+  --sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
   }
 
 /* --------------------------------------  */
