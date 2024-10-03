@@ -266,12 +266,12 @@ div.isueo-callout-stat {
 	margin-left: -1.75rem;
 	top: -.15rem;
 }
-.isueo-callout-stat li a {
+.isueo-callout-stat li a, .isueo-callout-stat a {
 	color: #fff;
 	text-decoration: underline;
 	text-decoration-color: var(--gold);
 }
-.isueo-callout-stat li a:hover {
+.isueo-callout-stat li a:hover, .isueo-callout-state a:hover {
 	text-decoration: none;
 }
 
