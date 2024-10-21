@@ -41,10 +41,10 @@
     {% endif %}
 
     {% for item in items %}
-      {# Assign classes based on if the item is an open parent, closed parent, 
+      {# Assign classes based on if the item is an open parent, closed parent,
       active, or a has a submenu. #}
       {%
-        set li_classes = [ 
+        set li_classes = [
           menu_level ? 'dropdown-item isu-dropdown-item' : 'nav-item',
           item.below ? 'isu-dropdown',
         ]

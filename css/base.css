@@ -557,6 +557,17 @@ button:focus {
   border-color: #575757;
 }
 
+.ck-button.ck-media-library.ck-button_with-text {
+    background-color: var(--midnight);
+    color: white;
+    border: none;
+}
+.ck-button.ck-media-library.ck-button_with-text:hover {
+    background-color: var(--dk-gray);
+	color: var(--midnight)
+}
+
+
 /* --------------------------------------  */
 /* ## TABLES
 /* --------------------------------------  */
