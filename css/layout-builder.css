@@ -148,7 +148,8 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
 /* --------------------------------------  */
 @media screen and (max-width : 768px) {
   .layout--content-container--default .layout-content {
-		width: 75% !important;
+		margin-left: 2rem;
+		margin-right: 2rem;
 	  	/*display: inline-block;*/
 	}
 	.layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content, .layout-builder-base--four-columns .layout-content {
