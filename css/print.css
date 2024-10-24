@@ -4,16 +4,71 @@
  *
  */
 
+ /* --------------------------------------  */
+/* ## TYPOGRAPHY
+/* --------------------------------------  */
 body {
   padding-top: 0 !important;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
 body,
 .isu-site-navbar,
 .card-header {
-  background-color: #fff !important;
+  background-color: transparent;
+}
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+}
+a {
+  word-wrap: break-word;
+  font-weight: bold;
+}
+/*a:after {
+  content: " (" attr(href) ")";
+  font-size: .9rem;
+  display: contents !important;
+}
+a#main-content:after {
+  display: none;
+}*/
+/* --------------------------------------  */
+/* ## PAGE LAYOUT
+/* --------------------------------------  */
+.node {
+  padding: 0 !important;
+  color: #000 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  background-color: transparent !important;
+}
+#toolbar-bar,
+.isu-navbar,
+.isu-search_collapse,
+.isu-menu-navbar_toggler,
+.isu-search_toggler,
+.isu-menu-navbar,
+.isu-region_breadcrumbs, 
+.nav-tabs,
+.isu-comments_title,
+.comment-comment-form,
+.isu-sidebar,
+.isu-links,
+mark.badge,
+.isu-row-header,
+.isu-both-row-header,
+.contextual .trigger,
+.isu-sign-off_wrapper,
+.isu-footer img, 
+.isu-footer .isu-copyright,
+.isu-social-menu-footer,
+.isu-region_footer-fourth,
+.isu-footer a {
+  display: none;
 }
 
+/* --------------------------------------  */
+/* ## SITE HEADER
+/* --------------------------------------  */
 .isu-site-navbar {
   border-bottom: none;
 }
@@ -31,10 +86,8 @@ a.isu-wordmark {
 }
 
 .isu-wordmark-logo {
-  filter: invert(1) !important;
-  filter: invert(100%) !important;
-  -webkit-filter: invert(1) !important;
   max-width: 400px;
+  padding-top: 4rem;
 }
 
 .isu-wordmark-sitename { 
@@ -42,6 +95,17 @@ a.isu-wordmark {
   font-size: 18px;
 }
 
+#block-gtranslate {
+  display: none;
+}
+
+#block-socialmediared {
+  display: none;
+}
+
+/* --------------------------------------  */
+/* ## LINKS and BUTTONS
+/* --------------------------------------  */
 a { 
   padding: 0 !important;
   margin: 0 !important;
@@ -62,31 +126,49 @@ a {
   background-color: #fff !important;
   border: none !important;
 }
+.btn-success, .btn-outline-success, .btn-danger, .btn-outline-danger, .btn-primary, .btn-outline-primary, .btn-secondary, .btn-outline-secondary {
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  border-radius: unset;
+}
 
-#toolbar-bar,
-.isu-navbar,
-.isu-search_collapse,
-.isu-menu-navbar_toggler,
-.isu-search_toggler,
-.isu-menu-navbar,
-.isu-region_breadcrumbs, 
-.nav-tabs,
-.isu-comments_title,
-.comment-comment-form,
-.isu-sidebar,
-.isu-footer,
-.isu-links,
-mark.badge,
-.isu-row-header,
-.isu-both-row-header,
-.contextual .trigger {
+/* --------------------------------------  */
+/* ## BLOCKS
+/* --------------------------------------  */
+/* Stat Cards */
+.isueo-callout-stat {
+  background: transparent;
+}
+div.isueo-callout-stat {
+  color: #000;
+  padding: 0 !important;
+}
+.isueo-callout-stat:before {
   display: none;
 }
 
-.node {
-  padding: 0 !important;
-  color: #000 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  background-color: transparent !important;
+/* --------------------------------------  */
+/* ## LAYOUT BUILDER
+/* --------------------------------------  */
+.layout--background--gray, .layout--background--red, .layout--background--green, .layout--background--blue {
+  background-color: transparent;
+}
+/* --------------------------------------  */
+/* ## SITE FOOTER
+/* --------------------------------------  */
+#block-contact-us.isu-footer_contact-address {
+  color: #000;
+  width: 1140px;
+}
+.isu-footer {
+  background: transparent;
+  padding: 0;
+}
+.isu-footer .row {
+  display: block;
+}
+#block-contact-us.isu-footer_contact-address:after {
+  content: "This institution is an equal opportunity provider. For the full non-discrimination statement or accommodation inquiries, go to www.extension.iastate.edu/diversity/ext";
+  font-size: .9rem;
 }
