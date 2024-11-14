@@ -25,6 +25,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
   }
 
 /* --------------------------------------  */
@@ -37,7 +39,7 @@
 	padding-bottom: 0.375rem;
 }
 .gt_selector {
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1rem;
 	padding-left: 1.7em;
 	width: 100px;
@@ -57,7 +59,7 @@
 /* ## GTRANSLATE RESPONSIVE
 /* --------------------------------------  */
 @media screen and (max-width : 991px) {
-	.gt_selector {	
+	.gt_selector {
 		width: 100%;
 	}
 	.gt_selector:hover {
@@ -74,7 +76,7 @@
 	}
 	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;
@@ -84,11 +86,40 @@
 @media screen and (max-width : 1199px) {
 	.gt_selector, .isu-social-menu-red #dropdownMenuButton {
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;
 	}
+}
+
+/* --------------------------------------  */
+/* ## Stat Cards
+/* --------------------------------------  */
+.stat-card .card-img img {
+	width: 100%;
+	object-fit: cover;
+	max-height: 300px;
+}
+.stat-card .card-img-overlay {
+	flex-direction: column;
+	justify-content: space-between;
+	display: flex;
+}
+.statistic__title {
+	color: #fff;
+	font-family: var(--serif-font);
+	font-weight: 700;
+	font-size: 7.375rem;
+	line-height: 1.23636;
+	text-align: center;
+}
+.statistic__text {
+	color: #fff;
+	font-family: var(--sans-font);
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.66667;
 }
 
 /* --------------------------------------  */
@@ -97,6 +128,24 @@
 .flexslider {
 	background: none;
 	border: none;
+}
+
+/* --------------------------------------  */
+/* ## Title Overlay for Hero
+/* -------------------------------------  */
+.ext-hero-red-overlay {
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	background: rgba(200,16,46,.8);
+	padding: 0.75rem 1rem;
+}
+.ext-hero-white-overlay {
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        background: rgba(255,255,255,.7);
+        padding: 0.75rem 1rem;
 }
 
 /* ------------------------------------- */
@@ -117,6 +166,10 @@ img.four-zero-four {
 }
 .four-zero-four.fun-fact {
 	padding-bottom: 5rem;
+}
+.four-zero-four .isu-search {
+	float: initial;
+	width: inherit;
 }
 
 /* --------------------------------------  */
@@ -145,7 +198,7 @@ img.four-zero-four {
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;
@@ -194,24 +247,46 @@ img.four-zero-four {
   /* --------------------------------------  */
   /* ## STAFF VIEWS
   /* --------------------------------------  */
-  .views-field.views-field-field-staff-profile-pref-phone {
-    margin: 12px;
-  }
-  .views-field.views-field-field-staff-profile-pref-phone h2 {
-    padding-bottom: 0px;
-  }
-  img.staff_profile_smugmug {
-    max-width: 100px;
-    margin: .75rem;
-    float: left;
-  }
-  
-  /* This style is for staff views before they were changed to grid, eventually can be deleted */
-  td.staff-view-smugmug img {
-    max-width: 100px;
-    margin: 10px 0px;
-  }
-
+.isu-people-directory-view {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.isu-horizontal-card {
+	display: flex;
+}
+.isu-people-directory-view .isu-horizontal-card_wrap {
+	display: flex;
+}
+.isu-horizontal-card_wrap {
+	align-items: flex;
+}
+.isu-horizontal-card_left {
+	margin-bottom: 0;
+	margin-right: 1rem;
+}
+.isu-horizontal-card_body {
+	flex: 1;
+	line-height: 1.75;
+}
+.isu-horizontal-card_body p{
+	line-height: 1.3;
+}
+.people-teaser-name {
+	word-break: break-word;
+}
+.people-teaser-name h2 {
+	margin-bottom: 0.5rem;
+	font-size: clamp(1.25rem,.9vw,1.25rem);
+	padding-bottom: 0;
+}
+img.staff_profile_smugmug {
+	max-width: 150px;
+	min-width: 100px;
+}
+.staff-profile-reed-add-cty-editor input.form-autocomplete {
+    border: 2px solid #868686 !important;
+}
 /* Custodian of Public Record/About page */
 .isu-custodian-records-about {
 	max-width: 1140px;
@@ -335,13 +410,35 @@ img.four-zero-four {
 	padding: 20% 0;
 }
 .hero-heading h2 {
-	font-size: 4.375rem;
+	font-size: clamp(3rem, 4.2vw, 4.375rem);
 	line-height: 1.24528;
 }
-.vertical-alignment {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+.hero-heading.h1.isu-page-title {
+	margin: 0.625rem 0 0.625rem;
+}
+.hero-heading.h1.isu-page-title hr {
+border-top: 2px solid var(--gold);
+width: 6.125rem;
+margin-top: -14px;
+}
+.vertical-alignment .layout-content {
+	align-items: center;
+}
+.isueo-box-shadow {
+	margin-bottom: 20px;
+	padding: 2rem;
+	border-radius: 0.25rem;
+	box-shadow: 0.5625rem 0.5625rem 1.25rem rgb(0 0 0 / 20%);
+	height: 100%;
+}
+.isueo-cardinal, .isueo-cardinal p {
+	color: var(--cardinal);
+}
+.isueo-midnight, .isueo-midnight p {
+	color: var(--midnight);
+}
+.isueo-burgundy, .isueo-burgundy p {
+	color: var(--burgundy);
 }
 
 /* --------------------------------------  */
@@ -349,14 +446,19 @@ img.four-zero-four {
 /* --------------------------------------  */
 @media screen and (max-width : 768px) {
 	.strong-iowa {
-		padding-top: 10%;
+		padding: 5% 0;
 	}
 	.strong-iowa img {
-		max-width: 90%;
-		padding-left: 5%;
+		max-width: 100%;
+		display: grid;
+		margin: auto;
 	}
 	.vertical-alignment {
 		transform: none;
+	}
+	.featured-pubs {
+		max-width: 94%;
+		margin: auto;
 	}
 }
 
@@ -385,6 +487,27 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 }
 
 /* --------------------------------------  */
+/* ## Dashboard
+/* --------------------------------------  */
+.isueo-dashboard {
+	max-height: 400px;
+	overflow: auto;
+}
+.isueo-dashboard.layout-block--background--gray .isu-fieldset {
+	background-color: #fff;
+}
+
+/* --------------------------------------  */
+/* ## Dashed Yellow Border
+/* --------------------------------------  */
+.isueo-gold-dash {
+	padding: 2rem;
+	border-radius: 0.25rem;
+	margin-bottom: 20px;
+	border: 2px dashed var(--gold);
+}
+
+/* --------------------------------------  */
 /* ## MEDIA LIBRARY
 /* --------------------------------------  */
 .media-library-item__preview {
@@ -398,7 +521,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 /* Media Library Theme Reset*/
 .views-live-preview .media-library-view div.views-row + div.views-row {
     margin-top: 0;
-} 
+}
 .media-library-wrapper div[role="toolbar"] {
     max-width: 20%;
 }
@@ -409,7 +532,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 	width: 100%;
 }
 .js-form-item-sort-by select{
-    height: auto !important;  
+    height: auto !important;
 }
 .media-library-view--form-actions {
 	margin-bottom: 0px;
@@ -421,7 +544,7 @@ div.upcoming-events-white h2.isu-block-title.h4 {
     background: #6b6b6b !important ;
     padding: 15px 49px 15px 15px !important;
 }
-.ui-dialog-title {    
+.ui-dialog-title {
 	margin: 0;
     color: #fff;
     font-size: 1.231em;
@@ -475,8 +598,8 @@ a.bean-card_link {
 }
 
 /* Kill external link icon */
-#section-content .bean-card a.external:after { 
-	display: none; 
+#section-content .bean-card a.external:after {
+	display: none;
 }
 
 /* Label */
@@ -486,33 +609,45 @@ a.bean-card_link {
 .bean-card_label {
 	display: flex;
 	padding: 0.75rem 1rem;
-	justify-content: center;
 	background: var(--cardinal);
 	font-size: 1.5rem;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	right: 0;
+	flex-direction: column;
 }
 .bean-card_label p {
 	margin: 0;
 	line-height: 1.45;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 }
 .bean-card_label div {
 	margin: 0;
 }
-
+.image-card_caption p {
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+	line-height: 1.5;
+	font-family: var(--sans-font);
+	justify-content: center;
+	display: flex;
+	text-align: center;
+}
+.image-card_caption hr {
+	border-bottom: 0.125rem solid var(--gold);
+	width: 50%;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
 /* Partial Label */
 .bean-card_label.Partial {
 	width: 85%;
 	justify-content: left;
 	display: flex;
-	align-items: center;
 }
 .bean-card_label.Partial p {
 	padding-right: 10%;
-} 
+}
 .bean-card_label.Partial:before {
 	content: "";
 	position: absolute;
@@ -543,11 +678,6 @@ a.bean-card_link {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 1199px) {
-	.bean-card_label p {
-		line-height: 1;
-	}
- }
 
 /* Icons */
 div.fontawesome-icon i {
@@ -575,18 +705,18 @@ div.fontawesome-icon i {
 }
 
 /* Changes color of border depending on selected label color) */
-.bean-card_body.Green { 
-	border-color: var(--green); 
+.bean-card_body.Green {
+	border-color: var(--green);
 }
-.bean-card_body.Dark.Red { 
-	border-color: var(--burgundy); 
+.bean-card_body.Dark.Red {
+	border-color: var(--burgundy);
 }
-.bean-card_body.Dark.Blue { 
-	border-color: var(--midnight); 
+.bean-card_body.Dark.Blue {
+	border-color: var(--midnight);
 }
 
-/* 
-/* Old Color Styles 
+/*
+/* Old Color Styles
 /* We have to keep these in case someone is using them so they don't break
 /*
 */
@@ -605,20 +735,20 @@ div.fontawesome-icon i {
 .bean-card_label.Dark.Overlay.Bottom {
 	background: rgba(0,0,0,0.75);
 }
-.bean-card_body.Blue{ 
+.bean-card_body.Blue{
 	border-color: var(--midnight);
 }
-.bean-card_body.Dark.Green { 
-	border-color: #3E4827; 
+.bean-card_body.Dark.Green {
+	border-color: #3E4827;
 }
-.bean-card_body.Brown { 
-	border-color: #8b5b29; 
+.bean-card_body.Brown {
+	border-color: #8b5b29;
 }
-.bean-card_body.Grey { 
-	border-color: #707372; 
+.bean-card_body.Grey {
+	border-color: #707372;
 }
-.bean-card_body.Dark.Overlay.Bottom { 
-	border-color: rgba(0,0,0,0.75); 
+.bean-card_body.Dark.Overlay.Bottom {
+	border-color: rgba(0,0,0,0.75);
 }
 .bean-card_label.Dark.Overlay.Left,
 .bean-card_label.Dark.Overlay.Bottom {
@@ -638,28 +768,84 @@ div.fontawesome-icon i {
 
 /* Text Size */
 .bean-card_label.Small {
-	font-size: 0.93rem !important;
+	font-size: clamp(.8rem, 1vw, .93rem) !important;
 }
 .bean-card_label.Medium {
-	font-size: 1.5rem !important;
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
 }
 .bean-card_label.Large {
-	font-size: 2rem !important;
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
+.bean-card-content_label.Small {
+	font-size: clamp(.8rem, 1vw, .93rem) !important;
+}
+.bean-card-content_label.Medium {
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.bean-card-content_label.Large {
+	font-size: clamp(1rem,1.1vw,2rem)!important;
+}
+.flip-card_label.Small p{
+	font-size: clamp(.8rem, 1vw, 1rem) !important;
+}
+.flip-card_label.Medium p{
+	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+}
+.flip-card_label.Large p{
+	font-size: clamp(1rem,1.1vw,2rem)!important;
 }
 
  /* When Icons are in the Label */
 .fontawesome-icons {
 	font-family: FontAwesome;
-} 
+}
 .bean-card_label.Small div.fontawesome-icons {
 	margin-right: 0.5rem;
 	padding-right: 5px;
 }
 .bean-card_label.Medium div.fontawesome-icons {
-	margin-right: 1rem;
 	padding-right: 5px;
 }
 .bean-card_label.Large div.fontawesome-icons {
 	margin-right: 1.25rem;
 	padding-right: 5px;
 }
+
+/* ------------------------------------- */
+/* ## CATEGORIES
+/* ------------------------------------- */
+.plp-category-cards .card-body p, .plp-category-cards .card-title {
+    text-align: start;
+}
+.plp-category-cards .card-body {
+	padding: .3rem 1.25rem 1.25rem;
+}
+.plp-category-cards h3.card-title {
+    font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+    margin: 0;
+}
+.plp-category-cards img {
+    border: 10px solid #fff;
+	width: 480px;
+	height: 185px;
+	object-fit: cover;
+}
+.plp-category-cards .btn-danger {
+	position: absolute;
+	right: 13px;
+	border-radius: .25rem;
+	bottom: -7px;
+}
+.plp-category-cards .col-md-6.col-lg-4 {
+	padding-left: 0px;
+	padding-right: 0px;
+	align-items: stretch;
+	display: flex;
+}
+.plp-category-cards .mb-3{
+	margin-bottom: 2rem !important;
+}
+
+/* --------------------------------------  */
+/* ## SLICK SLIDER
+/* --------------------------------------  */

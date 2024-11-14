@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes }}>
+      {% for item in items %}
+        <div{{ item.attributes }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div class="announcement-wrapper"><div class="announcement-wrapper-content">
+      <svg class="svg-inline--fa fa-iastate22-exclamation-point" aria-hidden="true" focusable="false" data-prefix="fak" data-icon="iastate22-exclamation-point" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg="" style="width: 1.25em;"><path fill="currentColor" d="M353.472 8.896a69.344 69.344 0 0126.24 26.752L584.32 408.032a70.592 70.592 0 01-26.24 95.04A67.2 67.2 0 01524.8 512H115.2a69.184 69.184 0 01-68.448-69.824 71.104 71.104 0 018.736-34.144l204.8-372.384A67.712 67.712 0 01352 8.096zM320 357.12a34.144 34.144 0 1034.144 34.144A34.144 34.144 0 00320 357.12zm27.488-209.024h-54.912v80.512l15.712 108.32h23.36l15.776-108.32z"></path></svg>
+      <span{{attributes.addClass(field_name) }}>{{ item.content }}</span></div></div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes }}>
+    <div{{ title_attributes }}>{{ label }}</div>
+    {% if multiple %}
+      <div>
+    {% endif %}
+    {% for item in items %}
+      <div class="announcement-wrapper"><div class="announcement-wrapper-content">
+      <svg class="svg-inline--fa fa-iastate22-exclamation-point" aria-hidden="true" focusable="false" data-prefix="fak" data-icon="iastate22-exclamation-point" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg="" style="width: 1.25em;"><path fill="currentColor" d="M353.472 8.896a69.344 69.344 0 0126.24 26.752L584.32 408.032a70.592 70.592 0 01-26.24 95.04A67.2 67.2 0 01524.8 512H115.2a69.184 69.184 0 01-68.448-69.824 71.104 71.104 0 018.736-34.144l204.8-372.384A67.712 67.712 0 01352 8.096zM320 357.12a34.144 34.144 0 1034.144 34.144A34.144 34.144 0 00320 357.12zm27.488-209.024h-54.912v80.512l15.712 108.32h23.36l15.776-108.32z"></path></svg>
+      <span{{attributes.addClass(field_name) }}>{{ item.content }}</span></div></div>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

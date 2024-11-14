@@ -9,14 +9,10 @@ libraries:
   - iastate_theme/fonts
   - iastate_theme/font-awesome
   - iastate_theme/academicons
-ckeditor_stylesheets:
+ckeditor5-stylesheets:
   - css/bootstrap/bootstrap.min.css
   - css/base.css
   - css/ext_iastate.css
-#ckeditor5-stylesheets:
-#  - css/bootstrap/bootstrap.min.css
-#  - css/base.css
-#  - css/ext_iastate.css
 stylesheets-remove:
   - core/assets/vendor/normalize-css/normalize.normalize
   - core/modules/system/css/system.module.css

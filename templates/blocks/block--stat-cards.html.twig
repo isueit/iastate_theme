@@ -28,43 +28,20 @@
 {%
   set block_classes = [
     is_front ? 'isu-block-front' : '',
-    'isu-block',
-    'flip-card_box'
+    'isu-block'
   ]
 %}
 
-{%
-  set btn_classes = {
-    'Green' : 'btn-success',
-    'Red' : 'btn-outline-danger',
-    'Dark Blue' : 'btn-primary',
-    'Dark Red' : 'btn-secondary'
-  }
-%}
-
-<div{{ attributes.addClass(block_classes) }}>
-  {{ title_suffix }}
-  <div class="bean-card flip-card" onclick="this.classList.toggle('flipped');">
-  {% block content %}
-    <div class="flip-card_front">
-      <div class="flip-card_img">
-	      {{ content.field_flip_card_image }}
-      </div>
-      <div class="flip-card_label {{ content.field_flip_card_text_size[0] }}  {{ content.field_flip_card_color_style[0] }}">
-        {{ content.field_flip_card_title[0] }}
-        <p class="flip-card_button {{ content.field_flip_card_color_style[0] }}"><span class="btn {{ btn_classes[content.field_flip_card_color_style[0]['#markup']] }}">View More</span></p>
-	    </div>
-    </div>
-    
-	  <div class="flip-card_back {{ content.field_flip_card_color_style[0] }}">
-	<div class="flip-card_label {{ content.field_flip_card_text_size[0] }}">
-        {{ content.field_flip_card_title[0] }}
-        </div>
-      <div>
-		  {{ content.field_flip_card_back.0 }}
-      </div>
-	  </div>
-  
-  {% endblock %}
+<div{{attributes.addClass(block_classes)}}>
+	 {{ title_prefix }}
+	<div class="stat-card card">
+		{% block content %}
+	 {{ content.field_stat_background_image }}
+	 <div class="card-img-overlay layout--background-overlay--darker">
+		<h3 class="card-title">{{ content.field_stat_percent }}</h3>
+		<p class="card-text">{{ content.field_stat_content }}</p>
   </div>
+{{ title_suffix }}
+		{% endblock %}
+	</div>
 </div>

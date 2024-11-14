@@ -7,6 +7,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
   }
 /* -------------------------------------- */
 /* ## Homepage
@@ -62,10 +64,6 @@ li.event {
 
 a.events_show_more {
 	float: right;
-}
-
-.node--type-homepage-ct {
-	border-top: 10px solid var(--gold);
 }
 
 a.county_calendar {
@@ -150,4 +148,10 @@ div.join-4h-info {
 	max-width: 1140px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.fa-iastate22-exclamation-point{
+	-webkit-box-flex: 0;
+	flex:0,0,auto;
+	color: var(--gold);
+	font-size: 1.875rem;
 }

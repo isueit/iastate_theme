@@ -57,6 +57,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+  --sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
   }
 
 /* --------------------------------------  */
@@ -302,7 +304,7 @@ body,
 	margin: 0;
 	padding: 0;
 	font-size: 1.125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	line-height: 1.25;
 }
@@ -317,7 +319,7 @@ body,
 	text-decoration: none;
 }
 /* If there is both a unit and site name,
- * site name gets the unit's styling and then 
+ * site name gets the unit's styling and then
  * a border.
  */
 .isu-wordmark-sitename_unit {
@@ -391,11 +393,11 @@ body,
   padding: 1rem;
 }
 .isu-form-type_radio {
-  float:left; 
-  margin:0 20px 0 0;  
+  float:left;
+  margin:0 20px 0 0;
 }
 div#edit-search-broadness {
-  margin:0 0 0 15px; 
+  margin:0 0 0 15px;
 }
 /* Specific to 404 Page search */
 .four-zero-four .isu-search > form {
@@ -596,7 +598,7 @@ div#edit-search-broadness {
   margin: 0px;
   padding: 5px;
   }
-} 
+}
 
 /* Toggle the search on mobile */
 
@@ -745,7 +747,7 @@ div#edit-search-broadness {
 		text-align: left;
 		cursor: pointer;
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-weight: 700;
 		font-size: 1.125rem;
 		text-decoration: none;
@@ -774,8 +776,8 @@ div#edit-search-broadness {
   }
 }
 /* --- Dropdowns --- */
-/* We are not using Bootstrap 4's Dropdown utility because it is not 
- * optimized to be accessible and keyboard navigable in the way we need. 
+/* We are not using Bootstrap 4's Dropdown utility because it is not
+ * optimized to be accessible and keyboard navigable in the way we need.
  * Our version is based on the black ISU Navbar's method, which establishes
  * a consistent behavior. Javascript can be found in isu-main-menu.js.
  */
@@ -794,7 +796,7 @@ div#edit-search-broadness {
   font-family: "FontAwesome";
 }
 .isu-dropdown-toggle_mobile {
-  display: none; 
+  display: none;
 }
 .isu-dropdown-menu {
   position: absolute;
@@ -908,7 +910,7 @@ a.isu-dropdown-submenu {
   }
   a.nav-link.isu-nav-link.isu-dropdown-toggle {
     font-size: 1.125rem;
-    font-family: Nimbus Sans,sans-serif;
+    font-family: var(--sans-font);
   }
   .isu-dropdown-toggle_mobile {
     display: flex;
@@ -934,9 +936,9 @@ a.isu-dropdown-submenu {
 		margin-left: -50px;
 	}
   */
-  .isu-dropdown-toggle_mobile .svg-inline--fa { 
+  .isu-dropdown-toggle_mobile .svg-inline--fa {
     display: none;
-  } 
+  }
 	.isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
 		content: "\f100";
 		position: absolute;
@@ -1004,12 +1006,13 @@ a.isu-dropdown-submenu {
 	border-radius: 3px;
 }
 .isu-page-title {
-  font-family: Merriweather,serif;
+  font-family: var(--serif-font);
 	line-height: 1.32857;
 	font-weight: 400;
 	letter-spacing: 0;
 	margin: 3.5625rem 0 0.625rem;
 	color: var(--cardinal);
+  width: 1140px;
 }
 .isu-region.isu-region_sidebar-second {
 	margin-top: 2rem;
@@ -1038,6 +1041,16 @@ div#block-iastate-theme-local-tasks {
   .isu-page-column {
 		max-width: 98%;
 	}
+  div#block-iastate-theme-page-title--2 {
+    padding-left: 2%;
+  }
+  .row.three-col {
+    display: grid;
+    grid-template-rows:repeat(3, 1fr);
+  }
+  .row.three-col .col-md-4{
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width : 1199px) {
@@ -1052,6 +1065,14 @@ div#block-iastate-theme-local-tasks {
    max-width: 94%;
    margin: auto;
  }
+ div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6, div#block-iastate-theme-content--2 img {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  max-width: 94%;
+}
+div#block-iastate-theme-content--2 p {
+  margin-bottom: .8rem;
+}
 }
 
 /* --- ## Submitted By --- */
@@ -1184,10 +1205,10 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 .isu-block-title {
   margin-bottom: 0.75rem;
   line-height: 1.25;
-  font-weight: 700; 
+  font-weight: 700;
 	padding: 0 0 13px 0;
 	letter-spacing: 0;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	border-bottom: #fff;
 }
 .isu-sidebar .isu-block-title {
@@ -1345,6 +1366,19 @@ abbr[title].tabledrag-changed { /* Class via Drupal 8 */
   text-align: center;
   text-decoration: none;
 }
+.messages.messages--status{
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border:1px solid transparent;
+  border-radius: .25rem;
+  max-width: 1140px;
+  margin: auto;
+}
+
 
 /* -------------------------------------- */
 /* ## COMMENTS
@@ -1450,7 +1484,7 @@ details {
   display: inline-block;
   width: auto;
   padding: 0 0.5rem;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   font-weight: 700;
 }
 .isu-fieldset .isu-fieldset .isu-legend {
@@ -1958,14 +1992,30 @@ a.tabledrag-handle .handle {
   .isu-social-menu-footer{
 		display: none;
 	}
+  .isu-footer {
+    padding: 0;
+  }
   .isu-footer-logo {
     width: 90vw;
+    position: relative;
+    margin: auto;
   }
-  .isu-footer .col-md-6 { 
-    flex: 0 40%;
+  .isu-footer .col-md-6 {
+    flex: 0 100% !important;
+    justify-content: flex-start;
+}
+footer .row, .col-lg-3 {
+  justify-content: start;
+}
+.isu-social-menu-footer {
+  margin: auto;
 }
 .layout--base--twocols .layout-content {
   grid-template-columns: 1fr;
+}
+.isu-social-menu a:before {
+  margin-right: 0.88em;
+  padding-top: 0;
 }
 }
 @media screen and (max-width: 991px) {
@@ -1975,9 +2025,10 @@ a.tabledrag-handle .handle {
 	}
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
     order: 1;
+    flex-wrap: wrap;
   }
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(2) {
-    order: 4; 
+    order: 4;
     grid-column: span 4;
   }
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(3) {
@@ -1992,7 +2043,7 @@ a.tabledrag-handle .handle {
   .isu-footer-logo {
 		margin-left: -6%;
     width: 100%;
-    position: absolute;
+    position: relative; /* changed from abosolute to relative*/
 	}
   .isu-footer {
 		padding-left: 2rem;
@@ -2017,7 +2068,7 @@ a.tabledrag-handle .handle {
 		padding-bottom: 20px;
 	}
   footer .row, .col-lg-3 {
-    display: flex; 
+    /*display: grid; changed from flex to grid */
     max-width: 100%;
     justify-content: space-evenly;
     flex: 0 0 22%;

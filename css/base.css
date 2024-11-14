@@ -5,7 +5,7 @@
  * Bootstrap 4 colors with ISU brand colors, and tweaking colors to meet
  * WCAG AA color contrast guidelines.
  */
-
+/*test git add now*/
  :root {
 	--cardinal: #c8102e;
 	--gold: #f1be48;
@@ -15,6 +15,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
   }
 
 /* --------------------------------------  */
@@ -24,7 +26,7 @@
 body {
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.5;
-  font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--sans-font);
   -webkit-font-smoothing: antialiased;
   -webkit-osx-font-smoothing: grayscale;
   background-color: #ffffff;
@@ -37,7 +39,7 @@ h2, .h2 {
   margin-top: 2rem;
   font-size: clamp(1.5rem, 2.2vw, 1.875rem);
   font-weight: 700;
-  font-family: Merriweather,serif;	
+  font-family: var(--serif-font);
 	letter-spacing: 0;
 	line-height: 1.4;
 	padding-bottom: 1rem;
@@ -52,11 +54,11 @@ h2:first-child,
 .sr-only + .h2 {
   margin-top: 0;
 }
-h3, .h3 { 
+h3, .h3 {
   margin-bottom: 0.35rem;
-  font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
+  font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
   font-weight: 700;
-  font-family: Nimbus Sans,sans-serif;
+  font-family: var(--sans-font);
 	letter-spacing: 0;
 	line-height: 1.42857;
 	margin: 2rem 0 0.5625rem;
@@ -64,9 +66,9 @@ h3, .h3 {
 h3 {
 	color: var(--cardinal);
 }
-h4, .h4 { 
+h4, .h4 {
   font-size: clamp(1rem, .9vw, 1.125rem);
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -78,7 +80,7 @@ h4 {
 .h5, h5 {
 	font-size: clamp(1rem, 1.2vw, 1.125rem);
 	line-height: 1.5625;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -87,7 +89,7 @@ h5 {
 	color: var(--burgundy);
 }
 .h6, h6 {
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	font-weight: 700;
 	letter-spacing: 0;
 	margin: 2rem 0 0.5625rem;
@@ -121,12 +123,12 @@ blockquote:before {
 }
 blockquote p {
 	font-size: clamp(1rem, 2.1vw, 2.5rem);
-	font-family: Merriweather, serif;
+	font-family: var(--serif-font);
 	line-height: 1.39024;
 	font-weight: 700;
 	max-width: 80vw;
 }
-blockquote p:before, blockquote p:after {
+blockquote p:first-child:before, blockquote p:last-child:after {
 	content: "";
 	width: 4rem;
 	height: 3.25rem;
@@ -142,7 +144,7 @@ blockquote p:before {
 }
 blockquote p:after {
 	bottom: 2.625rem;
-	right: 0;
+	right: -22%;
 	transform: rotate(180deg);
 }
 blockquote .author {
@@ -154,6 +156,13 @@ blockquote .author {
 blockquote img {
 	max-width: 16.125rem;
 	margin-right: 6.12rem;
+}
+blockquote a {
+	color: #fff;
+}
+blockquote a:hover {
+	text-decoration: underline;
+	color: var(--gold);
 }
 /* --------------------------------------  */
 /* ## Responsive
@@ -172,7 +181,7 @@ hr { /* Overrides Bootstrap 4's hr style */
 /* ## LINKS and BUTTONS
 /* --------------------------------------  */
 
-a { /* Overrides bootstrap.min.css */
+a, .link { /* Overrides bootstrap.min.css */
   color: var(--burgundy); /* ISU brand standard */
   text-decoration: underline; /* WCAG A standard */
   transition: color .2s ease-in-out;
@@ -237,8 +246,8 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--gold);
 }
-.btn-success:not(:disabled):not(.disabled).active, 
-.btn-success:not(:disabled):not(.disabled):active, 
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
   background-color: var(--green);
   border-color: var(--green);
@@ -273,8 +282,8 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--gold);
 }
-.btn-outline-success:not(:disabled):not(.disabled).active, 
-.btn-outline-success:not(:disabled):not(.disabled):active, 
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,
 .show > .btn-outline-success.dropdown-toggle {
   background-color: var(--green);
   border-color: var(--green);
@@ -319,7 +328,7 @@ button:focus {
 .btn-outline-danger:hover {
 	background-color: #fff;
 	color: var(--cardinal);
-}	
+}
 .btn-outline-danger::after {
 	content: "";
 	display: block;
@@ -490,8 +499,8 @@ button:focus {
   background-color: #0F6875;
   border-color: #0F6875;
 }
-.btn-outline-info:not(:disabled):not(.disabled).active, 
-.btn-outline-info:not(:disabled):not(.disabled):active, 
+.btn-outline-info:not(:disabled):not(.disabled).active,
+.btn-outline-info:not(:disabled):not(.disabled):active,
 .show > .btn-outline-info.dropdown-toggle {
   background-color: #117a8b;
   border-color: #117a8b;
@@ -507,7 +516,7 @@ button:focus {
 .btn-outline-light:hover {
   border-color: #c2c2c2;
 }
-.btn.disabled, 
+.btn.disabled,
 .btn:disabled { /* Overrides bootstrap.min.css */
   /* Sufficient contrast with white. */
   opacity: 1;
@@ -552,19 +561,20 @@ button:focus {
 /* ## TABLES
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
-
-.table tbody {
-  border-bottom: .125rem solid var(--md-gray);
-}
-.table thead th,
-.table th {
+.ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
   background: var(--cardinal);
 	color: white;
 	padding: 1.5625rem;
-	font-size: clamp(1.1rem, 1.1vw, 1.3125rem); 
+	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
 	line-height: 1.42857;
 	font-weight: 700;
 	vertical-align: top;
+}
+body.cke_editable table[border] th a, body.cke_editable table th a, .table th a {
+	color: var(--lt-gray);
+}
+body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
+	color: var(--gold);
 }
 caption {
   caption-side: top;
@@ -572,23 +582,28 @@ caption {
   color: #676767;
   border-top: 1px solid #cccccc;
 }
-.table[border] th, .table[border] td {
+body.cke_editable table[border] th, body.cke_editable table[border] td,
+.table[border] th, .table[border] td,
+body.cke_editable table th, body.cke_editable table td,
+.tableth, .table td {
 	border-bottom-color: transparent;
 	border-top-color: transparent;
 }
-.table[border] {
+body.cke_editable table[border], .table[border]
+body.cke_editable table, .table, .table tbody {
 	border-bottom-color: transparent;
 	border: .125rem solid var(--md-gray);
 }
 .table[cellpadding], .table[cellspacing] {
 	border-collapse: collapse;
 }
-.table td {
+.ck-editor__editable.ck-content .ck-widget.table table[border] td.ck-editor__nested-editable, .ck-content .table table td, .ck-content .table table th, .ck-editor__editable.ck-content .ck-widget.table td {
 	line-height: 1.75;
 	padding: 1.5625rem;
 	vertical-align: top;
 	border: 0.0625rem solid #f3f3f3;
 }
+body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth-child(2n),
 .table tbody tr:nth-child(2n) {
 	background-color: rgba(0,0,0,.048);
 }
@@ -601,7 +616,20 @@ caption {
   border-right: 1px solid #dddd;
   border-left: 1px solid #ddd;
 }
-
+.table {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: .125rem solid #ebebeb !important;
+}
+.table>:not(:first-child) {
+	border-top: none;
+}
+.table tbody td {
+	padding: 1.5625rem;
+	max-width: 90vw;
+	min-width: 0;
+	border: .0625rem solid #f3f3f3;
+}
 /* --------------------------------------  */
 /* ## IMAGES
 /* --------------------------------------  */
@@ -673,32 +701,32 @@ table img {
 .ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
 	background: var(--midnight);
 }
-.ck.ck-heading_heading2 {
+button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
-.ck.ck-heading_heading3 {
+button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
-.ck.ck-heading_heading4 {
+button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
-.ck.ck-heading_heading5 {
+button.ck.ck-heading_heading5 {
 	font-size: 1rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
-.ck.ck-heading_heading6 {
-	font-family: Nimbus Sans, sans-serif;
+button.ck.ck-heading_heading6 {
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
@@ -706,7 +734,7 @@ table img {
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;
@@ -767,8 +795,23 @@ dl {
 	font-weight: inherit;
 	border-bottom: 0.125rem solid #ebebeb;
 }
-
-
+blockquote .ck-editor__editable.ck-editor__nested-editable.ck-editor__nested-editable_focused {
+	color: #000;
+}
+blockquote .ck-editor__editable.ck-editor__nested-editable {
+	border: 1px solid #fff;
+	padding: .5rem;
+}
+blockquote.ck-widget {
+	margin-inline: 0;
+}
+blockquote.ck-widget p:before {
+	margin-left: -2.1875rem;
+	top: 1rem;
+}
+blockquote.ck-widget p:after {
+	right: 1rem;
+}
 /* --------------------------------------  */
 /* ## FORMS
 /* --------------------------------------  */
@@ -808,6 +851,11 @@ textarea.cke_source {
   font-size: 0.9rem;
 }
 
+/* Fieldset styling to match admin theme */
+.vertical-tabs__items.vertical-tabs__panes .form-wrapper {
+	margin: var(--space-l) var(--details-desktop-wrapper-padding-start);
+}
+
 /*
  * Some of these styles are partially duplicated from the live content
  * versions from theme.css.
@@ -833,7 +881,7 @@ body.cke_editable figure figcaption {
 }
 
 /*
- * Duplicate Bootstrap 4 styles in the ckeditor so table look as 
+ * Duplicate Bootstrap 4 styles in the ckeditor so table look as
  * true-to-live as possible.
  */
 
@@ -872,12 +920,14 @@ body.cke_editable table[cellspacing] {
   border-collapse: inherit;
 }
 
-body.cke_editable table[border] {
+body.cke_editable table[border], body.cke_editable table{
   border-bottom-color: #808080;
 }
 
 body.cke_editable table[border] th,
-body.cke_editable table[border] td {
+body.cke_editable table[border] td,
+body.cke_editable table th,
+body.cke_editable table td{
   border-collapse: inherit;
   border-bottom-color: #808080;
   border-top-color: #808080;
@@ -885,7 +935,7 @@ body.cke_editable table[border] td {
 
 /* --------------------------------------  */
 /* ## CKEditor 5 Styles
-/* --------------------------------------  
+/* --------------------------------------
 .ckeditor-accordion {
 	border: dashed 2px var(--cardinal);
 }
@@ -897,30 +947,30 @@ body.cke_editable table[border] td {
 }
 .ck.ck-heading_heading2 {
 	font-size: 1.875rem;
-	font-family: Merriweather,serif;
+	font-family: var(--serif-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 .ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--cardinal);
 }
 .ck.ck-heading_heading4 {
 	font-size: 1.125rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 .ck.ck-heading_heading5 {
 	font-size: 1rem;
-	font-family: Nimbus sans,sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
 .ck.ck-heading_heading6 {
-	font-family: Nimbus Sans, sans-serif;
+	font-family: var(--sans-font);
 	letter-spacing: 0;
 	color: var(--burgundy);
 }
@@ -928,7 +978,7 @@ body.cke_editable table[border] td {
 	text-decoration: none;
 	color: var(--cardinal);
 	background-color: inherit;
-	font-family: Nimbus Sans,sans-serif;
+	font-family: var(--sans-font);
 	font-size: 1.3125rem;
 	font-weight: 700;
 	line-height: 1.42587;

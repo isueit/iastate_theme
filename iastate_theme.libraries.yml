@@ -25,15 +25,6 @@ global-js:
     - core/jquery
     - core/drupal
 
-# Fonts
-fonts:
-  css:
-    theme:
-      "//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css":
-        { type: external }
-      "https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i&subset=latin-ext":
-        { type: external }
-
 # Icons
 font-awesome:
   remote: https://fortawesome.github.io/Font-Awesome/

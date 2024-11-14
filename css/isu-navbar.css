@@ -22,6 +22,8 @@
 	--md-gray: #ebebeb;
 	--midnight: #003d4c;
 	--green: #008540;
+  --sans-font: 'Arial', 'Helvetica Neue', sans-serif;
+	--serif-font: 'Merriweather', serif;
 }
 
 .isu-navbar {
@@ -123,7 +125,7 @@
 	}
   .isu-navbar-responsive a {
 		color: #fff;
-		font-family: Nimbus Sans, sans-serif;
+		font-family: var(--sans-font);
 		font-size: 18px !important;
 		font-weight: 700;
 		text-decoration: underline;

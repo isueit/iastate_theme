@@ -9,7 +9,8 @@
 /* --------------------------------------  */
 
 article table {
-  display: block; /* Allows overflow-x to scroll */
+  display: table;
+  table-layout: fixed;  /* Allows overflow-x to scroll */
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
