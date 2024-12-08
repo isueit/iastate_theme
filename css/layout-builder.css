@@ -143,6 +143,11 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
   margin-left: 10px;
 }
 
+/* Layout Tabs */
+.layout.layout--tabs {
+max-width: 1140px;
+margin: auto;
+}
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
@@ -679,4 +684,20 @@ background-color: var(--gold);
 .layout--left-right-padding--small{
 	padding-left: 20px;
 }
-
+/* --------------------------------------  */
+/* ## LAYOUT TABS
+/* --------------------------------------  */
+.tabs.layout-tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+.layout-tabs .nav-link.is-active {
+	border-left: 1px solid var(--lt-gray);
+	border-top: 1px solid var(--lt-gray);
+	border-right: 1px solid var(--lt-gray);
+	margin-bottom: -1px;
+	background: #fff;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+	color: #000;
+}
