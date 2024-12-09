@@ -690,14 +690,23 @@ background-color: var(--gold);
 .tabs.layout-tabs {
 	display: flex;
 	flex-wrap: wrap;
+	border-bottom: 1px solid var(--md-gray);
+	padding-left: 0;
 }
 .layout-tabs .nav-link.is-active {
-	border-left: 1px solid var(--lt-gray);
-	border-top: 1px solid var(--lt-gray);
-	border-right: 1px solid var(--lt-gray);
+	border-left: 1px solid var(--md-gray);
+	border-top: 1px solid var(--md-gray);
+	border-right: 1px solid var(--md-gray);
 	margin-bottom: -1px;
 	background: #fff;
 	border-top-left-radius: .25rem;
 	border-top-right-radius: .25rem;
 	color: #000;
+}
+.tabs.layout-tabs .tab-content {
+	padding-left: 1rem;
+	padding-top: 1rem;
+}
+.tabs.layout-tabs ul {
+	list-style: none;
 }
