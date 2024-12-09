@@ -6,10 +6,10 @@
  (function ($, Drupal) {
 
 $(document).ready(function() {
-  
+
   // Allow navigation with left and right arrow keys
   $('#isu-navbar').on('keydown', function(event) {
-      if (event.keyCode === 39) { // right 
+      if (event.keyCode === 39) { // right
         event.preventDefault();
         if ( $(':focus').is('.isu-navbar_dropdown-menu a') ) {
           // If the focused item is a link in a dropdown...
@@ -38,12 +38,12 @@ $(document).ready(function() {
           // If the item is in the top level
           $(':focus').parent().prev().children('a').focus();
         }
-      
+
       }
   });
-  
+
   // Traverse Signons menu with up/down arrow keys
-  $('.isu-navbar_signons').on('keydown', function(event) { 
+  $('.isu-navbar_signons').on('keydown', function(event) {
       if (event.keyCode === 40) { // down
         event.preventDefault();
         // Change the focus to the link in the next li
@@ -56,7 +56,7 @@ $(document).ready(function() {
         }
       }
   })
-  
+
   // Enter dropdowns with the down arrow
   $('.isu-navbar_dropdown > .isu-navbar_dropdown-toggle').on('keydown', function(event) {
     var dropdownToggle = $(this);
@@ -81,7 +81,7 @@ $(document).ready(function() {
         dropdownMenuItem.closest('.isu-navbar_dropdown').find('a').focus();
       }
   });
-  
+
   // Exit the Sign-Ons menu with up arrow
   $('.isu-navbar_signons > li:first-of-type a').on('keydown', function(event) {
     var dropdownMenuItem = $(this);
@@ -92,7 +92,7 @@ $(document).ready(function() {
         dropdownMenuItem.closest('.isu-navbar_dropdown').find('a').focus();
       }
   });
-  
+
   // Close dropdowns upon exit
   $('.isu-navbar_dropdown-menu').on('mouseleave focusout', function(e) {
     var dropdownMenu = $(this);

@@ -9,7 +9,7 @@
  * - Enter should still work to click on parent items.
  *
  * HTML Structure
- * 
+ *
  * ul
  * - li NO CHILDREN
  * -- a.isu-navlink
@@ -110,10 +110,39 @@ $(document).ready(function() {
     }, 100 );
   });
 
+  // Toggle dropdowns on click
+$('.isu-dropdown-toggle').on('click', function(event) {
+  event.preventDefault();
+  var dropdownToggle = $(this);
+  var parentDropdown = dropdownToggle.closest('.isu-dropdown');
+  var isExpanded = parentDropdown.attr('aria-expanded') === 'true';
+
+  // Toggle aria-expanded attribute
+  parentDropdown.attr('aria-expanded', !isExpanded);
+
+  // Set focus to the first link in the dropdown if opening
+  if (!isExpanded) {
+    parentDropdown.find('.isu-dropdown-menu li:first-of-type a').focus();
+  }
+});
+
+// Handle "Back" button in submenus
+$('.isu-navbar_dropdown-back').on('click', function() {
+  var submenu = $(this).closest('.isu-dropdown-menu');
+  var parentDropdown = submenu.closest('.isu-dropdown');
+
+  // Close the submenu
+  parentDropdown.attr('aria-expanded', 'false');
+
+  // Set focus back to the parent link
+  parentDropdown.find('> .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle').focus();
+});
+
+
   /* Entering and exiting the dropdowns with the mobile toggle
    *
    * Because there is no hover on mobile, we must add a mobile toggle button
-   * for those narrow screens. They must open on click/tap, enter, and arrow keys 
+   * for those narrow screens. They must open on click/tap, enter, and arrow keys
    * because the mobile breakpoints also appear when the page zooms.
    */
 
@@ -128,7 +157,7 @@ $(document).ready(function() {
       $(dropdownMenu).attr('aria-expanded', 'true');
     }
   });
-  
+
 });
 
 })(jQuery, Drupal);

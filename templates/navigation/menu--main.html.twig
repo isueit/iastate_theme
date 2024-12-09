@@ -33,33 +33,60 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %} {# If the menu has only one level. #}
-      <ul role="menubar" {{ attributes.addClass('nav navbar-nav menubar') }}>
+      <ul> {#role="menubar" {{ attributes.addClass('nav navbar-nav menubar') }}#}
 	{% elseif menu_level == 1 %}
-      <ul role="menu" class="isu-dropdown-menu">
+      <ul aria-hidden ="true"> {#role="menu" class="isu-dropdown-menu"#}
+      <li class="site-header__mega-menu-main-nav-dropdown-back-wrap">
+          <button class="site-header__mega-menu-main-nav-dropdown-back" tabindex="-1">
+            <span class="site-header__mega-menu-main-nav-dropdown-back-icon" aria-hidden="true">&lt;</span>
+            <span class="site-header__mega-menu-main-nav-dropdown-back-label">Back</span>
+            <span class="visible-for-screen-readers"> to top level of menu</span>
+          </button>
+        </li>
 	{% else %}
-	  <ul role="submenu" class="isu-dropdown-menu isu-dropdown-submenu">
+	  <ul aria-hidden="true"> {#role="submenu" class="isu-dropdown-menu isu-dropdown-submenu"#}
     {% endif %}
 
     {% for item in items %}
-      {# Assign classes based on if the item is an open parent, closed parent, 
+      {# Assign classes based on if the item is an open parent, closed parent,
       active, or a has a submenu. #}
       {%
-        set li_classes = [ 
+        set li_classes = [
           menu_level ? 'dropdown-item isu-dropdown-item' : 'nav-item',
           item.below ? 'isu-dropdown',
         ]
       %}
 
       {% if item.below %} {# If the item has children, it will be a dropdown. #}
-        <li role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-expanded', 'false').setAttribute('aria-haspopup', 'true') }}>
-          <div role="none" class="isu-dropdown-toggle_wrapper {{ (menu_level) ? 'divsub' }}">
-			<a class="nav-link isu-nav-link isu-dropdown-toggle {{ (menu_level) ? 'sub' }}" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}</a>
-			<button class="isu-dropdown-toggle_mobile"><span class="fa fa-angle-down"></span><span class="sr-only">Open dropdown menu</span></button>
-          </div>
+        <li> {#role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-expanded', 'false').setAttribute('aria-haspopup', 'true') }}#}
+          {% if item.url and item.title %}
+            <a href="{{ item.url }}"
+               aria-expanded="false"
+               class="isu-dropdown-toggle"
+               data-index="{{ loop.index }}"
+               tabindex="0">
+              {{ item.title }}
+            </a>
+          {% endif %}
 
           {{ menus.menu_links(item.below, item.attributes, menu_level + 1) }}
+          </li>
+          {% elseif menu_level == 1 %}
+          <li> {#role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-expanded', 'false').setAttribute('aria-haspopup', 'true') }}#}
+          {% if item.url and item.title %}
+            <a href="{{ item.url }}"
+               aria-expanded="false"
+               class="link-territory"
+               data-index="{{ loop.index }}"
+               tabindex="0">
+              {{ item.title }}
+            </a>
+          {% endif %}
+
+          {{ menus.menu_links(item.below, item.attributes, menu_level + 1) }}
+          </li>
       {% else %} {# If the item does not have children, it will not be a dropdown. #}
-        <li role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-haspopup', 'false') }}>
+        <li role="menuitem" {{ item.attributes.addClass('dropdown-item isu-dropdown-item').setAttribute('aria-haspopup', 'false') }}>
 		  <a class="nav-link isu-nav-link" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}</a>
       {% endif %}
 	  </li>
@@ -68,4 +95,70 @@
     </ul>
   {% endif %}
 {% endmacro %}
+
+
+
+
+
+
+
+
+{#
+<nav class="site-header__mega-menu-main-nav" aria-label="Main">
+  <ul>
+    {% for item in items %}
+      {% if item.below %}
+        {# Parent item with submenu HERE
+        <li>
+          <a href="{{ item.url }}"
+             class="site-header__mega-menu-main-nav-parent"
+             data-drupal-link-system-path="{{ item.url }}"
+             aria-expanded="false"
+             tabindex="0">
+            {{ item.title }}
+          </a>
+          <ul aria-hidden="true">
+            <li class="site-header__mega-menu-main-nav-dropdown-back-wrap">
+              <button class="site-header__mega-menu-main-nav-dropdown-back" tabindex="-1">
+                <span class="site-header__mega-menu-main-nav-dropdown-back-icon" aria-hidden="true">&lt;</span>
+                <span class="site-header__mega-menu-main-nav-dropdown-back-label">Back</span>
+                <span class="visible-for-screen-readers"> to top level of menu</span>
+              </button>
+            </li>
+            <li class="site-header__mega-menu-main-nav-dropdown-parent-wrap">
+              <a href="{{ item.url }}"
+                 class="site-header__mega-menu-main-nav-dropdown-parent iastate22-link-secondary"
+                 tabindex="-1">
+                {{ item.title }}
+                <span class="arrow"></span>
+              </a>
+            </li>
+            {# Render submenu items recursively HERE
+            {% for sub_item in item.below %}
+              <li>
+                <a href="{{ sub_item.url }}"
+                   class="link-tertiary"
+                   data-drupal-link-system-path="{{ sub_item.url }}"
+                   tabindex="-1">
+                  {{ sub_item.title }}
+                  <span class="arrow"></span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        {# Parent item without submenu HERE
+        <li class="site-header__parent-link-no-subnav-wrap">
+          <a href="{{ item.url }}"
+             class="site-header__parent-link-no-subnav"
+             data-drupal-link-system-path="{{ item.url }}"
+             tabindex="0">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav> #}
 
