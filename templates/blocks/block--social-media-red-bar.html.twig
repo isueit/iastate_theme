@@ -33,6 +33,9 @@
 					{% elseif 'twitter.com' in link['#url']|render|render %}
 								{% set has_links = true %}
 
+					{% elseif 'x.com' in link['#url']|render|render %}
+								{% set has_links = true %}
+
 					{% elseif 'linkedin.com' in link['#url']|render|render %}
 								{% set has_links = true %}
 
@@ -82,6 +85,10 @@
 					{% elseif 'twitter.com' in link['#url']|render|render %}
 						<li>
 							<a href="{{link['#url'] }}" title="Join us on Twitter" class="dropdown-item" aria-label="Follow us on Twitter">{{ link['#title'] }}</a>
+						</li>
+					{% elseif 'x.com' in link['#url']|render|render %}
+						<li>
+							<a href="{{link['#url'] }}" title="Join us on X" class="dropdown-item" aria-label="Follow us on X">{{ link['#title'] }}</a>
 						</li>
 					{% elseif 'linkedin.com' in link['#url']|render|render %}
 						<li>
