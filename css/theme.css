@@ -1093,7 +1093,7 @@ div#block-iastate-theme-content--2 p {
 span.authored-on {
 	font-style: oblique;
 	font-size: .9em;
-	color: #666;
+	color: var(--dk-gray);
 }
 
 /* If there is a user picture */
