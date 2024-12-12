@@ -65,6 +65,9 @@ mark.badge,
 .isu-footer a {
   display: none;
 }
+.si-toggle-container {
+  display: none;
+}
 
 /* --------------------------------------  */
 /* ## SITE HEADER
