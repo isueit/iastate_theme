@@ -1202,6 +1202,9 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 .isu-sidebar .isu-block {
   margin-bottom: 1rem;
 }
+.isu-sidebar {
+  margin-top: 20%;
+}
 .isu-block-title {
   margin-bottom: 0.75rem;
   line-height: 1.25;
