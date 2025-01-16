@@ -437,12 +437,6 @@ text-decoration: none;
 .layout--background--red hr, .layout--background--blue hr {
 border-top: 2px solid var(--gold);
 }
-.layout--background--red .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
-	color: #ffffff;
-}
-.layout--background--red .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: var(--gold);
-}
 .layout--background--green a:hover {
 text-decoration: underline;
 }

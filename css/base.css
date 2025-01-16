@@ -697,6 +697,9 @@ table img {
     color: white;
     border: none;
 }
+.ckeditor-accordion-container {
+	background: #ffffff;
+}
 .ck-button.ck-media-library.ck-button_with-text:hover {
     background-color: var(--md-gray);
 	color: var(--midnight)
