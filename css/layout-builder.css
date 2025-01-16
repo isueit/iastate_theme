@@ -434,7 +434,7 @@ text-decoration: underline;
 color: var(--gold);
 text-decoration: none;
 }
-.layout--background--red hr {
+.layout--background--red hr, .layout--background--blue hr {
 border-top: 2px solid var(--gold);
 }
 .layout--background--green a:hover {
