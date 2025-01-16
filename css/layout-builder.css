@@ -462,7 +462,12 @@ background-color: var(--gold);
 .layout--background--blue a:hover {
 		color: var(--gold);
 		text-decoration: none;
-	}
+}
+.layout--background--blue a.btn-outline-primary {
+	color: var(--midnight);
+	border: 2px solid var(--gold);
+	text-decoration: none;
+}
 .layout--color--white[style^="background-image"] a{
 	color: #fff;
 	text-decoration: underline;
