@@ -777,22 +777,22 @@ div.fontawesome-icon i {
 	font-size: clamp(1rem,1.1vw,2rem)!important;
 }
 .bean-card-content_label.Small {
-	font-size: clamp(.8rem, 1vw, .93rem) !important;
+	font-size: clamp(.93rem,1.2vw,.93rem) !important;
 }
 .bean-card-content_label.Medium {
-	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+	font-size: clamp(1rem,1.5vw,1.5rem) !important;
 }
 .bean-card-content_label.Large {
-	font-size: clamp(1rem,1.1vw,2rem)!important;
+	font-size: clamp(2rem,1.5vw,2rem) !important;
 }
 .flip-card_label.Small p{
-	font-size: clamp(.8rem, 1vw, 1rem) !important;
+	font-size: clamp(.93rem,1.2vw,.93rem) !important;
 }
 .flip-card_label.Medium p{
-	font-size: clamp(.9rem, 1vw,1.5rem) !important;
+	font-size: clamp(1rem,1.5vw,1.5rem) !important;
 }
 .flip-card_label.Large p{
-	font-size: clamp(1rem,1.1vw,2rem)!important;
+	font-size: clamp(2rem,1.5vw,2rem) !important;
 }
 
  /* When Icons are in the Label */

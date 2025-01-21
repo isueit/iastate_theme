@@ -86,6 +86,14 @@ color: #fff;
 color: #fff;
 }
 
+.isu-social-menu a[href*='x.com']:before {
+  content: "\e61a";
+}
+
+.isu-social-menu-red a[href*='x.com']:before {
+color: #fff;
+}
+
 .isu-social-menu a[href*='instagram.com']:before {
   content: "\f16d";
 }

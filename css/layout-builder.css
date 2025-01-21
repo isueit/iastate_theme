@@ -143,6 +143,11 @@ a.inline-block-list__item:hover :not(.inline-block-list__item-custom-block-descr
   margin-left: 10px;
 }
 
+/* Layout Tabs */
+.layout.layout--tabs {
+max-width: 1140px;
+margin: auto;
+}
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
@@ -429,6 +434,9 @@ text-decoration: underline;
 color: var(--gold);
 text-decoration: none;
 }
+.layout--background--red hr, .layout--background--blue hr {
+border-top: 2px solid var(--gold);
+}
 .layout--background--green a:hover {
 text-decoration: underline;
 }
@@ -454,7 +462,12 @@ background-color: var(--gold);
 .layout--background--blue a:hover {
 		color: var(--gold);
 		text-decoration: none;
-	}
+}
+.layout--background--blue a.btn-outline-primary {
+	color: var(--midnight);
+	border: 2px solid var(--gold);
+	text-decoration: none;
+}
 .layout--color--white[style^="background-image"] a{
 	color: #fff;
 	text-decoration: underline;
@@ -676,4 +689,29 @@ background-color: var(--gold);
 .layout--left-right-padding--small{
 	padding-left: 20px;
 }
-
+/* --------------------------------------  */
+/* ## LAYOUT TABS
+/* --------------------------------------  */
+.tabs.layout-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1px solid var(--md-gray);
+	padding-left: 0;
+}
+.layout-tabs .nav-link.is-active {
+	border-left: 1px solid var(--md-gray);
+	border-top: 1px solid var(--md-gray);
+	border-right: 1px solid var(--md-gray);
+	margin-bottom: -1px;
+	background: #fff;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+	color: #000;
+}
+.tabs.layout-tabs .tab-content {
+	padding-left: 1rem;
+	padding-top: 1rem;
+}
+.tabs.layout-tabs ul {
+	list-style: none;
+}

@@ -692,6 +692,18 @@ table img {
 /* --------------------------------------  */
 /* ## CKEditor 5 Styles
 /* -------------------------------------- */
+.ck-button.ck-media-library.ck-button_with-text {
+    background-color: var(--midnight);
+    color: white;
+    border: none;
+}
+.ckeditor-accordion-container {
+	background: #ffffff;
+}
+.ck-button.ck-media-library.ck-button_with-text:hover {
+    background-color: var(--md-gray);
+	color: var(--midnight)
+}
 .ckeditor-accordion {
 	border: dashed 2px var(--cardinal);
 }
