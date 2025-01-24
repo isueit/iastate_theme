@@ -113,7 +113,7 @@ body,
 @media screen and (max-width : 992px) {
   .isu-page-title {
     margin: 1.5625rem 0 0.625rem;
-    max-width: 94%;
+	max-width: max-content;
   }
   .strong-iowa img {
     width: 80%;
@@ -1053,6 +1053,7 @@ div#block-iastate-theme-local-tasks {
     max-width: 100%;
   }
 }
+
 @media screen and (max-width : 1199px) {
  div#block-iastate-theme-page-title--2 {
    max-width: 94%;
@@ -1065,9 +1066,10 @@ div#block-iastate-theme-local-tasks {
    max-width: 94%;
    margin: auto;
  }
- div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6 {
+ div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6, div#block-iastate-theme-content--2 img {
   margin-left: 2rem;
   margin-right: 2rem;
+  max-width: 94%;
 }
 div#block-iastate-theme-content--2 p {
   margin-bottom: .8rem;
@@ -1200,9 +1202,6 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 
 .isu-sidebar .isu-block {
   margin-bottom: 1rem;
-}
-.isu-sidebar {
-  margin-top: 20%;
 }
 .isu-block-title {
   margin-bottom: 0.75rem;
@@ -2039,11 +2038,33 @@ footer .row, .col-lg-3 {
   .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(4) {
     order: 3;
   }
+	 div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6, div#block-iastate-theme-content--2 img {
+		 margin-left: 0;
+}
+	.layout--onecol, .layout--threecol-section {
+		padding: 0;
+	}
+	.search-results .ais-RefinementList ul {
+	    padding-right: 0;
+}
+.search-results .card img {
+  margin: 0 !important;
+}
+.card {
+  margin:0 10px;
+}
+.ais-SearchBox-form {
+  display: flex;
+}
+
+.search-results-facets .btn-outline-primary {
+  width: 100px;
+}
 }
 
 @media screen and (max-width : 1199px) {
   .isu-footer-logo {
-		margin-left: -6%;
+	margin-left: -6%;
     width: 100%;
     position: relative; /* changed from abosolute to relative*/
 	}
