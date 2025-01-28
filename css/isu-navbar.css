@@ -200,6 +200,59 @@
 .isu-navbar_dropdown[aria-expanded='false'] .isu-navbar_dropdown-menu {
   display: none;
 }
+.contextual-region>ul>li>ul[aria-hidden="true"]{
+  display: none;
+}
+@media (min-width:1200px){
+  .contextual-region>ul{
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin: 0 0 0 auto;
+  }
+  .contextual-region>ul>li>a{
+     max-width: none;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: #c8102e;
+        font-size: .875rem;
+        line-height: 1.85714;
+        margin: 0;
+        border-radius: 0;
+  }
+  .contextual-region > ul >li> a{
+    display: block;
+    border-radius: 1.875rem;
+    padding: .5rem 2.1875rem .5rem 1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: .625rem 0;
+    text-align: left;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--burgundy);
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.38889;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out, padding .2s ease-in-out;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out, padding .2s ease-in-out;
+    position: relative;
+  }
+}
+/*
+ADDED THESE ON INSPECT (WEB)
+need to change the padding so they aren't so spread out
+figure out why user guide isn't in line but rather up and down
+*/
+.contextual-region>ul>li{
+  list-style-type: none;
+}
+
 
 /* --------------------------------------  */
 /* ## Responsive
@@ -240,6 +293,10 @@
   a.nav-link.isu-nav-link{
     border-color: var(--lt-gray);
     background-color: var(--lt-gray);
+  }
+  a.isu-dropdown-toggle{
+    border-color: var(--lt-gray) !important;
+    background-color: var(--lt-gray) !important;
   }
   ::marker{
     content: '';
