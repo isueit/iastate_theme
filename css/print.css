@@ -4,7 +4,18 @@
  *
  */
 
- /* --------------------------------------  */
+@page {
+  size: letter;
+  break-before: auto;
+  break-after: auto;
+  padding: 10mm;
+}
+
+.isu-main {
+  margin-left: 10mm;
+  margin-right: 10mm;
+}
+/* --------------------------------------  */
 /* ## TYPOGRAPHY
 /* --------------------------------------  */
 body {
