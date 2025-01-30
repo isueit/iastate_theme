@@ -4,7 +4,7 @@
  *
  */
 
-@page {
+ @page {
   size: letter;
   break-before: auto;
   break-after: auto;
@@ -33,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   word-wrap: break-word;
   font-weight: bold;
+}
+p {
+  font-size: 18pt;
 }
 /*a:after {
   content: " (" attr(href) ")";
