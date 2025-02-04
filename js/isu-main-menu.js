@@ -9,7 +9,7 @@
  * - Enter should still work to click on parent items.
  *
  * HTML Structure
- * 
+ *
  * ul
  * - li NO CHILDREN
  * -- a.isu-navlink
@@ -24,112 +24,67 @@
  */
 
 (function ($, Drupal) {
+  $(document).ready(function () {
+    const menu = $('#block-iastate-theme-main-menu');
 
-$(document).ready(function() {
+    // Click to open submenu instead of navigating (only for items with submenus)
+    menu.on('click', '.isu-dropdown-toggle', function (event) {
+      const dropdown = $(this).closest('.isu-dropdown');
 
-  // Navigate with right and left arrow keys.
-  $('#block-iastate-theme-main-menu').on('keydown', function(event) {
-    if (event.keyCode === 39) { // RIGHT arrow key
-      event.preventDefault();
-	  if ($(':focus').hasClass('sub')) {
-		$(':focus').closest('.isu-dropdown').attr('aria-expanded', 'true');
-		$(':focus').parent('.isu-dropdown-toggle_wrapper').next('ul').find('li:first-of-type a').focus();
-	  } else {
-		$(':focus').closest('li').next('li').find('a').focus();
-	  }
-    } else if (event.keyCode === 37) { // LEFT arrow key
-      event.preventDefault();
-	  if ($(':focus').offsetParent().siblings('div.isu-dropdown-toggle_wrapper').children('a.sub').hasClass('isu-dropdown-toggle')) {
-		$(':focus').offsetParent().offsetParent().find('a.sub').focus();
-        $(':focus').closest('.isu-dropdown').attr('aria-expanded', 'false');
-	  } else {
-	    $(':focus').closest('li').prev('li').find('a').focus();
-	  }
-    }
-  });
+      if (dropdown.length && dropdown.find('.isu-dropdown-menu').length) {
+        event.preventDefault(); // Prevent navigation ONLY for dropdown items
+        const submenu = dropdown.find('.isu-dropdown-menu').first();
+        const isExpanded = dropdown.attr('aria-expanded') === 'true';
 
-  // Enter dropdowns with the down arrow
-  $('.isu-dropdown-toggle').on('keydown', function(event) {
-    var dropdownToggle = $(this);
-      if (event.keyCode === 40) { // DOWN arrow key
-        event.preventDefault();
-		if (!($(':focus').is('a.isu-dropdown-toggle.sub'))) {
-		  // Open menu
-          dropdownToggle.closest('.isu-dropdown').attr('aria-expanded', 'true');
-          // Change focus to the first link in the dropdown
-          $(':focus').parent('.isu-dropdown-toggle_wrapper').next('ul').find('li:first-of-type a').focus();
-		}
-      }
-  });
+        // Toggle submenu visibility
+        dropdown.attr('aria-expanded', !isExpanded);
+        submenu.attr('aria-hidden', isExpanded);
 
-  // Navigate within a dropdown with the up and down arrow keys.
-  $('.isu-dropdown-menu').on('keydown', function(event) {
-    if (event.keyCode === 40) { // DOWN arrow key
-      event.preventDefault();
-	  event.stopPropagation();
-      // Change the focus to the next link in the dropdown
-      $(':focus').closest('li').next('li').find('a').focus();
-	  // console.log($(':focus').parent());
-    } else if (event.keyCode === 38) { // UP arrow key
-      event.preventDefault();
-	  event.stopPropagation();
-      if ( $(':focus').is('.isu-dropdown-menu li:not(:first-of-type) a') ) {
-        // If the focused item is NOT the first item in the list...
-        // Change the focus to the link in the previous li
-		// console.log($(':focus').closest('li').prev('li'));
-        $(':focus').closest('li').prev('li').find('a').focus();
-      }
-    }
-  });
-
-  // Exit dropdowns with the up arrow
-  $('.isu-dropdown-menu > li:first-of-type a').on('keydown', function(event) {
-    var dropdownMenuItem = $(this);
-      if (event.keyCode === 38) { // up
-		if (!($(':focus').offsetParent().hasClass('isu-dropdown-submenu'))) {
-          // Close the dropdown
-          dropdownMenuItem.offsetParent().closest('.isu-dropdown').attr('aria-expanded', 'false');
-          // Refocus on the parent link
-          dropdownMenuItem.closest('.isu-dropdown-menu').prev('.isu-dropdown-toggle_wrapper').find('.isu-dropdown-toggle').focus();
-		}
-      }
-  });
-
-  // Close dropdowns when clicked out
-  $('.isu-dropdown-menu').on('mouseleave focusout', function(e) {
-    var dropdownMenu = $(this);
-    setTimeout(function() {
-      if (dropdownMenu.find(':focus').length === 0) {
-        // If neither the dropdown or its children have focus...
-        if (dropdownMenu.siblings('a:focus').length === 0) {
-          // Close the menu
-          dropdownMenu.parent('.isu-dropdown').attr('aria-expanded', 'false');
-          // Remove styling class
+        // Manage focus
+        if (!isExpanded) {
+          submenu.find('li:first-child a, button').first().focus();
         }
-	  }
-    }, 100 );
+      }
+    });
+
+    // Ensure menu items without submenus navigate as expected
+    menu.on('click', '.nav-item:not(.isu-dropdown) a', function (event) {
+      // Allow normal navigation
+      window.location.href = $(this).attr('href');
+    });
+
+    // Back button to close submenu
+    menu.on('click', '.isu-dropdown-back', function () {
+      const submenu = $(this).closest('.isu-dropdown-menu');
+      const parentDropdown = submenu.closest('.isu-dropdown');
+
+      // Hide submenu and refocus parent link
+      submenu.attr('aria-hidden', 'true');
+      parentDropdown.attr('aria-expanded', 'false');
+      parentDropdown.find('> .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle').focus();
+    });
+
+    // Close dropdowns when clicking outside
+    $(document).on('click', function (event) {
+      if (!$(event.target).closest('.isu-dropdown').length) {
+        $('.isu-dropdown[aria-expanded="true"]').attr('aria-expanded', 'false').find('.isu-dropdown-menu').attr('aria-hidden', 'true');
+      }
+    });
+
+    // Close dropdowns when focus leaves
+    menu.on('focusout', '.isu-dropdown-menu', function () {
+      const dropdown = $(this).closest('.isu-dropdown');
+      setTimeout(() => {
+        if (!dropdown.find(':focus').length) {
+          dropdown.attr('aria-expanded', 'false').find('.isu-dropdown-menu').attr('aria-hidden', 'true');
+        }
+      }, 100);
+    });
+
+    // Allow submenu's second "Resources" link to navigate
+    menu.on('click', '.isu-dropdown-parent-wrap a', function (event) {
+      window.location.href = $(this).attr('href');
+    });
+
   });
-
-  /* Entering and exiting the dropdowns with the mobile toggle
-   *
-   * Because there is no hover on mobile, we must add a mobile toggle button
-   * for those narrow screens. They must open on click/tap, enter, and arrow keys 
-   * because the mobile breakpoints also appear when the page zooms.
-   */
-
-  // Toggle dropdowns on mobile with the mobile toggle button
-  $('.isu-dropdown-toggle_mobile').click(function() {
-    var mobileDropdownToggle = $(this);
-    var dropdownMenu = $(this).closest('.isu-dropdown');
-
-    if (dropdownMenu.attr('aria-expanded') === 'true') {
-      $(dropdownMenu).attr('aria-expanded', 'false');
-    } else {
-      $(dropdownMenu).attr('aria-expanded', 'true');
-    }
-  });
-  
-});
-
 })(jQuery, Drupal);
-
