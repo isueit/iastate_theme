@@ -61,7 +61,7 @@ a#main-content:after {
 .isu-menu-navbar_toggler,
 .isu-search_toggler,
 .isu-menu-navbar,
-.isu-region_breadcrumbs, 
+.isu-region_breadcrumbs,
 .nav-tabs,
 .isu-comments_title,
 .comment-comment-form,
@@ -72,7 +72,7 @@ mark.badge,
 .isu-both-row-header,
 .contextual .trigger,
 .isu-sign-off_wrapper,
-.isu-footer img, 
+.isu-footer img,
 .isu-footer .isu-copyright,
 .isu-social-menu-footer,
 .isu-region_footer-fourth,
@@ -94,7 +94,7 @@ mark.badge,
   display: block;
 }
 
-.isu-col-header-first { 
+.isu-col-header-first {
   text-align: left;
 }
 
@@ -107,8 +107,8 @@ a.isu-wordmark {
   padding-top: 4rem;
 }
 
-.isu-wordmark-sitename { 
-  color: #000; 
+.isu-wordmark-sitename {
+  color: #000;
   font-size: 18px;
 }
 
@@ -123,7 +123,7 @@ a.isu-wordmark {
 /* --------------------------------------  */
 /* ## LINKS and BUTTONS
 /* --------------------------------------  */
-a { 
+a {
   padding: 0 !important;
   margin: 0 !important;
   color: #000 !important;
@@ -139,7 +139,7 @@ a {
   border: 1px solid #000 !important;
 }
 
-.badge { 
+.badge {
   background-color: #fff !important;
   border: none !important;
 }
