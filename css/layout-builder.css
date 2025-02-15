@@ -178,7 +178,13 @@ margin: auto;
 		max-width: 1140px;
 		margin: auto;
 	}
-
+}
+@media screen and (max-width : 575px) {
+	.layout--content-container--small .layout-content {
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 /* --------------------------------------  */
