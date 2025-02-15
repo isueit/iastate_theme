@@ -1982,6 +1982,11 @@ a.tabledrag-handle .handle {
   .isu-footer .col-md-6 {
 		max-width: 94%;
 	}
+  .col-md-6 {
+    flex: 0 0 45%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (max-width : 768px) {
   .isu-region_footer-third {
