@@ -1975,6 +1975,13 @@ a.tabledrag-handle .handle {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
+@media screen and (max-width : 425px) {
+  .col-md-6 {
+    flex: none;
+    max-width: 80%;
+  }
+}
+
 @media screen and (max-width : 575px) {
   .isu-footer-logo{
     padding-bottom: 0px;
