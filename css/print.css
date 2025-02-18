@@ -172,6 +172,9 @@ div.isueo-callout-stat {
   line-height: 24px !important;
   background-color: transparent !important;
 }
+span.event_day{
+  margin-bottom: 0;
+}
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER
 /* --------------------------------------  */
