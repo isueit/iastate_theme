@@ -1836,7 +1836,19 @@ a.tabledrag-handle .handle {
 }
 .isu-footer .col-sm-6.col-md-6.col-lg-3 {
 	padding-bottom: 20px;
+    display: grid;
+	max-width: 100%;
+
 }
+
+.isu-footer-title {
+  color: #fff;
+  font-family: var(--serif-font);
+  font-size: 24px;
+  min-width: max-content;
+	font-weight: 600;
+}
+
 .isu-footer-logo {
   width: 100%;
   margin-top: -15px;
@@ -1844,6 +1856,26 @@ a.tabledrag-handle .handle {
 	margin-right: auto;
 	display: block;
 	max-width: 350px;
+}
+
+
+.footer-contact-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-contact-block .footer-visit-us {
+  grid-column-start: 1;
+
+}
+.footer-contact-block .footer-call-us {
+  grid-column-start: 2;
+  padding: 0 100px;
+}
+.footer-contact-block .footer-email-us {
+  grid-column-start: 3;
+	padding: 0 100px;
+
 }
 
 /* --- ## CONTACT BLOCK --- */
@@ -1912,12 +1944,6 @@ a.tabledrag-handle .handle {
 	margin-right: 0px;
 	margin-left: 0px;
 	color: var(--burgundy);
-}
-.isu-social-menu-footer:before {
-	content: "";
-	border-bottom: 0.2rem solid var(--gold);
-	width: 13.5rem;
-	position: absolute;
 }
 
 /* --- ## LEGAL MENU --- */

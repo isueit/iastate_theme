@@ -51,7 +51,9 @@ s.parentNode.insertBefore(sz, s);
 					</a>
 				{% endif %}
 
-				{% if default_social_footer %}
+
+			</div>
+					{% if default_social_footer %}
 					<div class="isu-social-menu-footer isu-social-menu">
 						<a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a>
 						<a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a>
@@ -60,28 +62,17 @@ s.parentNode.insertBefore(sz, s);
 						<a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a>
 					</div>
 				{% endif %}
-
-			</div>
-
+				{#}
 			<div class="col-sm-6 col-md-6 col-lg-3">
+							{% if page.footer_fourth %}
+					{{ page.footer_fourth }}
+				{% endif %}
+				{#}
 
 				{% if page.footer_second %}
 					{{ page.footer_second }}
 				{% endif %}
 
-				{% if default_copyright %}
-					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
-					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
-				{% set copyright_subject = copyright_subject|merge({'#text': '
-		    <p>
-			  Copyright © 1995-<script>document.write(new Date().getFullYear())</script><br>
-		  	  <strong><a href="https://www.iastate.edu/">Iowa State University of Science and Technology.</a></strong> All rights reserved.</p>
-		    <br>		   
-		    <p class="isu-copyright-links"> 
-			  <a href="https://www.extension.iastate.edu/legal">Policies</a><br>
-		  	  <a href="https://nifa.usda.gov/land-grant-colleges-and-universities-partner-website-directory">State & National Extension Partners</a><br>			</p>
-		  ' }) %}
-				{% endif %}
 
 					{% if footer2_file_exists %}
 						{% autoescape false %}
@@ -102,15 +93,31 @@ s.parentNode.insertBefore(sz, s);
 
 			</div>
 
+			<div class="footer-contact-block">
 			<div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="isu-footer-title">Contact Iowa State University Extension and Outreach</div>
 
-				{% if page.footer_fourth %}
-					{{ page.footer_fourth }}
-				{% endif %}
-
+			<div class="footer-visit-us">Visit Us</div>
+			<div class="footer-call-us">Call Us</div>
+			<div class="footer-email-us">Email Us</div>
 			</div>
 		</div>
+		</div>
 	</div>
+
+					{% if default_copyright %}
+					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
+					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
+				{% set copyright_subject = copyright_subject|merge({'#text': '
+		    <p>
+			  Copyright © 1995-<script>document.write(new Date().getFullYear())</script><br>
+		  	  <strong><a href="https://www.iastate.edu/">Iowa State University of Science and Technology.</a></strong> All rights reserved.</p>
+		    <br>
+		    <p class="isu-copyright-links">
+			  <a href="https://www.extension.iastate.edu/legal">Policies</a><br>
+		  	  <a href="https://nifa.usda.gov/land-grant-colleges-and-universities-partner-website-directory">State & National Extension Partners</a><br>			</p>
+		  ' }) %}
+				{% endif %}
 
 	{% if page.sign_off %}
 		<div class="isu-sign-off_wrapper">
