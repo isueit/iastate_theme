@@ -29,6 +29,8 @@
 <div {{ attributes.addClass("isu-footer_contact-address") }}>
   {{ title_prefix }}
     {% block content %}
+    	<div class="isu-footer-title">Contact Iowa State University Extension and Outreach</div>
+      <div class="footer-contact-links">
       {% if content.field_contact_creator_title[0]  %}
          <div class="isu-footer_contact-address-title">
            {{ content.field_contact_creator_title[0] }}
@@ -37,18 +39,22 @@
 
 	    {% if content.field_contact_creator_address[0] %}
         <div>
+        <div class="footer-visit-us">Visit Us</div>
 		      {{ content.field_contact_creator_address[0] }}
         </div>
 	    {% endif %}
 
 	    {% if content.field_contact_creator_email[0] %}
         <div>
+        <div class="footer-email-us">Email Us</div>
+
 		        {{ content.field_contact_creator_email[0] }}
         </div>
 	    {% endif %}
 
       {% if content.field_contact_creator_phone[0]  %}
         <div>
+            <div class="footer-call-us">Call Us</div>
            {{ content.field_contact_creator_phone[0] }}
         </div>
       {% endif %}
@@ -58,6 +64,7 @@
           {{ content.field_contact_creator_phone_2[0] }}
         </div>
       {% endif %}
+      </div>
 
      {{ title_suffix }}
     {% endblock %}
