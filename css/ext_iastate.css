@@ -332,6 +332,16 @@ img.staff_profile_smugmug {
 }
 
 /* --------------------------------------  */
+/* ## CARD RESPONSIVE
+/* --------------------------------------  */
+@media screen and (max-width : 575px) {
+	.card-body p {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+/* --------------------------------------  */
 /* ## NEWS BLOCK RESPONSIVE
 /* --------------------------------------  */
 @media screen and (max-width : 425px) {

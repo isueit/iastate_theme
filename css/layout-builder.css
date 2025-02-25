@@ -160,6 +160,9 @@ margin: auto;
 		font-size: 8px;
 		position: static;
 	  }
+	.layout--left-right-padding--small {
+		padding-right: 0px;
+	}
 }
 @media screen and (max-width : 992px) {
 .layout--column-gap--none .layout-content {
@@ -175,7 +178,13 @@ margin: auto;
 		max-width: 1140px;
 		margin: auto;
 	}
-
+}
+@media screen and (max-width : 575px) {
+	.layout--content-container--small .layout-content {
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 /* --------------------------------------  */
