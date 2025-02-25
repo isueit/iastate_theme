@@ -30,8 +30,7 @@ s.parentNode.insertBefore(sz, s);
 
 	<div class="container">
 		<div class="row">
-
-			<div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="footer-logo-block">
 
 				{% if page.footer_first %}
 					{{ page.footer_first }}
@@ -51,8 +50,9 @@ s.parentNode.insertBefore(sz, s);
 					</a>
 				{% endif %}
 
+				</div>
 
-			</div>
+				<div class="footer-social-block">
 					{% if default_social_footer %}
 					<div class="isu-social-menu-footer isu-social-menu">
 						<a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a>
@@ -62,50 +62,39 @@ s.parentNode.insertBefore(sz, s);
 						<a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a>
 					</div>
 				{% endif %}
-				{#}
-			<div class="col-sm-6 col-md-6 col-lg-3">
-							{% if page.footer_fourth %}
+				</div>
+
+
+			<div class="quick-links-block">
+			{% if page.footer_fourth %}
 					{{ page.footer_fourth }}
 				{% endif %}
-				{#}
-
-				{% if page.footer_second %}
-					{{ page.footer_second }}
-				{% endif %}
 
 
-					{% if footer2_file_exists %}
-						{% autoescape false %}
-					{{ footer2_file_contents }}
-					{% endautoescape %}
-				{% else %}
-					<div class="isu-copyright">
-						{{ copyright_subject }}
-					</div>
-				{% endif %}
+
 			</div>
-
-			<div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="footer-contact-block">
 
 				{% if page.footer_third %}
 					{{ page.footer_third }}
 				{% endif %}
 
-			</div>
 
-			<div class="footer-contact-block">
-			<div class="col-sm-6 col-md-6 col-lg-3">
-			<div class="isu-footer-title">Contact Iowa State University Extension and Outreach</div>
-
-			<div class="footer-visit-us">Visit Us</div>
-			<div class="footer-call-us">Call Us</div>
-			<div class="footer-email-us">Email Us</div>
-			</div>
 		</div>
 		</div>
 	</div>
 
-					{% if default_copyright %}
+		{% if page.sign_off %}
+		<div class="isu-sign-off_wrapper">
+			<div class="container">
+				{{ page.sign_off }}
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="footer-isu-copyright">
+
+			{% if default_copyright %}
 					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
 					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
 				{% set copyright_subject = copyright_subject|merge({'#text': '
@@ -119,11 +108,8 @@ s.parentNode.insertBefore(sz, s);
 		  ' }) %}
 				{% endif %}
 
-	{% if page.sign_off %}
-		<div class="isu-sign-off_wrapper">
-			<div class="container">
-				{{ page.sign_off }}
-			</div>
-		</div>
-	{% endif %}
+				<p> {{ copyright_subject|render }} </p>
+
+</div>
+
 </footer>
