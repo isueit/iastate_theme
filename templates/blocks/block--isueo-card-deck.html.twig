@@ -46,7 +46,7 @@
 			</div>
 			{% if content.field_card_deck_link.0['#url'].toString() is not empty %}
 				<div class="isueo-card-deck-footer card-footer">
-					<a id="{{ content.field_card_deck_link.0['#title'] }}" aria-label="{{ label }}" class="isueo-card-deck-link" href="{{ content.field_card_deck_link.0['#url'] }}">
+					<a id="{{ content.field_card_deck_link.0['#title'] }}" aria-label="{{ content.field_card_deck_link.0['#title'] }} {{ label }}" class="isueo-card-deck-link" href="{{ content.field_card_deck_link.0['#url'] }}">
 					{{ content.field_card_deck_link.0['#title'] }}</a>
 				</div>
 			{% endif %}
@@ -60,7 +60,7 @@
 			</div>
 			{% if content.field_card_deck_link.0['#url'].toString() is not empty %}
 				<div class="isueo-card-deck-footer card-footer">
-					<a id="{{ content.field_card_deck_link.0['#title'] }}" aria-label="{{ label }}" class="isueo-card-deck-link" href="{{ content.field_card_deck_link.0['#url'] }}">
+					<a id="{{ content.field_card_deck_link.0['#title'] }}" aria-label="{{ content.field_card_deck_link.0['#title'] }} {{ label }}" class="isueo-card-deck-link" href="{{ content.field_card_deck_link.0['#url'] }}">
 					{{ content.field_card_deck_link.0['#title'] }}</a>
 				</div>
 			{% endif %}
