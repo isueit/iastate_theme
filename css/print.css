@@ -199,3 +199,63 @@ span.event_day{
   content: "This institution is an equal opportunity provider. For the full non-discrimination statement or accommodation inquiries, go to www.extension.iastate.edu/legal/";
   font-size: .9rem;
 }
+nav.slick__arrow{
+  display: none;
+}
+@media screen {
+  #print_footnotes{
+    display: none !important;
+  }
+}
+@media print{
+  #print_footnotes,
+  #footnotes-placeholder {
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    clear: both !important;
+    overflow: visible !important;
+    margin-top: 2em;
+    z-index: auto !important;
+  }
+  sup.sup-print{
+    display: inline;
+  }
+  body{
+    height: auto !important;
+  }
+  .featured-pubs{
+    display: none;
+  }
+  .ext-news-feed .row{
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1em !important;
+  }
+  .card-footer{
+    display: none !important;
+  }
+  .card-body p{
+    font-size: 1.1vw;
+  }
+  .ext-news-feed footer{
+    display: none !important;
+  }
+  .events_show_more{
+    display: none !important;
+  }
+
+}
+
+@media print and (-webkit-min-device-pixel-ratio:0) { /* This is for safari Local News*/
+  .ext-news-feed .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1em !important;
+  }
+  .ext-news-feed .row > li {
+    flex: 1 1 calc(33.33% - 1em) !important;
+    max-width: calc(33.33% - 1em) !important;
+    box-sizing: border-box;
+  }
+}
