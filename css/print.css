@@ -61,7 +61,7 @@ a#main-content:after {
 .isu-menu-navbar_toggler,
 .isu-search_toggler,
 .isu-menu-navbar,
-.isu-region_breadcrumbs, 
+.isu-region_breadcrumbs,
 .nav-tabs,
 .isu-comments_title,
 .comment-comment-form,
@@ -72,7 +72,7 @@ mark.badge,
 .isu-both-row-header,
 .contextual .trigger,
 .isu-sign-off_wrapper,
-.isu-footer img, 
+.isu-footer img,
 .isu-footer .isu-copyright,
 .isu-social-menu-footer,
 .isu-region_footer-fourth,
@@ -94,7 +94,7 @@ mark.badge,
   display: block;
 }
 
-.isu-col-header-first { 
+.isu-col-header-first {
   text-align: left;
 }
 
@@ -107,8 +107,8 @@ a.isu-wordmark {
   padding-top: 4rem;
 }
 
-.isu-wordmark-sitename { 
-  color: #000; 
+.isu-wordmark-sitename {
+  color: #000;
   font-size: 18px;
 }
 
@@ -123,7 +123,7 @@ a.isu-wordmark {
 /* --------------------------------------  */
 /* ## LINKS and BUTTONS
 /* --------------------------------------  */
-a { 
+a {
   padding: 0 !important;
   margin: 0 !important;
   color: #000 !important;
@@ -139,7 +139,7 @@ a {
   border: 1px solid #000 !important;
 }
 
-.badge { 
+.badge {
   background-color: #fff !important;
   border: none !important;
 }
@@ -172,6 +172,9 @@ div.isueo-callout-stat {
   line-height: 24px !important;
   background-color: transparent !important;
 }
+span.event_day{
+  margin-bottom: 0;
+}
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER
 /* --------------------------------------  */
@@ -195,4 +198,64 @@ div.isueo-callout-stat {
 #block-contact-us.isu-footer_contact-address:after {
   content: "This institution is an equal opportunity provider. For the full non-discrimination statement or accommodation inquiries, go to www.extension.iastate.edu/legal/";
   font-size: .9rem;
+}
+nav.slick__arrow{
+  display: none;
+}
+@media screen {
+  #print_footnotes{
+    display: none !important;
+  }
+}
+@media print{
+  #print_footnotes,
+  #footnotes-placeholder {
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    clear: both !important;
+    overflow: visible !important;
+    margin-top: 2em;
+    z-index: auto !important;
+  }
+  sup.sup-print{
+    display: inline;
+  }
+  body{
+    height: auto !important;
+  }
+  .featured-pubs{
+    display: none;
+  }
+  .ext-news-feed .row{
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1em !important;
+  }
+  .card-footer{
+    display: none !important;
+  }
+  .card-body p{
+    font-size: 1.1vw;
+  }
+  .ext-news-feed footer{
+    display: none !important;
+  }
+  .events_show_more{
+    display: none !important;
+  }
+
+}
+
+@media print and (-webkit-min-device-pixel-ratio:0) { /* This is for safari Local News*/
+  .ext-news-feed .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1em !important;
+  }
+  .ext-news-feed .row > li {
+    flex: 1 1 calc(33.33% - 1em) !important;
+    max-width: calc(33.33% - 1em) !important;
+    box-sizing: border-box;
+  }
 }

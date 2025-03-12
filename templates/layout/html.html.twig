@@ -30,6 +30,7 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
+    {{attach_library('iastate_theme/print-footnotes')}}
 
 {% if js_file_exists %}
   <script type="text/javascript" src="{{ js_file_url }}"></script>
@@ -66,6 +67,7 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
+    <div id="footnotes-placeholder" class="footnotes-clear"></div>
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
 </html>
