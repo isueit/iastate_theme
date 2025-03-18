@@ -745,14 +745,27 @@ div#edit-search-broadness {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
 		display: block;
-		text-align: left;
-		cursor: pointer;
-		color: #fff;
-		font-family: var(--sans-font);
-		font-weight: 700;
-		font-size: 1.125rem;
-		text-decoration: none;
-		min-width: 100%;
+    border: .125rem solid #7c2529;
+    border-radius: 1.875rem;
+    padding: .5rem 2.1875rem .5rem 1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: .625rem 0;
+    text-align: left;
+    cursor: pointer;
+    background-color: transparent;
+    color: #7c2529;
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.38889;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out, padding .2s ease-in-out;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out, padding .2s ease-in-out;
+    position: relative;
+    background-color: #fff;
+    border-color: #fff;
 	}
   .navbar-expand-lg .navbar-nav {
     flex-direction: column;
@@ -885,6 +898,9 @@ a.isu-dropdown-submenu {
 }
 
 /* Mobile Dropdown Toggles */
+::marker{
+  content: '';
+}
 @media screen and (max-width : 1199px) {
   	/* Adjust submenu alignment for condensed menu */
 	.isu-dropdown-submenu {
@@ -892,8 +908,18 @@ a.isu-dropdown-submenu {
 		margin-top: 0;
 	}
   .isu-dropdown-toggle:after {
-    content: '';
-    color: var(--gold);
+    content: "";
+    position: absolute;
+    border-right: .125rem solid #7c2529;
+    border-bottom: .125rem solid #7c2529;
+    width: .75rem;
+    height: .75rem;
+    right: 1rem;
+    top: .875rem;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
   }
   .isu-dropdown-toggle:hover:after {
     content: "\f061";
@@ -903,8 +929,8 @@ a.isu-dropdown-submenu {
   .isu-dropdown-toggle_wrapper {
     display: flex;
     align-items: stretch;
-    padding-left: 2%;
-    margin-top: 1.25rem;
+    /*padding-left: 2%;
+    margin-top: 1.25rem;*/
   }
   .isu-dropdown-toggle_wrapper .nav-link {
     flex-grow: 1;
@@ -959,11 +985,8 @@ a.isu-dropdown-submenu {
 		min-height: 10px;
 		color: #fff;
 	}
-	.dropdown-item {
-		width: 0px;
-	}
   .isu-dropdown[aria-expanded='false'] .isu-dropdown-menu {
-    display: block;
+    display: none;
   }
   .isu-dropdown-item a {
     margin: .675rem;
