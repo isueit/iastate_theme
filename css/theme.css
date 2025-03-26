@@ -110,7 +110,7 @@ body,
   }
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (min-width : 992px) {
   .isu-page-title {
     margin: 1.5625rem 0 0.625rem;
     max-width: 94%;
