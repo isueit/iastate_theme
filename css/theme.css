@@ -1307,10 +1307,55 @@ h2.isu-block-title.h4:after {
 /* --- ## Breadcrumbs --- */
 
 .isu-breadcrumb {
-  margin-bottom: 0;
-  background: transparent;
+  margin: 1.125rem 0 .5rem;
+  padding: 0;
 }
-
+.isu-breadcrumb__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.isu-breadcrumb__list li {
+  display: inline-block;
+  position: relative;
+  margin-right: .5rem;
+  font-weight: 700;
+  font-family: var(--sans-font);
+  font-size: 1.125rem;
+  line-height: 1.88889;
+  color: var(--burgundy);
+}
+.isu-breadcrumb__list li a {
+  text-decoration: underline;
+  text-decoration-thickness: .0625rem;
+  text-underline-offset: .0625rem;
+  transition: border .2s ease-in-out, color .2s ease-in-out;
+  -webkit-transition: border .2s ease-in-out,color .2s ease-in-out;
+  -webkit-text-decoration-color: var(--burgundy);
+}
+.isu-breadcrumb__list a:focus, .isu-breadcrumb__list a:hover {
+  border-bottom-width: 2px;
+  color: var(--cardinal);
+}
+.isu-breadcrumb__list li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: .75rem;
+  right: -.9275rem;
+  width: .5rem;
+  height: .5rem;
+  border-right: .125rem solid var(--burgundy);
+  border-bottom: .125rem solid var(--burgundy);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.breadcrumb-item+.breadcrumb-item::before {
+  display: none;
+}
+.breadcrumb-item+.breadcrumb-item {
+  padding-left: 1rem;
+}
 /* --- ## Links --- */
 /*
  * Not, like, regular links, but the buttons that do stuff

@@ -8,8 +8,8 @@
  */
 #}
 {% if breadcrumb %}
-  <nav role="navigation" aria-label="{{ 'Breadcrumb'|t }}">
-    <ol class="breadcrumb isu-breadcrumb">
+  <nav role="navigation" aria-label="{{ 'Breadcrumb'|t }}" class="isu-breadcrumb">
+    <ol class="breadcrumb isu-breadcrumb__list">
     {% for item in breadcrumb %}
       <li class="breadcrumb-item">
         {% if item.url %}
