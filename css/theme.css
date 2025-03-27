@@ -130,6 +130,7 @@ body,
     padding: 2.5rem 0;
     width: 94%;
   }
+}
 
 /* --------------------------------------  */
 /* ## SITE NAVBAR
@@ -176,7 +177,7 @@ body,
   margin-right: auto;
   width: 100%;
 }
-}
+
 /* --- ## Menu Navbar Toggle --- */
 
 .isu-menu-navbar_toggler {
