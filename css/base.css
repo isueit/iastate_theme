@@ -25,7 +25,6 @@
 
 body {
   font-size: clamp(1rem, 1.2vw, 1.125rem);
-  line-height: 1.5;
   font-family: var(--sans-font);
   -webkit-font-smoothing: antialiased;
   -webkit-osx-font-smoothing: grayscale;
