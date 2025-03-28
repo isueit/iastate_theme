@@ -1357,6 +1357,22 @@ h2.isu-block-title.h4:after {
 .breadcrumb-item+.breadcrumb-item {
   padding-left: 1rem;
 }
+
+/* --------------------------------------  */
+/* ## Responsive
+/* --------------------------------------  */
+@media screen and (max-width : 992px) {
+  .isu-breadcrumb {
+    margin: 1.125rem 1.1rem .5rem;
+  }
+}
+@media screen and (max-width : 768px) {
+  .isu-breadcrumb__list li {
+    font-size: 1rem;
+  }
+}
+
+
 /* --- ## Links --- */
 /*
  * Not, like, regular links, but the buttons that do stuff

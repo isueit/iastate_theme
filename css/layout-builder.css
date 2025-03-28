@@ -160,9 +160,6 @@ margin: auto;
 		font-size: 8px;
 		position: static;
 	  }
-	.layout--left-right-padding--small {
-		padding-right: 0px;
-	}
 }
 @media screen and (max-width : 992px) {
 .layout--column-gap--none .layout-content {
@@ -689,6 +686,7 @@ background-color: var(--gold);
 
 .layout--left-right-padding--small{
 	padding-left: 20px;
+	padding-right: 20px;
 }
 /* --------------------------------------  */
 /* ## LAYOUT TABS
