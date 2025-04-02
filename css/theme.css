@@ -88,6 +88,10 @@ body,
   flex-shrink: 0;
   flex-basis: auto;
 }
+.isu-main .row {
+  width: 100%;
+  margin: auto;
+}
 .container {
 	padding-right: 0px;
 	padding-left: 0px;
@@ -111,10 +115,6 @@ body,
 }
 
 @media screen and (min-width : 992px) {
-  .isu-page-title {
-    margin: 1.5625rem 0 0.625rem;
-    max-width: 94%;
-  }
   .strong-iowa img {
     width: 80%;
     padding: 0;
@@ -129,6 +129,10 @@ body,
     height: 3.5rem;
     padding: 2.5rem 0;
     width: 94%;
+  }
+  .isu-page-title {
+    margin: 1.5625rem 0 0.625rem;
+    max-width: 94%;
   }
 }
 
@@ -594,7 +598,7 @@ div#edit-search-broadness {
     display: inline-block;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1199px) {
 .isu-site-navbar div {
   max-width: inherit;
   margin: 0px;
@@ -1306,9 +1310,11 @@ h2.isu-block-title.h4:after {
 /* -------------------------------------- */
 
 /* --- ## Breadcrumbs --- */
-
+.isu-region_breadcrumbs {
+  max-width: 1140px;
+}
 .isu-breadcrumb {
-  margin: 1.125rem 0 .5rem;
+  margin: 1.125rem auto .5rem auto;
   padding: 0;
 }
 .isu-breadcrumb__list {
@@ -1361,14 +1367,20 @@ h2.isu-block-title.h4:after {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 992px) {
+@media screen and (max-width : 1199px) {
   .isu-breadcrumb {
+    margin: 1.125rem 1.1rem .5rem;
+  }
+  .isu-breadcrumb__list {
     margin: 1.125rem 1.1rem .5rem;
   }
 }
 @media screen and (max-width : 768px) {
   .isu-breadcrumb__list li {
     font-size: 1rem;
+  }
+  .isu-region_breadcrumbs {
+    max-width: 100%;
   }
 }
 

@@ -127,7 +127,7 @@ body #layout-builder-modal {
 	overscroll-behavior: none;
 }
 .layout--content-container--default .layout-content {
-	max-width: 1140px;
+	width: 100%;
 }
 
 /* "Add a new custom block" changes */
