@@ -1043,6 +1043,12 @@ div#block-iastate-theme-local-tasks {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
+@media screen and (max-width : 575px) {
+  div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6, div#block-iastate-theme-content--2 ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 @media screen and (max-width : 768px) {
   .isu-page-column {
 		max-width: 98%;
@@ -1340,6 +1346,7 @@ h2.isu-block-title.h4:after {
   transition: border .2s ease-in-out, color .2s ease-in-out;
   -webkit-transition: border .2s ease-in-out,color .2s ease-in-out;
   -webkit-text-decoration-color: var(--burgundy);
+  text-decoration-color: var(--burgundy);
 }
 .isu-breadcrumb__list a:focus, .isu-breadcrumb__list a:hover {
   border-bottom-width: 2px;
@@ -1373,6 +1380,14 @@ h2.isu-block-title.h4:after {
   }
   .isu-breadcrumb__list {
     margin: 1.125rem 1.1rem .5rem;
+  }
+}
+@media screen and (max-width : 992px) {
+  li.breadcrumb-item:last-child {
+    display: none;
+  }
+  .isu-breadcrumb__list li:nth-child(n + 2)::after {
+    display: none;
   }
 }
 @media screen and (max-width : 768px) {
@@ -2051,8 +2066,8 @@ a.tabledrag-handle .handle {
 /* --------------------------------------  */
 @media screen and (max-width : 425px) {
   .col-md-6 {
-    flex: none;
-    max-width: 80%;
+    flex: 0 0 90% !important;
+    max-width: 90%;
   }
 }
 
