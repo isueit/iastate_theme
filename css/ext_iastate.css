@@ -824,6 +824,7 @@ div.fontawesome-icon i {
 /* ------------------------------------- */
 /* ## CATEGORIES
 /* ------------------------------------- */
+/* Category Cards */
 .plp-category-cards .card-body p, .plp-category-cards .card-title {
     text-align: start;
 }
@@ -857,5 +858,11 @@ div.fontawesome-icon i {
 }
 
 /* --------------------------------------  */
-/* ## SLICK SLIDER
+/* ## RESPONSIVE
 /* --------------------------------------  */
+@media screen and (max-width : 575px) {
+	.plp-category-cards .col-md-6 {
+		flex: 0 0 85%;
+		margin: auto;
+	}
+}
