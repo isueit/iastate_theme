@@ -168,6 +168,7 @@ margin: auto;
 .layout--base--threecols .layout-content, .layout--base--fourcols .layout-content, .layout--base--twocols .layout-content, .layout-builder-base--four-columns .layout-content {
     grid-template-columns: 47% 47% ;
 	display: grid;
+	grid-gap: 14px;
   }
 }
 @media screen and (max-width : 1199px) {
