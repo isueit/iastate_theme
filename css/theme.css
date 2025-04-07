@@ -153,7 +153,7 @@ body,
  }
 .isu-site-navbar {
   padding: 0;
-  background-color: #ffffff;
+  background-color: var(--primary-color);
 }
 /* The gold border is optional and can be hidden in theme settings */
 .isu-gold-border_hidden {

@@ -55,7 +55,58 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value'	=> theme_get_setting('default_social_footer'),
     '#tree'		=> '',
   );
+
+  // Create a section for color settings
+  $form['iastate_color_settings'] = [
+    '#type' => 'details',
+    '#title' => t('Theme Color Settings'),
+    '#description' => t('Color selection for custom colors'),
+    '#weight' => -980,
+    '#open' => TRUE,
+  ];
   
+  // Set up the checkbox for the default colors
+  $form['iastate_color_settings']['default_color_settings'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Use the colors supplied by the theme'),
+    '#default_value' => isset($stored_value) ? $stored_value : 1,
+  ];
+  
+  // This container will be hidden when the checkbox is checked.
+  $form['iastate_color_settings']['settings'] = [
+    '#type' => 'container',
+    '#states' => [
+      'visible' => [
+        ':input[name="default_color_settings"]' => ['checked' => FALSE],
+      ],
+    ],
+  ];
+  
+  // Create color selector for primary color, cardinal is the default
+  $form['iastate_color_settings']['settings']['primary_color'] = [
+    '#type' => 'color',
+    '#title' => t('Primary Color'),
+    '#description' => t('Controls things like footer background color and heading colors'),
+    '#default_value' => theme_get_setting('primary_color') ?? '#c8102e',
+  ];
+  
+  // Create color selector for secondary color, burgundy is the default
+  $form['iastate_color_settings']['settings']['secondary_color'] = [
+    '#type' => 'color',
+    '#title' => t('Secondary Color'),
+    '#description' => t('Controls things like link color and smaller heading colors'),
+    '#default_value' => theme_get_setting('secondary_color') ?? '#7c2529',
+  ];
+  
+  // Create color selector for primary accent color, gold is the default
+  $form['iastate_color_settings']['settings']['primary_accent_color'] = [
+    '#type' => 'color',
+    '#title' => t('Primary Accent Color'),
+    '#description' => t('Controls decorative colors like the line under block headings'),
+    '#default_value' => theme_get_setting('primary_accent_color') ?? '#003d4c',
+  ];
+  
+
   // Include the logo default and fields for custom logo
   $form['logo']['#weight'] = -950;
   

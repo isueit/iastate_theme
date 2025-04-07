@@ -199,6 +199,43 @@ function iastate_theme_preprocess_page(&$variables)
     '#text' => isset(theme_get_setting('copyright_subject')['value']) ? theme_get_setting('copyright_subject')['value'] : '',
     '#format' => theme_get_setting('copyright_subject')['format'],
   );
+
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function iastate_theme_preprocess_html(&$variables) {
+  $use_defaults = theme_get_setting('default_color_settings');
+
+  if (!empty($use_defaults)) {
+    // Use hard-coded defaults.
+    $primary = '#c8102e';
+    $secondary = '#7c2529';
+    $accent = '#003d4c';
+  } else {
+    // Use user-selected settings.
+    $primary = theme_get_setting('primary_color') ?? '#c8102e';
+    $secondary = theme_get_setting('secondary_color') ?? '#7c2529';
+    $accent = theme_get_setting('primary_accent_color') ?? '#003d4c';
+  }
+
+  $inline_styles = <<<CSS
+    :root {
+      --primary-color: {$primary};
+      --secondary-color: {$secondary};
+      --primary-accent-color: {$accent};
+    }
+  CSS;
+
+  $element = [
+    '#type' => 'html_tag',
+    '#tag' => 'style',
+    '#value' => $inline_styles,
+    '#attributes' => ['type' => 'text/css'],
+  ];
+
+  $variables['#attached']['html_head'][] = [$element, 'custom_theme_colors'];
 }
 
 /**
