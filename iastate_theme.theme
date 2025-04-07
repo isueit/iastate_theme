@@ -130,8 +130,8 @@ function iastate_theme_preprocess(&$variables, $hook)
   // Ensure the cache varies correctly (new in Drupal 8.3).
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 
-  $variables['iastate_unit_name'] = theme_get_setting('iastate_unit_name');
-  $variables['iastate_unit_url'] = theme_get_setting('iastate_unit_url');
+  /*$variables['iastate_unit_name'] = theme_get_setting('iastate_unit_name');
+  $variables['iastate_unit_url'] = theme_get_setting('iastate_unit_url');*/
 
   // Added variables as a workaround for twig not having file exists
   // Theses variables help with our "local" javascript and css
@@ -184,25 +184,6 @@ function iastate_theme_preprocess_page(&$variables)
   $variables['gold_border_hidden'] = theme_get_setting('gold_border_hidden');
 
   $variables['theme_path'] = base_path() . $variables['directory'];
-
-  $variables['iastate_contact_title'] = theme_get_setting('iastate_contact_title');
-  $variables['iastate_contact_address'] = theme_get_setting('iastate_contact_address');
-  $variables['iastate_contact_email'] = theme_get_setting('iastate_contact_email');
-  $variables['iastate_contact_phone'] = theme_get_setting('iastate_contact_phone');
-  $variables['iastate_contact_fax'] = theme_get_setting('iastate_contact_fax');
-
-  $variables['iastate_associate1_title'] = theme_get_setting('iastate_associate1_title');
-  $variables['iastate_associate1_url'] = theme_get_setting('iastate_associate1_url');
-  $variables['iastate_associate2_title'] = theme_get_setting('iastate_associate2_title');
-  $variables['iastate_associate2_url'] = theme_get_setting('iastate_associate2_url');
-  $variables['iastate_associate3_title'] = theme_get_setting('iastate_associate3_title');
-  $variables['iastate_associate3_url'] = theme_get_setting('iastate_associate3_url');
-  $variables['iastate_associate4_title'] = theme_get_setting('iastate_associate4_title');
-  $variables['iastate_associate4_url'] = theme_get_setting('iastate_associate4_url');
-  $variables['iastate_associate5_title'] = theme_get_setting('iastate_associate5_title');
-  $variables['iastate_associate5_url'] = theme_get_setting('iastate_associate5_url');
-  $variables['iastate_associate6_title'] = theme_get_setting('iastate_associate6_title');
-  $variables['iastate_associate6_url'] = theme_get_setting('iastate_associate6_url');
 
   $variables['default_footer_logo'] = theme_get_setting('default_footer_logo');
   $variables['iastate_footer_logo_path'] = theme_get_setting('iastate_footer_logo_path');
