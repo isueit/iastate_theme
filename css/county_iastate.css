@@ -1,12 +1,7 @@
 :root {
-	--cardinal: #c8102e;
-	--gold: #f1be48;
-	--burgundy: #7c2529;
 	--dk-gray: #4a4a4a;
 	--lt-gray: #f5f5f5;
 	--md-gray: #ebebeb;
-	--midnight: #003d4c;
-	--green: #008540;
 	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
 	--serif-font: 'Merriweather', serif;
   }
@@ -27,8 +22,8 @@ div.program_offering_blocks {
 
 .program_offering_blocks.isu-block-front.isu-block {
 	background-color: #ffffff;
-	border: 3px solid var(--midnight);
-	box-shadow: -5px 5px 19px -5px var(--midnight);
+	border: 3px solid var(--tertiary-color);
+	box-shadow: -5px 5px 19px -5px var(--tertiary-color);
 }
 
 div.program_offering_blocks h2.isu-block-title.h4:before {
@@ -81,16 +76,16 @@ a.event_title:hover, a.county_calendar:hover {
 }
 
 .isu-block-front span.event_day {
-	color: var(--midnight);
+	color: var(--tertiary-color);
 }
 
 .isu-block-front span.event_month {
-	color: var(--midnight);
+	color: var(--tertiary-color);
 }
 
 .isu-block-front div.event_date {
 	margin: 0 5px 8px 0;
-	color: var(--midnight);
+	color: var(--tertiary-color);
 }
 
 .isu-block-front ul.program_offering_blocks {
@@ -152,6 +147,6 @@ div.join-4h-info {
 .fa-iastate22-exclamation-point{
 	-webkit-box-flex: 0;
 	flex:0,0,auto;
-	color: var(--gold);
+	color: var(--primary-accent-color);
 	font-size: 1.875rem;
 }

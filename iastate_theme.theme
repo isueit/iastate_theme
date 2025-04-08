@@ -209,14 +209,26 @@ function iastate_theme_preprocess_html(&$variables) {
   // Use theme settings for the primary, secondary, and accent colors
   $primary = theme_get_setting('primary_color') ?? '#c8102e';
   $secondary = theme_get_setting('secondary_color') ?? '#7c2529';
-  $accent = theme_get_setting('primary_accent_color') ?? '#003d4c';
+  $tertiary = theme_get_setting('tertiary_color') ?? '#003d4c';
+  $accent = theme_get_setting('primary_accent_color') ?? '#f1be48';
+  $link = theme_get_setting('link_color') ?? '#7c2529';
+  $btn_success = theme_get_setting('btn_success_color') ?? '#008540';
+  $btn_danger = theme_get_setting('btn_danger_color') ?? '#c8102e';
+  $btn_primary = theme_get_setting('btn_primary_color') ?? '#003d4c';
+  $btn_secondary = theme_get_setting('btn_secondary_color') ?? '#7c2529';
 
   // Add CSS variables
   $inline_styles = <<<CSS
     :root {
       --primary-color: {$primary};
       --secondary-color: {$secondary};
+      --tertiary-color: {$tertiary};
       --primary-accent-color: {$accent};
+      --link-color: {$link};
+      --btn-success-color: {$btn_success};
+      --btn-danger-color: {$btn_danger};
+      --btn-primary-color: {$btn_primary};
+      --btn-secondary-color: {$btn_secondary};
     }
   CSS;
 

@@ -7,14 +7,9 @@
  */
 /*test git add now*/
  :root {
-	--cardinal: #c8102e;
-	--gold: #f1be48;
-	--burgundy: #7c2529;
 	--dk-gray: #4a4a4a;
 	--lt-gray: #f5f5f5;
 	--md-gray: #ebebeb;
-	--midnight: #003d4c;
-	--green: #008540;
 	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
 	--serif-font: 'Merriweather', serif;
   }
@@ -46,7 +41,7 @@ h2, .h2 {
 	position: relative;
 }
 h2 {
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 h2:first-child,
 .h2:first-child,
@@ -64,7 +59,7 @@ h3, .h3 {
 	margin: 2rem 0 0.5625rem;
 }
 h3 {
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 h4, .h4 {
   font-size: clamp(1rem, .9vw, 1.125rem);
@@ -75,7 +70,7 @@ h4, .h4 {
 	line-height: 1.38889;
 }
 h4 {
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .h5, h5 {
 	font-size: clamp(1rem, 1.2vw, 1.125rem);
@@ -86,7 +81,7 @@ h4 {
 	margin: 2rem 0 0.5625rem;
 }
 h5 {
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .h6, h6 {
 	font-family: var(--sans-font);
@@ -95,7 +90,7 @@ h5 {
 	margin: 2rem 0 0.5625rem;
 }
 h6 {
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 dl, ol, ul { /* Overrides bootstrap-reboot.min.css */
   padding-left: 2rem;
@@ -103,7 +98,7 @@ dl, ol, ul { /* Overrides bootstrap-reboot.min.css */
 /* --- ## Block quote --- */
 /* Duplicates Bootstrap 4's .blockquote */
 blockquote {
-	background-color: var(--cardinal);
+	background-color: var(--primary-color);
 	color: #fff;
 	position: relative;
 	padding: 3.75rem 2.25rem 5.625rem;
@@ -115,7 +110,7 @@ blockquote:before {
 	bottom: 0;
 	width: 150vw;
 	left: 50%;
-	background-color: var(--cardinal);
+	background-color: var(--primary-color);
 	transform: translateX(-50%);
 	-webkit-transform: translateX(-50%);
 	z-index: -1;
@@ -162,7 +157,7 @@ blockquote a {
 }
 blockquote a:hover {
 	text-decoration: underline;
-	color: var(--gold);
+	color: var(--primary-accent-color);
 }
 /* --------------------------------------  */
 /* ## Responsive
@@ -177,7 +172,7 @@ hr { /* Overrides Bootstrap 4's hr style */
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 #gold hr {
-	border-top: 1px solid var(--gold);
+	border-top: 1px solid var(--primary-accent-color);
 }
 
 /* --------------------------------------  */
@@ -185,15 +180,15 @@ hr { /* Overrides Bootstrap 4's hr style */
 /* --------------------------------------  */
 
 a, .link { /* Overrides bootstrap.min.css */
-  color: var(--burgundy); /* ISU brand standard */
+  color: var(--link-color); /* ISU brand standard */
   text-decoration: underline; /* WCAG A standard */
   transition: color .2s ease-in-out;
 }
 a:hover { /* Overrides bootstrap.min.css */
-  color: var(--cardinal); /* ISU brand standard */
+  color: var(--primary-color); /* ISU brand standard */
 }
 a:hover img {
-  outline: var(--gold) auto 5px;
+  outline: var(--primary-accent-color) auto 5px;
 }
 a.btn,
 a.badge,
@@ -220,9 +215,9 @@ button:focus {
 
 /* Green Button */
 .btn-success { /* Overrides bootstrap.min.css */
-  background-color: var(--green);
-	border-color: var(--green);
-	border: 1px solid var(--green);
+  background-color: var(--btn-success-color);
+	border-color: var(--btn-success-color);
+	border: 1px solid var(--btn-success-color);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -230,8 +225,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-success:hover {
-  background-color: var(--green);
-  border: 1px solid var(--green);
+  background-color: var(--btn-success-color);
+  border: 1px solid var(--btn-success-color);
   color: #fff;
 }
 .btn-success::after {
@@ -247,18 +242,18 @@ button:focus {
 }
 .btn-success:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 .btn-success:not(:disabled):not(.disabled).active,
 .btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
-  background-color: var(--green);
-  border-color: var(--green);
+  background-color: var(--btn-success-color);
+  border-color: var(--btn-success-color);
 }
 /* Green Outline Button */
 .btn-outline-success {
-	color: var(--green);
-	border: 1px solid var(--green);
+	color: var(--btn-success-color);
+	border: 1px solid var(--btn-success-color);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -267,8 +262,8 @@ button:focus {
 }
 .btn-outline-success:hover {
 	background-color: #fff;
-	color: var(--green);
-	border: 1px solid var(--green);
+	color: var(--btn-success-color);
+	border: 1px solid var(--btn-success-color);
 }
 .btn-outline-success::after {
 	content: "";
@@ -283,19 +278,19 @@ button:focus {
 }
 .btn-outline-success:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show > .btn-outline-success.dropdown-toggle {
-  background-color: var(--green);
-  border-color: var(--green);
+  background-color: var(--btn-success-color);
+  border-color: var(--btn-success-color);
 }
 
 /* Cardinal Button */
 .btn-danger {
-	background-color: var(--cardinal);
-	border-color: var(--cardinal);
+	background-color: var(--btn-danger-color);
+	border-color: var(--btn-danger-color);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -315,13 +310,13 @@ button:focus {
 }
 .btn-danger:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 
 /* Cardinal Outline Button */
 .btn-outline-danger {
 	color: #dc3545;
-	border: 1px solid var(--cardinal);
+	border: 1px solid var(--btn-danger-color);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -330,7 +325,7 @@ button:focus {
 }
 .btn-outline-danger:hover {
 	background-color: #fff;
-	color: var(--cardinal);
+	color: var(--btn-danger-color);
 }
 .btn-outline-danger::after {
 	content: "";
@@ -345,13 +340,13 @@ button:focus {
 }
 .btn-outline-danger:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 
 /* Dark Blue Button */
 .btn-primary {
-	background-color: var(--midnight);
-	border-color: var(--midnight);
+	background-color: var(--btn-primary-color);
+	border-color: var(--btn-primary-color);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -359,7 +354,7 @@ button:focus {
 	overflow: hidden;
 }
 .btn-primary:hover {
-	background-color: var(--midnight);
+	background-color: var(--btn-primary-color);
 	color: #fff;
 }
 .btn-primary::after {
@@ -375,13 +370,13 @@ button:focus {
 }
 .btn-primary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 
 /* Dark Blue Outline Button */
 .btn-outline-primary {
-	color: var(--midnight);
-	border: 1px solid var(--midnight);
+	color: var(--btn-primary-color);
+	border: 1px solid var(--btn-primary-color);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -390,8 +385,8 @@ button:focus {
 }
 .btn-outline-primary:hover {
 	background-color: #fff;
-	color: var(--midnight);
-	border: 1px solid var(--midnight);
+	color: var(--btn-primary-color);
+	border: 1px solid var(--btn-primary-color);
 }
 .btn-outline-primary::after {
 	content: "";
@@ -406,14 +401,14 @@ button:focus {
 }
 .btn-outline-primary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 
 /* Dark Red Button */
 .btn-secondary {
-	background-color: var(--burgundy);
-	border-color: var(--burgundy);
-	border: 1px solid var(--burgundy);
+	background-color: var(--btn-secondary-color);
+	border-color: var(--btn-secondary-color);
+	border: 1px solid var(--btn-secondary-color);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -421,8 +416,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-secondary:hover {
-	background-color: var(--burgundy);
-	border: 1px solid var(--burgundy);
+	background-color: var(--btn-secondary-color);
+	border: 1px solid var(--btn-secondary-color);
 	color: #fff;
 }
 .btn-secondary::after {
@@ -438,13 +433,13 @@ button:focus {
 }
 .btn-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 
 /* Dark Red Outline Button */
 .btn-outline-secondary {
-	color: var(--burgundy);
-	border: 1px solid var(--burgundy);
+	color: var(--btn-secondary-color);
+	border: 1px solid var(--btn-secondary-color);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -453,8 +448,8 @@ button:focus {
 }
 .btn-outline-secondary:hover {
 	background-color: #fff;
-	color: var(--burgundy);
-	border: 1px solid var(--burgundy);
+	color: var(--btn-secondary-color);
+	border: 1px solid var(--btn-secondary-color);
 }
 .btn-outline-secondary::after {
 	content: "";
@@ -469,7 +464,7 @@ button:focus {
 }
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--gold);
+	background: var(--primary-accent-color);
 }
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */
@@ -565,7 +560,7 @@ button:focus {
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
 .ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
-  background: var(--cardinal);
+  background: var(--primary-color);
 	color: white;
 	padding: 1.5625rem;
 	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
@@ -577,7 +572,7 @@ body.cke_editable table[border] th a, body.cke_editable table th a, .table th a 
 	color: var(--lt-gray);
 }
 body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
-	color: var(--gold);
+	color: var(--primary-accent-color);
 }
 caption {
   caption-side: top;
@@ -696,7 +691,7 @@ table img {
 /* ## CKEditor 5 Styles
 /* -------------------------------------- */
 .ck-button.ck-media-library.ck-button_with-text {
-    background-color: var(--midnight);
+    background-color: var(--btn-primary-color);
     color: white;
     border: none;
 }
@@ -705,49 +700,49 @@ table img {
 }
 .ck-button.ck-media-library.ck-button_with-text:hover {
     background-color: var(--md-gray);
-	color: var(--midnight)
+	color: var(--btn-primary-color)
 }
 .ckeditor-accordion {
-	border: dashed 2px var(--cardinal);
+	border: dashed 2px var(--primary-color);
 }
 .ckeditor-accordion .ckeditor-accordion-title, .ckeditor-accordion .ckeditor-accordion-content {
-	border: dashed 1px var(--midnight);
+	border: dashed 1px var(--btn-primary-color);
 }
 .ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
-	background: var(--midnight);
+	background: var(--btn-primary-color);
 }
 button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
 	font-family: var(--serif-font);
 	letter-spacing: 0;
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading6 {
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
 	text-decoration: none;
-	color: var(--cardinal);
+	color: var(--primary-color);
 	background-color: inherit;
 	font-family: var(--sans-font);
 	font-size: 1.3125rem;
@@ -761,14 +756,14 @@ button.ck.ck-heading_heading6 {
 }
 .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
 	background-color: inherit;
-	color: var(--cardinal);
+	color: var(--primary-color);
 	cursor: pointer;
 }
 .ckeditor-accordion-container > dl {
 	border: 1px solid transparent;
 }
 .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
-	background: var(--cardinal);
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
 	left: 10px;
@@ -800,7 +795,7 @@ dl {
 	border-bottom: 0;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: var(--cardinal);
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
 	left: auto;
@@ -952,7 +947,7 @@ body.cke_editable table td{
 /* ## CKEditor 5 Styles
 /* --------------------------------------
 .ckeditor-accordion {
-	border: dashed 2px var(--cardinal);
+	border: dashed 2px var(--primary-color);
 }
 .ckeditor-accordion .ckeditor-accordion-title, .ckeditor-accordion .ckeditor-accordion-content {
 	border: dashed 1px var(--midnight);
@@ -964,34 +959,34 @@ body.cke_editable table td{
 	font-size: 1.875rem;
 	font-family: var(--serif-font);
 	letter-spacing: 0;
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 .ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 .ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .ck.ck-heading_heading6 {
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--burgundy);
+	color: var(--secondary-color);
 }
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
 	text-decoration: none;
-	color: var(--cardinal);
+	color: var(--primary-color);
 	background-color: inherit;
 	font-family: var(--sans-font);
 	font-size: 1.3125rem;
@@ -1005,14 +1000,14 @@ body.cke_editable table td{
 }
 .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
 	background-color: inherit;
-	color: var(--cardinal);
+	color: var(--primary-color);
 	cursor: pointer;
 }
 .ckeditor-accordion-container > dl {
 	border: 1px solid transparent;
 }
 .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
-	background: var(--cardinal);
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
 	left: 10px;
@@ -1044,7 +1039,7 @@ dl {
 	border-bottom: 0;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: var(--cardinal);
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
 	left: auto;

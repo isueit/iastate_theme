@@ -26,7 +26,13 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   // Default colors for the theme
   $default_primary = '#c8102e';
   $default_secondary = '#7c2529';
+  $default_tertiary = "003d4c";
   $default_accent = '#003d4c';
+  $default_link = "#7c2529";
+  $default_btn_success = "#008540";
+  $default_btn_danger = "#c8102e";
+  $default_btn_primary = "#003d4c";
+  $default_btn_secondary = "#7c2529";
 
   // Create a section for ISU theme settings
   $form['iastate_theme_settings'] = array(
@@ -63,9 +69,8 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create a section for color settings
   $form['iastate_color_settings'] = [
-    '#type' => 'details',
-    '#title' => t('Theme Color Settings'),
-    '#description' => t('Color selection for custom colors'),
+    '#type' => 'fieldset',
+    '#title' => t('Color Settings'),
     '#weight' => -980,
     '#open' => TRUE,
   ];
@@ -102,6 +107,14 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('Controls things like link color and smaller heading colors'),
     '#default_value' => theme_get_setting('secondary_color') ?? $default_secondary,
   ];
+
+  // Create color selector for tertiary color, midnight is the default
+  $form['iastate_color_settings']['settings']['tertiary_color'] = [
+    '#type' => 'color',
+    '#title' => t('Tertiary Color'),
+    '#description' => t('Controls things like link color and smaller heading colors'),
+    '#default_value' => theme_get_setting('tertiary_color') ?? $default_tertiary,
+  ];
   
   // Create color selector for primary accent color, gold is the default
   $form['iastate_color_settings']['settings']['primary_accent_color'] = [
@@ -110,14 +123,54 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('Controls decorative colors like the line under block headings'),
     '#default_value' => theme_get_setting('primary_accent_color') ?? $default_accent,
   ];
+
+  // Create color selector for link color, burgundy is the default
+  $form['iastate_color_settings']['settings']['link_color'] = [
+    '#type' => 'color',
+    '#title' => t('Link Color'),
+    '#description' => t('Controls color of links'),
+    '#default_value' => theme_get_setting('link_color') ?? $default_link,
+  ];
+
+  // Create color selector for success button color, green is the default
+  $form['iastate_color_settings']['settings']['btn_success_color'] = [
+    '#type' => 'color',
+    '#title' => t('Bootstrap Success Button Color'),
+    '#description' => t('Controls the bootstrap success btn color'),
+    '#default_value' => theme_get_setting('btn_success_color') ?? $default_btn_success,
+  ];
+
+  // Create color selector for success button color, green is the default
+  $form['iastate_color_settings']['settings']['btn_danger_color'] = [
+    '#type' => 'color',
+    '#title' => t('Bootstrap Danger Button Color'),
+    '#description' => t('Controls the bootstrap danger btn color'),
+    '#default_value' => theme_get_setting('btn_danger_color') ?? $default_btn_danger,
+  ];
+
+  // Create color selector for primary button color, midnight is the default
+  $form['iastate_color_settings']['settings']['btn_primary_color'] = [
+    '#type' => 'color',
+    '#title' => t('Bootstrap Primary Color'),
+    '#description' => t('Controls the bootstrap primary btn color'),
+    '#default_value' => theme_get_setting('btn_primary_color') ?? $default_btn_primary,
+  ];
+
+  // Create color selector for secondary button color, burgundy is the default
+  $form['iastate_color_settings']['settings']['btn_secondary_color'] = [
+    '#type' => 'color',
+    '#title' => t('Bootstrap Secondary Color'),
+    '#description' => t('Controls the bootstrap secondary btn color'),
+    '#default_value' => theme_get_setting('btn_secondary_color') ?? $default_btn_secondary,
+  ];
   
   // Include the logo default and fields for custom logo
   $form['logo']['#weight'] = -950;
   
   // Create a section for alt text and URL for custom logo
   $form['site_logo_alttext_url'] = array(
-    '#type'	=> 'details',
-    '#title'	=> t('Logo Image Alternative Text & URL'),
+    '#type'	=> 'fieldset',
+    '#title'	=> t('Custom Logo Settings'),
     '#weight'	=> -900,
     '#open'	=> TRUE,
   );
@@ -199,26 +252,26 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Set up textfield for custom footer logo link
   $form['iastate_footer_logo']['settings']['iastate_footer_logo_url'] = array(
-    '#type'   => 'textfield',
-    '#title'  => t('Link logo to URL'),
+    '#type' => 'textfield',
+    '#title' => t('Link logo to URL'),
     '#default_value'  => theme_get_setting('default_footer_logo') ? 'https://www.extension.iastate.edu' : theme_get_setting('iastate_footer_logo_url'),
   );
   
   // Create section for copyright settings
   $form['iastate_copyright'] = array(
-    '#type'         => 'details',
-    '#title'        => t('Copyright Settings'),
-    '#description'  => t(''),
+    '#type' => 'fieldset',
+    '#title' => t('Copyright Settings'),
+    '#description' => t(''),
     '#weight' => -800,
     '#open' => TRUE,
   );
   
   // Set up checkbox for the default copyright settings
   $form['iastate_copyright']['default_copyright'] = array(
-	  '#type'		=> 'checkbox',
-	  '#title'	=> t('Use the copyright supplied by the theme'),
-	  '#default_value'	=> theme_get_setting('default_copyright'),
-	  '#tree'		=> '',
+	  '#type' => 'checkbox',
+	  '#title' => t('Use the copyright supplied by the theme'),
+	  '#default_value' => theme_get_setting('default_copyright'),
+	  '#tree'	=> '',
   );
 
   $form['iastate_copyright']['settings'] = array(

@@ -5,14 +5,9 @@
  */
 
  :root {
-	--cardinal: #c8102e;
-	--gold: #f1be48;
-	--burgundy: #7c2529;
 	--dk-gray: #4a4a4a;
 	--lt-gray: #f5f5f5;
 	--md-gray: #ebebeb;
-	--midnight: #003d4c;
-	--green: #008540;
 	--sans-font: 'Arial', 'Helvetica Neue', sans-serif;
 	--serif-font: 'Merriweather', serif;
 }
@@ -248,7 +243,7 @@ margin: auto;
 
 /* Red Feature Card */
 .isueo-callout-stat {
-	background: var(--cardinal);
+	background: var(--primary-color);
 	padding: 4.0625rem 2.5rem;
 	overflow: hidden;
 	position: relative;
@@ -266,7 +261,7 @@ div.isueo-callout-stat {
 	color: #fff;
 }
 .isueo-callout-stat:before {
-	border-bottom: 0.5rem solid var(--gold);
+	border-bottom: 0.5rem solid var(--primary-accent-color);
 	content: "";
 	width: 3.5rem;
 	height: 0.5rem;
@@ -278,7 +273,7 @@ div.isueo-callout-stat {
 .isueo-callout-stat li a, .isueo-callout-stat a {
 	color: #fff;
 	text-decoration: underline;
-	text-decoration-color: var(--gold);
+	text-decoration-color: var(--primary-accent-color);
 }
 .isueo-callout-stat li a:hover, .isueo-callout-state a:hover {
 	text-decoration: none;
@@ -291,12 +286,12 @@ div.isueo-callout-stat {
 	padding: 1rem;
 }
 .layout-block--background--blue {
-	background: var(--midnight);
+	background: var(--btn-primary-color);
 	border-radius: 3px;
 	padding: 1rem;
 }
 .layout-block--background--green {
-	background: var(--green);
+	background: var(--btn-success-color);
 	border-radius: 3px;
 	padding: 1rem;
 }
@@ -420,10 +415,10 @@ div.isueo-callout-stat {
 /* ## BACKGROUNDS
 /* --------------------------------------  */
 .layout--background--red {
-  background-color: var(--cardinal);
+  background-color: var(--primary-color);
 }
 .layout--background--green {
-background-color: var(--green);
+background-color: var(--btn-success-color);
 }
 .layout--background--green a {
 color: #fff;
@@ -434,41 +429,41 @@ color: #fff;
 text-decoration: underline;
 }
 .layout--background--red a:hover {
-color: var(--gold);
+color: var(--primary-accent-color);
 text-decoration: none;
 }
 .layout--background--red hr, .layout--background--blue hr {
-border-top: 2px solid var(--gold);
+border-top: 2px solid var(--primary-accent-color);
 }
 .layout--background--green a:hover {
 text-decoration: underline;
 }
 .layout--background--red span.btn.btn-outline-danger a {
-color: var(--cardinal);
+color: var(--btn-danger-color);
 }
 .layout--background--red span.btn.btn-outline-danger a:hover {
-color: var(--midnight);
+color: var(--btn-primary-color);
 }
 .layout--background--red .btn-outline-danger:hover {
-background-color: var(--gold);
+background-color: var(--primary-accent-color);
 }
 .layout--background--gray {
   background-color: var(--lt-gray);
 }
 .layout--background--blue {
-  background-color: var(--midnight);
+  background-color: var(--btn-primary-color);
 }
 .layout--background--blue a {
-	color: var(--gold);
+	color: var(--primary-accent-color);
 	text-decoration: underline;
 	}
 .layout--background--blue a:hover {
-		color: var(--gold);
+		color: var(--primary-accent-color);
 		text-decoration: none;
 }
 .layout--background--blue a.btn-outline-primary {
-	color: var(--midnight);
-	border: 2px solid var(--gold);
+	color: var(--btn-primary-color);
+	border: 2px solid var(--primary-accent-color);
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a{
@@ -476,7 +471,7 @@ background-color: var(--gold);
 	text-decoration: underline;
 }
 .layout--color--white[style^="background-image"] a:hover{
-	color: var(--gold);
+	color: var(--primary-accent-color);
 	text-decoration: none;
 }
 /* Background Overlays. */
@@ -499,8 +494,8 @@ background-color: var(--gold);
 	position: relative;
 }
 .layout-builder-block.layout--background-overlay--dark-light a, .layout-builder-block.layout--background-overlay--dark a, .layout-builder-block.layout--background-overlay--darker a {
-	background-color: var(--cardinal);
-	border-color: var(--cardinal);
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
 	font-weight: 700;
 	border-radius: 3px;
 	cursor: pointer;
@@ -515,8 +510,8 @@ background-color: var(--gold);
 	border-color: #000000;
 }
 .layout-builder-block.layout--background-overlay--red a {
-	background-color: var(--midnight);
-	border-color: var(--midnight);
+	background-color: var(--btn-primary-color);
+	border-color: var(--btn-primary-color);
 	font-weight: 700;
 	border-radius: 3px;
 	cursor: pointer;
@@ -527,9 +522,9 @@ background-color: var(--gold);
 	text-decoration: none;
 }
 .layout-builder-block.layout--background-overlay--red a:hover {
-	background-color: var(--gold);
-	border-color: var(--gold);
-	color: var(--midnight);
+	background-color: var(--primary-accent-color);
+	border-color: var(--primary-accent-color);
+	color: var(--btn-primary-color);
 }
 .layout--background-overlay--green {
 	position: relative;
@@ -550,8 +545,8 @@ background-color: var(--gold);
 	position: relative;
 }
 .layout-builder-block.layout--background-overlay--dark-light a, .layout-builder-block.layout--background-overlay--dark a, .layout-builder-block.layout--background-overlay--darker a {
-	background-color: var(--green);
-	border-color: var(--green);
+	background-color: var(--btn-success-color);
+	border-color: var(--btn-success-color);
 	font-weight: 700;
 	border-radius: 3px;
 	cursor: pointer;
@@ -562,8 +557,8 @@ background-color: var(--gold);
 	text-decoration: none;
 }
 .layout-builder-block.layout--background-overlay--green a {
-	background-color: var(--gold);
-	border-color: var(--gold);
+	background-color: var(--primary-accent-color);
+	border-color: var(--primary-accent-color);
 	font-weight: 700;
 	border-radius: 3px;
 	cursor: pointer;
@@ -574,9 +569,9 @@ background-color: var(--gold);
 	text-decoration: none;
 }
 .layout-builder-block.layout--background-overlay--green a:hover {
-	background-color: var(--midnight);
-	border-color: var(--midnight);
-	color: var(--gold);
+	background-color: var(--btn-primary-color);
+	border-color: var(--btn-primary-color);
+	color: var(--primary-accent-color);
 }
 
 /* --------------------------------------  */
@@ -646,7 +641,7 @@ background-color: var(--gold);
 
 /*Table Styles*/
 .layout-builder-block >*  table[border] th {
-	background: var(--cardinal);
+	background: var(--primary-color);
 	color: white;
 	padding: 1.5625rem;
 	font-weight: 700;
@@ -656,7 +651,7 @@ background-color: var(--gold);
 	color: var(--lt-gray);
 }
 .layout-builder-block >* th a:hover {
-	color: var(--gold);
+	color: var(--primary-accent-color);
 }
 .layout-builder-block >* table[border] td {
 	line-height: 1.75;

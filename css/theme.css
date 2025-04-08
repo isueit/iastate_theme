@@ -49,14 +49,9 @@
  */
 
  :root {
-	--cardinal: #c8102e;
-	--gold: #f1be48;
-	--burgundy: #7c2529;
 	--dk-gray: #4a4a4a;
 	--lt-gray: #f5f5f5;
 	--md-gray: #ebebeb;
-	--midnight: #003d4c;
-	--green: #008540;
   --sans-font: 'Arial', 'Helvetica Neue', sans-serif;
 	--serif-font: 'Merriweather', serif;
   }
@@ -205,7 +200,7 @@ body,
 .isu-menu-navbar_toggler-icon span {
   display: block;
   width: 100%;
-  border-bottom: 0.125rem solid var(--cardinal);
+  border-bottom: 0.125rem solid var(--primary-color);
   transition: all 300ms ease-in-out;
   transform-origin: center center;
 }
@@ -288,7 +283,7 @@ body,
   margin-top: -5%;
 }
 .isu-wordmark a {
-  color: var(--burgundy);
+  color: var(--link-color);
 }
 .isu-wordmark a:hover {
   color: #ffffff;
@@ -320,7 +315,7 @@ body,
 }
 
 .isu-wordmark-sitename a:hover {
-	color: var(--cardinal);
+	color: var(--primary-color);
 	text-decoration: none;
 }
 /* If there is both a unit and site name,
@@ -497,7 +492,7 @@ div#edit-search-broadness {
 		background: transparent;
 	}
 	.isu-search_toggler svg path ~ .isu-search_toggler_open {
-		fill: var(--cardinal);
+		fill: var(--primary-color);
 	}
 	.form-control.isu-form-control_search.isu-search__search-field.form-search::placeholder {
 		visibility: hidden;
@@ -702,11 +697,11 @@ div#edit-search-broadness {
 	border-bottom: none;
 	transition: all 0.1s ease;
 	line-height: 1.625;
-	color: var(--burgundy);
+	color: var(--link-color);
 	font-weight: 700;
 }
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-	color: var(--cardinal);
+	color: var(--primary-color);
 	background: transparent;
 	border-bottom: none !important;
 }
@@ -728,7 +723,7 @@ div#edit-search-broadness {
     color: #fff;
 	}
   .isu-menu-navbar_show.isu-menu-navbar_wrap {
-		background-color: var(--cardinal);
+		background-color: var(--primary-color);
 		overflow: hidden;
 		top: 0;
 		right: 0;
@@ -846,7 +841,7 @@ div#edit-search-broadness {
 .isu-dropdown-item a.active,
 .isu-dropdown-item a:active {
   background: transparent;
-	color: var(--cardinal);
+	color: var(--primary-color);
 }
 /* Third Level Menu */
 .isu-dropdown-submenu {
@@ -897,11 +892,11 @@ a.isu-dropdown-submenu {
 	}
   .isu-dropdown-toggle:after {
     content: '';
-    color: var(--gold);
+    color: var(--primary-accent-color);
   }
   .isu-dropdown-toggle:hover:after {
     content: "\f061";
-    color: var(--gold);
+    color: var(--primary-accent-color);
     transition: all .3s ease-in-out;
   }
   .isu-dropdown-toggle_wrapper {
@@ -1016,7 +1011,7 @@ a.isu-dropdown-submenu {
 	font-weight: 400;
 	letter-spacing: 0;
 	margin: 3.5625rem 0 0.625rem;
-	color: var(--cardinal);
+	color: var(--primary-color);
   width: 1140px;
 }
 .isu-region.isu-region_sidebar-second {
@@ -1128,8 +1123,8 @@ span.authored-on {
 }
 /* The Full Pager uses .active for the current page */
 .page-item.active .isu-page-link { /* .page-item via Drupal 8 */
-  background-color: var(--cardinal);
-  border-color: var(--cardinal);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .page-item.active .isu-page-link:hover {
   background-color: #a00606;
@@ -1228,7 +1223,7 @@ h2.isu-block-title.h4 {
 	margin-bottom: 1.75rem;
 	line-height: 1.4;
 	font-size: clamp(2rem, 2.2vw, 1.875rem);
-	color: var(--cardinal);
+	color: var(--primary-color);
 	position: relative;
 }
 h2.isu-block-title.h4:after {
@@ -1237,7 +1232,7 @@ h2.isu-block-title.h4:after {
 	left: 0;
 	bottom: 0;
 	width: 3.125rem;
-	border-bottom: 0.125rem solid var(--gold);
+	border-bottom: 0.125rem solid var(--primary-accent-color);
 }
 
 /* -------------------------------------- */
@@ -1334,7 +1329,7 @@ h2.isu-block-title.h4:after {
   font-family: var(--sans-font);
   font-size: 1.125rem;
   line-height: 1.88889;
-  color: var(--burgundy);
+  color: var(--link-color);
 }
 .isu-breadcrumb__list li a {
   text-decoration: underline;
@@ -1342,12 +1337,12 @@ h2.isu-block-title.h4:after {
   text-underline-offset: .0625rem;
   transition: border .2s ease-in-out, color .2s ease-in-out;
   -webkit-transition: border .2s ease-in-out,color .2s ease-in-out;
-  -webkit-text-decoration-color: var(--burgundy);
-  text-decoration-color: var(--burgundy);
+  -webkit-text-decoration-color: var(--link-color);
+  text-decoration-color: var(--link-color);
 }
 .isu-breadcrumb__list a:focus, .isu-breadcrumb__list a:hover {
   border-bottom-width: 2px;
-  color: var(--cardinal);
+  color: var(--primary-color);
 }
 .isu-breadcrumb__list li:not(:last-child):after {
   content: "";
@@ -1356,8 +1351,8 @@ h2.isu-block-title.h4:after {
   right: -.9275rem;
   width: .5rem;
   height: .5rem;
-  border-right: .125rem solid var(--burgundy);
-  border-bottom: .125rem solid var(--burgundy);
+  border-right: .125rem solid var(--link-color);
+  border-bottom: .125rem solid var(--link-color);
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -1506,7 +1501,7 @@ abbr[title].tabledrag-changed { /* Class via Drupal 8 */
 .form-required:after { /* .form-required from Drupal 8 */
   content: "*";
   margin-left: 0.25rem;
-  color: var(--cardinal);
+  color: var(--primary-color);
 }
 
 /* If a form-group is in a table */
@@ -1525,7 +1520,7 @@ details {
   max-width: 100%;
 }
 .isu-form-control.error { /* .error via Drupal 8 */
-  border: 1px solid var(--cardinal);
+  border: 1px solid var(--primary-color);
 }
 
 .container-inline.form-radio {
@@ -1911,13 +1906,13 @@ a.tabledrag-handle .handle {
   flex-shrink: 0;
   padding: 2rem 0;
   color: #ffffff;
-	background: var(--cardinal);
+	background: var(--primary-color);
 }
 .isu-footer a {
 	color: #ffffff;
 }
 .isu-footer a:hover {
-	color: var(--gold);
+	color: var(--primary-accent-color);
 	text-decoration: underline;
 }
 .isu-footer .col-sm-6.col-md-6.col-lg-3 {
@@ -1997,11 +1992,11 @@ a.tabledrag-handle .handle {
 	font-size: 1rem;
 	margin-right: 0px;
 	margin-left: 0px;
-	color: var(--burgundy);
+	color: var(--link-color);
 }
 .isu-social-menu-footer:before {
 	content: "";
-	border-bottom: 0.2rem solid var(--gold);
+	border-bottom: 0.2rem solid var(--primary-accent-color);
 	width: 13.5rem;
 	position: absolute;
 }
@@ -2032,7 +2027,7 @@ a.tabledrag-handle .handle {
 
 /* --- ## SIGN OFF --- */
 .isu-footer .isu-sign-off_wrapper {
-  background: var(--burgundy);
+  background: var(--secondary-color);
   color: #fff;
   font-weight: revert;
   margin-bottom: -2rem;
@@ -2046,7 +2041,7 @@ a.tabledrag-handle .handle {
   font-weight: 400;
 }
 .isu-sign-off_wrapper a:hover {
-  color: var(--gold);
+  color: var(--primary-accent-color);
 }
 .isueo-staff-links ul {
 	list-style: none;
