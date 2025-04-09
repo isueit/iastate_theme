@@ -33,6 +33,12 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   $default_btn_danger = "#c8102e";
   $default_btn_primary = "#003d4c";
   $default_btn_secondary = "#7c2529";
+  // Old variables need removed after local styles are updated
+  $cardinal = '#c8102e';
+  $burgundy = '#7c2529';
+  $midnight = '#003d4c';
+  $green = '#008540';
+  $gold = '#f1be48';
 
   // Create a section for ISU theme settings
   $form['iastate_theme_settings'] = array(

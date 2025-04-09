@@ -216,6 +216,12 @@ function iastate_theme_preprocess_html(&$variables) {
   $btn_danger = theme_get_setting('btn_danger_color') ?? '#c8102e';
   $btn_primary = theme_get_setting('btn_primary_color') ?? '#003d4c';
   $btn_secondary = theme_get_setting('btn_secondary_color') ?? '#7c2529';
+  // Remove old variable names after local styles have been updated
+  $cardinal = theme_get_setting('cardinal') ?? '#c8102e';
+  $green = theme_get_setting('btn_green') ?? '#008540';
+  $burgundy = theme_get_setting('burgundy') ?? '#7c2529';
+  $midnight = theme_get_setting('midnight') ?? '#003d4c';
+  $gold = theme_get_setting('gold') ?? '#f1be48';
 
   // Add CSS variables
   $inline_styles = <<<CSS
@@ -229,6 +235,11 @@ function iastate_theme_preprocess_html(&$variables) {
       --btn-danger-color: {$btn_danger};
       --btn-primary-color: {$btn_primary};
       --btn-secondary-color: {$btn_secondary};
+      --cardinal: {$cardinal};
+      --burgundy: {$burgundy};
+      --midnight: {$midnight};
+      --green: {$green};
+      --gold: {$gold};
     }
   CSS;
 
