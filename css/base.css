@@ -224,17 +224,23 @@ button:focus {
 	border-color: var(--green);
 	border: 1px solid var(--green);
 	font-weight: 700;
-	border-radius: 2rem;
+	border-radius: 5px;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #16662a;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-success:hover {
   background-color: var(--green);
   border: 1px solid var(--green);
   color: #fff;
+  box-shadow: 0 2px 0 #134d22;
+	top: 2px;
 }
-.btn-success::after {
+/*.btn-success::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -244,7 +250,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-success:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -259,18 +265,24 @@ button:focus {
 .btn-outline-success {
 	color: var(--green);
 	border: 1px solid var(--green);
-	border-radius: 2rem;
+	border-radius: 5px;
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #16662a;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-outline-success:hover {
 	background-color: #fff;
 	color: var(--green);
 	border: 1px solid var(--green);
+	box-shadow: 0 2px 0 #134d22;
+	top: 2px;
 }
-.btn-outline-success::after {
+/*.btn-outline-success::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -280,7 +292,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-outline-success:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -296,13 +308,26 @@ button:focus {
 .btn-danger {
 	background-color: var(--cardinal);
 	border-color: var(--cardinal);
-	border-radius: 2rem;
+	border-radius: 5px;
 	font-weight: 700;
 	cursor: pointer;
+	transition: background-color 0.3sm transform 0.2s ease-in-out;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #dc3545;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
-.btn-danger::after {
+
+.btn-danger:hover {
+  background-color: var(--cardinal);
+  border: 1px solid var(--cardinal);
+  color: #fff;
+	box-shadow: 0 2px 0 #c8102e;
+	top: 2px;
+}
+/*.btn-danger::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -312,7 +337,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-danger:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -322,17 +347,22 @@ button:focus {
 .btn-outline-danger {
 	color: #dc3545;
 	border: 1px solid var(--cardinal);
-	border-radius: 2rem;
+	border-radius: 5px;
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #dc3545;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-outline-danger:hover {
 	background-color: #fff;
 	color: var(--cardinal);
+	box-shadow: 0 2px 0 #dc3545;
 }
-.btn-outline-danger::after {
+/*.btn-outline-danger::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -342,7 +372,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-outline-danger:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -353,16 +383,22 @@ button:focus {
 	background-color: var(--midnight);
 	border-color: var(--midnight);
 	font-weight: 700;
-	border-radius: 2rem;
+	border-radius: 5px;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #003d4c;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-primary:hover {
 	background-color: var(--midnight);
 	color: #fff;
+	box-shadow: 0 2px 0 #003d4c;
+	top: 2px;
 }
-.btn-primary::after {
+/*.btn-primary::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -372,7 +408,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-primary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -382,18 +418,24 @@ button:focus {
 .btn-outline-primary {
 	color: var(--midnight);
 	border: 1px solid var(--midnight);
-	border-radius: 2rem;
+	border-radius: 5px;
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #003d4c;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-outline-primary:hover {
 	background-color: #fff;
 	color: var(--midnight);
 	border: 1px solid var(--midnight);
+	box-shadow: 0 2px 0 #003d4c;
+	top: 2px;
 }
-.btn-outline-primary::after {
+/*.btn-outline-primary::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -403,7 +445,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-outline-primary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -415,17 +457,23 @@ button:focus {
 	border-color: var(--burgundy);
 	border: 1px solid var(--burgundy);
 	font-weight: 700;
-	border-radius: 2rem;
+	border-radius: 5px;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #7c2529;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-secondary:hover {
 	background-color: var(--burgundy);
 	border: 1px solid var(--burgundy);
 	color: #fff;
+	box-shadow: 0 2px 0 #7c2529;
+	top: 2px;
 }
-.btn-secondary::after {
+/*.btn-secondary::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -435,7 +483,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-secondary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
@@ -445,18 +493,23 @@ button:focus {
 .btn-outline-secondary {
 	color: var(--burgundy);
 	border: 1px solid var(--burgundy);
-	border-radius: 2rem;
+	border-radius: 5px;
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
 	overflow: hidden;
+	box-shadow: 0 4px 0 #7c2529;
+  position: relative;
+  top: 0;
+  transition: top 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn-outline-secondary:hover {
 	background-color: #fff;
 	color: var(--burgundy);
 	border: 1px solid var(--burgundy);
+	box-shadow: 0 2px 0 #7c2529;
 }
-.btn-outline-secondary::after {
+/*.btn-outline-secondary::after {
 	content: "";
 	display: block;
 	border-radius: 2rem;
@@ -466,7 +519,7 @@ button:focus {
 	margin-top: 3px;
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
-}
+}*/
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--gold);
