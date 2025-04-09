@@ -26,8 +26,8 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   // Default colors for the theme
   $default_primary = '#c8102e';
   $default_secondary = '#7c2529';
-  $default_tertiary = "003d4c";
-  $default_accent = '#003d4c';
+  $default_tertiary = "#003d4c";
+  $default_accent = '#f1be48';
   $default_link = "#7c2529";
   $default_btn_success = "#008540";
   $default_btn_danger = "#c8102e";
