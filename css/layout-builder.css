@@ -151,10 +151,6 @@ margin: auto;
 		grid-template-columns: 1fr !important;
 		display: grid;
 	  }
-	  .views-field-field-publication-date{
-		font-size: 8px;
-		position: static;
-	  }
 }
 @media screen and (max-width : 992px) {
 .layout--column-gap--none .layout-content {
