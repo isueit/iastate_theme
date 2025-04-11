@@ -287,6 +287,147 @@ img.staff_profile_smugmug {
 .staff-profile-reed-add-cty-editor input.form-autocomplete {
     border: 2px solid #868686 !important;
 }
+
+.personal-profile-info-card_wrap {
+	margin-bottom: 50px;
+	margin-top: 50px;
+  }
+
+  .personal-profile-info-card {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+  }
+
+  .personal-profile-info-card__media {
+	margin: 0 auto;
+	max-width: 100%;
+
+  }
+
+  .personal-profile-info-card__media::before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+  }
+
+  .personal-profile-info-card__content {
+	padding: 38px 0;
+  }
+
+  .personal-profile-info-card--no-image .personal-profile-info-card__content {
+	padding-left: 0;
+  }
+
+  .personal-profile-info-card__name {
+	position: relative;
+	font-size: 30px;
+	font-weight: 700;
+	padding-bottom: 20px;
+	margin-top: 48px;
+	margin-bottom: 22px;
+	font-family: var(--serif-font);
+	color: var(--cardinal);
+	font-weight: 800;
+  }
+
+.personal-profile-info-card__name::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 3.125rem;
+	border-bottom: 0.125rem solid var(--gold);
+}
+
+  .personal-profile-info-card__titles {
+	margin-bottom: 30px;
+  }
+
+  .personal-profile-info-card__titles li {
+	margin-bottom: 12px;
+  }
+
+  .personal-profile-info-card__contact-box {
+		display: block;
+		background-color: var(--lt-gray);
+		margin: 20px 0 0;
+		padding: 38px;
+		width: 100%;
+  }
+
+  .personal-profile-info-card__contact-box::before {
+	content: "";
+	border-bottom: 8px solid var(--gold);
+	top: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 56px;
+	height: 8px;
+	position: absolute;
+  }
+
+  .personal-profile-info-card__contact-box h2 {
+	font-size: 1.5rem;
+	padding-bottom: 0;
+	font-family: var(--sans-font);
+  }
+
+  .personal-profile-info-card__contact-box p {
+	font-weight: 700;
+		color: var(--dk-gray);
+  }
+
+  .personal-profile-info-card__contact-box p a {
+	color: var(--dk-gray);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	transition: color 0.2s ease-in-out;
+  }
+
+  .personal-profile-info-card__contact-box p a:hover {
+	color: var(--cardinal);
+  }
+
+  .personal-profile-info-card__contact-box-columns-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 625px;
+  }
+
+  .personal-profile-info-card__contact-box-column {
+	padding-bottom: 14px;
+  }
+
+  .personal-profile-info-card__contact-box-social {
+	display: flex;
+	flex-wrap: wrap;
+  }
+
+  .personal-profile-info-card__contact-box-social li {
+	margin-right: 10px;
+  }
+
+  .personal-profile-info-card__contact-box-social li a {
+	border-radius: 50%;
+	border: 2px solid var(--cardinal);
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--cardinal);
+	font-size: 13px;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  .personal-profile-info-card__contact-box-social li a:hover {
+	border-color: var(--burgundy);
+	color: var(--burgundy);
+  }
+
 /* Custodian of Public Record/About page */
 .isu-custodian-records-about {
 	max-width: 1140px;
