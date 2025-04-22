@@ -334,6 +334,28 @@ img.staff_profile_smugmug {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+	.ext-news-feed .views-col {
+		width: 95% !important;
+	}
+}
+@media screen and (max-width : 768px) {
+	.ext-news-feed .views-col {
+		width: 50% !important;
+		padding-bottom: 1rem;
+	}
+}
+@media screen and (max-width : 992px) {
+	.ext-news-feed .views-view-grid .views-row {
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	.ext-news-feed .card-body {
+		padding: 1.25rem 0.75rem;
+	}
+	div#block-iastate-theme-content--2 .ext-news-feed .card-body p, div#block-iastate-theme-content--2 .ext-news-feed .card-title {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
 }
 
 /* --------------------------------------  */
@@ -370,7 +392,6 @@ img.staff_profile_smugmug {
 		text-align: left !important;
 	}
 	.ext-news-feed img {
-		float: left;
 		max-height: 50%;
 		width: 100%;
 		object-fit: cover;
