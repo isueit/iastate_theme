@@ -827,7 +827,7 @@ blockquote.ck-widget p:after {
 	right: 1rem;
 }
 ul.todo-list {
-	display: inline;
+	display: contents;
 }
 ul.todo-list li {
 	list-style: none;
@@ -842,6 +842,9 @@ ul.todo-list label {
 }
 ul.todo-list p {
 	display: inline;
+}
+ul.todo-list li > ul > li {
+	padding-left: 2rem;
 }
 /* --------------------------------------  */
 /* ## FORMS
@@ -963,7 +966,9 @@ body.cke_editable table td{
   border-bottom-color: #808080;
   border-top-color: #808080;
 }
-
+.ck-content .todo-list li {
+	margin-left: 2.5rem;
+}
 /* --------------------------------------  */
 /* ## CKEditor 5 Styles
 /* --------------------------------------
