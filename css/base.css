@@ -308,6 +308,10 @@ button:focus {
 	margin-left: -5px;
 	transition: width 0.3s ease-in-out;
 }
+.btn-danger:hover {
+	background-color: var(--btn-danger-color);
+	border-color: var(--btn-danger-color);
+}
 .btn-danger:hover:after {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);

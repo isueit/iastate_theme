@@ -1011,7 +1011,7 @@ a.isu-dropdown-submenu {
 	letter-spacing: 0;
 	margin: 3.5625rem 0 0.625rem;
 	color: var(--primary-color);
-  width: 1140px;
+  max-width: 1140px;
 }
 .isu-region.isu-region_sidebar-second {
 	margin-top: 2rem;
@@ -1059,6 +1059,7 @@ div#block-iastate-theme-local-tasks {
  div#block-iastate-theme-page-title--2 {
    max-width: 94%;
    margin: auto;
+   padding-right: 0;
  }
  div#block-iastate-theme-local-tasks {
    padding-left: 6%;
