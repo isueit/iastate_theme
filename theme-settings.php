@@ -39,8 +39,13 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   $midnight = '#003d4c';
   $green = '#008540';
   $gold = '#f1be48';
-
-  // Create a section for ISU theme settings
+  
+/**
+ * 
+ * SECTION
+ * ISUEO theme settings
+ * 
+ */
   $form['iastate_theme_settings'] = array(
     '#type'         => 'details',
     '#title'        => t('IASTATE Theme Settings'),
@@ -57,12 +62,12 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description'  => t('Check this option if you\'d like to show the ISU navbar.'),
   );
 
-  // Set up the checkbox to show/hide the gold border on the Site Header
-  $form['iastate_theme_settings']['gold_border_hidden'] = array(
-    '#type'         => 'checkbox',
-    '#title'        => t('Hide gold border'),
-    '#default_value' => theme_get_setting('gold_border_hidden'),
-    '#description'  => t('Check this option to hide the gold border on the red header.'),
+  // Set up the field for the Support Extension link
+  $form['iastate_theme_settings']['support_extension'] = array(
+    '#type'         => 'url',
+    '#title'        => t('Support Extension link'),
+    '#default_value' => theme_get_setting('support_extension') ?: 'https://www.extension.iastate.edu/support-extension',
+    '#description'  => t('Add a link to change the default Support Extension link'),
   );
 
   // Set up the checkbox to show/hide the social icons under the footer logo
@@ -73,41 +78,67 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#tree'		=> '',
   );
 
-  // Create a section for color settings
-  $form['iastate_color_settings'] = [
-    '#type' => 'fieldset',
-    '#title' => t('Color Settings'),
-    '#weight' => -980,
-    '#open' => TRUE,
-  ];
-  
+/**
+ * 
+ * SECTION
+ * Global Colors
+ * 
+ */
+  $form['color_config'] = array(
+    '#type'         => 'vertical_tabs',
+    '#weight' => -990,
+  );
+
+  // Create global styles section
+  $form['global_styles'] = array(
+    '#type'         => 'details',
+    '#title'        => t('Global Styles'),
+    '#description'  => t('In this section you can set simple styles for your site. These will be applied generally and you will be able to override some elements in the following sections.'),
+    '#group'        => 'color_config',
+  );
+
+  $form['global_styles'] ['colors'] = array(
+    '#type'         => 'checkbox',
+    '#title'        => t('Set Colors'),
+  );
+
+  // Create global styles section
+  $form['global_styles'] = array(
+    '#type'         => 'details',
+    '#title'        => t('Global Styles'),
+    '#description'  => t('In this section you can set simple styles for your site. These will be applied generally and you will be able to override some elements in the following sections.'),
+    '#group'        => 'color_config',
+  );
+
   // Set up the checkbox for the default colors
-  $form['iastate_color_settings']['default_color_settings'] = [
+  $form['global_styles']['default_color_settings'] = [
     '#type' => 'checkbox',
+    '#group'        => 'global_styles',
     '#title' => t('Use the colors supplied by the theme'),
     '#default_value' => theme_get_setting('default_color_settings') ?? 1,
   ];
-  
+
   // This container will be hidden when the checkbox is checked.
-  $form['iastate_color_settings']['settings'] = [
-    '#type' => 'container',
+  $form['global_styles']['global_settings'] = [
+    '#type' => 'fieldset',
+    '#group'        => 'global_styles',
     '#states' => [
       'visible' => [
         ':input[name="default_color_settings"]' => ['checked' => FALSE],
       ],
     ],
   ];
-  
+
   // Create color selector for primary color, cardinal is the default
-  $form['iastate_color_settings']['settings']['primary_color'] = [
+  $form['global_styles']['global_settings']['primary_color'] = [
     '#type' => 'color',
     '#title' => t('Primary Color'),
     '#description' => t('Controls things like footer background color and heading colors'),
     '#default_value' => theme_get_setting('primary_color') ?? $default_primary,
   ];
-  
+
   // Create color selector for secondary color, burgundy is the default
-  $form['iastate_color_settings']['settings']['secondary_color'] = [
+  $form['global_styles']['global_settings']['secondary_color'] = [
     '#type' => 'color',
     '#title' => t('Secondary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
@@ -115,7 +146,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for tertiary color, midnight is the default
-  $form['iastate_color_settings']['settings']['tertiary_color'] = [
+  $form['global_styles']['global_settings']['tertiary_color'] = [
     '#type' => 'color',
     '#title' => t('Tertiary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
@@ -123,7 +154,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
   
   // Create color selector for primary accent color, gold is the default
-  $form['iastate_color_settings']['settings']['primary_accent_color'] = [
+  $form['global_styles']['global_settings']['primary_accent_color'] = [
     '#type' => 'color',
     '#title' => t('Primary Accent Color'),
     '#description' => t('Controls decorative colors like the line under block headings'),
@@ -131,15 +162,29 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for link color, burgundy is the default
-  $form['iastate_color_settings']['settings']['link_color'] = [
+  $form['global_styles']['global_settings']['link_color'] = [
     '#type' => 'color',
     '#title' => t('Link Color'),
     '#description' => t('Controls color of links'),
     '#default_value' => theme_get_setting('link_color') ?? $default_link,
   ];
 
+  // Create bootstrap styles section
+  $form['bootstrap_styles'] = array(
+    '#type'         => 'details',
+    '#title'        => t('Button and Labels'),
+    '#description'  => t('Override the button and card label colors.'),
+    '#group'        => 'color_config',
+  );
+
+  // This container will be hidden when the checkbox is checked.
+  $form['bootstrap_styles']['global_settings'] = [
+    '#type'         => 'fieldset',
+    '#group'        => 'bootstrap_styles',
+  ];
+
   // Create color selector for success button color, green is the default
-  $form['iastate_color_settings']['settings']['btn_success_color'] = [
+  $form['bootstrap_styles']['global_settings']['btn_success_color'] = [
     '#type' => 'color',
     '#title' => t('Bootstrap Success Button Color'),
     '#description' => t('Controls the bootstrap success btn color'),
@@ -147,7 +192,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for success button color, green is the default
-  $form['iastate_color_settings']['settings']['btn_danger_color'] = [
+  $form['bootstrap_styles']['global_settings']['btn_danger_color'] = [
     '#type' => 'color',
     '#title' => t('Bootstrap Danger Button Color'),
     '#description' => t('Controls the bootstrap danger btn color'),
@@ -155,7 +200,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for primary button color, midnight is the default
-  $form['iastate_color_settings']['settings']['btn_primary_color'] = [
+  $form['bootstrap_styles']['global_settings']['btn_primary_color'] = [
     '#type' => 'color',
     '#title' => t('Bootstrap Primary Color'),
     '#description' => t('Controls the bootstrap primary btn color'),
@@ -163,7 +208,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for secondary button color, burgundy is the default
-  $form['iastate_color_settings']['settings']['btn_secondary_color'] = [
+  $form['bootstrap_styles']['global_settings']['btn_secondary_color'] = [
     '#type' => 'color',
     '#title' => t('Bootstrap Secondary Color'),
     '#description' => t('Controls the bootstrap secondary btn color'),

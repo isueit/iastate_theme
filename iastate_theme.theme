@@ -181,7 +181,7 @@ function iastate_theme_preprocess_page(&$variables)
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');
   $variables['isu_navbar'] = theme_get_setting('isu_navbar');
-  $variables['gold_border_hidden'] = theme_get_setting('gold_border_hidden');
+  $variables['support_extension'] = theme_get_setting('support_extension');
 
   $variables['theme_path'] = base_path() . $variables['directory'];
 
