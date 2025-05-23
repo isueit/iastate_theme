@@ -48,8 +48,8 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
  */
   $form['iastate_theme_settings'] = array(
     '#type'         => 'details',
-    '#title'        => t('IASTATE Theme Settings'),
-    '#description'  => t('Configure IASTATE Theme options'),
+    '#title'        => t('ISUEO Theme Settings'),
+    '#description'  => t('Configure settings for ISUEO sites.'),
     '#weight' => -1000,
     '#open' => TRUE,
   );
@@ -59,7 +59,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'         => 'checkbox',
     '#title'        => t('Show ISU navbar'),
     '#default_value' => theme_get_setting('isu_navbar'),
-    '#description'  => t('Check this option if you\'d like to show the ISU navbar.'),
+    '#description'  => t('Check this option if you\'d like to show the ISUEO navbar.'),
   );
 
   // Set up the field for the Support Extension link
@@ -67,7 +67,12 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'         => 'url',
     '#title'        => t('Support Extension link'),
     '#default_value' => theme_get_setting('support_extension') ?: 'https://www.extension.iastate.edu/support-extension',
-    '#description'  => t('Add a link to change the default Support Extension link'),
+    '#description'  => t('Add an absolute URL for a custom Support Extension link. Leave blank to use the default.'),
+     '#states' => [
+      'visible' => [
+        ':input[name="isu_navbar"]' => ['checked' => TRUE],
+      ],
+    ],
   );
 
   // Set up the checkbox to show/hide the social icons under the footer logo
@@ -78,40 +83,41 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#tree'		=> '',
   );
 
+// Create Global Config Container
+$form['global_styles'] = array(
+  '#type' => 'vertical_tabs',
+  '#weight' => -990,
+);
+
 /**
  * 
  * SECTION
  * Global Colors
  * 
  */
-  $form['color_config'] = array(
-    '#type'         => 'vertical_tabs',
-    '#weight' => -990,
-  );
-
   // Create global styles section
-  $form['global_styles'] = array(
+  $form['theme_overrides'] = array(
     '#type'         => 'details',
     '#title'        => t('Global Styles'),
     '#description'  => t('In this section you can set simple styles for your site. These will be applied generally and you will be able to override some elements in the following sections.'),
-    '#group'        => 'color_config',
+    '#group'        => 'global_styles',
   );
 
-  $form['global_styles'] ['colors'] = array(
+  $form['theme_overrides'] ['colors'] = array(
     '#type'         => 'checkbox',
     '#title'        => t('Set Colors'),
   );
 
   // Create global styles section
-  $form['global_styles'] = array(
+  $form['theme_overrides'] = array(
     '#type'         => 'details',
     '#title'        => t('Global Styles'),
     '#description'  => t('In this section you can set simple styles for your site. These will be applied generally and you will be able to override some elements in the following sections.'),
-    '#group'        => 'color_config',
+    '#group'        => 'global_styles',
   );
 
   // Set up the checkbox for the default colors
-  $form['global_styles']['default_color_settings'] = [
+  $form['theme_overrides']['default_color_settings'] = [
     '#type' => 'checkbox',
     '#group'        => 'global_styles',
     '#title' => t('Use the colors supplied by the theme'),
@@ -119,7 +125,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // This container will be hidden when the checkbox is checked.
-  $form['global_styles']['global_settings'] = [
+  $form['theme_overrides']['global_settings'] = [
     '#type' => 'fieldset',
     '#group'        => 'global_styles',
     '#states' => [
@@ -130,15 +136,17 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for primary color, cardinal is the default
-  $form['global_styles']['global_settings']['primary_color'] = [
-    '#type' => 'color',
+  $form['theme_overrides']['global_settings']['primary_color'] = [
+    '#type' => 'textfield',
+    '#maxlength' => 7,
+    '#size' => 10,
     '#title' => t('Primary Color'),
     '#description' => t('Controls things like footer background color and heading colors'),
     '#default_value' => theme_get_setting('primary_color') ?? $default_primary,
   ];
 
   // Create color selector for secondary color, burgundy is the default
-  $form['global_styles']['global_settings']['secondary_color'] = [
+  $form['theme_overrides']['global_settings']['secondary_color'] = [
     '#type' => 'color',
     '#title' => t('Secondary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
@@ -146,7 +154,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for tertiary color, midnight is the default
-  $form['global_styles']['global_settings']['tertiary_color'] = [
+  $form['theme_overrides']['global_settings']['tertiary_color'] = [
     '#type' => 'color',
     '#title' => t('Tertiary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
@@ -154,7 +162,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
   
   // Create color selector for primary accent color, gold is the default
-  $form['global_styles']['global_settings']['primary_accent_color'] = [
+  $form['theme_overrides']['global_settings']['primary_accent_color'] = [
     '#type' => 'color',
     '#title' => t('Primary Accent Color'),
     '#description' => t('Controls decorative colors like the line under block headings'),
@@ -162,7 +170,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   // Create color selector for link color, burgundy is the default
-  $form['global_styles']['global_settings']['link_color'] = [
+  $form['theme_overrides']['global_settings']['link_color'] = [
     '#type' => 'color',
     '#title' => t('Link Color'),
     '#description' => t('Controls color of links'),
@@ -174,7 +182,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type'         => 'details',
     '#title'        => t('Button and Labels'),
     '#description'  => t('Override the button and card label colors.'),
-    '#group'        => 'color_config',
+    '#group'        => 'global_styles',
   );
 
   // This container will be hidden when the checkbox is checked.
