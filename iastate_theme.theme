@@ -182,15 +182,34 @@ function iastate_theme_preprocess_page(&$variables)
   $variables['site_name'] = $config->get('name');
   $variables['isu_navbar'] = theme_get_setting('isu_navbar');
 
-  $support_extension = theme_get_setting('support_extension');
-  // Fallback if setting is not stored yet
-  if (empty($support_extension)) {
-    $support_extension = 'https://www.extension.iastate.edu/support-extension';
-  }
-
-  $variables['support_extension'] = $support_extension;
+  $variables['default_support_extension'] = theme_get_setting('default_support_extension');
+  $variables['support_extension'] = theme_get_setting('support_extension');
 
   $variables['theme_path'] = base_path() . $variables['directory'];
+
+  //Heading Override Variables
+  $variables['default_heading_one_color'] = theme_get_setting('default_heading_one_color');
+  $variables['heading_one_color'] = theme_get_setting('heading_one_color');
+  $variables['default_heading_two_color'] = theme_get_setting('default_heading_two_color');
+  $variables['heading_two_color'] = theme_get_setting('heading_two_color');
+  $variables['default_heading_three_color'] = theme_get_setting('default_heading_three_color');
+  $variables['heading_three_color'] = theme_get_setting('heading_three_color');
+  $variables['default_heading_four_color'] = theme_get_setting('default_heading_four_color');
+  $variables['heading_four_color'] = theme_get_setting('heading_four_color');
+  $variables['default_heading_five_color'] = theme_get_setting('default_heading_five_color');
+  $variables['heading_five_color'] = theme_get_setting('heading_five_color');
+  $variables['default_heading_six_color'] = theme_get_setting('default_heading_six_color');
+  $variables['heading_six_color'] = theme_get_setting('heading_six_color');
+
+  // Button and Card Label Override Variables
+  $variables['default_btn_success'] = theme_get_setting('default_btn_success');
+  $variables['btn_success_color'] = theme_get_setting('btn_success_color');
+  $variables['default_btn_danger'] = theme_get_setting('default_btn_danger');
+  $variables['btn_danger_color'] = theme_get_setting('btn_danger_color');
+  $variables['default_btn_primary'] = theme_get_setting('default_btn_primary');
+  $variables['btn_primary_color'] = theme_get_setting('btn_primary_color');
+  $variables['default_btn_secondary'] = theme_get_setting('default_btn_secondary');
+  $variables['btn_secondary_color'] = theme_get_setting('btn_secondary_color');
 
   $variables['default_footer_logo'] = theme_get_setting('default_footer_logo');
   $variables['iastate_footer_logo_path'] = theme_get_setting('iastate_footer_logo_path');

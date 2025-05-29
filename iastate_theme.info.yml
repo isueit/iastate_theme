@@ -33,23 +33,6 @@ regions:
   footer_fourth: "Footer Fourth"
   sign_off: "Sign Off"
 logo: images/isu-wordmark-red.svg
-settings:
-  default_color_settings: true
-  primary_color: "#c8102e"
-  secondary_color: "#7c2529"
-  tertiary_color: "#003d4c"
-  primary_accent_color: "#f1be48"
-  link_color: "#7c2529"
-  btn_success_color: "#008540"
-  btn_danger_color: "#c8102e"
-  btn_primary_color: "#003d4c"
-  btn_secondary_color: "#7c2529"
-  cardinal: "#c8102e"
-  burgundy: "#7c2529"
-  midnight: "#003d4c"
-  green: "#008540"
-  gold: "#f1be48"
-  support_extension: "https://www.extension.iastate.edu/support_extension"
 
 libraries-override:
   layout_builder/drupal.layout_builder:
