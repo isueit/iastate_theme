@@ -183,8 +183,12 @@ function iastate_theme_preprocess_page(&$variables)
   $variables['isu_navbar'] = theme_get_setting('isu_navbar');
  
   // Donation Link
-  $variables['default_support_extension'] = theme_get_setting('default_support_extension');
-  $variables['support_extension'] = theme_get_setting('support_extension');
+  $support_extension = theme_get_setting('support_extension');
+  // Fallback if setting is not stored yet
+  if (empty($support_extension)) {
+    $support_extension = 'https://www.extension.iastate.edu/support-extension/';
+  }
+  $variables['support_extension'] = $support_extension;
 
   $variables['theme_path'] = base_path() . $variables['directory'];
 

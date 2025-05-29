@@ -22,9 +22,6 @@
  *   A keyed array containing the current state of the form.
  */
 function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
-  
-  // Default ISUEO styles
-  $support_extension = 'https://www.extension.iastate.edu/support-extension/';
 
   // Default colors for the theme
   $default_primary = '#c8102e';
