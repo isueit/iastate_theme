@@ -23,6 +23,9 @@
  */
 function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   
+  // Default ISUEO styles
+  $support_extension = 'https://www.extension.iastate.edu/support-extension/';
+
   // Default colors for the theme
   $default_primary = '#c8102e';
   $default_secondary = '#7c2529';
@@ -71,6 +74,20 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title'	=> t('Show social footer icons'),
     '#default_value'	=> theme_get_setting('default_social_footer'),
     '#tree'		=> '',
+  );
+
+
+  // Set up the field for the Support Extension link
+  $form['iastate_theme_settings']['support_extension'] = array(
+    '#type'         => 'url',
+    '#title'        => t('Support Extension link'),
+    '#default_value' => theme_get_setting('support_extension') ?? $support_extension,
+    '#description'  => t('Add an absolute URL for a custom Support Extension link.'),
+     '#states' => [
+      'visible' => [
+        ':input[name="isu_navbar"]' => ['checked' => TRUE],
+      ],
+    ],
   );
 
   // Create a section for color settings
