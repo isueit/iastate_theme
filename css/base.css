@@ -564,7 +564,7 @@ button:focus {
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
 .ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
-  background: var(--primary-color);
+  background: #c8102e;
 	color: white;
 	padding: 1.5625rem;
 	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
@@ -576,7 +576,7 @@ body.cke_editable table[border] th a, body.cke_editable table th a, .table th a 
 	color: var(--lt-gray);
 }
 body.cke_editable table[border] th a:hover, body.cke_editable table th a:hover,  .table th a:hover{
-	color: var(--primary-accent-color);
+	color: #f1be48;
 }
 caption {
   caption-side: top;
@@ -695,7 +695,7 @@ table img {
 /* ## CKEditor 5 Styles
 /* -------------------------------------- */
 .ck-button.ck-media-library.ck-button_with-text {
-    background-color: var(--btn-primary-color);
+    background-color: #003d4c;
     color: white;
     border: none;
 }
@@ -704,49 +704,49 @@ table img {
 }
 .ck-button.ck-media-library.ck-button_with-text:hover {
     background-color: var(--md-gray);
-	color: var(--btn-primary-color)
+	color: #003d4c;
 }
 .ckeditor-accordion {
-	border: dashed 2px var(--primary-color);
+	border: dashed 2px #c8102e;
 }
 .ckeditor-accordion .ckeditor-accordion-title, .ckeditor-accordion .ckeditor-accordion-content {
-	border: dashed 1px var(--btn-primary-color);
+	border: dashed 1px #003d4c;
 }
 .ckeditor-accordion .ckeditor-accordion-title:before, .ckeditor-accordion .ckeditor-accordion-content:before {
-	background: var(--btn-primary-color);
+	background: #003d4c;
 }
 button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
 	font-family: var(--serif-font);
 	letter-spacing: 0;
-	color: var(--primary-color);
+	color: #c8102e;
 }
 button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--primary-color);
+	color: #c8102e;
 }
 button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--secondary-color);
+	color: #7c2529;
 }
 button.ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--secondary-color);
+	color: #7c2529;
 }
 button.ck.ck-heading_heading6 {
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: var(--secondary-color);
+	color: #7c2529;
 }
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
 	text-decoration: none;
-	color: var(--primary-color);
+	color: #c8102e;
 	background-color: inherit;
 	font-family: var(--sans-font);
 	font-size: 1.3125rem;
@@ -760,14 +760,14 @@ button.ck.ck-heading_heading6 {
 }
 .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
 	background-color: inherit;
-	color: var(--primary-color);
+	color: #c8102e;
 	cursor: pointer;
 }
 .ckeditor-accordion-container > dl {
 	border: 1px solid transparent;
 }
 .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
-	background: var(--primary-color);
+	background: #c8102e;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
 	left: 10px;
@@ -799,7 +799,7 @@ dl {
 	border-bottom: 0;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: var(--primary-color);
+	background: #c8102e;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
 	left: auto;
