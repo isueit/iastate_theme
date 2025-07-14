@@ -295,6 +295,60 @@ img.staff_profile_smugmug {
 	font-size: 1.3rem;
 	padding-right: 5px;
 }
+
+/* County Staff Page */
+.isueo-staff-page .layout--top-bottom-padding--small {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.isueo-staff-page .layout--content-container--default .layout-content {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.isueo-staff-page .layout-builder-base--two-columns.layout--column-width--80-20 .layout-content {
+	grid-template-columns: 0.80fr 0.20fr;
+	display: grid;
+}
+ul.isueo-staff-page--reed.list-unstyled.row {
+	justify-content: end;
+}
+.isueo-staff-page--reed.isu-horizontal-card {
+	display: block;
+	background: #f5f5f5;
+	padding: 2rem;
+	margin-top: 5.2rem;
+}
+
+/* --------------------------------------  */
+/* ## STAFF RESPONSIVE
+/* --------------------------------------  */
+@media screen and (max-width : 768px) {
+	#block-iastate-theme-content--2 .isueo-staff-page {
+		max-width: 94%;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.isueo-staff-page--mobile .layout__region.layout__region--first {
+		order: 2;
+	}
+	.isu-staff-page--mobile .layout-content {
+		grid-template-columns: 1fr;
+	}
+	.isueo-staff-page div#block-iastate-theme-content--2 ul {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.isueo-staff-page--reed.isu-horizontal-card {
+		display: flex;
+		margin-top: 0;
+	}
+	ul.isueo-staff-page--reed.list-unstyled.row {
+	justify-content: start;
+}
+}
 /* --------------------------------------  */
 /* ## NEWS HOMEPAGE BLOCK
 /* --------------------------------------  */

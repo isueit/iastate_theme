@@ -1018,7 +1018,7 @@ a.isu-dropdown-submenu {
 .isu-region_sidebar-second .h3 {
 	border-bottom: 1px solid #ddd;
 }
-div#block-iastate-theme-page-title--2 {
+div#block-iastate-theme-page-title--2, div#block-iastate-theme-page-title {
   padding-left: 0%;
   padding-right: 6%;
   max-width: 1140px;

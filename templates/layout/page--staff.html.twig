@@ -1,4 +1,4 @@
-{# homepage_content_type/templates/page--homepagect.html.twig
+{# 
 /**
  * @file
  * Theme override to display a single page.
@@ -53,7 +53,6 @@
  * @see html.html.twig
  */
 #}
-
 <div
 	class="isu-page-wrap">
 
@@ -79,12 +78,13 @@
 		{% endif %}
 
 		{{ page.breadcrumbs }}
-
 		<div class="row">
-
-			{% if page.content|render %}
+			{# Make the County staff page if it is a county site #}
+			{% if is_county == false %}
+				{% include '@iastate_theme/layout/page--county-staff.html.twig' %}
+			{% else %} 
 				{{ page.content }}
-			{% endif %}
+			{% endif %} 
 
 		</div>
 
