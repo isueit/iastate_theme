@@ -488,6 +488,24 @@ background-color: var(--primary-accent-color);
 	z-index: 100;
 	position: relative;
 }
+#isueo-header-styling.layout--background-overlay--red::before {
+	width: 75%;
+	margin: auto;
+	height: 75%;
+	mix-blend-mode: hard-light;
+	opacity: .99;
+}
+#isueo-header-styling.isueo-header-styling--half.layout--background-overlay--red::before {
+	width: 50%;
+}
+#isueo-header-styling img {
+	max-width: 380px;
+	max-height: 380px;
+	padding-bottom: 4rem;
+}
+#isueo-header-styling .layout__region--second {
+	width: 75%;
+}
 .layout-builder-block.layout--background-overlay--dark-light a, .layout-builder-block.layout--background-overlay--dark a, .layout-builder-block.layout--background-overlay--darker a {
 	background-color: var(--primary-color);
 	border-color: var(--primary-color);

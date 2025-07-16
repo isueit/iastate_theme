@@ -215,9 +215,9 @@ button:focus {
 
 /* Green Button */
 .btn-success { /* Overrides bootstrap.min.css */
-  background-color: var(--btn-success-color);
-	border-color: var(--btn-success-color);
-	border: 1px solid var(--btn-success-color);
+  background-color: #008540;
+	border-color: #008540;
+	border: 1px solid #008540;
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -225,8 +225,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-success:hover {
-  background-color: var(--btn-success-color);
-  border: 1px solid var(--btn-success-color);
+  background-color: #008540;
+  border: 1px solid #008540;
   color: #fff;
 }
 .btn-success::after {
@@ -242,13 +242,13 @@ button:focus {
 }
 .btn-success:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .btn-success:not(:disabled):not(.disabled).active,
 .btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
-  background-color: var(--btn-success-color);
-  border-color: var(--btn-success-color);
+  background-color: #008540;
+  border-color: #008540;
 }
 .layout--color--white[style^="background-image"] a.btn-success {
 	text-decoration: none;
@@ -258,8 +258,8 @@ button:focus {
 }
 /* Green Outline Button */
 .btn-outline-success {
-	color: var(--btn-success-color);
-	border: 1px solid var(--btn-success-color);
+	color: #008540;
+	border: 1px solid #008540;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -268,8 +268,8 @@ button:focus {
 }
 .btn-outline-success:hover {
 	background-color: #fff;
-	color: var(--btn-success-color);
-	border: 1px solid var(--btn-success-color);
+	color: #008540;
+	border: 1px solid #008540;
 }
 .btn-outline-success::after {
 	content: "";
@@ -284,26 +284,26 @@ button:focus {
 }
 .btn-outline-success:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show > .btn-outline-success.dropdown-toggle {
-  background-color: var(--btn-success-color);
-  border-color: var(--btn-success-color);
+  background-color: #008540;
+  border-color: #008540;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-success {
-	color: var(--btn-success-color);
+	color: #008540;
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-success:hover {
-	color: var(--btn-success-color);
+	color: #008540;
 }
 
 /* Cardinal Button */
 .btn-danger {
-	background-color: var(--btn-danger-color);
-	border-color: var(--btn-danger-color);
+	background-color: #C8102E;
+	border-color: #C8102E;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -322,12 +322,12 @@ button:focus {
 	transition: width 0.3s ease-in-out;
 }
 .btn-danger:hover {
-	background-color: var(--btn-danger-color);
-	border-color: var(--btn-danger-color);
+	background-color: #C8102E;
+	border-color: #C8102E;
 }
 .btn-danger:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-danger {
 	text-decoration: none;
@@ -348,8 +348,8 @@ button:focus {
 }
 .btn-outline-danger:hover {
 	background-color: #fff;
-	color: var(--btn-danger-color);
-	border: var(--btn-danger-color);
+	color: #C8102E;
+	border: #C8102E;
 }
 .btn-outline-danger::after {
 	content: "";
@@ -364,20 +364,20 @@ button:focus {
 }
 .btn-outline-danger:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-danger {
-	color: var(--btn-danger-color);
+	color: #C8102E;
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-danger:hover {
-	color: var(--btn-danger-color);
+	color: #C8102E;
 }
 
 /* Dark Blue Button */
 .btn-primary {
-	background-color: var(--btn-primary-color);
-	border-color: var(--btn-primary-color);
+	background-color: #003d4c;
+	border-color: #003d4c;
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -385,7 +385,7 @@ button:focus {
 	overflow: hidden;
 }
 .btn-primary:hover {
-	background-color: var(--btn-primary-color);
+	background-color: #003d4c;
 	color: #fff;
 }
 .btn-primary::after {
@@ -401,7 +401,7 @@ button:focus {
 }
 .btn-primary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-primary {
 	text-decoration: none;
@@ -412,8 +412,8 @@ button:focus {
 
 /* Dark Blue Outline Button */
 .btn-outline-primary {
-	color: var(--btn-primary-color);
-	border: 1px solid var(--btn-primary-color);
+	color: #003D4C;
+	border: 1px solid #003D4C;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -422,8 +422,8 @@ button:focus {
 }
 .btn-outline-primary:hover {
 	background-color: #fff;
-	color: var(--btn-primary-color);
-	border: 1px solid var(--btn-primary-color);
+	color: #003D4C;
+	border: 1px solid #003D4C;
 }
 .btn-outline-primary::after {
 	content: "";
@@ -438,21 +438,21 @@ button:focus {
 }
 .btn-outline-primary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-primary {
-	color: var(--btn-primary-color);
+	color: #003D4C;
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-primary:hover {
-	color: var(--btn-primary-color);
+	color: #003D4C;
 }
 
 /* Dark Red Button */
 .btn-secondary {
-	background-color: var(--btn-secondary-color);
-	border-color: var(--btn-secondary-color);
-	border: 1px solid var(--btn-secondary-color);
+	background-color: #7c2529;
+	border-color: #7c2529;
+	border: 1px solid #7c2529;
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -460,8 +460,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-secondary:hover {
-	background-color: var(--btn-secondary-color);
-	border: 1px solid var(--btn-secondary-color);
+	background-color: #7c2529;
+	border: 1px solid #7c2529;
 	color: #fff;
 }
 .btn-secondary::after {
@@ -477,7 +477,7 @@ button:focus {
 }
 .btn-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-secondary {
 	text-decoration: none;
@@ -488,8 +488,8 @@ button:focus {
 
 /* Dark Red Outline Button */
 .btn-outline-secondary {
-	color: var(--btn-secondary-color);
-	border: 1px solid var(--btn-secondary-color);
+	color: #7c2529;
+	border: 1px solid #7c2529;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -498,8 +498,8 @@ button:focus {
 }
 .btn-outline-secondary:hover {
 	background-color: #fff;
-	color: var(--btn-secondary-color);
-	border: 1px solid var(--btn-secondary-color);
+	color: #7c2529;
+	border: 1px solid #7c2529;
 }
 .btn-outline-secondary::after {
 	content: "";
@@ -514,14 +514,14 @@ button:focus {
 }
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: var(--primary-accent-color);
+	background: #F1BE48;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-secondary {
-	color: var(--btn-secondary-color);
+	color: #7c2529;
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-secondary:hover {
-	color: var(--btn-secondary-color);
+	color: #7c2529;
 }
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */
