@@ -462,11 +462,10 @@ background-color: var(--primary-accent-color);
 	border: 2px solid var(--primary-accent-color);
 	text-decoration: none;
 }
-.layout--color--white[style^="background-image"] a{
-	color: #fff;
+.layout--color--white[style^="background-image"] a {
 	text-decoration: underline;
 }
-.layout--color--white[style^="background-image"] a:hover{
+.layout--color--white[style^="background-image"] a:hover {
 	color: var(--primary-accent-color);
 	text-decoration: none;
 }

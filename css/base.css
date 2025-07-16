@@ -250,6 +250,12 @@ button:focus {
   background-color: var(--btn-success-color);
   border-color: var(--btn-success-color);
 }
+.layout--color--white[style^="background-image"] a.btn-success {
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-success:hover {
+	color: inherit;
+}
 /* Green Outline Button */
 .btn-outline-success {
 	color: var(--btn-success-color);
@@ -286,6 +292,13 @@ button:focus {
   background-color: var(--btn-success-color);
   border-color: var(--btn-success-color);
 }
+.layout--color--white[style^="background-image"] a.btn-outline-success {
+	color: var(--btn-success-color);
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-outline-success:hover {
+	color: var(--btn-success-color);
+}
 
 /* Cardinal Button */
 .btn-danger {
@@ -316,11 +329,17 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
 }
+.layout--color--white[style^="background-image"] a.btn-danger {
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-danger:hover {
+	color: inherit;
+}
 
 /* Cardinal Outline Button */
 .btn-outline-danger {
-	color: #dc3545;
-	border: 1px solid var(--btn-danger-color);
+	color: #c8102e;
+	border: none;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -330,6 +349,7 @@ button:focus {
 .btn-outline-danger:hover {
 	background-color: #fff;
 	color: var(--btn-danger-color);
+	border: var(--btn-danger-color);
 }
 .btn-outline-danger::after {
 	content: "";
@@ -345,6 +365,13 @@ button:focus {
 .btn-outline-danger:hover:after {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
+}
+.layout--color--white[style^="background-image"] a.btn-outline-danger {
+	color: var(--btn-danger-color);
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-outline-danger:hover {
+	color: var(--btn-danger-color);
 }
 
 /* Dark Blue Button */
@@ -376,6 +403,12 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
 }
+.layout--color--white[style^="background-image"] a.btn-primary {
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-primary:hover {
+	color: inherit;
+}
 
 /* Dark Blue Outline Button */
 .btn-outline-primary {
@@ -406,6 +439,13 @@ button:focus {
 .btn-outline-primary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
+}
+.layout--color--white[style^="background-image"] a.btn-outline-primary {
+	color: var(--btn-primary-color);
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-outline-primary:hover {
+	color: var(--btn-primary-color);
 }
 
 /* Dark Red Button */
@@ -439,6 +479,12 @@ button:focus {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
 }
+.layout--color--white[style^="background-image"] a.btn-secondary {
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-secondary:hover {
+	color: inherit;
+}
 
 /* Dark Red Outline Button */
 .btn-outline-secondary {
@@ -469,6 +515,13 @@ button:focus {
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 10px);
 	background: var(--primary-accent-color);
+}
+.layout--color--white[style^="background-image"] a.btn-outline-secondary {
+	color: var(--btn-secondary-color);
+	text-decoration: none;
+}
+.layout--color--white[style^="background-image"] a.btn-outline-secondary:hover {
+	color: var(--btn-secondary-color);
 }
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */

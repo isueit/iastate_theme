@@ -80,7 +80,7 @@
 		{{ page.breadcrumbs }}
 		<div class="row">
 			{# Make the County staff page if it is a county site #}
-			{% if is_county == false %}
+			{% if is_county == true %}
 				{% include '@iastate_theme/layout/page--county-staff.html.twig' %}
 			{% else %} 
 				{{ page.content }}
