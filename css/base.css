@@ -339,7 +339,7 @@ button:focus {
 /* Cardinal Outline Button */
 .btn-outline-danger {
 	color: #c8102e;
-	border: none;
+	border-color: #c8102e;
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -349,7 +349,7 @@ button:focus {
 .btn-outline-danger:hover {
 	background-color: #fff;
 	color: #C8102E;
-	border: #C8102E;
+	border-color: #C8102E;
 }
 .btn-outline-danger::after {
 	content: "";
