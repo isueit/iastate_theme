@@ -1067,10 +1067,6 @@ div#block-iastate-theme-local-tasks {
    max-width: 94%;
    margin: auto;
  }
- div#block-iastate-theme-content--2 p, div#block-iastate-theme-content--2 h1, div#block-iastate-theme-content--2 h2, div#block-iastate-theme-content--2 h3, div#block-iastate-theme-content--2 h4, div#block-iastate-theme-content--2 h5, div#block-iastate-theme-content--2 h6, div#block-iastate-theme-content--2 ul {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
 div#block-iastate-theme-content--2 p {
   margin-bottom: .8rem;
 }
