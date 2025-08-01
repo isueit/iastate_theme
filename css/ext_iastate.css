@@ -883,3 +883,40 @@ div.fontawesome-icon i {
 		margin: auto;
 	}
 }
+
+/* --------------------------------------  */
+/* ## TAXONOMY - HIERARCHY
+/* --------------------------------------  */
+input.form-element--api-textfield.hidden, select.shs-enabled.hidden {
+	display: none;
+}
+.shs-addnew-container a.button.add-another {
+	color: #fff;
+	background-color: var(--gin-color-primary);
+}
+.shs-widget-container {
+	margin-right: 1rem;
+	margin: 3px;
+}
+.shs-container select.form-select:not([size]):not([multiple]) {
+	height: calc(2.25rem + 2px);
+}
+.shs-select.form-element {
+border: 1px solid #eeeeee;
+padding: .375rem 0.75rem;
+font-size: 1rem;
+border-radius: .25rem;
+transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+line-height: 1.5;
+color: #495057;
+background-color: #fff;
+background-clip: padding-box;
+}
+form.views-exposed-form select.shs-select.form-element--type-select {
+	width: 36.1rem;
+	box-sizing: border-box;
+	max-width: 572px;
+}
+form.views-exposed-form .shs-container {
+	display: flex;
+}
