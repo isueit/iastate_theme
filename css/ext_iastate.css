@@ -295,6 +295,11 @@ img.staff_profile_smugmug {
 	font-size: 1.3rem;
 	padding-right: 5px;
 }
+/* Featured Staff */
+.featured-staff-profile img {
+	max-width: 250px;
+	padding-right: 1rem;
+}
 
 /* --------------------------------------  */
 /* ## NEWS HOMEPAGE BLOCK
