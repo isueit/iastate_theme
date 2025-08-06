@@ -428,6 +428,10 @@ text-decoration: underline;
 color: var(--primary-accent-color);
 text-decoration: none;
 }
+.layout--background--red a.btn.btn-danger {
+	border-color: #ffffff;
+	text-decoration: none;
+}
 .layout--background--red hr, .layout--background--blue hr {
 border-top: 2px solid var(--primary-accent-color);
 }
