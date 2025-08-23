@@ -48,3 +48,10 @@ academicons:
   css:
     theme:
       css/icons/academicons-1.8.6/css/academicons.min.css: { minified: true }
+
+print-footnotes:
+  js:
+    js/print-footnotes.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

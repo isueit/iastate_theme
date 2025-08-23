@@ -2409,3 +2409,12 @@ figure.align-right {
 #edit-node-bulk-form--2 .isu-form-submit {
   margin-bottom: 1rem;
 }
+#print_footnotes{
+  display: none;
+}
+sup.sup-print{
+  display: none;
+}
+.footnotes-clear {
+  clear: both; /* or clear: left; if you only have left-floats */
+}
