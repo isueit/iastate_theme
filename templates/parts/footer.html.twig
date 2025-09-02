@@ -72,9 +72,9 @@ s.parentNode.insertBefore(sz, s);
 				{% if default_copyright %}
 					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
 					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
-				{% set copyright_subject = copyright_subject|merge({'#text': '
+				{% set copyright_subject = copyright_subject|merge({'#markup': '
 		    <p>
-			  Copyright © 1995-<script>document.write(new Date().getFullYear())</script><br>
+			  Copyright © 1995-' ~ "now"|date("Y") ~ '<br>
 		  	  <strong><a href="https://www.iastate.edu/">Iowa State University of Science and Technology.</a></strong> All rights reserved.</p>
 		    <br>		   
 		    <p class="isu-copyright-links"> 
