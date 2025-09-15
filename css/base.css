@@ -871,6 +871,7 @@ blockquote .ck-editor__editable.ck-editor__nested-editable {
 }
 blockquote.ck-widget {
 	margin-inline: 0;
+	background-color: #c8102e;
 }
 blockquote.ck-widget p:before {
 	margin-left: -2.1875rem;
