@@ -330,6 +330,100 @@ img.staff_profile_smugmug {
 }
 
 /* --------------------------------------  */
+/* ## CALENDAR of EVENTS
+/* --------------------------------------  */
+.calendar-view-pager {
+	list-style: none;
+	background-color: transparent;
+	border: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.calendar-view-pager .pager__item > * {
+	font-size: 1.1rem;
+}
+.calendar-view-pager .pager__item > .form-item {
+	color: var(--cardinal);
+	font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+	font-family: Merriweather,serif;
+	letter-spacing: 0;
+	line-height: 1.4;
+	padding-bottom: 2rem;
+	position: relative;
+	border-top: none;
+}
+.calendar-view-table caption {
+	display: none;
+}
+.calendar-view-table.table {
+	border: none !important;
+}
+table.calendar-view-table body.cke_editable table[border], .table[border] body.cke_editable table, .table, .table tbody {
+	border: none;
+}
+table.calendar-view-table.table thead th {
+	border-bottom: none;
+}
+.calendar-view-table.table td {
+	padding: 0;
+}
+.calendar-view-table .calendar-view-day__number {
+	color: var(--cardinal);
+	background: transparent;
+}
+.calendar-view-table .next-month .calendar-view-day__number, .calendar-view-table .previous-month .calendar-view-day__number {
+	color: #000;
+	background: transparent;
+}
+.calendar-view-table .calendar-view-day__number {
+	flex: 1 0;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+	cursor: pointer;
+	font-weight: 700;
+	text-align: left;
+}
+.calendar-view-table .calendar-view-day__row {
+	border: none;
+	font-size: clamp(.8rem, 1vw, 1.125rem)
+}
+.calendar-view-table .calendar-view-day {
+	flex-wrap: wrap;
+}
+.today .calendar-view-day__number {
+	color: var(--cardinal);
+}
+.calendar-view-table.table tbody tr:nth-child(2n) {
+	background-color: transparent;
+}
+.calendar-view-table .next-month, .calendar-view-table .previous-month {
+	opacity: 0.7;
+}
+.views-field-field-event-date-and-time {
+	font-size: .8rem;
+}
+.calendar-view-pager__reset a, .calendar-view-pager .pager__item > * {
+	line-height: 1.5625;
+	text-transform: none;
+}
+li.pager__item.pager__previous a::before {
+	content: "\f053";
+	font-family: FontAwesome;
+	padding-right: 6px;
+}
+li.pager__item.pager__next a::after {
+	content: "\f054";
+	font-family: FontAwesome;
+	padding-left: 6px;
+}
+@media (min-width: 48rem) {
+	.calendar-view-day__row.is-multi {
+		--calendar-view-day-multi-offset: none;
+		padding-left: none;
+	}
+}
+
+
+/* --------------------------------------  */
 /* ## CARD RESPONSIVE
 /* --------------------------------------  */
 @media screen and (max-width : 575px) {
