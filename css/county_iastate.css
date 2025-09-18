@@ -208,19 +208,28 @@ ul.isueo-staff-page--reed.list-unstyled.row {
 /* ## Support Extension Page
 /* ------------------------------------- */
 .layout.support--extension {
-	background-image: url("themes/custom/iastate_theme/images/county-support-extension.png");
+	background-image: url("/themes/custom/iastate_theme/images/county-support-extension.png");
 }
 #isueo-header-styling .layout__region.layout__region--content {
 	width: 45vw;
 	margin: auto;
 }
 .layout.support--extension .isu-block:nth-child(2) > div > div > div:nth-child(2) a.btn.btn-primary::before {
-	content: url("themes/custom/iastate_theme/images/Clover_Wht.png");
+	content: url("/themes/custom/iastate_theme/images/Clover_Wht.png");
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 5px;
 	width: 25px;
 	height: 25px;
+}
+.support--extension.layout--content-container--small .layout-content {
+	max-width: 100%;
+}
+.support--extension.layout--top-bottom-padding--small {
+	padding-top: 0px;
+}
+.support--extension.layout--top-margin--small {
+	margin-top: 0px;
 }
 .layout.support--extension .isu-block:nth-child(2) > div > div {
 	display: flex;
