@@ -698,6 +698,27 @@ div.upcoming-events-white h2.isu-block-title.h4 {
 	padding-right: 25px;
 }
 
+/* Expand/Collapse Formatter */
+a.ec-toggle-link {
+	color: #4a4a4a;
+	text-decoration: none;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+a.ec-toggle-link.ecf-open:after {
+	content: '\f107';
+	font-family: "FontAwesome";
+	margin: 0 0 0 4px;
+	vertical-align: top;
+}
+a.ec-toggle-link.ecf-close:after {
+	content: '\f106';
+	font-family: "FontAwesome";
+	margin: 0 0 0 4px;
+	vertical-align: top;
+}
+
+
 /* --------------------------------------  */
 /* ## CARDS
 /* Styles apply to content, flip, and image
