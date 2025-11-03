@@ -415,12 +415,24 @@ span.card-arrow {
 	vertical-align: middle;
 	font-size: 1.3rem;
 }
-
-/* --------------------------------------  */
-/* ## NEWS RESPONSIVE
-/* --------------------------------------  */
-
-
+.ext-news-feed footer a {
+	font-weight: 700;
+	line-height: 1.388;
+	text-decoration: none;
+	display: inline-flex;
+	position: relative;
+	font-size: 1.125rem;
+	align-items: center;
+}
+.ext-news-feed footer a:after {
+	content: '\f061';
+	font-family: 'FontAwesome';
+	transition: transform 0.3s ease;
+	margin-left: 8px;
+}
+.ext-news-feed footer a:hover::after {
+	transform: translateX(4px);
+}
 /* --------------------------------------  */
 /* ## CALENDAR of EVENTS
 /* --------------------------------------  */
