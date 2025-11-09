@@ -1000,3 +1000,41 @@ div.fontawesome-icon i {
 		margin: auto;
 	}
 }
+
+/* --------------------------------------  */
+/* ## FEATURED NEWSLETTER VIEW
+/* --------------------------------------  */
+.isueo-newsletter-featured-view li {
+  gap: 2.1875rem;
+}
+.isueo-newsletter-featured-view .views-field-field-newsletter-thumbnail {
+  min-width: 25rem;
+}
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured {
+  padding: .8125rem 1.25rem;
+  border-left: .125rem solid #f1be48;
+  margin: auto 0;
+}
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a {
+  text-decoration: none;
+}
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:after {
+  content: '\f061';
+  font-family: FontAwesome;
+  padding-left: .5rem;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease
+}
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:hover::after {
+transform: translateX(4px);
+}
+.isueo-newsletter-featured-view .h3 {
+	margin: 0;
+}
+.isueo-newsletter-featured-view h2.newsletter-featured-title--preview {
+	padding-bottom: 0;
+	display: inline-flex;
+	position: relative;
+	align-items: center;
+}
