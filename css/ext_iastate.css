@@ -338,6 +338,7 @@ img.staff_profile_smugmug {
 }
 .ext-news-column .card-body {
 	padding: 1.25rem 0.8rem;
+	width: 59%;
 }
 .ext-news-feed a {
 	text-decoration: none;
