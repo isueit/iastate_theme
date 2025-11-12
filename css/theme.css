@@ -1401,7 +1401,7 @@ h2.isu-block-title.h4:after {
 .isu-links .comment-forbidden { /* .comment-forbidden via Drupal 8 */
   margin-top: 1rem;
 }
-.contextual-region > div[data-contextual-id]:not([style]) {
+.contextual-region > div[data-contextual-id]:not([class]) {
 	display: none !important;
 }
 .isu-links.contextual-links li { /* .contextual-links via Drupal 8 */
