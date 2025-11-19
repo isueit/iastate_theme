@@ -240,3 +240,13 @@ ul.isueo-staff-page--reed.list-unstyled.row {
 .layout.support--extension .isu-block:nth-child(2) > div > div > div {
 	flex: 0 0 auto;
 }
+
+/* -------------------------------------- */
+/* ## Volunteer Recruitment Page
+/* ------------------------------------- */
+.layout.isueo-volunteer--hero {
+	background-image: url("https://www.extension.iastate.edu/files/layout_background/volunteer-hero.png");
+}
+.layout.isueo-volunteer--footer {
+	background-image: url("https://www.extension.iastate.edu/files/layout_background/volunteer-footer.jpg");
+}
