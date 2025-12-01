@@ -1157,3 +1157,21 @@ transform: translateX(4px);
 	position: relative;
 	align-items: center;
 }
+
+
+/* -------------------------------------- */
+/* ## EDIT IMPACT REPORT
+/* ------------------------------------- */
+div#edit-moderation-state-wrapper {
+	background-color: #cff4fc;
+	border: 1px solid #9eeaf9;
+	border-radius: 0.375rem;
+	padding: 0 1rem;
+	margin-bottom: 2rem;
+}
+div#edit-moderation-state-wrapper .form-item {
+	color: #055160;
+}
+div#edit-moderation-state-wrapper .form-item__label {
+	font-size: inherit;
+}
