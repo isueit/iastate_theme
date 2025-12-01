@@ -373,6 +373,7 @@ a .card-arrow-wrapper:hover {
 }
 .ext-news-feed .card-image-list img {
 	object-fit: cover;
+	height: 100%;
 }
 .card-arrow-wrapper {
   background-color: #c8102e; /* ISU red */
