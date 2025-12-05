@@ -35,7 +35,7 @@ a {
   font-weight: bold;
 }
 p {
-  font-size: 18pt;
+  font-size: 12pt;
 }
 /*a:after {
   content: " (" attr(href) ")";
@@ -87,7 +87,7 @@ mark.badge,
 /* ## SITE HEADER
 /* --------------------------------------  */
 .isu-site-navbar {
-  border-bottom: none;
+  display: none;
 }
 
 .isu-row-site-navbar {
