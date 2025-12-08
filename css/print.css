@@ -10,17 +10,12 @@
   break-after: auto;
   padding: 10mm;
 }
-
-.isu-main {
-  margin-left: 10mm;
-  margin-right: 10mm;
-}
 /* --------------------------------------  */
 /* ## TYPOGRAPHY
 /* --------------------------------------  */
 body {
   padding-top: 0 !important;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arial, sans-serif;;
 }
 body,
 .isu-site-navbar,
@@ -35,7 +30,9 @@ a {
   font-weight: bold;
 }
 p {
-  font-size: 12pt;
+  font-size: 16pt;
+  line-height: 1.3;
+  font-family: Arial, sans-serif;
 }
 /*a:after {
   content: " (" attr(href) ")";
@@ -80,6 +77,9 @@ mark.badge,
   display: none;
 }
 .si-toggle-container {
+  display: none;
+}
+div#block-iastate-theme-local-tasks {
   display: none;
 }
 
@@ -172,6 +172,9 @@ div.isueo-callout-stat {
   line-height: 24px !important;
   background-color: transparent !important;
 }
+h2.isu-block-title.h4:after {
+  display: none;
+}
 /* --------------------------------------  */
 /* ## LAYOUT BUILDER
 /* --------------------------------------  */
@@ -195,4 +198,5 @@ div.isueo-callout-stat {
 #block-contact-us.isu-footer_contact-address:after {
   content: "This institution is an equal opportunity provider. For the full non-discrimination statement or accommodation inquiries, go to www.extension.iastate.edu/legal/";
   font-size: .9rem;
+  display: block;
 }
