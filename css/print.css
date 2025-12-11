@@ -24,15 +24,29 @@ body,
 }
 h1, h2, h3, h4, h5, h6 {
   page-break-after: avoid;
+  page-break-inside: avoid;
+}
+h1 {
+  font-size: 24pt;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2.isu-block-title.h4, h2, .h2 {
+  margin: 1rem 0 0;
+  line-height: 1.2;
+  font-size: 22pt;
 }
 a {
   word-wrap: break-word;
   font-weight: bold;
 }
-p {
+p, ol, ul {
   font-size: 16pt;
   line-height: 1.3;
   font-family: Arial, sans-serif;
+  orphans: 2;
+  widows: 2;
 }
 /*a:after {
   content: " (" attr(href) ")";
@@ -86,9 +100,6 @@ div#block-iastate-theme-local-tasks {
 /* --------------------------------------  */
 /* ## SITE HEADER
 /* --------------------------------------  */
-.isu-site-navbar {
-  display: none;
-}
 
 .isu-row-site-navbar {
   display: block;
