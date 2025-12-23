@@ -198,10 +198,14 @@ h2.isu-block-title.h4:after {
 #block-contact-us.isu-footer_contact-address {
   color: #000;
   width: 1140px;
+  font-size: 14pt;
+  line-height: 1.6;
+  border-top: 2px solid var(--primary-color);
 }
 .isu-footer {
   background: transparent;
   padding: 0;
+  page-break-inside: avoid;
 }
 .isu-footer .row {
   display: block;
