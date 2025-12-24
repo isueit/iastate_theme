@@ -591,7 +591,7 @@ background-color: var(--primary-accent-color);
 	color: var(--primary-accent-color);
 }
 
-.layout--background-isu-background:before {
+.layout--background-overlay--isu:before {
 	content: "";
 	position: absolute;
 	left: 0;
