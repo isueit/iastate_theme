@@ -590,7 +590,9 @@ background-color: var(--primary-accent-color);
 	border-color: var(--btn-primary-color);
 	color: var(--primary-accent-color);
 }
-
+.layout--background-overlay--isu {
+	position: relative;
+}
 .layout--background-overlay--isu:before {
 	content: "";
 	position: absolute;
@@ -600,6 +602,10 @@ background-color: var(--primary-accent-color);
 	bottom: 0;
 	z-index: 0;
 	background-color: rgba(7, 51, 62, 0.5);
+}
+.layout--background-overlay--isu>* {
+	z-index: 100;
+	position: relative;
 }
 
 /* --------------------------------------  */
