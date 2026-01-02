@@ -113,7 +113,7 @@ form#node-layout-ct-layout-builder-form {
 #layout-builder-modal .button:hover:after {
     width: 0;
 }
-div#edit-actions {
+form.layout-builder-form div#edit-actions {
 	max-width: 1135px;
 	margin: auto;
 }
