@@ -376,7 +376,7 @@ a .card-arrow-wrapper:hover {
 	height: 100%;
 }
 .card-arrow-wrapper {
-  background-color: #c8102e; /* ISU red */
+  background-color: var(--primary-color); /* ISU red */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,14 +393,14 @@ span.card-arrow {
 	transform-origin: center;
 }
 .card-arrow:hover {
-  background-color: #7C2529; /* ISU maroon */
+  background-color: var(--secondary-color); /* ISU maroon */
 }
 .ext-news-feed .card-body .card-title {
   margin-top: 0;
 }
 .ext-news-feed .bg-danger {
-	background-color: #c8102e !important;
-	border-color: #c8102e;
+	background-color: var(--primary-color) !important;
+	border-color: var(--primary-color);
 	color: #fff;
 	left: 13px;
 	border-radius: .25rem;
