@@ -1175,3 +1175,29 @@ div#edit-moderation-state-wrapper .form-item {
 div#edit-moderation-state-wrapper .form-item__label {
 	font-size: inherit;
 }
+
+/* --------------------------------------  */
+/* ## HERE WITH YOU CAMPAIGN
+/* --------------------------------------  */
+#isueo-here-with-you--hero-text h2 span.little-hero span.emphasis::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 4px;
+	background-color: var(--primary-accent-color);
+	border-radius: 2px;
+}
+#isueo-here-with-you--hero-text h2 span.little-hero span.emphasis {
+	font-style: italic;
+	position: relative;
+}
+#isueo-here-with-you--hero-text h2 span.little-hero {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	line-height: 2;
+}
+#isueo-here-with-you--hero-text h2 {
+	text-transform: uppercase;
+	font-family: var(--sans-font);
+}
