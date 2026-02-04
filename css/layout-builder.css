@@ -271,6 +271,9 @@ div.isueo-callout-stat {
 	text-decoration: underline;
 	text-decoration-color: var(--primary-accent-color);
 }
+.isueo-callout-stat a.btn-outline-danger {
+	color: #c8102e;
+}
 .isueo-callout-stat li a:hover, .isueo-callout-state a:hover {
 	text-decoration: none;
 }
