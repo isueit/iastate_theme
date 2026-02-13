@@ -666,6 +666,29 @@ margin-top: -14px;
 .vertical-alignment .layout-content {
 	align-items: center;
 }
+.layout-height-100vh .vertical-alignment >* {
+	min-height: 100vh;
+	display: grid;
+	align-content: center;
+}
+
+.layout-height-80vh .vertical-alignment >* {
+	min-height: 80vh;
+	display: grid;
+	align-content: center;
+}
+
+.layout-height-60vh .vertical-alignment >* {
+	min-height: 60vh;
+	display: grid;
+	align-content: center;
+}
+
+.layout-height-40vh .vertical-alignment >* {
+	min-height: 40vh;
+	display: grid;
+	align-content: center;
+}
 .isueo-box-shadow {
 	margin-bottom: 20px;
 	padding: 2rem;
