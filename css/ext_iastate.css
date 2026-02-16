@@ -1257,3 +1257,6 @@ div#edit-moderation-state-wrapper .form-item__label {
 #isueo-here-with-you .plp-topic-pills ul {
 	padding-top: 1rem;
 }
+#isueo-here-with-you .bean-card_label {
+	position: relative;
+}
