@@ -1134,7 +1134,7 @@ span.authored-on {
  * The most basic unit of content which appears all over.
  */
 
-article:not(.isu-user):not(.isu-search_collapse) {
+article:not(.isu-user):not(.isu-search_collapse):not(.node--type-layout-ct) {
   margin-bottom: 2rem;
 }
 li article:not(.isu-user):not(.isu-search_collapse) {
