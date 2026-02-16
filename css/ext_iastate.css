@@ -880,6 +880,9 @@ a.bean-card_link {
 	right: 0;
 	flex-direction: column;
 }
+.bean-card_label.Below {
+	position: relative;
+}
 .bean-card_label p {
 	margin: 0;
 	line-height: 1.45;
