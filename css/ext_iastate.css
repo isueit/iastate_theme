@@ -1260,3 +1260,13 @@ div#edit-moderation-state-wrapper .form-item__label {
 #isueo-here-with-you .bean-card_label {
 	position: relative;
 }
+#isueo-here-with-you .bean-card_title {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+#isueo-here-with-you .bean-card_title p:after {
+	content: "\f061";
+	font-family: FontAwesome;
+	padding-left: .5rem;
+	vertical-align: middle;
+}
