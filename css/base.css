@@ -611,6 +611,15 @@ button:focus {
   background-color: #575757;
   border-color: #575757;
 }
+/* --------------------------------------  */
+/* ## RESPONSIVE STYLES
+/* --------------------------------------  */
+@media screen and (max-width : 768px) {
+	.btn {
+		padding: .375rem .375rem;
+	}
+}
+
 
 /* --------------------------------------  */
 /* ## TABLES
