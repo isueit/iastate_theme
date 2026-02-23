@@ -607,6 +607,11 @@ background-color: var(--primary-accent-color);
 	position: relative;
 }
 
+/* Background Position */
+.layout--background-position--top {
+	background-position: center top;
+}
+
 /* --------------------------------------  */
 /* ## SECTION CONFIG
 /* --------------------------------------  */
