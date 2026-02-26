@@ -611,6 +611,29 @@ button:focus {
   background-color: #575757;
   border-color: #575757;
 }
+
+/* Badges */
+.badge {
+	padding: .5em 1em;
+	text-transform: uppercase;
+}
+.badge-light {
+	color: #7c2529;
+}
+.badge-primary {
+	background-color: #003d4c;
+}
+.badge-secondary {
+	background-color: #7c2529;
+}
+.badge-success {
+	background-color: #008540;
+}
+.badge-danger {
+	background-color: #c8102e;
+}
+
+
 /* --------------------------------------  */
 /* ## RESPONSIVE STYLES
 /* --------------------------------------  */
