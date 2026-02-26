@@ -41,9 +41,11 @@
 			</div>
 		{{ title_prefix }}
 		{% if content.body.0 is empty %}
-			<div class="isueo-card-deck-title h3 card-title">
-				{{ label }}
-			</div>
+			{% if configuration.label_display == 'visible' %}
+				<div class="isueo-card-deck-title h3 card-title">
+					{{ label }}
+				</div>
+			{% endif %}
 			{% if content.field_card_deck_link.0['#url'].toString() is not empty %}
 				<div class="isueo-card-deck-footer card-footer">
 					<a id="{{ content.field_card_deck_link.0['#title'] }}" aria-label="{{ content.field_card_deck_link.0['#title'] }} {{ label }}" class="isueo-card-deck-link" href="{{ content.field_card_deck_link.0['#url'] }}">
@@ -52,9 +54,11 @@
 			{% endif %}
 			
 		{% else %}
-			<div class="isueo-card-deck-title h3 card-title">
-				{{ label }}
-			</div>
+			{% if configuration.label_display == 'visible' %}
+				<div class="isueo-card-deck-title h3 card-title">
+					{{ label }}
+				</div>
+			{% endif %}
 			<div class="isueo-card-deck-body card-body">
 			{{ content.body }}
 			</div>
