@@ -184,10 +184,11 @@ ol.list-circles {
 	margin: 1em 0 0 0;
 	padding-left: 2.25em;
 	position: relative;
+	display: list-item;
 }
 .list-circles li::after {
 	counter-increment: li;
-	content: counter(li);
+	content: counter(list-item);
 	position: absolute;
 	font-size: 0.9em;
 	left: 0;
