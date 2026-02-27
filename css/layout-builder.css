@@ -668,6 +668,9 @@ background-color: var(--primary-accent-color);
 .layout--color--white h2.isu-block-title.h4 {
 	color: #fff;
 }
+.layout--color--white hr {
+	border-top: 1px solid rgba(255, 255, 255, 0.75);
+}
 
 .layout--color--white h2, .layout--color--white .h2, .layout--color--white h3, .layout--color--white .h3, .layout--color--white h4, .layout--color--white .h4, .layout--color--white h5, .layout--color--white .h5, .layout--color--white h6, .layout--color--white .h6 {
 	color: white;
