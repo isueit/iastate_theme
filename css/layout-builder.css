@@ -456,6 +456,9 @@ background-color: var(--primary-accent-color);
 	color: var(--primary-accent-color);
 	text-decoration: underline;
 	}
+.layout--background--blue a.btn {
+	color: inherit;
+}
 .layout--background--blue a:hover {
 		color: var(--primary-accent-color);
 		text-decoration: none;
