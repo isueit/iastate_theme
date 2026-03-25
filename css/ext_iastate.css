@@ -1185,7 +1185,12 @@ div#edit-moderation-state-wrapper .form-item__label {
 #isueo-here-with-you--hero-text .layout-content {
 	max-width: 80%;
 }
-#isueo-here-with-you--hero-text h2 span.emphasis::after {
+#isueo-here-with-you--hero-home .layout-content {
+	min-height: 40vh;
+	align-items: center;
+}
+#isueo-here-with-you--hero-text h2 span.emphasis::after, 
+#isueo-here-with-you--hero-home h2 span.emphasis::after {
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -1198,12 +1203,14 @@ div#edit-moderation-state-wrapper .form-item__label {
 	background-position: center;
 	pointer-events: none;
 }
-#isueo-here-with-you--hero-text h2 span.emphasis {
+#isueo-here-with-you--hero-text h2 span.emphasis,
+#isueo-here-with-you--hero-home h2 span.emphasis {
 	font-style: italic;
 	position: relative;
 	padding-bottom: clamp(0.3rem, 1.5vw, 0.6rem);
 }
-#isueo-here-with-you--hero-text h2 {
+#isueo-here-with-you--hero-text h2,
+#isueo-here-with-you--hero-home h2 {
 	text-transform: uppercase;
 	font-family: 'Arial Black', Arial, sans-serif;
 	font-size: clamp(2rem, 5vw, 3.5rem);
