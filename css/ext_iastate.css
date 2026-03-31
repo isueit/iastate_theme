@@ -1365,6 +1365,16 @@ ol.list-circles + p {
 	padding-left: 2.8em;
 	font-size: .9rem;
 }
+/* Force card height */
+#isueo-card-group--h .layout__region {
+	display: flex;
+	flex-direction: column;
+}
+#isueo-card-group--h .isu-block, #isueo-card-group--h .isueo-card-deck-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
 /* --------------------------------------  */
 /* ## RESPONSIVE
 /* --------------------------------------  */
