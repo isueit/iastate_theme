@@ -28,37 +28,48 @@
 
 <div {{ attributes.addClass("isu-footer_contact-address") }}>
   {{ title_prefix }}
-    {% block content %}
-      {% if content.field_contact_creator_title[0]  %}
-         <div class="isu-footer_contact-address-title">
-           {{ content.field_contact_creator_title[0] }}
-         </div>
-      {% endif %}
+  {% block content %}
 
-	    {% if content.field_contact_creator_address[0] %}
-        <div>
-		      {{ content.field_contact_creator_address[0] }}
-        </div>
-	    {% endif %}
+    {% if content.field_contact_creator_title[0] %}
+      <h2 class="isu-footer_contact-address-title">
+        {{ content.field_contact_creator_title[0] }}
+      </h2>
+    {% endif %}
 
-	    {% if content.field_contact_creator_email[0] %}
-        <div>
-		        {{ content.field_contact_creator_email[0] }}
-        </div>
-	    {% endif %}
+    <div class="isu-footer_contact-columns">
 
-      {% if content.field_contact_creator_phone[0]  %}
-        <div>
-           {{ content.field_contact_creator_phone[0] }}
+      {% if content.field_contact_creator_address[0] %}
+        <div class="isu-footer_contact-col">
+          <h3 class="isu-footer_contact-label">
+            <i class="fa-solid fa-location-dot"></i>Visit us
+          </h3>
+          <p>{{ content.field_contact_creator_address[0] }}</p>
         </div>
       {% endif %}
 
-      {% if content.field_contact_creator_phone_2[0] %}
-        <div>
-          {{ content.field_contact_creator_phone_2[0] }}
+      {% if content.field_contact_creator_phone[0] %}
+        <div class="isu-footer_contact-col">
+          <h3 class="isu-footer_contact-label">
+            <i class="fa-solid fa-phone"></i>Call us
+          </h3>
+          <p>{{ content.field_contact_creator_phone[0] }}</p>
+          {% if content.field_contact_creator_phone_2[0] %}
+            <p>{{ content.field_contact_creator_phone_2[0] }}</p>
+          {% endif %}
         </div>
       {% endif %}
 
-     {{ title_suffix }}
-    {% endblock %}
-  </div>
+      {% if content.field_contact_creator_email[0] %}
+        <div class="isu-footer_contact-col">
+          <h3 class="isu-footer_contact-label">
+            <i class="fa-solid fa-envelope-open-text"></i>Email us
+          </h3>
+          {{ content.field_contact_creator_email[0] }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  {{ title_suffix }}
+  {% endblock %}
+</div>

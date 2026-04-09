@@ -1903,27 +1903,79 @@ a.tabledrag-handle .handle {
 /* --------------------------------------  */
 .isu-footer {
   flex-shrink: 0;
-  padding: 2rem 0;
   color: #ffffff;
 	background: var(--primary-color);
+  position: relative;
 }
 .isu-footer a {
 	color: #ffffff;
+  font-size: 1rem;
 }
-.isu-footer a:hover {
-	color: var(--primary-accent-color);
-	text-decoration: underline;
+.isu-footer-top {
+	padding: 2.25rem 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.isu-footer .col-sm-6.col-md-6.col-lg-3 {
-	padding-bottom: 20px;
+.isu-footer-container .row {
+  margin-right: calc(-.5 * 1.5rem);
+  margin-left: calc(-.5 * 1.5rem);
+  margin-top: calc(-1 * 0rem);
+}
+.isu-footer-bottom {
+	padding: 1rem 0;
+}
+#block-staff-links {
+  padding-top: 2rem;
+}
+.isu-legal-copyright {
+	display: flex;
+	justify-content: space-between;
+  flex-direction: row-reverse;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.row.isu-footer-row-2 {
+  margin-bottom: 3.125rem; 
+}
+.isu-footer-section-1,
+.isu-footer-section-2 {
+	margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 .isu-footer-logo {
   width: 100%;
-  margin-top: -15px;
-	margin-left: -8%;
+	margin-left: -2%;
 	margin-right: auto;
 	display: block;
-	max-width: 350px;
+	max-width: 32.25rem;
+}
+.isu-footer-section-1 .isu-social-menu-footer {
+	margin-top: .5rem;
+}
+.isu-footer-container p {
+  font-size: 1rem;
+}
+@media (min-width: 1200px) {
+  .isu-footer {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .isu-footer-top {
+    padding: 3.6875rem 0 5.125rem 0;
+  }
+  .col-xl-6 {
+    flex: 0 0 auto;
+  }
+  .isu-footer-logo {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .isu-footer-top {
+    padding: 3.875rem 0 4.25rem;
+  }
 }
 
 /* --- ## CONTACT BLOCK --- */
@@ -1962,7 +2014,26 @@ a.tabledrag-handle .handle {
  * Icon styles found in isu-social.css
  * Template in templates/navigation/menu--social.html.twig
  */
-
+h2.isu-social-menu-footer__heading {
+	font-size: 1.3125rem;
+	font-weight: 700;
+	color: #ffffff;
+	line-height: 1.61905;
+	transition: color 0.2s ease-in-out;
+	margin: 0 0 1.0625rem 0;
+	padding-bottom: 0.5rem;
+	white-space: nowrap;
+	position: relative;
+}
+h2.isu-social-menu-footer__heading::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 3.125rem;
+	border-bottom: .125rem solid var(--primary-accent-color);
+}
 .isu-social-menu {
   list-style-type: none;
   padding: 0;
@@ -1993,44 +2064,91 @@ a.tabledrag-handle .handle {
 	margin-left: 0px;
 	color: var(--link-color);
 }
-.isu-social-menu-footer:before {
-	content: "";
-	border-bottom: 0.2rem solid var(--primary-accent-color);
-	width: 13.5rem;
-	position: absolute;
+ul.site-footer__social {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.site-footer__social li {
+  margin-right: 1.875rem;
+}
+ul.site-footer__social li a {
+  display: flex;
+  text-decoration: none;
+  border: .125rem solid #fff;
+  border-radius: 50%;
+  width: 3.25rem;
+  height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s ease-in-out;
 }
 
 /* --- ## LEGAL MENU --- */
 /*
  * Template in templates/navigation/menu--legal-menu.html.twig
  */
-
-.isu-legal-menu {
-  list-style-type: none;
-  padding: 0;
-  font-size: 12px;
-}
-.isu-legal-menu a {
-  display: inline-block;
-	text-decoration: underline;
-  padding: 0.25rem 0;
-  line-height: 1.25;
-}
-.isu-legal-menu a:hover {
-	text-decoration: underline;
-}
+ .isu-footer-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+ }
 .isu-copyright p {
 	margin-bottom: 0;
 	font-size: 0.9rem;
+}
+/* --- ## QUICK LINKS --- */
+.isu-footer-quick-links__heading {
+	font-size: 1.3125rem;
+	font-weight: 700;
+	color: #ffffff;
+	line-height: 1.61905;
+	transition: color 0.2s ease-in-out;
+	margin: 0 0 1.0625rem 0;
+	padding-bottom: 0.5rem;
+	white-space: nowrap;
+	position: relative;
+}
+.isu-footer-quick-links__heading::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 3.125rem;
+	border-bottom: .125rem solid var(--primary-accent-color);
+}
+.isu-footer-quick-links__columns {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 3rem;
+}
+.isu-footer-quick-links__column {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	flex: 0 0 auto;
+}
+.isu-footer-quick-links__column li {
+	margin-bottom: 0.625rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.isu-footer-quick-links__column a {
+  font-weight: 700;
+  text-decoration-thickness: .0625rem;
+  text-underline-offset: .0625rem;
+  transition: color .2s ease-in-out;
 }
 
 /* --- ## SIGN OFF --- */
 .isu-footer .isu-sign-off_wrapper {
   background: var(--secondary-color);
   color: #fff;
-  font-weight: revert;
-  margin-bottom: -2rem;
-  padding: 1rem 0;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  position: relative;
 }
 .isu-region_sign-off {
   font-size: 1rem;
@@ -2041,6 +2159,77 @@ a.tabledrag-handle .handle {
 }
 .isu-sign-off_wrapper a:hover {
   color: var(--primary-accent-color);
+}
+.isu-sign-off_wrapper .isu-copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.isu-sign-off_wrapper .isu-copyright__links a {
+  margin-right: 1.25rem;
+}
+.isu-copyright__links.site-footer__utility-nav ul {
+  column-count: 1;
+  display: flex;
+  column-gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.isu-copyright__links.site-footer__utility-nav ul li {
+  line-height: 1.4;
+  text-align: center;
+  margin-right: .9375rem;
+}
+.isu-copyright__links.site-footer__utility-nav ul li a {
+  transition: color .2s ease-in-out;
+  -webkit-transition: color .2s ease-in-out;
+  font-weight: 700;
+  font-size: .95rem;
+}
+.isu-sign-off_wrapper .isu-copyright__links a:last-child {
+  margin-right: 0;
+}
+.isu-copyright__statement.site-footer__copyright {
+  font-size: 1.125rem;
+}
+@media (min-width: 1400px) {
+  .isu-footer-bottom:before {
+    background: var(--secondary-color);
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150vw;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+@media (min-width: 1200px) {
+  .isu-footer-bottom {
+    margin-left: -5.125rem;
+    margin-right: -5.125rem;
+    padding-left: 5.125rem;
+    padding-right: 5.125rem;
+  }
+}
+@media (min-width: 768px) {
+  .isu-footer-bottom {
+    margin-left: -4.25rem;
+    margin-right: -4.25rem;
+    padding-left: 4.25rem;
+    padding-right: 4.25rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  .isu-sign-off_wrapper .isu-copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 .isueo-staff-links ul {
 	list-style: none;
@@ -2066,9 +2255,12 @@ a.tabledrag-handle .handle {
   .isu-footer-logo{
     padding-bottom: 0px;
   }
-  .isu-footer .col-md-6 {
-		max-width: 94%;
-	}
+  .isu-footer-section-1,
+  .isu-footer-section-2,
+  .isu-footer-section-3,
+  .isu-footer-section-4 {
+    max-width: 94%;
+  }
   .col-md-6 {
     flex: 0 0 45%;
     margin-left: auto;
@@ -2094,10 +2286,13 @@ a.tabledrag-handle .handle {
     position: relative;
     margin: auto;
   }
-  .isu-footer .col-md-6 {
-    flex: 0 100% !important;
+  .isu-footer-section-1,
+  .isu-footer-section-2,
+  .isu-footer-section-3,
+  .isu-footer-section-4 {
+    flex: 0 0 100% !important;
     justify-content: flex-start;
-}
+  }
 footer .row, .col-lg-3 {
   justify-content: start;
 }
@@ -2113,23 +2308,12 @@ footer .row, .col-lg-3 {
 }
 }
 @media screen and (max-width: 991px) {
-  .isu-footer .col-md-6 {
-		flex: 0 0 100%;
-		max-width: 75%;
-	}
-  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(1) {
-    order: 1;
-    flex-wrap: wrap;
-  }
-  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(2) {
-    order: 4;
-    grid-column: span 4;
-  }
-  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(3) {
-    order: 2;
-  }
-  .isu-footer .col-sm-6.col-md-6.col-lg-3:nth-of-type(4) {
-    order: 3;
+  .isu-footer-section-1,
+  .isu-footer-section-2,
+  .isu-footer-section-3,
+  .isu-footer-section-4 {
+    flex: 0 0 100%;
+    max-width: 75%;
   }
 }
 
