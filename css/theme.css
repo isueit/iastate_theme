@@ -1025,7 +1025,7 @@ div#block-iastate-theme-page-title--2, div#block-iastate-theme-page-title {
   max-width: 1200px;
   margin: auto;
 }
-div#block-iastate-theme-local-tasks {
+div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
   padding-left: 0%;
   padding-right: 6%;
   padding-top: 10px;
@@ -1215,14 +1215,17 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 .isu-sidebar .isu-block-title {
   font-size: 1.15rem;
 }
-h2.isu-block-title.h4 {
+h2.isu-block-title.h4, h1.isu-block-title.h4 {
 	margin-bottom: 1.75rem;
 	line-height: 1.4;
 	font-size: clamp(2rem, 2.2vw, 1.875rem);
 	color: var(--primary-color);
 	position: relative;
 }
-h2.isu-block-title.h4:after {
+h1.isu-block-title.h4 {
+  margin-top: 0;
+}
+h2.isu-block-title.h4:after, h1.isu-block-title.h4:after {
 	content: "";
 	position: absolute;
 	left: 0;
