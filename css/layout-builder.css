@@ -267,6 +267,10 @@ div.isueo-callout-stat {
 	text-decoration: underline;
 	text-decoration-color: var(--primary-accent-color);
 }
+.isueo-callout-stat .ckeditor-accordion-container a {
+	color: var(--link-color);
+	text-decoration-color: revert;
+}
 .isueo-callout-stat a.btn-outline-danger {
 	color: #c8102e;
 }
