@@ -49,7 +49,7 @@
   background-color: var(--secondary-color);
 }
 .isu-social-menu a:hover:before {
-  color: var(--primary-accent-color);
+  color: #fff;
   text-decoration: none;
 }
 .isu-social-menu-red a:hover {
