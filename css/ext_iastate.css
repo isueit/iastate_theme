@@ -425,6 +425,7 @@ span.card-arrow {
 	position: relative;
 	font-size: 1.125rem;
 	align-items: center;
+	float: left;
 }
 .ext-news-feed footer a:after {
 	content: '\f061';
