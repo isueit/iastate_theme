@@ -227,7 +227,7 @@ button:focus {
 	border-radius: 2rem;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-success:hover {
   background-color: #008540;
@@ -269,7 +269,7 @@ button:focus {
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-outline-success:hover {
 	background-color: #fff;
@@ -313,7 +313,7 @@ button:focus {
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-danger::after {
 	content: "";
@@ -349,7 +349,7 @@ button:focus {
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-outline-danger:hover {
 	background-color: #fff;
@@ -387,7 +387,7 @@ button:focus {
 	border-radius: 2rem;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-primary:hover {
 	background-color: #003d4c;
@@ -423,7 +423,7 @@ button:focus {
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-outline-primary:hover {
 	background-color: #fff;
@@ -462,7 +462,7 @@ button:focus {
 	border-radius: 2rem;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-secondary:hover {
 	background-color: #7c2529;
@@ -499,7 +499,7 @@ button:focus {
 	font-weight: 700;
 	cursor: pointer;
 	white-space: break-spaces;
-	overflow: auto;
+	overflow: hidden;
 }
 .btn-outline-secondary:hover {
 	background-color: #fff;
