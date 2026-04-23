@@ -10,10 +10,10 @@
 
 article table {
   display: table;
-  table-layout: fixed;  /* Allows overflow-x to scroll */
+  table-layout: auto;
   max-width: 100%;
-  overflow: hidden;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 article table tr {
   width: 100%;
@@ -56,13 +56,14 @@ article table::-webkit-scrollbar-track {
   /* --- All responsive tables --- */
   .isu-responsive-table td *,
   .isu-responsive-table tr * {
-    word-break: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* Safari fallback */
   }
 
   /* --- No headers (none) --- */
   .isu-responsive-table.isu-table-none {
-    display: table;
-    min-width: 75%;
+    display: block;
+    width: 100%;
   }
   .isu-responsive-table.isu-table-none tr {
     border-bottom: 3px solid #bbbbbb;
@@ -77,7 +78,9 @@ article table::-webkit-scrollbar-track {
   }
 
   /* --- Headers in first row --- */
-  .isu-responsive-table.isu-table-row { display: table; min-width: 75%;
+  .isu-responsive-table.isu-table-row {
+    display: block;
+    width: 100%;
   }
   .isu-responsive-table.isu-table-row th {
     display: none;
@@ -116,7 +119,8 @@ article table::-webkit-scrollbar-track {
 
   /* --- Headers in first column --- */
   .isu-responsive-table.isu-table-col {
-    display: table; min-width: 75%;
+    display: block;
+    width: 100%;
   }
   .isu-responsive-table.isu-table-col th,
   .isu-responsive-table.isu-table-col td {
@@ -140,7 +144,8 @@ article table::-webkit-scrollbar-track {
 
   /* --- Headers in both first row and first column --- */
   .isu-responsive-table.isu-table-both {
-    display: table; min-width: 75%;
+    display: block;
+    width: 100%;
   }
   .isu-responsive-table.isu-table-both th,
   .isu-responsive-table.isu-table-both td {
@@ -182,5 +187,12 @@ article table::-webkit-scrollbar-track {
     padding: 0.5rem 0.75rem;
     font-weight: 500;
     background: #eeeeee;
+  }
+
+  /* --- Colspan/rowspan tables (freeze): horizontal scroll --- */
+  .isu-table-freeze {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
