@@ -1329,6 +1329,9 @@ div#edit-moderation-state-wrapper .form-item__label {
 .isueo-eyebrow + h2 {
 	margin-top: 1rem;
 }
+.layout--color--white .isueo-eyebrow {
+	color: inherit;
+}
 
 /* Circled Number List */
 ol.list-circles {
