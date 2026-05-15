@@ -29,7 +29,7 @@
 
 {{ menus.menu_links(items, attributes, 0) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, parent_item) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %} {# If the menu has only one level. #}
@@ -40,11 +40,21 @@
 	  <ul role="submenu" class="isu-dropdown-menu isu-dropdown-submenu">
     {% endif %}
 
+    {# Output the parent page link as the first item in first-level dropdowns when it has a real URL. #}
+    {% if menu_level == 1 and parent_item is not null %}
+      {% set parent_url = parent_item.url|render|trim %}
+      {% if parent_url and parent_url != '#' %}
+        <li role="menuitem" class="isu-dropdown-item isu-dropdown-parent-item">
+          <a class="nav-link isu-nav-link isu-dropdown-parent-link" href="{{ parent_url }}">{{ parent_item.title }} <span aria-hidden="true">→</span></a>
+        </li>
+      {% endif %}
+    {% endif %}
+
     {% for item in items %}
-      {# Assign classes based on if the item is an open parent, closed parent, 
+      {# Assign classes based on if the item is an open parent, closed parent,
       active, or a has a submenu. #}
       {%
-        set li_classes = [ 
+        set li_classes = [
           menu_level ? 'dropdown-item isu-dropdown-item' : 'nav-item',
           item.below ? 'isu-dropdown',
         ]
@@ -57,7 +67,7 @@
 			<button class="isu-dropdown-toggle_mobile"><span class="fa fa-angle-down"></span><span class="sr-only">Open dropdown menu</span></button>
           </div>
 
-          {{ menus.menu_links(item.below, item.attributes, menu_level + 1) }}
+          {{ menus.menu_links(item.below, item.attributes, menu_level + 1, (menu_level == 0) ? item : null) }}
       {% else %} {# If the item does not have children, it will not be a dropdown. #}
         <li role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-haspopup', 'false') }}>
 		  <a class="nav-link isu-nav-link" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}</a>

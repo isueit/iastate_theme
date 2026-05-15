@@ -842,6 +842,25 @@ div#edit-search-broadness {
   background: transparent;
 	color: var(--primary-color);
 }
+/* Parent link at top of first-level dropdown menus */
+.isu-dropdown-parent-item {
+  border-bottom: 0.125rem solid var(--primary-accent-color);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+}
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:hover,
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:focus {
+  background: transparent;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
 /* Third Level Menu */
 .isu-dropdown-submenu {
   top: auto;
@@ -972,6 +991,21 @@ a.isu-dropdown-submenu {
     text-decoration: underline;
   }
   .isu-dropdown-item a.nav-link.isu-nav-link:hover {
+    text-decoration: none;
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item {
+    border-bottom-color: var(--primary-accent-color);
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+    color: #fff;
+    font-size: 1.125rem;
+    margin: .675rem;
+    padding: 0;
+    text-decoration: underline;
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:hover,
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:focus {
+    color: #fff;
     text-decoration: none;
   }
 }
