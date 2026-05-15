@@ -95,31 +95,62 @@ $(document).ready(function() {
       }
   });
 
-  // Close dropdowns when clicked out
-  $('.isu-dropdown-menu').on('mouseleave focusout', function(e) {
+  // Close dropdowns when focus leaves (keyboard users)
+  $('.isu-dropdown-menu').on('focusout', function(e) {
     var dropdownMenu = $(this);
     setTimeout(function() {
       if (dropdownMenu.find(':focus').length === 0) {
-        // If neither the dropdown or its children have focus...
+        // If neither the dropdown nor its children have focus...
         if (dropdownMenu.siblings('a:focus').length === 0) {
-          // Close the menu
           dropdownMenu.parent('.isu-dropdown').attr('aria-expanded', 'false');
-          // Remove styling class
         }
 	  }
     }, 100 );
   });
 
+  /* Desktop click-to-open dropdowns
+   *
+   * On desktop (>=1200px) the toggle link opens/closes the dropdown on click.
+   * Clicking outside any open dropdown closes it. Escape also closes.
+   */
+
+  // Toggle dropdowns on desktop via the nav link
+  $(document).on('click', '.isu-dropdown-toggle', function(event) {
+    if (window.innerWidth < 1200) return;
+    event.preventDefault();
+    var dropdown = $(this).closest('.isu-dropdown');
+    var isOpen = dropdown.attr('aria-expanded') === 'true';
+    // Close all open dropdowns first
+    $('.isu-dropdown[aria-expanded="true"]').attr('aria-expanded', 'false');
+    if (!isOpen) {
+      dropdown.attr('aria-expanded', 'true');
+    }
+  });
+
+  // Close open dropdowns when clicking outside the menu
+  $(document).on('click', function(event) {
+    if (window.innerWidth < 1200) return;
+    if (!$(event.target).closest('.isu-dropdown').length) {
+      $('.isu-dropdown[aria-expanded="true"]').attr('aria-expanded', 'false');
+    }
+  });
+
+  // Close open dropdowns with the Escape key
+  $(document).on('keydown', function(event) {
+    if (event.keyCode === 27) { // Escape
+      $('.isu-dropdown[aria-expanded="true"]').attr('aria-expanded', 'false');
+    }
+  });
+
   /* Entering and exiting the dropdowns with the mobile toggle
    *
    * Because there is no hover on mobile, we must add a mobile toggle button
-   * for those narrow screens. They must open on click/tap, enter, and arrow keys 
+   * for those narrow screens. They must open on click/tap, enter, and arrow keys
    * because the mobile breakpoints also appear when the page zooms.
    */
 
   // Toggle dropdowns on mobile with the mobile toggle button
   $('.isu-dropdown-toggle_mobile').click(function() {
-    var mobileDropdownToggle = $(this);
     var dropdownMenu = $(this).closest('.isu-dropdown');
 
     if (dropdownMenu.attr('aria-expanded') === 'true') {
