@@ -28,95 +28,159 @@ s.parentNode.insertBefore(sz, s);
 /*]]>*/
 	</script>
 
-	<div class="container">
-		<div class="row">
+	<div class="isu-footer-top">
+		<div class="isu-footer-container">
 
-			<div class="col-sm-6 col-md-6 col-lg-3">
+			<div class="row isu-footer-row-1 isu-footer-top_row">
 
-				{% if page.footer_first %}
-					{{ page.footer_first }}
-				{% endif %}
+				<div class="col-xl-6 col-md-6 isu-footer-top_col isu-footer-top_col-1 isu-footer-section-1">
 
-				{% if default_footer_logo %}
-					{% set iastate_footer_logo_path = 'themes/custom/iastate_theme/images/wordmark-stacked.svg' %}
-					{% set iastate_footer_logo_url = 'https://www.extension.iastate.edu' %}
-					{% set iastate_footer_logo_alttext = 'Iowa State University Extension and Outreach' %}
-				{% endif %}
+					{% if page.footer_first %}
+						{{ page.footer_first }}
+					{% endif %}
 
-				{% if iastate_footer_logo_path %}
-					{% if iastate_footer_logo_url %}
-						<a href="{{ iastate_footer_logo_url }}">
+					{% if default_footer_logo %}
+						{% set iastate_footer_logo_path = 'themes/custom/iastate_theme/images/isueo-wordmark.svg' %}
+						{% set iastate_footer_logo_url = 'https://www.extension.iastate.edu' %}
+						{% set iastate_footer_logo_alttext = 'Iowa State University Extension and Outreach' %}
+					{% endif %}
+
+					{% if iastate_footer_logo_path %}
+						{% if iastate_footer_logo_url %}
+							<a href="{{ iastate_footer_logo_url }}">
 						{% endif %}
 						<img class="isu-footer-logo" src="{{ base_path }}{{ iastate_footer_logo_path }}" class="wordmark-isu" alt="{{ iastate_footer_logo_alttext }}">
-					</a>
-				{% endif %}
+						</a>
+					{% endif %}
 
-				{% if default_social_footer %}
-					<div class="isu-social-menu-footer isu-social-menu">
-						<a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a>
-						<a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a>
-						<a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a>
-						<a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a>
-						<a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a>
-					</div>
-				{% endif %}
+					{# For if social stays under the wordmark
+					{% if default_social_footer %}
+						<div class="isu-social-menu-footer isu-social-menu site-footer__social-links-wrap">
+							<ul class="site-footer__social list-unstyled">
+								<li><a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a></li>
+								<li><a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a></li>
+								<li><a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a></li>
+								<li><a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a></li>
+								<li><a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a></li>
+							</ul>
+						</div>
+					{% endif %} #}
+
+				</div>
+
+				<div class="col-xl-6 col-md-6 isu-footer-top_col isu-footer-top_col-2 isu-footer-section-2">
+
+					{# For if social goes beside the wordmark #}
+					{% if default_social_footer %}
+						<div class="isu-social-menu-footer isu-social-menu site-footer__social-links-wrap">
+						<h2 class="isu-social-menu-footer__heading">Connect with ISU Extension and Outreach</h2>
+							<ul class="site-footer__social list-unstyled">
+								<li><a href="https://www.facebook.com/iowastateuniversityextension" aria-label="Join ISU Extension on Facebook"></a></li>
+								<li><a href="https://instagram.com/isuextension" aria-label="Follow ISU Extension on Instagram"></a></li>
+								<li><a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a></li>
+								<li><a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a></li>
+								<li><a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a></li>
+							</ul>
+						</div>
+					{% endif %}
+
+					{% if page.footer_second %}
+						{{ page.footer_second }}
+					{% endif %}
+
+				</div>
+
+				<div class="col-xl-6 col-md-6 isu-footer-top_col isu-footer-top_col-3 isu-footer-section-3">
+
+					{% if default_quick_links %}
+						<nav class="isu-footer-quick-links isu-footer-quicklinks-menu" aria-labelledby="isu-footer-quick-links-heading">
+							<h2 class="isu-footer-quick-links__heading isu-footer-quicklinks-menu_title" id="isu-footer-quick-links-heading">Quick Links</h2>
+							<div class="isu-footer-quick-links__columns isu-footer-quicklinks-menu_list">
+								<ul class="isu-footer-quick-links__column list-unstyled">
+									<li><a href="https://www.extension.iastate.edu/staff">Staff Directory</a></li>
+									<li><a href="https://www.extension.iastate.edu/calendar">Find Events</a></li>
+									<li><a href="https://shop.iastate.edu/extension/">Store</a></li>
+								</ul>
+								<ul class="isu-footer-quick-links__column list-unstyled">
+									<li><a href="https://www.extension.iastate.edu/content/hotlines">Hotlines</a></li>
+									<li><a href="https://www.extension.iastate.edu/impact-stories">Impact Stories</a></li>
+									<li><a href="https://www.extension.iastate.edu/program">Program Search</a></li>
+								</ul>
+								<ul class="isu-footer-quick-links__column list-unstyled">
+									<li><a href="https://www.extension.iastate.edu/branding">Branding</a></li>
+									<li><a href="https://www.extension.iastate.edu/jobs">County Jobs</a></li>
+									<li><a href="https://www.extension.iastate.edu/volunteer">Volunteer</a></li>
+								</ul>
+							</div>
+						</nav>
+					{% elseif quick_links %}
+						<nav class="isu-footer-quick-links isu-footer-quicklinks-menu" aria-labelledby="isu-footer-quick-links-heading">
+							<h2 class="isu-footer-quick-links__heading isu-footer-quicklinks-menu_title" id="isu-footer-quick-links-heading">Quick Links</h2>
+							<div class="isu-footer-quick-links__columns isu-footer-quicklinks-menu_list">
+								{% for column in quick_links|batch(3) %}
+									<ul class="isu-footer-quick-links__column list-unstyled">
+										{% for link in column %}
+											<li><a href="{{ link.url }}">{{ link.text }}</a></li>
+										{% endfor %}
+									</ul>
+								{% endfor %}
+							</div>
+						</nav>
+					{% endif %}
+
+					{% if page.footer_third %}
+						{{ page.footer_third }}
+					{% endif %}
+
+				</div>
+
+				<div class="col-xl-6 col-md-6 isu-footer-top_col isu-footer-top_col-4 isu-footer-section-4">
+
+					{% if page.footer_fourth %}
+						{{ page.footer_fourth }}
+					{% endif %}
+
+				</div>
 
 			</div>
 
-			<div class="col-sm-6 col-md-6 col-lg-3">
-
-				{% if page.footer_second %}
-					{{ page.footer_second }}
-				{% endif %}
-
-				{% if default_copyright %}
-					{# using merge filter to apply to '#text' key of copyright_subject render array (cannot use copyright_subject.#text for set operation) #}
-					{# Referenced: https://craftcms.stackexchange.com/questions/23932/unexpected-token-punctuation-of-value-end-of-statement-block-expected #}
-				{% set copyright_subject = copyright_subject|merge({'#markup': '
-		    <p>
-			  Copyright © 1995-' ~ "now"|date("Y") ~ '<br>
-		  	  <strong><a href="https://www.iastate.edu/">Iowa State University of Science and Technology.</a></strong> All rights reserved.</p>
-		    <br>		   
-		    <p class="isu-copyright-links"> 
-			  <a href="https://www.extension.iastate.edu/legal">Policies</a><br>
-		  	  <a href="https://nifa.usda.gov/land-grant-colleges-and-universities-partner-website-directory">State & National Extension Partners</a><br>			</p>
-		  ' }) %}
-				{% endif %}
-
-					{% if footer2_file_exists %}
-						{% autoescape false %}
-					{{ footer2_file_contents }}
-					{% endautoescape %}
-				{% else %}
-					<div class="isu-copyright">
-						{{ copyright_subject }}
-					</div>
-				{% endif %}
-			</div>
-
-			<div class="col-sm-6 col-md-6 col-lg-3">
-
-				{% if page.footer_third %}
-					{{ page.footer_third }}
-				{% endif %}
-
-			</div>
-
-			<div class="col-sm-6 col-md-6 col-lg-3">
-
-				{% if page.footer_fourth %}
-					{{ page.footer_fourth }}
-				{% endif %}
-
-			</div>
 		</div>
 	</div>
 
-	{% if page.sign_off %}
-		<div class="isu-sign-off_wrapper">
-			<div class="container">
+	<div class="isu-footer-bottom isu-sign-off_wrapper">
+		<div class="isu-footer-container">
+
+			{% if page.sign_off %}
 				{{ page.sign_off }}
+			{% endif %}
+
+			<div class="isu-legal-copyright">
+
+				{% if footer2_file_exists %}
+					{% autoescape false %}
+						{{ footer2_file_contents }}
+					{% endautoescape %}
+				{% elseif not default_copyright %}
+					{{ copyright_subject }}
+				{% else %}
+					<div class="isu-legal">
+						<h2 class="visually-hidden">Legal and Privacy Links</h2>
+						<nav class="isu-copyright__links site-footer__utility-nav" aria-label="Footer Utility">
+							<ul class="isu-legal-menu list-unstyled">
+								<li><a href="https://www.extension.iastate.edu/legal">Policies</a></li>
+								<li><a href="https://nifa.usda.gov/land-grant-colleges-and-universities-partner-website-directory">State &amp; National Extension Partners</a></li>
+								<li><a href="https://www.iastate.edu/">Iowa State University</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="isu-copyright isu-copyright__statement site-footer__copyright">
+						&copy; Iowa State University of Science and Technology
+					</div>
+				{% endif %}
+
 			</div>
+
 		</div>
-	{% endif %}
+	</div>
+
 </footer>

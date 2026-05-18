@@ -199,12 +199,23 @@ function iastate_theme_preprocess_page(&$variables)
 
   $variables['default_social_footer'] = theme_get_setting('default_social_footer');
 
-  $variables['default_copyright'] = theme_get_setting('default_copyright');
-  // Create copyright render array
+  $variables['default_quick_links'] = theme_get_setting('default_quick_links') ?? TRUE;
+  $quick_links = [];
+  for ($i = 1; $i <= 9; $i++) {
+    $text = theme_get_setting('quick_link_' . $i . '_text');
+    $url = theme_get_setting('quick_link_' . $i . '_url');
+    if (!empty($text) && !empty($url)) {
+      $quick_links[] = ['text' => $text, 'url' => $url];
+    }
+  }
+  $variables['quick_links'] = $quick_links;
+
+  $variables['default_copyright'] = theme_get_setting('default_copyright') ?? TRUE;
+  // Create copyright render array for custom override
   $variables['copyright_subject'] = array(
     '#type' => 'processed_text',
     '#text' => isset(theme_get_setting('copyright_subject')['value']) ? theme_get_setting('copyright_subject')['value'] : '',
-    '#format' => theme_get_setting('copyright_subject')['format'],
+    '#format' => isset(theme_get_setting('copyright_subject')['format']) ? theme_get_setting('copyright_subject')['format'] : 'wysiwyg',
   );
 
 }
