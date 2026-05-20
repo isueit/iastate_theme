@@ -57,6 +57,13 @@ div.join-4h-info {
 }
 
 /* -------------------------------------- */
+/* ## EDUCATIONAL PROGRAM PAGES
+/* ------------------------------------- */
+.educational_program .ckeditor-accordion-container {
+	display: none;
+}
+
+/* -------------------------------------- */
 /* ## COUNTY STAFF PAGE
 /* ------------------------------------- */
 .isueo-staff-page .layout--top-bottom-padding--small {
