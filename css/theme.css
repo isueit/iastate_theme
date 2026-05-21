@@ -2285,7 +2285,7 @@ ul.site-footer__social li a:focus-visible {
     margin-right: auto;
   }
 }
-@media screen and (max-width : 768px) {
+@media screen and (max-width : 1199px) {
   .isu-region_footer-third {
 		margin-bottom: 1rem;
     font-size: 1rem;
@@ -2304,6 +2304,7 @@ ul.site-footer__social li a:focus-visible {
   }
   .isu-footer-quick-links__columns {
     column-gap: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   .isu-social-menu-footer{
 		display: block;
@@ -2356,9 +2357,15 @@ footer .row, .col-lg-3 {
   }
 }
 
+@media screen and (max-width: 992px) {
+  .isu-footer-logo {
+    margin-left: -3%;
+  }
+}
+
 @media screen and (max-width : 1199px) {
   .isu-footer-logo {
-		margin-left: -6%;
+		margin-left: -1%;
     width: 100%;
     position: relative; /* changed from abosolute to relative*/
 	}
@@ -2389,7 +2396,7 @@ footer .row, .col-lg-3 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1199px) {
   .isu-footer {
     padding-left: 4.25rem;
     padding-right: 4.25rem;
@@ -2402,16 +2409,13 @@ footer .row, .col-lg-3 {
     padding-left: 0;
     padding-right: 0;
   }
-  .isu-footer-logo {
-    margin-left: -3%;
-  }
   h2.isu-social-menu-footer__heading {
     display: none;
   }
   ul.site-footer__social {
-    margin: 1rem 0;
+    margin: 1rem 0 2.6875rem 0;
   }
-  .isu-footer-quick-links__heading {
+  .isu-footer-quick-links__heading, h2.isu-footer_contact-address-title {
     margin-bottom: 1.25rem;
   }
   .isu-footer-quick-links__columns {
@@ -2420,30 +2424,145 @@ footer .row, .col-lg-3 {
   .isu-footer-section-1,
   .isu-footer-section-2,
   .isu-footer-section-3,
-  .isu-footer-section-4 {
+  .isu-footer-section-4,
+  .isu-region_footer-third,
+  .isu-region_footer-fourth {
     display: contents;
   }
   .isu-footer-section-1 > *,
   .isu-footer-section-2 > *,
   .isu-footer-section-3 > *,
-  .isu-footer-section-4 > * {
+  .isu-footer-section-4 > *,
+  .isu-region_footer-third > *,
+  .isu-region_footer-fourth > * {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  #block-iastate-theme-mglogo,
+  .isu-footer-section-1 > a {
+    order: 1;
+  }
+  .isu-social-menu-footer {
+    order: 2;
   }
   .isu-footer-quick-links {
     order: 3;
   }
-  #block-linksblock {
+  #block-contact-us {
     order: 4;
   }
-  #block-iastate-theme-mglogo {
+  #block-linksblock {
     order: 5;
+  }
+  #block-staff-links {
+    order: 6;
   }
 }
 
-@media screen and (max-width: 992px) {
-  .isu-footer-quick-links__heading::after {
+@media screen and (max-width: 1199px) {
+  .isu-footer-quick-links__heading::after, h2.isu-footer_contact-address-title::after {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .isu-footer {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+  .isu-footer-bottom.isu-sign-off_wrapper {
+    margin-left: -2.25rem;
+    margin-right: -2.25rem;
+  }
+  .isu-footer-container p {
+    font-weight: 700;
+  }
+  .isu-footer a {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+  .isu-footer-top {
+    padding: 2.25rem 0 1rem;
+  }
+  ul.site-footer__social {
+    justify-content: space-between;
+  }
+  ul.site-footer__social li {
+    margin-right: 0;
+  }
+  .isu-footer-quick-links {
+    text-align: center;
+  }
+  .isu-footer-quick-links__columns {
+    column-count: 2;
+    margin-bottom: 1.875rem;
+  }
+  .isu-footer-quick-links__heading, h2.isu-footer_contact-address-title {
+    margin-bottom: 1.6875rem;
+  }
+  .isu-footer_contact-address {
+    text-align: center;
+  }
+  .isu-footer_contact-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.15rem;
+  }
+  .isu-footer_contact-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .isu-footer_contact-label {
+    display: none;
+    align-items: center;
+    padding-bottom: 0.5rem;
+  }
+  .isu-footer_contact-columns p,
+  .isu-footer_contact-columns p.address {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  #block-staff-links {
+    text-align: center;
+  }
+  .isueo-staff-links ul {
+    margin-bottom: 0;
+  }
+  .isueo-staff-links li {
+    font-weight: 700;
+  }
+  .isueo-staff-links li a {
+    font-size: 1rem;
+  }
+  .isu-sign-off_wrapper .isu-copyright {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .isu-copyright__statement.site-footer__copyright {
+    font-weight: 400;
+  }
+  .isu-copyright__links.site-footer__utility-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+  .isu-copyright__links.site-footer__utility-nav ul li {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  #block-staff-links li:first-child {
+    display: block;
   }
 }
 

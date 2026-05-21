@@ -52,9 +52,11 @@
           <h3 class="isu-footer_contact-label">
             <i class="fa-solid fa-phone"></i>Call us
           </h3>
-          <p>{{ content.field_contact_creator_phone[0] }}</p>
+          {% set phone = content.field_contact_creator_phone[0]|render|striptags|trim %}
+          <p><a href="tel:{{ phone|replace({' ': '', '(': '', ')': '', '-': '', '.': ''}) }}">{{ phone }}</a></p>
           {% if content.field_contact_creator_phone_2[0] %}
-            <p>{{ content.field_contact_creator_phone_2[0] }}</p>
+            {% set phone_2 = content.field_contact_creator_phone_2[0]|render|striptags|trim %}
+            <p><a href="tel:{{ phone_2|replace({' ': '', '(': '', ')': '', '-': '', '.': ''}) }}">{{ phone_2 }}</a></p>
           {% endif %}
         </div>
       {% endif %}
