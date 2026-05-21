@@ -1,3 +1,9 @@
+fonts:
+  css:
+    theme:
+      "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap":
+        { type: external }
+
 global-css:
   css:
     theme:
