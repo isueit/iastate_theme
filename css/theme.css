@@ -743,6 +743,10 @@ div#edit-search-broadness {
     overflow: hidden !important;
     animation: isu-menu-close 0.2s ease-in forwards !important;
   }
+  .isu-menu-navbar.isu-menu-navbar--closing .isu-mobile-header-extras,
+  .isu-menu-navbar.isu-menu-navbar--closing .isu-mobile-quicklinks {
+    visibility: hidden;
+  }
   .isu-page-wrap:has(.isu-menu-navbar_show) .isu-menu-navbar {
     position: fixed;
     top: 0;
@@ -751,6 +755,7 @@ div#edit-search-broadness {
     bottom: 0;
     z-index: 9999;
     background: var(--primary-color);
+    overflow-x: hidden;
     overflow-y: auto;
     align-items: flex-start;
     animation: isu-menu-open 0.25s ease-out forwards;
@@ -1279,6 +1284,7 @@ a.isu-dropdown-submenu {
 
   /* --- Mobile header extras: search + social icons --- */
   .isu-mobile-header-extras {
+    width: 100%;
     max-width: 42.25rem;
   }
   /* Search form — always visible, white box */
@@ -1286,12 +1292,14 @@ a.isu-dropdown-submenu {
     max-height: none !important;
     overflow: visible !important;
     display: block !important;
+    width: 100%;
     margin-bottom: 1.25rem;
   }
 
   .isu-mobile-header-extras .isu-search {
     display: block !important;
     width: 100%;
+    float: none;
     margin: 2.5rem 0 1.5rem;
     padding: 0;
   }
@@ -1315,8 +1323,12 @@ a.isu-dropdown-submenu {
   }
 
   .isu-mobile-header-extras .isu-search__search-field {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
     border: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
     background: #fff !important;
     color: #212529 !important;
@@ -1331,6 +1343,8 @@ a.isu-dropdown-submenu {
   .isu-mobile-header-extras .isu-search__search-btn {
     border-radius: 0 0.25rem 0.25rem 0 !important;
     border: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
     padding: 0.5rem 0.875rem;
     color: var(--primary-color);
     display: flex;
@@ -1351,6 +1365,25 @@ a.isu-dropdown-submenu {
     margin-right: 1rem;
   }
 
+}
+
+@media screen and (max-width: 767px) {
+
+  /* Sub-panel: match collapse width so all content aligns */
+  .isu-mobile-panel--sub {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Social icons: left-align, restore per-item spacing */
+  .isu-mobile-social.site-footer__social {
+    justify-content: flex-start;
+  }
+  .isu-mobile-social.site-footer__social li {
+    margin-right: 1rem;
+  }
 }
 
 @media (min-width: 1200px) {
