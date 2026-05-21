@@ -2179,6 +2179,9 @@ ul.site-footer__social li a:focus-visible {
 .isu-sign-off_wrapper .isu-copyright__links a {
   margin-right: 1.25rem;
 }
+.isu-sign-off_wrapper .isu-legal-copyright--custom .isu-copyright__links a {
+  margin-right: 0;
+}
 .isu-copyright__links.site-footer__utility-nav ul {
   column-count: 1;
   display: flex;

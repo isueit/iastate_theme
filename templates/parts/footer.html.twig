@@ -146,14 +146,25 @@ s.parentNode.insertBefore(sz, s);
 				{{ page.sign_off }}
 			{% endif %}
 
-			<div class="isu-legal-copyright">
+			<div class="isu-legal-copyright{% if not default_copyright and not footer2_file_exists %} isu-legal-copyright--custom{% endif %}">
 
 				{% if footer2_file_exists %}
 					{% autoescape false %}
 						{{ footer2_file_contents }}
 					{% endautoescape %}
 				{% elseif not default_copyright %}
-					{{ copyright_subject }}
+					{%- set cr_html = copyright_subject|render|replace({'<br />': '<br>', '<br/>': '<br>', '<p>': '', '</p>': ''})|trim -%}
+					{%- set cr_parts = cr_html|split('<br>') -%}
+					<div class="isu-copyright isu-copyright__statement site-footer__copyright">
+						{{- cr_parts[0]|trim|raw -}}
+					</div>
+					{% if cr_parts|length > 1 %}
+						<div class="isu-legal">
+							<nav class="isu-copyright__links site-footer__utility-nav" aria-label="Footer Utility">
+								{{- cr_parts|slice(1)|join(' ')|trim|raw -}}
+							</nav>
+						</div>
+					{% endif %}
 				{% else %}
 					<div class="isu-legal">
 						<h2 class="visually-hidden">Legal and Privacy Links</h2>
