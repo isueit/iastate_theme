@@ -340,9 +340,9 @@ body,
 }
 @media screen and (max-width : 1199px) {
   .isu-wordmark-sitename {
-    width: 94%;
+    width: 100vw;
     max-width: 94%;
-    padding: 1rem 1rem 1rem 0;
+    padding: .625rem 0;
     margin: auto;
   }
 }
@@ -721,29 +721,64 @@ div#edit-search-broadness {
 		height: auto;
     color: #fff;
 	}
-  .isu-menu-navbar_show.isu-menu-navbar_wrap {
-		background-color: var(--primary-color);
-		overflow: hidden;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
-		padding: 2rem;
-		min-height: 1000px;
-		min-width: 100vw;
-	}
-	.isu-page-wrap:has(.isu-menu-navbar_show) {
-		position: fixed;
-    overflow: scroll;
-    height: 100%;
-	}
-	.isu-page-wrap:has(.isu-menu-navbar_show) .isu-site-navbar {
-		position: sticky;
-		top: 0;
-		z-index: 10000;
-		background: rgba(255, 255, 255, 0.95);
-	}
+  html:has(.isu-menu-navbar_show) {
+    overflow: hidden;
+  }
+  @keyframes isu-menu-open {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes isu-menu-close {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-12px); }
+  }
+  .isu-menu-navbar.isu-menu-navbar--closing {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+    background: var(--primary-color) !important;
+    overflow: hidden !important;
+    animation: isu-menu-close 0.2s ease-in forwards !important;
+  }
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-menu-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: var(--primary-color);
+    overflow-y: auto;
+    align-items: flex-start;
+    animation: isu-menu-open 0.25s ease-out forwards;
+  }
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-menu-navbar .isu-wordmark-sitename {
+    width: 94%;
+    max-width: 94%;
+    padding: 2rem 1rem 1.75rem 0.5rem;
+    margin: auto;
+  }
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-menu-navbar_container {
+    padding-top: 5.5rem;
+    align-self: flex-start;
+  }
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-wordmark-sitename a,
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-wordmark-sitename a:hover {
+    color: #fff;
+  }
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-site-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    z-index: 10000;
+    background: #fff;
+    padding-bottom: 1rem;
+  }
   .isu-menu-navbar_wrap {
     width: 100%;
   }
@@ -762,16 +797,15 @@ div#edit-search-broadness {
     flex-direction: column;
     -ms-flex-direction: column;
   }
-.container.isu-menu-navbar_container {
-  display: block;
-  max-width: 100%;
-}
-.isu-menu-navbar_collapse.isu-menu-navbar_show {
-  display: block !important;
-  overflow: scroll;
-  width: 100%;
-  padding-top: 2%;
-}
+  .container.isu-menu-navbar_container {
+    display: block;
+    max-width: 100%;
+  }
+  .isu-menu-navbar_collapse.isu-menu-navbar_show {
+    display: block !important;
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 
 @media screen and (min-width : 1200px) {
@@ -868,17 +902,10 @@ a.isu-dropdown-submenu {
   .isu-menu-navbar {
     display: block;
   }
-  .isu-menu-navbar_show.isu-menu-navbar_wrap {
-    padding: 0;
-  }
   .isu-dropdown-menu {
     padding-left: 0;
     height: auto;
     margin-left: 0;
-  }
-  .isu-page-wrap:has(.isu-menu-navbar_show) {
-    overflow: scroll;
-    height: 100%;
   }
 }
 /* Large */
@@ -980,6 +1007,350 @@ a.isu-dropdown-submenu {
   .isu-dropdown-item a.nav-link.isu-nav-link:hover {
     text-decoration: none;
   }
+}
+
+/* ======================================= */
+/* ## Mobile Slide Panel Menu
+/* ======================================= */
+@media screen and (max-width: 1199px) {
+
+  /* Panel container */
+  .isu-mobile-panels {
+    width: 100%;
+  }
+
+
+  /* ---- Main panel (top-level items as pills) ---- */
+
+  .isu-mobile-panel--main ul.menubar {
+    margin: 0;
+    list-style: none;
+    padding: 0 0 3.75rem;
+  }
+
+  /* Pill: non-dropdown items */
+  .isu-mobile-panel--main li.nav-item:not(.isu-dropdown) > a.nav-link {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.875rem 1.25rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    min-height: 0;
+  }
+
+  /* Pill: dropdown wrapper */
+  .isu-mobile-panel--main .isu-dropdown > .isu-dropdown-toggle_wrapper {
+    background: rgb(255, 255, 255);
+    border: 0.125rem solid rgb(255, 255, 255);
+    border-radius: 1.875rem;
+    padding: 0;
+    margin: 0.625rem 0;
+    padding-left: 0;
+    align-items: stretch;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 3rem;
+    max-width: 42.25rem;
+  }
+
+  /* Link text inside dropdown pill — full width, arrow via ::after */
+  .isu-mobile-panel--main .isu-dropdown > .isu-dropdown-toggle_wrapper a.isu-dropdown-toggle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .3rem .6rem .3rem 1.25rem;
+    color: var(--secondary-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    background: transparent;
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  /* Right-pointing arrow via ::after pseudo-element */
+  .isu-mobile-panel--main .isu-dropdown > .isu-dropdown-toggle_wrapper a.isu-dropdown-toggle::after {
+    content: "\f105";
+    font-family: "FontAwesome";
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    flex-shrink: 0;
+  }
+
+  /* Hide the separate arrow button — replaced by ::after above */
+  .isu-mobile-panel--main .isu-dropdown-toggle_mobile {
+    display: none !important;
+  }
+
+  /* Hide existing inline dropdown menus — handled by sub-panels now */
+  .isu-mobile-panel--main .isu-dropdown-menu {
+    display: none !important;
+  }
+
+  /* Slide main panel out when drilled */
+  .isu-mobile-panels--drilled .isu-mobile-panel--main {
+    display: none;
+  }
+
+  /* Hide site name when sub-panel is open; back button takes its place */
+  .isu-page-wrap:has(.isu-menu-navbar_show) .isu-menu-navbar_container:has(.isu-mobile-panels--drilled) .isu-wordmark-sitename {
+    display: none;
+  }
+
+  /* ---- Sub-panels ---- */
+
+  .isu-mobile-panel--sub {
+    display: none;
+    width: 94%;
+    max-width: 94%;
+    padding: 2.25rem 0.7rem;
+  }
+
+  .isu-mobile-panel--sub.isu-mobile-panel--active {
+    display: block;
+  }
+
+  /* Back button */
+  .isu-mobile-back {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 0 1rem 0;
+    cursor: pointer;
+    letter-spacing: .06em;
+  }
+
+  .isu-mobile-back__icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* Parent page heading */
+  .isu-mobile-parent-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #fff;
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 1.3125rem;
+    text-decoration: none;
+    padding-bottom: 0.875rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.7619;
+  }
+
+  .isu-mobile-parent-heading .arrow::after {
+    content: "\f061";
+    font-family: "FontAwesome";
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .isu-mobile-subitems .arrow::after {
+    content: "\f061";
+    font-family: "FontAwesome";
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .isu-mobile-parent-heading:hover {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+  }
+
+  /* Sub-items list */
+  .isu-mobile-subitems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .isu-mobile-subitems > li {
+    margin-bottom: 0.625rem;
+    padding-left: .875rem;
+  }
+  .isu-mobile-subitems > li > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #fff;
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.44444;
+    text-decoration: underline;
+    text-decoration-thickness: .0625rem;
+    transition: color .3s ease-in-out,text-decoration-color .3s ease-in-out,-webkit-text-decoration-color .3s ease-in-out;
+  }
+  .isu-mobile-subitems > li > a .arrow {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .isu-mobile-subitems > li > a:hover {
+    text-decoration: none;
+  }
+  .isu-mobile-subitems > li > a:hover .arrow::after {
+    opacity: 1;
+  }
+
+  /* ---- ISU Quicklinks in mobile main panel ---- */
+
+  .isu-mobile-quicklinks .isu-navbar {
+    display: block !important;
+    background: transparent !important;
+  }
+
+  .isu-mobile-quicklinks .isu-navbar_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.75rem 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 42.25rem;
+  }
+  .isu-mobile-quicklinks .isu-navbar_container li {
+    margin-bottom: 0.5rem
+  }
+
+  .isu-mobile-quicklinks .isu-navbar_container li:has(.isu-header-utility-button) {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+  }
+
+  .isu-mobile-quicklinks .isu-navbar a:not(.isu-header-utility-button) {
+    color: #fff;
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: underline;
+  }
+
+  .isu-mobile-quicklinks .isu-navbar a:not(.isu-header-utility-button):hover {
+    text-decoration: none;
+  }
+
+  /* Give / utility button: white pill with arrow */
+  .isu-mobile-quicklinks .isu-header-utility-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff !important;
+    color: var(--secondary-color);
+    border-radius: 0;
+    padding: 0.125rem 0.9375rem;
+    font-family: var(--sans-font);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    line-height: 1.75;
+  }
+
+  .isu-mobile-quicklinks .isu-header-utility-button:hover,
+  .isu-mobile-quicklinks .isu-header-utility-button:focus {
+    background: #fff !important;
+    color: var(--secondary-color) !important;
+  }
+
+  .isu-mobile-quicklinks .isu-header-utility-button::after {
+    content: "\f105" !important;
+    font-family: "FontAwesome" !important;
+    font-size: 1rem;
+    border: none !important;
+    height: auto !important;
+    width: auto !important;
+    transform: none !important;
+    margin-left: 0;
+  }
+
+  /* --- Mobile header extras: search + social icons --- */
+  .isu-mobile-header-extras {
+    max-width: 42.25rem;
+  }
+  /* Search form — always visible, white box */
+  .isu-mobile-header-extras .isu-mobile-search {
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    margin-bottom: 1.25rem;
+  }
+
+  .isu-mobile-header-extras .isu-search {
+    display: block !important;
+    width: 100%;
+    margin: 2.5rem 0 1.5rem;
+    padding: 0;
+  }
+
+  .isu-mobile-header-extras .isu-search > form {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .isu-mobile-header-extras .isu-search > form#cse-search-form .form-control {
+    height: 3rem;
+  }
+  .isu-mobile-header-extras .isu-search > form#cse-search-form .isu-search__search-btn {
+    height: 3rem;
+    color: var(--primary-color);
+    font-size: 1.5625rem;
+  }
+
+  .isu-mobile-header-extras .isu-search__search-field {
+    flex: 1;
+    border: none !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+    background: #fff !important;
+    color: #212529 !important;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .isu-mobile-header-extras .isu-search__search-field::placeholder {
+    color: #6c757d !important;
+  }
+
+  .isu-mobile-header-extras .isu-search__search-btn {
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    border: none !important;
+    padding: 0.5rem 0.875rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .isu-mobile-header-extras .isu-search__search-btn-text {
+    display: none;
+  }
+
+  /* Social icons row */
+  .isu-mobile-social-wrap {
+    margin-top: 0.25rem;
+  }
+
+  /* Tighten spacing between icons in the narrow mobile panel */
+  .isu-mobile-social.site-footer__social li {
+    margin-right: 1rem;
+  }
+
 }
 
 @media (min-width: 1200px) {
