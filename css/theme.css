@@ -2510,6 +2510,8 @@ ul.site-footer__social li a:focus-visible {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  z-index: 0;
+  position: relative;
  }
 .isu-copyright p {
 	margin-bottom: 0;
@@ -2563,6 +2565,11 @@ ul.site-footer__social li a:focus-visible {
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
   position: relative;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .isu-region_sign-off {
   font-size: 1rem;
@@ -2611,7 +2618,7 @@ ul.site-footer__social li a:focus-visible {
 .isu-copyright__statement.site-footer__copyright {
   font-size: 1.125rem;
 }
-@media (min-width: 1400px) {
+@media (max-width: 1199px) {
   .isu-footer-bottom:before {
     background: var(--secondary-color);
     content: '';
@@ -2620,8 +2627,8 @@ ul.site-footer__social li a:focus-visible {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 150vw;
-    z-index: -1;
+    width: 100vw;
+    z-index: 0;
     pointer-events: none;
   }
 }
