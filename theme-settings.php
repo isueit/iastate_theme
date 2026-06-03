@@ -75,6 +75,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
 
   // Set up the field for the Support Extension link
+  $support_extension = '';
   $form['iastate_theme_settings']['support_extension'] = array(
     '#type'         => 'url',
     '#title'        => t('Support Extension link'),
@@ -94,14 +95,14 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#weight' => -980,
     '#open' => TRUE,
   ];
-  
+
   // Set up the checkbox for the default colors
   $form['iastate_color_settings']['default_color_settings'] = [
     '#type' => 'checkbox',
     '#title' => t('Use the colors supplied by the theme'),
     '#default_value' => theme_get_setting('default_color_settings') ?? 1,
   ];
-  
+
   // This container will be hidden when the checkbox is checked.
   $form['iastate_color_settings']['settings'] = [
     '#type' => 'container',
@@ -111,7 +112,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
       ],
     ],
   ];
-  
+
   // Create color selector for primary color, cardinal is the default
   $form['iastate_color_settings']['settings']['primary_color'] = [
     '#type' => 'color',
@@ -119,7 +120,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('Controls things like footer background color and heading colors'),
     '#default_value' => theme_get_setting('primary_color') ?? $default_primary,
   ];
-  
+
   // Create color selector for secondary color, burgundy is the default
   $form['iastate_color_settings']['settings']['secondary_color'] = [
     '#type' => 'color',
@@ -135,7 +136,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('Controls things like link color and smaller heading colors'),
     '#default_value' => theme_get_setting('tertiary_color') ?? $default_tertiary,
   ];
-  
+
   // Create color selector for primary accent color, gold is the default
   $form['iastate_color_settings']['settings']['primary_accent_color'] = [
     '#type' => 'color',
@@ -183,10 +184,10 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t('Controls the bootstrap secondary btn color'),
     '#default_value' => theme_get_setting('btn_secondary_color') ?? $default_btn_secondary,
   ];
-  
+
   // Include the logo default and fields for custom logo
   $form['logo']['#weight'] = -950;
-  
+
   // Create a section for alt text and URL for custom logo
   $form['site_logo_alttext_url'] = array(
     '#type'	=> 'fieldset',
@@ -194,7 +195,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#weight'	=> -900,
     '#open'	=> TRUE,
   );
-  
+
   // Set up the checkbox for the default logo alt text and URL
   $form['site_logo_alttext_url']['default_site_logo_alttext_url'] = array(
     '#type'		=> 'checkbox',
@@ -202,7 +203,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value'	=> theme_get_setting('default_site_logo_alttext_url'),
     '#tree'		=> '',
   );
-  
+
   $form['site_logo_alttext_url']['settings'] = array(
     '#type'	=> 'container',
     '#states'	=> array(
@@ -213,21 +214,21 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     ),
   );
-  
+
   // Set up textfield for custom logo alt text
   $form['site_logo_alttext_url']['settings']['site_logo_alttext'] = array(
     '#type'	=> 'textfield',
     '#title'	=> t('Set alt text for accessibility'),
     '#default_value'	=> theme_get_setting('default_site_logo_alttext_url') ? 'Iowa State University Extension and Outreach' : theme_get_setting('site_logo_alttext'),
   );
-  
-  // Set up textfield for custom logo 
+
+  // Set up textfield for custom logo
   $form['site_logo_alttext_url']['settings']['site_logo_url'] = array(
     '#type'   => 'textfield',
     '#title'  => t('Link logo to URL'),
     '#default_value'  => theme_get_setting('default_site_logo_alttext_url') ? 'https://www.extension.iastate.edu' : theme_get_setting('site_logo_url'),
   );
-  
+
   // Create a section for footer logo
   $form['iastate_footer_logo'] = array(
 	  '#type'	=> 'details',
@@ -261,7 +262,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title'	=> t('Path to custom logo'),
     '#description' => t('Examples: logo.svg (for a file in the public filesystem), public://logo.svg, or themes/contrib/iastate_theme/logo.svg.'),
     '#default_value'  => theme_get_setting('default_footer_logo') ? 'themes/custom/iastate_theme/images/wordmark-stacked.svg' : theme_get_setting('iastate_footer_logo_path'),
-  ); 
+  );
 
   // Set up textfield for custom footer logo alt text
   $form['iastate_footer_logo']['settings']['iastate_footer_logo_alttext'] = array(
@@ -276,7 +277,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Link logo to URL'),
     '#default_value'  => theme_get_setting('default_footer_logo') ? 'https://www.extension.iastate.edu' : theme_get_setting('iastate_footer_logo_url'),
   );
-  
+
   // Create section for quick links settings
   $form['iastate_quick_links'] = array(
     '#type' => 'fieldset',
