@@ -656,7 +656,7 @@ button:focus {
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
 .ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
-  background: #c8102e;
+  background: var(--primary-color);
 	color: white;
 	padding: 1.5625rem;
 	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
@@ -811,34 +811,34 @@ button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
 	font-family: var(--serif-font);
 	letter-spacing: 0;
-	color: #c8102e;
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #c8102e;
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading6 {
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
 	text-decoration: none;
-	color: #c8102e;
+	color: var(--primary-color);
 	background-color: inherit;
 	font-family: var(--sans-font);
 	font-size: 1.3125rem;
@@ -852,14 +852,14 @@ button.ck.ck-heading_heading6 {
 }
 .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
 	background-color: inherit;
-	color: #c8102e;
+	color: var(--primary-color);
 	cursor: pointer;
 }
 .ckeditor-accordion-container > dl {
 	border: 1px solid transparent;
 }
 .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
-	background: #c8102e;
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
 	left: 10px;
@@ -891,7 +891,7 @@ dl {
 	border-bottom: 0;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: #c8102e;
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
 	left: auto;
@@ -910,7 +910,7 @@ blockquote .ck-editor__editable.ck-editor__nested-editable {
 }
 blockquote.ck-widget {
 	margin-inline: 0;
-	background-color: #c8102e;
+	background-color: var(--primary-color);
 }
 blockquote.ck-widget p:before {
 	margin-left: -2.1875rem;
