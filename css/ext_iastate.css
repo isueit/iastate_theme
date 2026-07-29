@@ -168,6 +168,14 @@ img.four-zero-four {
 }
 
 /* --------------------------------------  */
+/* ## TERM PAGE
+/* --------------------------------------  */
+.isueo-taxonomy-term-content {
+	max-width: 1200px;
+	margin: auto;
+}
+
+/* --------------------------------------  */
 /* ## ACCORDIONS
 /* --------------------------------------  */
 .ckeditor-accordion-container > dl dt.active > a {
