@@ -171,10 +171,11 @@ img.four-zero-four {
 /* ## TERM PAGE
 /* --------------------------------------  */
 .isueo-taxonomy-term-content {
-	margin: auto;
+	width: 100%;
 }
 .isueo-taxonomy-term-view {
 	max-width: 1200px;
+	margin: auto;
 }
 
 /* --------------------------------------  */
