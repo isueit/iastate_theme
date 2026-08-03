@@ -1141,7 +1141,8 @@ div.fontawesome-icon i {
 .isueo-newsletter-featured-view .views-field-field-newsletter-featured a {
   text-decoration: none;
 }
-.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:after {
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:after,
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h3:after {
   content: '\f061';
   font-family: FontAwesome;
   padding-left: .5rem;
@@ -1149,13 +1150,15 @@ div.fontawesome-icon i {
   font-size: 1.5rem;
   transition: transform 0.3s ease
 }
-.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:hover::after {
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h2:hover::after,
+.isueo-newsletter-featured-view .views-field-field-newsletter-featured a h3:hover::after {
 transform: translateX(4px);
 }
 .isueo-newsletter-featured-view .h3 {
 	margin: 0;
 }
-.isueo-newsletter-featured-view h2.newsletter-featured-title--preview {
+.isueo-newsletter-featured-view h2.newsletter-featured-title--preview,
+.isueo-newsletter-featured-view h3.newsletter-featured-title--preview {
 	padding-bottom: 0;
 	display: inline-flex;
 	position: relative;
