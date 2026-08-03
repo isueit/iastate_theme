@@ -637,6 +637,9 @@ background-color: var(--primary-accent-color);
 .layout-height-40vh {
 	min-height: 40vh;
 }
+.layout-height-20vh {
+	min-height: 20vh;
+}
 
 /* Aligns Block Title Border */
 .layout--alignment--left .isu-block-title {

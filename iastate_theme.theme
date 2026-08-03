@@ -218,6 +218,29 @@ function iastate_theme_preprocess_page(&$variables)
     '#format' => isset(theme_get_setting('copyright_subject')['format']) ? theme_get_setting('copyright_subject')['format'] : 'wysiwyg',
   );
 
+  // Expose the current taxonomy term's description to
+  // page--taxonomy--term.html.twig; it's otherwise unavailable in page
+  // template variables (the term name reaches the page via the Page Title
+  // block, which has no description output). Handled here rather than in a
+  // hook_preprocess_page__taxonomy__term() implementation, since that
+  // suggestion-specific hook was not being invoked on this site.
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term && !$term instanceof \Drupal\taxonomy\TermInterface) {
+    // The route parameter isn't always upcast to an entity (e.g. a view
+    // whose path argument isn't configured as an entity:taxonomy_term type),
+    // so fall back to loading it from the raw ID.
+    $term = \Drupal\taxonomy\Entity\Term::load($term);
+  }
+  if ($term instanceof \Drupal\taxonomy\TermInterface) {
+    $variables['term'] = $term;
+    if (!$term->get('description')->isEmpty()) {
+      $variables['term_description'] = [
+        '#type' => 'processed_text',
+        '#text' => $term->getDescription(),
+        '#format' => $term->get('description')->format,
+      ];
+    }
+  }
 }
 
 /**
