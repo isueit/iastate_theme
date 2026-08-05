@@ -747,6 +747,9 @@ table img {
 	margin-right: auto;
 	margin-left: auto;
 }
+:has(> .align-right), :has(> .align-left) {
+	display: flow-root;
+}
 
 /* We want to respect content-editor table styles
  * as much as possible, until we reach the responsive
