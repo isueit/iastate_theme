@@ -219,7 +219,7 @@ h2.isu-block-title.h4:after {
 }
 #block-contact-us p,
 #block-contact-us a {
-  font-size: 12pt !important;
+  font-size: 10pt !important;
 }
 #block-contact-us a[href^="tel:"] {
   text-decoration: none !important;
