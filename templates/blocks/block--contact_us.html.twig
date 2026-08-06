@@ -36,6 +36,11 @@
       </h2>
     {% endif %}
 
+    {%- set print_title = (site_slogan ~ ' ' ~ site_name)|trim -%}
+    {% if print_title %}
+      <h2 class="isu-footer_contact-print-title">{{ print_title }}</h2>
+    {% endif %}
+
     <div class="isu-footer_contact-columns">
 
       {% if content.field_contact_creator_address[0] %}
@@ -71,6 +76,8 @@
       {% endif %}
 
     </div>
+
+    <p class="isu-footer_contact-print-url">{{ drupal_token('site:base-url') }}</p>
 
   {{ title_suffix }}
   {% endblock %}

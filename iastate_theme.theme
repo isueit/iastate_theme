@@ -307,6 +307,17 @@ function iastate_theme_preprocess_block__system_branding_block(&$variables)
 }
 
 /**
+ * Implements hook_theme_preprocess_block__contact_us()
+ * Provides the site name/slogan for the print-only footer title.
+ */
+function iastate_theme_preprocess_block__contact_us(&$variables)
+{
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  * Allow template suggestion based on content type.
  */
