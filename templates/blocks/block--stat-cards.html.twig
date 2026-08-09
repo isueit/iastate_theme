@@ -32,16 +32,47 @@
   ]
 %}
 
-<div{{attributes.addClass(block_classes)}}>
-	 {{ title_prefix }}
-	<div class="stat-card card">
-		{% block content %}
-	 {{ content.field_stat_background_image }}
-	 <div class="card-img-overlay layout--background-overlay--darker">
-		<h3 class="card-title">{{ content.field_stat_percent }}</h3>
-		<p class="card-text">{{ content.field_stat_content }}</p>
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% block content %}
+    {# Helpful for making sure that edits to the block update without a cache clear #}
+     {{ content|without('field_stat_card_icon', 'field_stat_card_image','field_stat_card_primary', 'field_stat_card_secondary', 'field_stat_card_button') }}
+    <div class="stat-card">
+      {% if content.field_stat_card_icon[0] is not empty %}
+        <div class="stat-card_icon">
+          <span class="fa fa-{{ content.field_stat_card_icon[0] }}"></span>
+        </div>
+      {% endif %}
+      {% if content.field_stat_card_primary[0] is not empty %}
+        <div class="stat-card_primary">
+          {{ content.field_stat_card_primary }}
+        </div>
+      {% endif %}
+      {% if content.field_stat_card_secondary[0] is not empty %}
+        <div class="stat-card_secondary">
+          {{ content.field_stat_card_secondary }}
+        </div>
+      {% endif %}
+      {% if content.field_stat_card_button[0] is not empty %}
+        <div class="stat-card_button">
+        {% if content.field_stat_card_button.0['#url'].toString() is empty %}
+          <span class="btn btn-danger">
+        {% else %}
+          <a href="{{ content.field_stat_card_button[0]['#url'] }}" class="btn btn-danger">
+        {% endif %}
+        {{ content.field_stat_card_button[0]['#title'] }}
+        {% if content.field_stat_card_button.0['#url'].toString() is empty %}
+         </span>
+        {% else %}
+         </a>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
-{{ title_suffix }}
-		{% endblock %}
-	</div>
+  {% endblock %}
 </div>
