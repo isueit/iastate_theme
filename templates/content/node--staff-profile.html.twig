@@ -1,0 +1,101 @@
+
+
+<div class="personal-profile-info-card{% if not image %} personal-profile-info-card--no-image{% endif %}">
+  {% if image %}
+{% if smugmug_image %}
+  <div class="personal-profile-info-card__media">
+  <div> {{ node.field_staff_profile_smugmug.0.value }} </div>
+  <img src="https://photos.smugmug.com/photos/{{ field_staff_profile_smugmug }}/10000/XL/{{ field_staff_profile_smugmug }}-XL.jpg" alt="{{ node.label }}"></div>
+  </div>
+{% endif %}
+
+  {% endif %}
+
+  <div class="personal-profile-info-card__content">
+    <h1 class="personal-profile-info-card__name">{{ node.field_staff_profile_first_name.0.value }} {{ node.field_staff_profile_last_name.0.value }}</h1>
+    <ul class="personal-profile-info-card__titles">
+      <li>
+        {{ node.field_staff_profile_job_title.0.value }}
+      </li>
+    </ul>
+    {% if link_set %}
+    {% include "@link-set" with link_set %}
+    {% endif %}
+  </div>
+  <div class="personal-profile-info-card__contact-box">
+  <h2>Contact</h2>
+    <h2>{{ field.field.node.staff_profile.label }}</h2>
+    <div class="personal-profile-info-card__contact-box-columns-wrap">
+      <div class="personal-profile-info-card__contact-box-column">
+        {% if node.field_staff_profile_email.0.value  %}<p><a href="mailto:{{ node.field_staff_profile_email.0.value }}">{{ node.field_staff_profile_email.0.value }}</a></p>{% endif %}
+        {% if node.field_staff_profile_phone.0.value %}<p>{{ node.field_staff_profile_phone.0.value  }}</p>{% endif %}
+      </div>
+      <div class="personal-profile-info-card__contact-box-column">
+            <div class="personal-profile-info-card__address">
+              {% set address = node.field_staff_profile_addr.0 %}
+                {{ address.address_line1 }}
+                {{ address.address_line2 }}
+                {{ address.locality }}
+                {{ address.administrative_area }}
+                {{ address.postal_code }}
+                {{ address.country_code }}
+          </div>
+      </div>
+    </div>
+    {% if field.field.node.staff_profile.social_links %}
+    <ul class="personal-profile-info-card__contact-box-social">
+      {% if field.field.node.staff_profile.social_links.instagram %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.instagram }}" target="_blank">
+          <i class="fak fa-iastate22-instagram" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">Instagram</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if field.field.node.staff_profile.social_links.youtube %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.youtube }}" target="_blank">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">YouTube</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if field.field.node.staff_profile.social_links.facebook %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.facebook }}" target="_blank">
+          <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">Facebook</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if field.field.node.staff_profile.social_links.twitter %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.twitter }}" target="_blank">
+          <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">Twitter</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if field.field.node.staff_profile.social_links.linkedin %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.linkedin }}" target="_blank">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">LinkedIn</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if field.field.node.staff_profile.social_links.flickr %}
+      <li>
+        <a href="{{ field.field.node.staff_profile.social_links.flickr }}" target="_blank">
+          <i class="fak fa-iastate22-flickr" aria-hidden="true"></i>
+          <span class="visible-for-screen-readers">Flickr</span>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
+  </div>
+
+
+</div>
+
