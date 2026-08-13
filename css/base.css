@@ -108,7 +108,7 @@ blockquote:before {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 150vw;
+	width: 100vw;
 	left: 50%;
 	background-color: var(--primary-color);
 	transform: translateX(-50%);
@@ -135,11 +135,12 @@ blockquote p:first-child:before, blockquote p:last-child:after {
 	background-position: 50% center;
 }
 blockquote p:before {
-	margin-left: -7.1875rem;
+	top: 3rem;
+	left: -3.5rem;
 }
 blockquote p:after {
 	bottom: 2.625rem;
-	right: -22%;
+	right: 1.25rem;
 	transform: rotate(180deg);
 }
 blockquote .author {
@@ -167,12 +168,6 @@ blockquote a:hover {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 1199px) {
-	blockquote p:first-child:before {
-		left: 3rem;
-	}
-}
-
 hr { /* Overrides Bootstrap 4's hr style */
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
