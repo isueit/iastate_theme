@@ -296,6 +296,16 @@ div.isueo-callout-stat {
 	padding: 1rem;
 }
 
+/* Feature with Large Image: Red Accent Background */
+.feature-with-large-image--red-accent {
+	background: var(--primary-color);
+	border-top: 0.5rem solid var(--primary-accent-color);
+	padding: 1rem;
+}
+.feature-with-large-image--red-accent .feature-with-large-image-content {
+	background-color: #fff;
+}
+
 /* --------------------------------------  */
 /* ## SPACING STYLES
 /* --------------------------------------  */
