@@ -566,8 +566,8 @@ background-color: var(--primary-accent-color);
    :has() to the shared .isu-content-column ancestor (see page.html.twig)
    rather than sibling adjacency, since Layout Builder's own wrapper
    markup sits between local tasks and the section itself. */
-.isu-content-column:has(#block-iastate-theme-local-tasks) [class*="layout--background--partial--"]:before,
-.isu-content-column:has(#block-iastate-theme-local-tasks--2) [class*="layout--background--partial--"]:before {
+.isu-region_content:has(#block-iastate-theme-local-tasks) [class*="layout--background--partial--"]:before,
+.isu-region_content:has(#block-iastate-theme-local-tasks--2) [class*="layout--background--partial--"]:before {
   top: 0;
 }
 [class*="layout--background--partial--"] > * {
