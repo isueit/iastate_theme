@@ -1436,6 +1436,8 @@ div#block-iastate-theme-page-title--2, div#block-iastate-theme-page-title {
   margin: auto;
 }
 div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
+  position: relative;
+  z-index: 1;
   padding-left: 0%;
   padding-right: 6%;
   padding-top: 10px;
