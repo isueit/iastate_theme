@@ -317,6 +317,38 @@ div.isueo-callout-stat {
 	color: var(--primary-color);
 }
 
+/* Feature with Large Image: on a gray or partial background section, flip
+   the card to the same red-card treatment as .isueo-callout-stat so it
+   doesn't blend into (or clash with) the section background. */
+.layout--background--gray .feature-with-large-image-content,
+[class*="layout--background--partial--"] .feature-with-large-image-content {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+.layout--background--gray .feature-with-large-image-title.h2,
+[class*="layout--background--partial--"] .feature-with-large-image-title.h2 {
+	color: #fff;
+}
+.layout--background--gray .feature-with-large-image-content li a,
+.layout--background--gray .feature-with-large-image-content a,
+[class*="layout--background--partial--"] .feature-with-large-image-content li a,
+[class*="layout--background--partial--"] .feature-with-large-image-content a {
+	color: #fff;
+	text-decoration: underline;
+	text-decoration-color: var(--primary-accent-color);
+}
+.layout--background--gray .feature-with-large-image-content li a:hover,
+.layout--background--gray .feature-with-large-image-content a:hover,
+[class*="layout--background--partial--"] .feature-with-large-image-content li a:hover,
+[class*="layout--background--partial--"] .feature-with-large-image-content a:hover {
+	text-decoration: none;
+}
+.layout--background--gray .feature-with-large-image-content a.btn-outline-danger,
+[class*="layout--background--partial--"] .feature-with-large-image-content a.btn-outline-danger {
+	color: #c8102e;
+	text-decoration: none;
+}
+
 /* --------------------------------------  */
 /* ## SPACING STYLES
 /* --------------------------------------  */
@@ -526,11 +558,14 @@ background-color: var(--primary-accent-color);
   }
 }
 
-/* When local tasks (View/Edit/Delete tabs) sit directly above a partial
-   background section, don't let the section's upward bleed reach behind
-   them -- start the background at the section's own top instead. */
-#block-iastate-theme-local-tasks + [class*="layout--background--partial--"]:before,
-#block-iastate-theme-local-tasks--2 + [class*="layout--background--partial--"]:before {
+/* When local tasks (View/Edit/Delete tabs) are present on the page, don't
+   let a partial background section's upward bleed reach behind them --
+   start the background at the section's own top instead. Scoped via
+   :has() to the shared .isu-content-column ancestor (see page.html.twig)
+   rather than sibling adjacency, since Layout Builder's own wrapper
+   markup sits between local tasks and the section itself. */
+.isu-content-column:has(#block-iastate-theme-local-tasks) [class*="layout--background--partial--"]:before,
+.isu-content-column:has(#block-iastate-theme-local-tasks--2) [class*="layout--background--partial--"]:before {
   top: 0;
 }
 
