@@ -36,23 +36,25 @@
 <div{{ attributes.addClass(block_classes) }}>
   <div class="feature-with-large-image">
     {% block content %}
-      <div class="feature-with-large-image-img">
-        {{ content.field_flwi_image }}
+      {{ title_prefix }}
+      <div class="feature-with-large-image-inner">
+        <div class="feature-with-large-image-img">
+          {{ content.field_flwi_image }}
+        </div>
+        <div class="feature-with-large-image-content">
+          {% if block_title %}
+            <div class="feature-with-large-image-title h2"{{ title_attributes }}>
+              {{ block_title }}
+            </div>
+          {% endif %}
+          {% if content.field_flwi_text.0 is not empty %}
+            <div class="feature-with-large-image-text">
+              {{ content.field_flwi_text }}
+            </div>
+          {% endif %}
+        </div>
       </div>
-      <div class="feature-with-large-image-content">
-        {{ title_prefix }}
-        {% if block_title %}
-          <div class="feature-with-large-image-title h2"{{ title_attributes }}>
-            {{ block_title }}
-          </div>
-        {% endif %}
-        {{ title_suffix }}
-        {% if content.field_flwi_text.0 is not empty %}
-          <div class="feature-with-large-image-text">
-            {{ content.field_flwi_text }}
-          </div>
-        {% endif %}
-      </div>
+      {{ title_suffix }}
     {% endblock %}
   </div>
 </div>

@@ -206,7 +206,10 @@ margin: auto;
   width: auto;
   margin-left: 0;
   margin-right: 0;
+}
+.layout-builder-block .feature-with-large-image-inner {
   padding-left: 0;
+  max-width: none;
 }
 .layout-builder-block [tabindex="-1"] {
   pointer-events: none;
