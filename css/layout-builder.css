@@ -209,7 +209,7 @@ margin: auto;
 }
 .layout-builder-block .feature-with-large-image-inner {
   padding-left: 0;
-  max-width: none;
+  width: 100%;
 }
 .layout-builder-block [tabindex="-1"] {
   pointer-events: none;
@@ -524,6 +524,14 @@ background-color: var(--primary-accent-color);
     top: -3.75rem;
     max-height: 23.75rem;
   }
+}
+
+/* When local tasks (View/Edit/Delete tabs) sit directly above a partial
+   background section, don't let the section's upward bleed reach behind
+   them -- start the background at the section's own top instead. */
+#block-iastate-theme-local-tasks + [class*="layout--background--partial--"]:before,
+#block-iastate-theme-local-tasks--2 + [class*="layout--background--partial--"]:before {
+  top: 0;
 }
 
 [class*="layout--background--partial--"] > * {
