@@ -31,6 +31,7 @@
     'isu-block'
   ]
 %}
+{% set block_title = label ?: content['#block_content'].label() %}
 
 <div{{ attributes.addClass(block_classes) }}>
   <div class="feature-with-large-image">
@@ -40,22 +41,15 @@
       </div>
       <div class="feature-with-large-image-content">
         {{ title_prefix }}
-        <div class="feature-with-large-image-title h2">
-          {{ content.field_flwi_title }}
-        </div>
+        {% if block_title %}
+          <div class="feature-with-large-image-title h2"{{ title_attributes }}>
+            {{ block_title }}
+          </div>
+        {% endif %}
         {{ title_suffix }}
         {% if content.field_flwi_text.0 is not empty %}
           <div class="feature-with-large-image-text">
             {{ content.field_flwi_text }}
-          </div>
-        {% endif %}
-        {% if content.field_flwi_links.0 is defined %}
-          <div class="feature-with-large-image-buttons">
-            {% for link in content.field_flwi_links %}
-              {% if link['#url'] %}
-                <a id="{{ link['#title'] }}" class="btn btn-primary" href="{{ link['#url'] }}">{{ link['#title'] }}</a>
-              {% endif %}
-            {% endfor %}
           </div>
         {% endif %}
       </div>
