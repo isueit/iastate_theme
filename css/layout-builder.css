@@ -299,11 +299,10 @@ div.isueo-callout-stat {
 /* Feature with Large Image: Red Accent Background */
 .feature-with-large-image--red-accent {
 	background: var(--primary-color);
-	border-top: 0.5rem solid var(--primary-accent-color);
-	padding: 1rem;
+	padding: 1.5rem;
 }
-.feature-with-large-image--red-accent .feature-with-large-image-content {
-	background-color: #fff;
+.feature-with-large-image--red-accent .feature-with-large-image-title.h2 {
+	color: var(--primary-color);
 }
 
 /* --------------------------------------  */
@@ -499,7 +498,7 @@ background-color: var(--primary-accent-color);
 	content: "";
 	pointer-events: none;
 	position: absolute;
-	width: 150vw;
+	width: 100vw;
 	left: 50%;
 	transform: translateX(-50%);
 	top: -1.875rem;
