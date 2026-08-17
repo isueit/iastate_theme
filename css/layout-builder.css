@@ -199,6 +199,15 @@ margin: auto;
   cursor: move;
   overflow: auto;
 }
+/* Feature with Large Image breaks out to full viewport width on the live
+   page; inside the Layout Builder edit screen that bleed gets clipped by
+   .layout-builder-block's overflow, so contain it here instead. */
+.layout-builder-block .feature-with-large-image {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
 .layout-builder-block [tabindex="-1"] {
   pointer-events: none;
 }
