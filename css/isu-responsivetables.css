@@ -195,4 +195,32 @@ article table::-webkit-scrollbar-track {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+
+  /* --- Layout tables always stack, even with colspan/rowspan ---
+   * A layout table with a merged cell gets .isu-table-freeze from
+   * isu-responsivetables.js, which scrolls horizontally instead of
+   * stacking — correct for a wide data table, wrong for layout content. */
+  .layout-table.isu-table-freeze {
+    display: block;
+    width: 100%;
+    overflow-x: visible;
+  }
+  .layout-table.isu-table-freeze td,
+  .layout-table.isu-table-freeze th {
+    display: block;
+  }
+
+  /* --- Layout tables: no header/data borders or shading at this breakpoint --- */
+  .isu-responsive-table.layout-table tr {
+    border-bottom: none;
+  }
+  .isu-responsive-table.layout-table td,
+  .isu-responsive-table.layout-table th {
+    border-bottom: none;
+    border-right: none;
+  }
+  .isu-responsive-table.layout-table .isu-row-header,
+  .isu-responsive-table.layout-table .isu-both-row-header {
+    background: transparent;
+  }
 }

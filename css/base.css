@@ -719,6 +719,27 @@ body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth
 	min-width: 0;
 	border: .0625rem solid #f3f3f3;
 }
+
+/* Layout tables (CKEditor 5 "Table type: Layout") are structural only —
+ * strip the visual table chrome so they read as plain content, not a table. */
+.table.layout-table {
+	border: none !important;
+}
+.table.layout-table th[colspan]:not([colspan="1"]),
+.table.layout-table th[rowspan]:not([rowspan="1"]),
+.table.layout-table td[colspan]:not([colspan="1"]),
+.table.layout-table td[rowspan]:not([rowspan="1"]) {
+	border-right: none;
+	border-left: none;
+}
+.table.layout-table tbody tr:nth-child(2n) {
+	background-color: transparent;
+}
+.table.layout-table tbody td,
+.table.layout-table tbody th {
+	padding: .5rem;
+	border: none;
+}
 /* --------------------------------------  */
 /* ## IMAGES
 /* --------------------------------------  */
