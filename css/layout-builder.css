@@ -570,6 +570,7 @@ background-color: var(--primary-accent-color);
    page.html.twig) rather than sibling adjacency, since Layout Builder's
    own wrapper markup sits between these blocks and the section itself. */
 .isu-region_content:has(#block-iastate-theme-page-title) [class*="layout--background--partial--"]:before,
+.isu-region_content:has(#block-iastate-theme-page-title--2) [class*="layout--background--partial--"]:before,
 .isu-region_content:has(#block-iastate-theme-local-tasks) [class*="layout--background--partial--"]:before,
 .isu-region_content:has(#block-iastate-theme-local-tasks--2) [class*="layout--background--partial--"]:before {
   top: 0;
