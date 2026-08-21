@@ -101,6 +101,7 @@ blockquote {
 	background-color: var(--primary-color);
 	color: #fff;
 	position: relative;
+	z-index: 0;
 	padding: 3.75rem 2.25rem 5.625rem;
 }
 blockquote:before {
