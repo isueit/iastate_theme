@@ -1429,3 +1429,85 @@ ol.list-circles + p {
 		flex-wrap: wrap;
 	}
 }
+/* --------------------------------------  */
+/* ## CARD MODAL
+/* Reusable card + modal component driven by a view (card display + modal
+/* display). See templates/views/views-view-fields--REPLACE-VIEW-NAME--REPLACE-CARD-DISPLAY.html.twig
+/* and js/iastate_theme.js for the matching markup/behavior.
+/* --------------------------------------  */
+.isueo-card-modal__card {
+	cursor: pointer;
+	text-align: center;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.isueo-card-modal__card:hover,
+.isueo-card-modal__card:focus-visible {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.isueo-card-modal__card h3 {
+	margin: 0;
+	padding: 10px;
+	background: #fff;
+	color: #7c2529;
+}
+
+.isueo-card-modal__overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 9999;
+	align-items: center;
+	justify-content: center;
+}
+.isueo-card-modal__overlay--open {
+	display: flex;
+}
+
+.isueo-card-modal__dialog {
+	background: #fff;
+	border-radius: 12px;
+	max-width: 860px;
+	width: 95%;
+	max-height: 90vh;
+	overflow-y: auto;
+	position: relative;
+	padding: 32px;
+	box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.isueo-card-modal__close {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	background: none;
+	border: none;
+	font-size: 28px;
+	cursor: pointer;
+	color: #555;
+	line-height: 1;
+}
+.isueo-card-modal__close:hover {
+	color: #000;
+}
+
+.isueo-card-modal__body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.isueo-card-modal__info h2 {
+	margin: 0 0 8px;
+	color: #7c2529;
+}
+.isueo-card-modal__info h3 {
+	color: #7c2529;
+}
+.isueo-card-modal__info p {
+	margin: 0;
+	color: #444;
+	line-height: 1.6;
+}

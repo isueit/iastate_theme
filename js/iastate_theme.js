@@ -168,6 +168,42 @@
 		}
 	});
 
+	// Card modal (view-driven card + modal pairs).
+	// Delegated on document so this also covers rows added later by an
+	// infinite-scroll pager.
+	$(document).on('click', '[data-isueo-card-modal-trigger]', function() {
+		var modal = document.getElementById($(this).data('isueo-card-modal-target'));
+		if (!modal) return;
+		$(modal).addClass('isueo-card-modal__overlay--open');
+		$('body').css('overflow', 'hidden');
+	});
+
+	$(document).on('keydown', '[data-isueo-card-modal-trigger]', function(e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			$(this).trigger('click');
+		}
+	});
+
+	$(document).on('click', '[data-isueo-card-modal-close]', function() {
+		$(this).closest('.isueo-card-modal__overlay').removeClass('isueo-card-modal__overlay--open');
+		$('body').css('overflow', '');
+	});
+
+	$(document).on('click', '.isueo-card-modal__overlay', function(e) {
+		if (e.target === this) {
+			$(this).removeClass('isueo-card-modal__overlay--open');
+			$('body').css('overflow', '');
+		}
+	});
+
+	$(document).on('keydown', function(e) {
+		if (e.key === 'Escape') {
+			$('.isueo-card-modal__overlay--open').removeClass('isueo-card-modal__overlay--open');
+			$('body').css('overflow', '');
+		}
+	});
+
   });
 
 })(jQuery, Drupal);
