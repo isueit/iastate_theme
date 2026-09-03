@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * 3-column grid wrapper for the Resources view, "modal" display.
+ *
+ * The display already uses Format = "Unformatted list" + Row style = "Fields",
+ * so this template is picked up automatically. Clear the style's "Row class"
+ * (currently "col-md-6 mb-4") so it doesn't fight the CSS grid.
+ *
+ * Each row is a card + modal pair rendered by
+ * templates/views/views-view-fields--resources--modal.html.twig.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if title %}
+  <h3 class="isueo-card-modal__group-title">{{ title }}</h3>
+{% endif %}
+<div class="isueo-card-modal__grid">
+  {% for row in rows %}
+    <div{{ row.attributes.addClass('isueo-card-modal__grid-item') }}>
+      {{- row.content -}}
+    </div>
+  {% endfor %}
+</div>

@@ -169,38 +169,115 @@
 	});
 
 	// Card modal (view-driven card + modal pairs).
-	// Delegated on document so this also covers rows added later by an
-	// infinite-scroll pager.
+	// Each card has a trigger button carrying data-isueo-card-modal-target ->
+	// the id of its .isueo-card-modal__overlay. Handlers are delegated on
+	// document so AJAX-pager rows are covered too.
+	var isueoCardModalTrigger = null;
+	var isueoCardModalScrollY = 0;
+
+	function isueoCardModalLockScroll() {
+		if (document.body.classList.contains('isueo-card-modal-scroll-lock')) { return; }
+		isueoCardModalScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+		var sbw = window.innerWidth - document.documentElement.clientWidth;
+		if (sbw > 0) { document.body.style.paddingRight = sbw + 'px'; }
+		document.body.style.top = (-isueoCardModalScrollY) + 'px';
+		document.body.classList.add('isueo-card-modal-scroll-lock');
+	}
+
+	function isueoCardModalUnlockScroll() {
+		if (!document.body.classList.contains('isueo-card-modal-scroll-lock')) { return; }
+		document.body.classList.remove('isueo-card-modal-scroll-lock');
+		document.body.style.top = '';
+		document.body.style.paddingRight = '';
+		window.scrollTo(0, isueoCardModalScrollY);
+	}
+
+	function isueoCardModalFocusables(container) {
+		return Array.prototype.filter.call(
+			container.querySelectorAll(
+				'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+			),
+			function (el) {
+				return el.offsetWidth || el.offsetHeight || el.getClientRects().length;
+			}
+		);
+	}
+
+	function isueoCardModalOpen(modal, trigger) {
+		var current = document.querySelector('.isueo-card-modal__overlay--open');
+		if (current && current !== modal) { isueoCardModalClose(current); }
+
+		isueoCardModalTrigger = trigger || null;
+
+		// Portal to <body> so the rest of the page can be made inert.
+		if (modal.parentNode !== document.body) { document.body.appendChild(modal); }
+		Array.prototype.forEach.call(document.body.children, function (el) {
+			if (el !== modal && !el.hasAttribute('inert')) {
+				el.setAttribute('inert', '');
+				el.setAttribute('data-isueo-card-modal-inerted', '');
+			}
+		});
+
+		isueoCardModalLockScroll();
+		modal.classList.add('isueo-card-modal__overlay--open');
+
+		var dialog = modal.querySelector('.isueo-card-modal__dialog') || modal;
+		dialog.focus();
+	}
+
+	function isueoCardModalClose(modal) {
+		modal.classList.remove('isueo-card-modal__overlay--open');
+		isueoCardModalUnlockScroll();
+
+		Array.prototype.forEach.call(
+			document.querySelectorAll('[data-isueo-card-modal-inerted]'),
+			function (el) {
+				el.removeAttribute('inert');
+				el.removeAttribute('data-isueo-card-modal-inerted');
+			}
+		);
+
+		if (isueoCardModalTrigger && document.body.contains(isueoCardModalTrigger)) {
+			isueoCardModalTrigger.focus();
+		}
+		isueoCardModalTrigger = null;
+	}
+
 	$(document).on('click', '[data-isueo-card-modal-trigger]', function() {
 		var modal = document.getElementById($(this).data('isueo-card-modal-target'));
-		if (!modal) return;
-		$(modal).addClass('isueo-card-modal__overlay--open');
-		$('body').css('overflow', 'hidden');
-	});
-
-	$(document).on('keydown', '[data-isueo-card-modal-trigger]', function(e) {
-		if (e.key === 'Enter' || e.key === ' ') {
-			e.preventDefault();
-			$(this).trigger('click');
-		}
+		if (modal) { isueoCardModalOpen(modal, this); }
 	});
 
 	$(document).on('click', '[data-isueo-card-modal-close]', function() {
-		$(this).closest('.isueo-card-modal__overlay').removeClass('isueo-card-modal__overlay--open');
-		$('body').css('overflow', '');
+		var modal = $(this).closest('.isueo-card-modal__overlay')[0];
+		if (modal) { isueoCardModalClose(modal); }
 	});
 
 	$(document).on('click', '.isueo-card-modal__overlay', function(e) {
-		if (e.target === this) {
-			$(this).removeClass('isueo-card-modal__overlay--open');
-			$('body').css('overflow', '');
-		}
+		if (e.target === this) { isueoCardModalClose(this); }
 	});
 
 	$(document).on('keydown', function(e) {
-		if (e.key === 'Escape') {
-			$('.isueo-card-modal__overlay--open').removeClass('isueo-card-modal__overlay--open');
-			$('body').css('overflow', '');
+		if (e.key !== 'Escape') { return; }
+		var open = document.querySelector('.isueo-card-modal__overlay--open');
+		if (open) { isueoCardModalClose(open); }
+	});
+
+	// Keep Tab focus inside the open dialog.
+	$(document).on('keydown', '.isueo-card-modal__overlay--open', function(e) {
+		if (e.key !== 'Tab') { return; }
+		var focusable = isueoCardModalFocusables(this);
+		var dialog = this.querySelector('.isueo-card-modal__dialog') || this;
+		if (!focusable.length) { e.preventDefault(); dialog.focus(); return; }
+		var first = focusable[0];
+		var last = focusable[focusable.length - 1];
+		var active = document.activeElement;
+		if (e.shiftKey && (active === first || active === dialog)) {
+			e.preventDefault();
+			last.focus();
+		} else if (!e.shiftKey && active === last) {
+			e.preventDefault();
+			first.focus();
 		}
 	});
 

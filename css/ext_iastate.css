@@ -1431,83 +1431,319 @@ ol.list-circles + p {
 }
 /* --------------------------------------  */
 /* ## CARD MODAL
-/* Reusable card + modal component driven by a view (card display + modal
-/* display). See templates/views/views-view-fields--REPLACE-VIEW-NAME--REPLACE-CARD-DISPLAY.html.twig
+/* Reusable card + modal component driven by a view. Each result renders a
+/* clickable card that opens its own modal dialog. See
+/* templates/views/views-view-fields--resources--modal.html.twig,
+/* templates/views/views-view-unformatted--resources--modal.html.twig
 /* and js/iastate_theme.js for the matching markup/behavior.
+/*
+/* Colors reuse the theme tokens set in iastate_theme.theme /
+/* ext_iastate.css :root - var(--secondary-color) (maroon), var(--dk-gray),
+/* var(--md-gray). The pale rose chip and taupe eyebrow have no token, so
+/* they are literals here.
 /* --------------------------------------  */
-.isueo-card-modal__card {
-	cursor: pointer;
-	text-align: center;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-	transition: transform 0.2s, box-shadow 0.2s;
+/* Grid ------------------------------------------------------------------ */
+.isueo-card-modal__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
 }
-.isueo-card-modal__card:hover,
-.isueo-card-modal__card:focus-visible {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+.isueo-card-modal__grid-item {
+	display: flex;
+	/* Neutralise Bootstrap column classes if a "Row class" is still set. */
+	min-width: 0;
+	max-width: none;
+	flex: 1 1 auto;
+	margin-bottom: 0;
+	padding: 0;
 }
-.isueo-card-modal__card h3 {
-	margin: 0;
-	padding: 10px;
-	background: #fff;
-	color: #7c2529;
+@media screen and (max-width: 992px) {
+	.isueo-card-modal__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 576px) {
+	.isueo-card-modal__grid {
+		grid-template-columns: 1fr;
+	}
 }
 
+/* Card (front) -------------------------------------------------------- */
+.isueo-card-modal__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 2rem 1.5rem 3.5rem 1.5rem;
+	cursor: pointer;
+	text-align: left;
+	background: #fff;
+	border: 1px solid var(--md-gray);
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	transition: transform 0.2s, box-shadow 0.2s;
+	margin-bottom: 0 !important;
+	overflow-wrap: break-word;
+}
+.isueo-card-modal__card:hover,
+.isueo-card-modal__card:focus-within {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+.isueo-card-modal__card:active {
+	background: #fdf7f7;
+}
+/* Make the title read as interactive (matters on touch, where there's no hover). */
+.isueo-card-modal__card:hover .isueo-card-modal__trigger,
+.isueo-card-modal__card:focus-within .isueo-card-modal__trigger {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+/* "Click me" arrow, bottom-right of the card (matches .ext-news-feed footer a:after). */
+.isueo-card-modal__card::after {
+	content: '\f061';
+	font-family: 'FontAwesome';
+	position: absolute;
+	right: 1.5rem;
+	bottom: 1.25rem;
+	font-size: 1.25rem;
+	color: var(--secondary-color);
+	transition: transform 0.3s ease;
+	pointer-events: none;
+}
+.isueo-card-modal__card:hover::after,
+.isueo-card-modal__card:focus-within::after {
+	transform: translateX(4px);
+}
+/* Honour "Reduce motion" - keep the shadow cue, drop the lift and arrow slide. */
+@media (prefers-reduced-motion: reduce) {
+	.isueo-card-modal__card,
+	.isueo-card-modal__card::after {
+		transition: none;
+	}
+	.isueo-card-modal__card:hover,
+	.isueo-card-modal__card:focus-within,
+	.isueo-card-modal__card:hover::after,
+	.isueo-card-modal__card:focus-within::after {
+		transform: none;
+	}
+}
+
+/* The whole card is clickable via this button's stretched ::before. */
+.isueo-card-modal__trigger {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	text-align: left;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+.isueo-card-modal__trigger::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+/* Only the :focus-visible ::before ring is used - suppress the theme's
+   button:focus gold outline that would otherwise hug just the title text. */
+.isueo-card-modal__trigger:focus {
+	outline: none;
+}
+.isueo-card-modal__trigger:focus-visible::before {
+	outline: 3px solid var(--secondary-color);
+	outline-offset: 3px;
+	border-radius: 0.5rem;
+}
+@media screen and (max-width: 576px) {
+	.isueo-card-modal__card {
+		padding: 1.75rem 1.75rem 3.5rem;
+	}
+}
+
+/* Eyebrow (field_resource_term) - identical on the card and in the modal. */
+.isueo-card-modal__eyebrow {
+	margin: 0 0 0.75rem;
+	font-family: var(--sans-font);
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: #333;
+}
+
+.isueo-card-modal__heading {
+	margin: 0.5rem 0 1.75rem 0;
+	padding: 0 0 1.75rem 0;
+	font-family: var(--serif-font);
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--secondary-color);
+	background: none;
+	border-bottom: 1px solid var(--md-gray);
+	overflow-wrap: break-word;
+}
+
+/* Optional grouping heading (only if the display ever uses a Views grouping). */
+.isueo-card-modal__group-title {
+	margin: 0 0 1rem;
+	font-family: var(--serif-font);
+	color: var(--secondary-color);
+}
+
+/* Chips (date / location badges) ------------------------------------- */
+.isueo-card-modal__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0 0 1.5rem;
+}
+.isueo-card-modal__chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.5rem 0.6rem;
+	font-size: 0.95rem;
+	line-height: 1;
+	color: var(--secondary-color);
+	background: #f7e9ea;
+	border-radius: 10px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+}
+.isueo-card-modal__chip i,
+.isueo-card-modal__chip svg,
+.isueo-card-modal__chip .svg-inline--fa {
+	flex: none;
+	width: auto;          /* keep each glyph's own aspect ratio */
+	height: 0.9em;
+	font-size: 0.9em;     /* sizes the webfont <i> fallback */
+	vertical-align: -0.1em;
+}
+.isueo-card-modal__excerpt {
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.5;
+	color: var(--dk-gray);
+}
+
+/* Modal (back) ------------------------------------------------------- */
+/* Scroll lock: <body> is fixed while a dialog is open (robust on iOS too);
+   the JS restores scrollTop on close. */
+body.isueo-card-modal-scroll-lock {
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+}
 .isueo-card-modal__overlay {
 	display: none;
 	position: fixed;
 	inset: 0;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0, 0, 0, 0.55);
 	z-index: 9999;
 	align-items: center;
 	justify-content: center;
+	padding: 24px;
 }
 .isueo-card-modal__overlay--open {
 	display: flex;
 }
 
 .isueo-card-modal__dialog {
-	background: #fff;
-	border-radius: 12px;
-	max-width: 860px;
-	width: 95%;
-	max-height: 90vh;
-	overflow-y: auto;
 	position: relative;
-	padding: 32px;
-	box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+	width: 100%;
+	max-width: min(92vw, 720px);
+	max-height: 90vh;
+	max-height: calc(100dvh - 3rem);
+	overflow-y: auto;
+	overflow-wrap: break-word;
+	padding: 2rem 1.5rem 1.5rem 1.5rem;
+	background: #fff;
+	border-radius: 0.5rem;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
+/* Receives focus programmatically when the dialog opens - no ring needed. */
+.isueo-card-modal__dialog:focus {
+	outline: none;
+}
+@media screen and (max-width: 576px) {
+	.isueo-card-modal__overlay {
+		padding: 12px;
+	}
+	.isueo-card-modal__dialog {
+		padding: 1.25rem;
+	}
+}
+
 .isueo-card-modal__close {
 	position: absolute;
-	top: 12px;
-	right: 16px;
-	background: none;
-	border: none;
-	font-size: 28px;
-	cursor: pointer;
-	color: #555;
+	top: 22px;
+	right: 22px;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	font-size: 20px;
 	line-height: 1;
+	color: #333;
+	background: none;
+	border: 1px solid #767676;
+	border-radius: 50%;
+	cursor: pointer;
 }
 .isueo-card-modal__close:hover {
 	color: #000;
+	border-color: #333;
+}
+.isueo-card-modal__close:focus-visible {
+	outline: 2px solid var(--secondary-color);
+	outline-offset: 2px;
+	color: #000;
+	border-color: #333;
 }
 
 .isueo-card-modal__body {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
 }
-.isueo-card-modal__info h2 {
-	margin: 0 0 8px;
-	color: #7c2529;
+/* Keep the eyebrow / title clear of the absolutely-positioned close button. */
+.isueo-card-modal__body .isueo-card-modal__eyebrow,
+.isueo-card-modal__title {
+	padding-right: 2.5rem;
 }
-.isueo-card-modal__info h3 {
-	color: #7c2529;
-}
-.isueo-card-modal__info p {
+.isueo-card-modal__title {
 	margin: 0;
-	color: #444;
-	line-height: 1.6;
+	font-family: var(--serif-font);
+	font-size: 1.7rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--secondary-color);
+	overflow-wrap: break-word;
+}
+.isueo-card-modal__badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0 0 1.25rem;
+}
+.isueo-card-modal__description {
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--dk-gray);
+	overflow-wrap: break-word;
+}
+.isueo-card-modal__description p:last-child {
+	margin-bottom: 0;
+}
+
+.isueo-card-modal__cta {
+	margin-top: 1.75rem;
+}
+.isueo-card-modal__cta .btn:focus-visible {
+	outline: 2px solid var(--secondary-color);
+	outline-offset: 2px;
 }

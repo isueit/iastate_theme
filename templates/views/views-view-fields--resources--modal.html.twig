@@ -1,0 +1,146 @@
+{#
+/**
+ * @file
+ * Card + modal row for the Resources view, "modal" display.
+ *
+ * Replaces the old "Global: Custom text" (nothing) rewrite. Each result becomes
+ * a clickable card that opens its own modal dialog.
+ *
+ * Pairs with:
+ * - templates/views/views-view-unformatted--resources--modal.html.twig  (3-col grid)
+ * - js/iastate_theme.js  (## Card modal - open/close behaviour)
+ * - css/ext_iastate.css  (## CARD MODAL)
+ *
+ * Fields used (machine names are in the `f` map below - edit there if yours
+ * differ). IMPORTANT: every field this template reads must have "Exclude from
+ * display" UNCHECKED - excluded fields are not passed to this template. This
+ * template supplies all the markup, so remove any "Override the output of this
+ * field with custom text" rewrites on these fields:
+ * - nid                     Content: ID          unique id for the modal
+ * - title                   Content: Title
+ * - field_resource_term     eyebrow / program label
+ * - field_location          location chip (e.g. "Zoom Meeting"); uses a fixed
+ *                           fa-location-dot icon
+ * - field_date_time         date + time, shown in the modal (format e.g.
+ *                           "M d, Y @ g:i a")
+ * - field_date_time_1       second instance of the same field, date only
+ *                           (format e.g. "M d, Y") - shown on the card. Falls
+ *                           back to field_date_time if it's not on the display.
+ * - field_description       description. Use the "Default" (untrimmed) formatter
+ *                           so the modal shows the full text; the card excerpt
+ *                           is trimmed here to ~150 chars.
+ * - field_link_to_resource  "View Resource" button URL. Link formatter with
+ *                           "Display URL as plain text" checked.
+ *
+ * @see template_preprocess_views_view_fields()
+ */
+#}
+{% set f = {
+  id: 'nid',
+  title: 'title',
+  eyebrow: 'field_resource_term',
+  location: 'field_location',
+  date: 'field_date_time_1',
+  datetime: 'field_date_time',
+  description: 'field_description',
+  link: 'field_link_to_resource',
+} %}
+
+{% set id = fields[f.id].content|render|striptags|trim %}
+{% set modal_id = 'isueo-card-modal-' ~ id %}
+
+{% set node_title = fields[f.title].content|render|striptags|trim %}
+{% set eyebrow = fields[f.eyebrow] is defined ? fields[f.eyebrow].content|render|striptags|trim : '' %}
+{% set location = fields[f.location] is defined ? fields[f.location].content|render|striptags|trim : '' %}
+{% set datetime = fields[f.datetime] is defined ? fields[f.datetime].content|render|striptags|trim : '' %}
+{% set date = fields[f.date] is defined ? fields[f.date].content|render|striptags|trim : datetime %}
+{% set description = fields[f.description] is defined ? fields[f.description].content : null %}
+{% set summary = description|render|striptags|replace({'&nbsp;': ' ', ' ': ' '})|trim %}
+{% set link_url = fields[f.link] is defined ? fields[f.link].content|render|striptags|trim : '' %}
+
+<article class="isueo-card-modal__card">
+  {% if eyebrow is not empty %}
+    <p class="isueo-card-modal__eyebrow">{{ eyebrow }}</p>
+  {% endif %}
+  {#
+    The trigger is a real <button> so it gets native keyboard/AT behaviour and
+    an accessible name of just the title (not the whole card). CSS stretches its
+    ::before over the card to keep the whole card clickable; the card's own
+    ::after draws the bottom-right "click me" arrow.
+  #}
+  <h3 class="isueo-card-modal__heading">
+    <button type="button"
+            class="isueo-card-modal__trigger"
+            data-isueo-card-modal-trigger
+            data-isueo-card-modal-target="{{ modal_id }}"
+            aria-haspopup="dialog"
+            aria-controls="{{ modal_id }}">{{ node_title }}</button>
+  </h3>
+  {% if location is not empty or date is not empty %}
+    <div class="isueo-card-modal__chips">
+      {% if location is not empty %}
+        <span class="isueo-card-modal__chip">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <span class="visually-hidden">Location: </span>{{ location }}
+        </span>
+      {% endif %}
+      {% if date is not empty %}
+        <span class="isueo-card-modal__chip">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          <span class="visually-hidden">Date: </span>{{ date }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if summary is not empty %}
+    <p class="isueo-card-modal__excerpt">
+      {{- summary|slice(0, 150) -}}
+      {%- if summary|length > 150 %}&hellip;{% endif -%}
+    </p>
+  {% endif %}
+</article>
+
+<div id="{{ modal_id }}"
+     class="isueo-card-modal__overlay"
+     data-isueo-card-modal>
+  <div class="isueo-card-modal__dialog"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="{{ modal_id }}-title"
+       tabindex="-1">
+    <button type="button"
+            class="isueo-card-modal__close"
+            data-isueo-card-modal-close
+            aria-label="Close dialog"><span aria-hidden="true">&times;</span></button>
+    <div class="isueo-card-modal__body">
+      {% if eyebrow is not empty %}
+        <p class="isueo-card-modal__eyebrow">{{ eyebrow }}</p>
+      {% endif %}
+      <h2 class="isueo-card-modal__title" id="{{ modal_id }}-title">{{ node_title }}</h2>
+      {% if location is not empty or datetime is not empty %}
+        <div class="isueo-card-modal__badges">
+          {% if location is not empty %}
+            <span class="isueo-card-modal__chip">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span class="visually-hidden">Location: </span>{{ location }}
+            </span>
+          {% endif %}
+          {% if datetime is not empty %}
+            <span class="isueo-card-modal__chip">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+              <span class="visually-hidden">Date: </span>{{ datetime }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if summary is not empty %}
+        <div class="isueo-card-modal__description">{{ description }}</div>
+      {% endif %}
+      {% if link_url is not empty %}
+        <div class="isueo-card-modal__cta">
+          <a href="{{ link_url }}" class="btn btn-secondary">View Resource</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
