@@ -111,7 +111,8 @@ article table::-webkit-scrollbar-track {
     flex: 0 1 45%;
     padding: 0.5rem 0.75rem;
     font-weight: 500;
-    background: #eeeeee;
+    background: var(--primary-color);
+    color: white;
   }
   .isu-table-row tr {
     border-bottom: 3px solid #bbbbbb;
@@ -186,7 +187,8 @@ article table::-webkit-scrollbar-track {
     flex: 0 1 45%;
     padding: 0.5rem 0.75rem;
     font-weight: 500;
-    background: #eeeeee;
+    background: var(--primary-color);
+    color: white;
   }
 
   /* --- Colspan/rowspan tables (freeze): horizontal scroll --- */
@@ -222,5 +224,6 @@ article table::-webkit-scrollbar-track {
   .isu-responsive-table.layout-table .isu-row-header,
   .isu-responsive-table.layout-table .isu-both-row-header {
     background: transparent;
+    color: inherit;
   }
 }
