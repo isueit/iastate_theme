@@ -560,19 +560,18 @@ background-color: var(--primary-accent-color);
   }
 }
 
-/* When the page title or local tasks (View/Edit/Delete tabs) are present
-   on the page, don't let a partial background section's upward bleed
-   reach behind them -- start the background at the section's own top
-   instead. The page title block renders for both logged-in and
-   logged-out users, so it's what keeps the bleed off the title on a
-   normal page view; local tasks only ever show for logged-in editors.
-   Scoped via :has() to the shared .isu-content-column ancestor (see
-   page.html.twig) rather than sibling adjacency, since Layout Builder's
-   own wrapper markup sits between these blocks and the section itself. */
-.isu-region_content:has(#block-iastate-theme-page-title) [class*="layout--background--partial--"]:before,
-.isu-region_content:has(#block-iastate-theme-page-title--2) [class*="layout--background--partial--"]:before,
-.isu-region_content:has(#block-iastate-theme-local-tasks) [class*="layout--background--partial--"]:before,
-.isu-region_content:has(#block-iastate-theme-local-tasks--2) [class*="layout--background--partial--"]:before {
+/* Don't let a partial background section's upward bleed reach behind
+   whatever renders above it in the "Content" region -- start the
+   background at the section's own top instead whenever anything (page
+   title, local tasks/View-Edit-Delete tabs, a menu block, or any other
+   block a site places there, now or in the future) precedes the main
+   content block. Each region block (see region.html.twig, which stamps
+   .isu-region_content on every "content" region) renders as its own
+   direct-child wrapper div, with the node/Layout Builder output as the
+   last one -- so ":not(:first-child)" alone detects "something is above
+   this" regardless of which specific block it is, instead of naming
+   block IDs one by one. */
+.isu-region_content > *:not(:first-child) [class*="layout--background--partial--"]:before {
   top: 0;
 }
 [class*="layout--background--partial--"] > * {
