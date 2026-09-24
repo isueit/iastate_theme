@@ -1622,6 +1622,17 @@ ol.list-circles + p {
 	font-size: 0.9em;     /* sizes the webfont <i> fallback */
 	vertical-align: -0.1em;
 }
+/* Audience / standard chips (field_intended_audience, field_educational_standard)
+   get their own colors so they read as a different category of info than the
+   date/location chips above. */
+.isueo-card-modal__chip--audience {
+	color: #1b4965;
+	background: #e3eef7;
+}
+.isueo-card-modal__chip--standard {
+	color: #6b4c00;
+	background: #fbedc9;
+}
 .isueo-card-modal__excerpt {
 	margin: 0;
 	font-size: 1.05rem;

@@ -6,6 +6,11 @@
  * Replaces the old "Global: Custom text" (nothing) rewrite. Each result becomes
  * a clickable card that opens its own modal dialog.
  *
+ * Shared across two sites whose "Resources" views expose different field sets
+ * under the same view/display name. Every field lookup below is guarded with
+ * `fields[...] is defined`, so a site can simply omit a field and the related
+ * markup won't render - no per-site template needed.
+ *
  * Pairs with:
  * - templates/views/views-view-unformatted--resources--modal.html.twig  (3-col grid)
  * - js/iastate_theme.js  (## Card modal - open/close behaviour)
@@ -16,21 +21,37 @@
  * display" UNCHECKED - excluded fields are not passed to this template. This
  * template supplies all the markup, so remove any "Override the output of this
  * field with custom text" rewrites on these fields:
- * - nid                     Content: ID          unique id for the modal
- * - title                   Content: Title
- * - field_resource_term     eyebrow / program label
- * - field_location          location chip (e.g. "Zoom Meeting"); uses a fixed
- *                           fa-location-dot icon
- * - field_date_time         date + time, shown in the modal (format e.g.
- *                           "M d, Y @ g:i a")
- * - field_date_time_1       second instance of the same field, date only
- *                           (format e.g. "M d, Y") - shown on the card. Falls
- *                           back to field_date_time if it's not on the display.
- * - field_description       description. Use the "Default" (untrimmed) formatter
- *                           so the modal shows the full text; the card excerpt
- *                           is trimmed here to ~150 chars.
- * - field_link_to_resource  "View Resource" button URL. Link formatter with
- *                           "Display URL as plain text" checked.
+ * - nid                       Content: ID            unique id for the modal
+ * - title                     Content: Title
+ * - field_resource_term       eyebrow / program label (site A)
+ * - field_resource_type       eyebrow fallback, taxonomy reference (site B);
+ *                             used only when field_resource_term isn't present
+ * - field_location            location chip (e.g. "Zoom Meeting"); uses a
+ *                             fixed fa-location-dot icon (site A only)
+ * - field_date_time           date + time, shown in the modal (format e.g.
+ *                             "M d, Y @ g:i a") (site A only)
+ * - field_date_time_1         second instance of the same field, date only
+ *                             (format e.g. "M d, Y") - shown on the card.
+ *                             Falls back to field_date_time (site A only)
+ * - field_description         description (site A). Use the "Default"
+ *                             (untrimmed) formatter so the modal shows the
+ *                             full text; the card excerpt is trimmed here to
+ *                             ~150 chars.
+ * - body                      description fallback (site B); used only when
+ *                             field_description isn't present. Same formatter
+ *                             guidance as above.
+ * - field_link_to_resource    "View Resource" button URL. Link formatter with
+ *                             "Display URL as plain text" checked.
+ * - field_intended_audience   audience chip, shown on the card and in the
+ *                             modal, styled distinctly from date/location
+ *                             (site B only)
+ * - field_educational_standard standard chip, shown on the card and in the
+ *                             modal, styled distinctly from date/location
+ *                             (site B only)
+ *
+ * field_status (Boolean, site B) and field_recommended_grade (site B) are
+ * intentionally never referenced here, so they don't need to be added to
+ * this display - leave them off, or exclude them.
  *
  * @see template_preprocess_views_view_fields()
  */
@@ -39,24 +60,32 @@
   id: 'nid',
   title: 'title',
   eyebrow: 'field_resource_term',
+  eyebrow_alt: 'field_resource_type',
   location: 'field_location',
   date: 'field_date_time_1',
   datetime: 'field_date_time',
   description: 'field_description',
+  description_alt: 'body',
   link: 'field_link_to_resource',
+  audience: 'field_intended_audience',
+  standard: 'field_educational_standard',
 } %}
 
 {% set id = fields[f.id].content|render|striptags|trim %}
 {% set modal_id = 'isueo-card-modal-' ~ id %}
 
 {% set node_title = fields[f.title].content|render|striptags|trim %}
-{% set eyebrow = fields[f.eyebrow] is defined ? fields[f.eyebrow].content|render|striptags|trim : '' %}
+{% set eyebrow_field = fields[f.eyebrow] is defined ? f.eyebrow : (fields[f.eyebrow_alt] is defined ? f.eyebrow_alt : null) %}
+{% set eyebrow = eyebrow_field ? fields[eyebrow_field].content|render|striptags|trim : '' %}
 {% set location = fields[f.location] is defined ? fields[f.location].content|render|striptags|trim : '' %}
 {% set datetime = fields[f.datetime] is defined ? fields[f.datetime].content|render|striptags|trim : '' %}
 {% set date = fields[f.date] is defined ? fields[f.date].content|render|striptags|trim : datetime %}
-{% set description = fields[f.description] is defined ? fields[f.description].content : null %}
-{% set summary = description|render|striptags|replace({'&nbsp;': ' ', ' ': ' '})|trim %}
+{% set description_field = fields[f.description] is defined ? f.description : (fields[f.description_alt] is defined ? f.description_alt : null) %}
+{% set description = description_field ? fields[description_field].content : null %}
+{% set summary = description ? description|render|striptags|replace({'&nbsp;': ' ', ' ': ' '})|trim : '' %}
 {% set link_url = fields[f.link] is defined ? fields[f.link].content|render|striptags|trim : '' %}
+{% set audience = fields[f.audience] is defined ? fields[f.audience].content|render|striptags|trim : '' %}
+{% set standard = fields[f.standard] is defined ? fields[f.standard].content|render|striptags|trim : '' %}
 
 <article class="isueo-card-modal__card">
   {% if eyebrow is not empty %}
@@ -76,7 +105,7 @@
             aria-haspopup="dialog"
             aria-controls="{{ modal_id }}">{{ node_title }}</button>
   </h3>
-  {% if location is not empty or date is not empty %}
+  {% if location is not empty or date is not empty or audience is not empty or standard is not empty %}
     <div class="isueo-card-modal__chips">
       {% if location is not empty %}
         <span class="isueo-card-modal__chip">
@@ -88,6 +117,18 @@
         <span class="isueo-card-modal__chip">
           <i class="fa-regular fa-calendar" aria-hidden="true"></i>
           <span class="visually-hidden">Date: </span>{{ date }}
+        </span>
+      {% endif %}
+      {% if audience is not empty %}
+        <span class="isueo-card-modal__chip isueo-card-modal__chip--audience">
+          <i class="fa-solid fa-users" aria-hidden="true"></i>
+          <span class="visually-hidden">Intended Audience: </span>{{ audience }}
+        </span>
+      {% endif %}
+      {% if standard is not empty %}
+        <span class="isueo-card-modal__chip isueo-card-modal__chip--standard">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          <span class="visually-hidden">Educational Standard: </span>{{ standard }}
         </span>
       {% endif %}
     </div>
@@ -117,7 +158,7 @@
         <p class="isueo-card-modal__eyebrow">{{ eyebrow }}</p>
       {% endif %}
       <h2 class="isueo-card-modal__title" id="{{ modal_id }}-title">{{ node_title }}</h2>
-      {% if location is not empty or datetime is not empty %}
+      {% if location is not empty or datetime is not empty or audience is not empty or standard is not empty %}
         <div class="isueo-card-modal__badges">
           {% if location is not empty %}
             <span class="isueo-card-modal__chip">
@@ -129,6 +170,18 @@
             <span class="isueo-card-modal__chip">
               <i class="fa-regular fa-calendar" aria-hidden="true"></i>
               <span class="visually-hidden">Date: </span>{{ datetime }}
+            </span>
+          {% endif %}
+          {% if audience is not empty %}
+            <span class="isueo-card-modal__chip isueo-card-modal__chip--audience">
+              <i class="fa-solid fa-users" aria-hidden="true"></i>
+              <span class="visually-hidden">Intended Audience: </span>{{ audience }}
+            </span>
+          {% endif %}
+          {% if standard is not empty %}
+            <span class="isueo-card-modal__chip isueo-card-modal__chip--standard">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <span class="visually-hidden">Educational Standard: </span>{{ standard }}
             </span>
           {% endif %}
         </div>
