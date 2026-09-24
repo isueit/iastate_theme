@@ -40,8 +40,9 @@
  * - body                      description fallback (site B); used only when
  *                             field_description isn't present. Same formatter
  *                             guidance as above.
- * - field_link_to_resource    "View Resource" button URL. Link formatter with
- *                             "Display URL as plain text" checked.
+ * - field_link_to_resource    "View Resource" button URL (site A only). Link
+ *                             formatter with "Display URL as plain text"
+ *                             checked. Not used on site B - see below.
  * - field_intended_audience   audience chip, shown on the card and in the
  *                             modal, styled distinctly from date/location
  *                             (site B only)
@@ -53,9 +54,17 @@
  * intentionally never referenced here, so they don't need to be added to
  * this display - leave them off, or exclude them.
  *
+ * Modal CTA button: site A links out to each node's field_link_to_resource
+ * ("View Resource"). Site B instead always points to the shared supply
+ * checkout form ("Checkout Resource") - see `site_b_cta_url` below - because
+ * checking out a physical resource goes through one central form, not a
+ * per-node URL. Site is detected by the presence of any site-B-only field
+ * (see `is_site_b` below); update that check if the field set changes.
+ *
  * @see template_preprocess_views_view_fields()
  */
 #}
+{% set site_b_cta_url = 'https://www.extension.iastate.edu/linn/form/supply-checkout-request' %}
 {% set f = {
   id: 'nid',
   title: 'title',
@@ -83,9 +92,11 @@
 {% set description_field = fields[f.description] is defined ? f.description : (fields[f.description_alt] is defined ? f.description_alt : null) %}
 {% set description = description_field ? fields[description_field].content : null %}
 {% set summary = description ? description|render|striptags|replace({'&nbsp;': ' ', ' ': ' '})|trim : '' %}
-{% set link_url = fields[f.link] is defined ? fields[f.link].content|render|striptags|trim : '' %}
 {% set audience = fields[f.audience] is defined ? fields[f.audience].content|render|striptags|trim : '' %}
 {% set standard = fields[f.standard] is defined ? fields[f.standard].content|render|striptags|trim : '' %}
+{% set is_site_b = fields[f.eyebrow_alt] is defined or fields[f.description_alt] is defined or fields[f.audience] is defined or fields[f.standard] is defined %}
+{% set cta_url = is_site_b ? site_b_cta_url : (fields[f.link] is defined ? fields[f.link].content|render|striptags|trim : '') %}
+{% set cta_label = is_site_b ? 'Checkout Resource' : 'View Resource' %}
 
 <article class="isueo-card-modal__card">
   {% if eyebrow is not empty %}
@@ -183,9 +194,9 @@
       {% if summary is not empty %}
         <div class="isueo-card-modal__description">{{ description }}</div>
       {% endif %}
-      {% if link_url is not empty %}
+      {% if cta_url is not empty %}
         <div class="isueo-card-modal__cta">
-          <a href="{{ link_url }}" class="btn btn-secondary">View Resource</a>
+          <a href="{{ cta_url }}" class="btn btn-secondary">{{ cta_label }}</a>
         </div>
       {% endif %}
     </div>
