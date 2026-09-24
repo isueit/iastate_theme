@@ -45,8 +45,8 @@
  * - field_intended_audience   audience chip, shown on the card and in the
  *                             modal, styled distinctly from date/location
  *                             (site B only)
- * - field_educational_standard standard chip, shown on the card and in the
- *                             modal, styled distinctly from date/location
+ * - field_educational_standard standard chip, shown only in the modal (not
+ *                             the card), styled distinctly from date/location
  *                             (site B only)
  *
  * field_status (Boolean, site B) and field_recommended_grade (site B) are
@@ -105,7 +105,7 @@
             aria-haspopup="dialog"
             aria-controls="{{ modal_id }}">{{ node_title }}</button>
   </h3>
-  {% if location is not empty or date is not empty or audience is not empty or standard is not empty %}
+  {% if location is not empty or date is not empty or audience is not empty %}
     <div class="isueo-card-modal__chips">
       {% if location is not empty %}
         <span class="isueo-card-modal__chip">
@@ -123,12 +123,6 @@
         <span class="isueo-card-modal__chip isueo-card-modal__chip--audience">
           <i class="fa-solid fa-users" aria-hidden="true"></i>
           <span class="visually-hidden">Intended Audience: </span>{{ audience }}
-        </span>
-      {% endif %}
-      {% if standard is not empty %}
-        <span class="isueo-card-modal__chip isueo-card-modal__chip--standard">
-          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-          <span class="visually-hidden">Educational Standard: </span>{{ standard }}
         </span>
       {% endif %}
     </div>
