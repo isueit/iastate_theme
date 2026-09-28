@@ -1431,8 +1431,8 @@ a.isu-dropdown-submenu {
 }
 div#block-iastate-theme-page-title--2, div#block-iastate-theme-page-title {
   padding-left: 0%;
-  padding-right: 6%;
-  max-width: 1200px;
+  padding-right: 0;
+  max-width: 1140px;
   margin: auto;
 }
 div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
@@ -1443,6 +1443,11 @@ div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
   padding-top: 10px;
   max-width: 1140px;
   margin: auto;
+}
+.isueo-taxonomy-term-content #block-iastate-theme-content--2 {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --------------------------------------  */
@@ -1500,7 +1505,7 @@ div#block-iastate-theme-content--2 p {
 .isu-user ~ div > .isu-submitted-by_name {
 	font-size: 0.85rem;
 }
-span.authored-on {
+span.authored-on, .authored-on {
 	font-style: oblique;
 	font-size: .9em;
 	color: var(--dk-gray);
@@ -1611,9 +1616,6 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 
 .isu-sidebar .isu-block {
   margin-bottom: 1rem;
-}
-.isu-sidebar {
-  margin-top: 20%;
 }
 .isu-block-title {
   margin-bottom: 0.75rem;
