@@ -8,12 +8,24 @@
  * @file
  * Supplemental CSS for the ISU Theme's social icons
  */
-
- .isu-social-menu a:hover {
-  color: var(--primary-accent-color);
+.site-footer__social li a:before {
+  width: 32px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  vertical-align: -.125em;
+  margin-right: 0;
+  padding-top: 0;
 }
-
-.isu-social-menu  a:before {
+.isu-social-menu a:before {
   content: '\f0c1';
   border-radius: 0;
   color: #fff;
@@ -22,7 +34,7 @@
   padding-top: 8px;
   display: inline-block;
   font-family: FontAwesome;
-  font-size: 1.8em;
+  font-size: 1.6rem;
   font-weight: normal;
   text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
@@ -33,7 +45,9 @@
   vertical-align: middle;
   list-style-type: none;
 }
-
+.site-footer__social li a:hover {
+  background-color: var(--secondary-color);
+}
 .isu-social-menu a:hover:before {
   color: var(--primary-accent-color);
   text-decoration: none;
@@ -41,12 +55,11 @@
 .isu-social-menu-red a:hover {
   color: var(--primary-color);
 }
-
 .isu-social-menu-red li{
   list-style-type: none;
   display: inline-block;
 }
-.isu-social-menu-red  a:before {
+.isu-social-menu-red a:before {
   content: '\f0c1';
   border-radius: 0;
   color: var(--primary-color);
@@ -66,7 +79,7 @@
 }
 
 .isu-social-menu a[href*='facebook.com']:before {
-  content: "\f082";
+  content: "\f09a";
 }
 
 .isu-social-menu-red a[href*='facebook.com']:before {
@@ -74,7 +87,7 @@ color: #fff;
 }
 
 .isu-social-menu a[href*='twitter.com']:before {
-  content: "\e61a";
+  content: "\e61b";
 }
 
 .isu-social-menu-red a[href*='twitter.com']:before {
@@ -82,7 +95,7 @@ color: #fff;
 }
 
 .isu-social-menu a[href*='x.com']:before {
-  content: "\e61a";
+  content: "\e61b";
 }
 
 .isu-social-menu-red a[href*='x.com']:before {
@@ -98,7 +111,7 @@ color: #fff;
 }
 
 .isu-social-menu a[href*='youtube.com']:before {
-  content: "\f166";
+  content: "\f167";
 }
 
 .isu-social-menu-red a[href*='youtube.com']:before {
@@ -130,7 +143,7 @@ color: #fff;
 }
 
 .isu-social-menu a[href*='linkedin.com']:before {
-  content: "\f08c";
+  content: "\f0e1";
 }
 
 .isu-social-menu-red a[href*='linkedin.com']:before {

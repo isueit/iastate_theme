@@ -1,0 +1,122 @@
+{#
+/**
+ * @file
+ * Theme override to display a taxonomy term page.
+ *
+ * Page structure mirrors page--type--layout-ct--canonical.html.twig. The
+ * Page Title block is excluded from page.content and replaced with a
+ * hand-built eyebrow / title / description header so the term description
+ * (not available via the Page Title block) can be shown between them.
+ * Everything after the description (facets, search, sort, teasers) is left
+ * to whatever view/blocks populate page.content.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Term variables (see iastate_theme_preprocess_page__taxonomy__term()):
+ * - term: The taxonomy term entity for the current page.
+ * - term_description: Processed text render array of the term's
+ *   description field, or unset if the term has no description.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Regions:
+ *   parts/site-navbar.html.twig
+ *   - page.header_first: First half of header, typically for site branding.
+ *   - page.header_second: Second half of header, typically for search and
+ *     site links.
+ *
+ *   parts/menu-navbar.html.twig
+ *   - page.menu_navbar: Primary site navigation
+ *
+ *   page.html.twig
+ *   - page.post_nav: Full width region preceding content.
+ *   - page.breadcrumb: Items for the breadcrumb region.
+ *   - page.content: The main content of the current page.
+ *
+ *   footer.html.twig
+ *   - page.footer_first: Items for first footer region
+ *   - page.footer_second: Items for second footer region
+ *   - page.footer_third: Items for third footer region
+ *   - page.footer_fourth: Items for fourth footer region
+ *   - page.sign_off: For small end-of-page items.
+ *
+ * @see template_preprocess_page()
+ * @see iastate_theme_preprocess_page__taxonomy__term()
+ * @see html.html.twig
+ */
+#}
+
+<div class="isu-page-wrap">
+
+  {# The ISU Navbar may be disabled in theme settings #}
+  {% if isu_navbar %}
+    {% include '@iastate_theme/parts/isu-navbar.html.twig' %}
+  {% endif %}
+
+  {# site-navbar.html.twig contains branded ISU header #}
+  {% include '@iastate_theme/parts/site-navbar.html.twig' %}
+
+  {# menu-navbar.html.twig contains the main menu #}
+  {% include '@iastate_theme/parts/menu-navbar.html.twig' %}
+
+  <main class="isu-main" role="main">
+
+    <a id="main-content" tabindex="-1"></a>
+
+    {% if page.post_nav %}
+      {{ page.post_nav }}
+    {% endif %}
+
+    {{ page.breadcrumbs }}
+
+    <div class="row">
+
+      {% if page.sidebar_first|render and page.sidebar_second|render %}
+        {% set content_classes = 'col-lg-6' %}
+        {% set sidebar_classes = 'col-lg-3' %}
+      {% elseif page.sidebar_first|render or page.sidebar_second|render %}
+        {% set content_classes = 'col-lg-9' %}
+        {% set sidebar_classes = 'col-lg-3' %}
+      {% else %}
+        {% set content_classes = 'col-lg-12' %}
+      {% endif %}
+
+      {% if page.sidebar_first|render %}
+        <div class="isu-page-column isu-sidebar isu-sidebar-first {{sidebar_classes}}">
+          <aside role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        </div>
+      {% endif %}
+
+      {% if page.content|render %}
+        <div class="isueo-taxonomy-term-content">
+          {{ page.content }}
+        </div>
+      {% endif %}
+
+      {% if page.sidebar_second|render %}
+        <div class="isu-page-column isu-sidebar isu-sidebar-second {{sidebar_classes}}">
+          <aside role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        </div>
+      {% endif %}
+
+    </div>
+
+  </main>
+
+  {% include '@iastate_theme/parts/footer.html.twig' %}
+
+</div>

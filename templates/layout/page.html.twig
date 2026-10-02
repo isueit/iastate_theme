@@ -81,6 +81,9 @@
 
 		{{ page.breadcrumbs }}
 
+		{# Page title spans the full 1140px width, above the content/sidebar columns #}
+		{{ page.content.iastate_theme_page_title }}
+
 		<div class="container">
 			<div class="row">
 
@@ -104,7 +107,7 @@
 
 				{% if page.content|render %}
 					<div class="isu-page-column isu-content-column {{content_classes}}">
-						{{ page.content }}
+						{{ page.content|without('iastate_theme_page_title') }}
 					</div>
 				{% endif %}
 

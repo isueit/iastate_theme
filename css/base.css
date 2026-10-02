@@ -101,6 +101,7 @@ blockquote {
 	background-color: var(--primary-color);
 	color: #fff;
 	position: relative;
+	z-index: 0;
 	padding: 3.75rem 2.25rem 5.625rem;
 }
 blockquote:before {
@@ -108,7 +109,7 @@ blockquote:before {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 150vw;
+	width: 100vw;
 	left: 50%;
 	background-color: var(--primary-color);
 	transform: translateX(-50%);
@@ -135,11 +136,12 @@ blockquote p:first-child:before, blockquote p:last-child:after {
 	background-position: 50% center;
 }
 blockquote p:before {
-	margin-left: -7.1875rem;
+	top: 3rem;
+	left: -3.5rem;
 }
 blockquote p:after {
 	bottom: 2.625rem;
-	right: -22%;
+	right: 1.25rem;
 	transform: rotate(180deg);
 }
 blockquote .author {
@@ -167,12 +169,6 @@ blockquote a:hover {
 /* --------------------------------------  */
 /* ## Responsive
 /* --------------------------------------  */
-@media screen and (max-width : 1199px) {
-	blockquote p:first-child:before {
-		left: 3rem;
-	}
-}
-
 hr { /* Overrides Bootstrap 4's hr style */
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
@@ -656,7 +652,7 @@ button:focus {
 /* --------------------------------------  */
 /* Overrides bootstrap.min.css */
 .ck-editor__editable .ck-widget.table[border] th, .ck-editor__editable .ck-widget.table th, .ck-editor__editable .table thead th, .ck-editor__editable .table th, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable_focused, .ck-editor__editable .ck-widget.table th.ck-editor__nested-editable:focus, .table thead th, .table th {
-  background: #c8102e;
+  background: var(--primary-color);
 	color: white;
 	padding: 1.5625rem;
 	font-size: clamp(1.1rem, 1.1vw, 1.3125rem);
@@ -724,6 +720,27 @@ body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth
 	min-width: 0;
 	border: .0625rem solid #f3f3f3;
 }
+
+/* Layout tables (CKEditor 5 "Table type: Layout") are structural only —
+ * strip the visual table chrome so they read as plain content, not a table. */
+.table.layout-table, table.isu-table-none {
+	border: none !important;
+}
+.table.layout-table th[colspan]:not([colspan="1"]),
+.table.layout-table th[rowspan]:not([rowspan="1"]),
+.table.layout-table td[colspan]:not([colspan="1"]),
+.table.layout-table td[rowspan]:not([rowspan="1"]) {
+	border-right: none;
+	border-left: none;
+}
+.table.layout-table tbody tr:nth-child(2n) {
+	background-color: transparent;
+}
+.table.layout-table tbody td,
+.table.layout-table tbody th {
+	padding: .5rem;
+	border: none;
+}
 /* --------------------------------------  */
 /* ## IMAGES
 /* --------------------------------------  */
@@ -746,6 +763,9 @@ table img {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+}
+:has(> .align-right), :has(> .align-left) {
+	display: flow-root;
 }
 
 /* We want to respect content-editor table styles
@@ -811,34 +831,34 @@ button.ck.ck-heading_heading2 {
 	font-size: 1.875rem;
 	font-family: var(--serif-font);
 	letter-spacing: 0;
-	color: #c8102e;
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading3 {
 	font-size: 1.3125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #c8102e;
+	color: var(--primary-color);
 }
 button.ck.ck-heading_heading4 {
 	font-size: 1.125rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading5 {
 	font-size: 1rem;
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 button.ck.ck-heading_heading6 {
 	font-family: var(--sans-font);
 	letter-spacing: 0;
-	color: #7c2529;
+	color: var(--secondary-color);
 }
 .ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
 	text-decoration: none;
-	color: #c8102e;
+	color: var(--primary-color);
 	background-color: inherit;
 	font-family: var(--sans-font);
 	font-size: 1.3125rem;
@@ -852,14 +872,14 @@ button.ck.ck-heading_heading6 {
 }
 .ckeditor-accordion-container > dl dt > a:hover, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
 	background-color: inherit;
-	color: #c8102e;
+	color: var(--primary-color);
 	cursor: pointer;
 }
 .ckeditor-accordion-container > dl {
 	border: 1px solid transparent;
 }
 .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
-	background: #c8102e;
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before {
 	left: 10px;
@@ -891,7 +911,7 @@ dl {
 	border-bottom: 0;
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle:after {
-	background: #c8102e;
+	background: var(--primary-color);
 }
 .ckeditor-accordion-container > dl dt > a > .ckeditor-accordion-toggle {
 	left: auto;
@@ -910,7 +930,7 @@ blockquote .ck-editor__editable.ck-editor__nested-editable {
 }
 blockquote.ck-widget {
 	margin-inline: 0;
-	background-color: #c8102e;
+	background-color: var(--primary-color);
 }
 blockquote.ck-widget p:before {
 	margin-left: -2.1875rem;

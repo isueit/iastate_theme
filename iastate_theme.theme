@@ -199,14 +199,48 @@ function iastate_theme_preprocess_page(&$variables)
 
   $variables['default_social_footer'] = theme_get_setting('default_social_footer');
 
-  $variables['default_copyright'] = theme_get_setting('default_copyright');
-  // Create copyright render array
+  $variables['default_quick_links'] = theme_get_setting('default_quick_links') ?? TRUE;
+  $quick_links = [];
+  for ($i = 1; $i <= 9; $i++) {
+    $text = theme_get_setting('quick_link_' . $i . '_text');
+    $url = theme_get_setting('quick_link_' . $i . '_url');
+    if (!empty($text) && !empty($url)) {
+      $quick_links[] = ['text' => $text, 'url' => $url];
+    }
+  }
+  $variables['quick_links'] = $quick_links;
+
+  $variables['default_copyright'] = theme_get_setting('default_copyright') ?? TRUE;
+  // Create copyright render array for custom override
   $variables['copyright_subject'] = array(
     '#type' => 'processed_text',
     '#text' => isset(theme_get_setting('copyright_subject')['value']) ? theme_get_setting('copyright_subject')['value'] : '',
-    '#format' => theme_get_setting('copyright_subject')['format'],
+    '#format' => isset(theme_get_setting('copyright_subject')['format']) ? theme_get_setting('copyright_subject')['format'] : 'wysiwyg',
   );
 
+  // Expose the current taxonomy term's description to
+  // page--taxonomy--term.html.twig; it's otherwise unavailable in page
+  // template variables (the term name reaches the page via the Page Title
+  // block, which has no description output). Handled here rather than in a
+  // hook_preprocess_page__taxonomy__term() implementation, since that
+  // suggestion-specific hook was not being invoked on this site.
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term && !$term instanceof \Drupal\taxonomy\TermInterface) {
+    // The route parameter isn't always upcast to an entity (e.g. a view
+    // whose path argument isn't configured as an entity:taxonomy_term type),
+    // so fall back to loading it from the raw ID.
+    $term = \Drupal\taxonomy\Entity\Term::load($term);
+  }
+  if ($term instanceof \Drupal\taxonomy\TermInterface) {
+    $variables['term'] = $term;
+    if (!$term->get('description')->isEmpty()) {
+      $variables['term_description'] = [
+        '#type' => 'processed_text',
+        '#text' => $term->getDescription(),
+        '#format' => $term->get('description')->format,
+      ];
+    }
+  }
 }
 
 /**
@@ -273,6 +307,17 @@ function iastate_theme_preprocess_block__system_branding_block(&$variables)
 }
 
 /**
+ * Implements hook_theme_preprocess_block__contact_us()
+ * Provides the site name/slogan for the print-only footer title.
+ */
+function iastate_theme_preprocess_block__contact_us(&$variables)
+{
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  * Allow template suggestion based on content type.
  */
@@ -334,5 +379,33 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
         array_splice($suggestions, 1, 0, 'page__node__layout');
       }
     }
+  }
+}
+
+/**
+ * Returns the site's short name, derived from the directory that contains
+ * the Drupal root. Anything after the first dot is dropped, so
+ * "porkgateway", "porkgateway.preview.extension.iastate.edu" and
+ * "porkgateway.iastate.edu" all return "porkgateway".
+ */
+function _iastate_theme_site_folder()
+{
+  $folders = explode('/', \Drupal::root());
+  if (count($folders) < 2) {
+    return 'unknown';
+  }
+  return strtolower(explode('.', $folders[count($folders) - 2])[0]);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Allow site-specific block templates, e.g.
+ * block--views-block--resource-details-block-1--porkgateway.html.twig
+ */
+function iastate_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  $site = preg_replace('/[^a-z0-9_]/', '_', _iastate_theme_site_folder());
+  foreach ($suggestions as $suggestion) {
+    $suggestions[] = $suggestion . '__' . $site;
   }
 }

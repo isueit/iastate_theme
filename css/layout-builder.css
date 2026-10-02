@@ -199,6 +199,18 @@ margin: auto;
   cursor: move;
   overflow: auto;
 }
+/* Feature with Large Image breaks out to full viewport width on the live
+   page; inside the Layout Builder edit screen that bleed gets clipped by
+   .layout-builder-block's overflow, so contain it here instead. */
+.layout-builder-block .feature-with-large-image {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+.layout-builder-block .feature-with-large-image-inner {
+  width: 100%;
+  max-width: none;
+}
 .layout-builder-block [tabindex="-1"] {
   pointer-events: none;
 }
@@ -294,6 +306,49 @@ div.isueo-callout-stat {
 	background: var(--btn-success-color);
 	border-radius: 3px;
 	padding: 1rem;
+}
+
+/* Feature with Large Image: Red Accent Background */
+.feature-with-large-image--red-accent {
+	background: var(--primary-color);
+	padding: 1.5rem;
+}
+.feature-with-large-image--red-accent .feature-with-large-image-title.h2 {
+	color: var(--primary-color);
+}
+
+/* Feature with Large Image: the card defaults to a gray background, so on
+   a gray (full or partial) background section specifically, flip it to
+   the same red-card treatment as .isueo-callout-stat instead -- otherwise
+   it's gray-on-gray. Other background colors (red, blue, green) are left
+   alone; .feature-with-large-image--red-accent already handles red. */
+.layout--background--gray .feature-with-large-image-content,
+.layout--background--partial--gray .feature-with-large-image-content {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+.layout--background--gray .feature-with-large-image-title.h2,
+.layout--background--partial--gray .feature-with-large-image-title.h2 {
+	color: #fff;
+}
+.layout--background--gray .feature-with-large-image-content li a,
+.layout--background--gray .feature-with-large-image-content a,
+.layout--background--partial--gray .feature-with-large-image-content li a,
+.layout--background--partial--gray .feature-with-large-image-content a {
+	color: #fff;
+	text-decoration: underline;
+	text-decoration-color: var(--primary-accent-color);
+}
+.layout--background--gray .feature-with-large-image-content li a:hover,
+.layout--background--gray .feature-with-large-image-content a:hover,
+.layout--background--partial--gray .feature-with-large-image-content li a:hover,
+.layout--background--partial--gray .feature-with-large-image-content a:hover {
+	text-decoration: none;
+}
+.layout--background--gray .feature-with-large-image-content a.btn-outline-danger,
+.layout--background--partial--gray .feature-with-large-image-content a.btn-outline-danger {
+	color: #c8102e;
+	text-decoration: none;
 }
 
 /* --------------------------------------  */
@@ -480,6 +535,62 @@ background-color: var(--primary-accent-color);
 	color: var(--primary-accent-color);
 	text-decoration: none;
 }
+/* Partial Backgrounds */
+[class*="layout--background--partial--"] {
+	position: relative;
+	background-color: transparent;
+}
+[class*="layout--background--partial--"]:before {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	width: 100vw;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -1.875rem;
+	height: 50%;
+	max-height: 12.6875rem;
+	z-index: 0;
+}
+
+@media (min-width: 992px) {
+  [class*="layout--background--partial--"]:before {
+    top: -3.75rem;
+    max-height: 23.75rem;
+  }
+}
+
+/* Don't let a partial background section's upward bleed reach behind
+   whatever renders above it in the "Content" region -- start the
+   background at the section's own top instead whenever anything (page
+   title, local tasks/View-Edit-Delete tabs, a menu block, or any other
+   block a site places there, now or in the future) precedes the main
+   content block. Each region block (see region.html.twig, which stamps
+   .isu-region_content on every "content" region) renders as its own
+   direct-child wrapper div, with the node/Layout Builder output as the
+   last one -- so ":not(:first-child)" alone detects "something is above
+   this" regardless of which specific block it is, instead of naming
+   block IDs one by one. */
+.isu-region_content > *:not(:first-child) [class*="layout--background--partial--"]:before {
+  top: 0;
+}
+[class*="layout--background--partial--"] > * {
+  position: relative;
+  z-index: 1;
+}
+.layout--background--partial--red:before {
+  background-color: var(--primary-color);
+}
+.layout--background--partial--green:before {
+  background-color: var(--btn-success-color);
+}
+.layout--background--partial--gray:before {
+  background-color: var(--lt-gray);
+}
+.layout--background--partial--blue:before {
+  background-color: var(--btn-primary-color);
+}
+
 /* Background Overlays. */
 .layout--background-overlay--red {
 	position: relative;
@@ -636,6 +747,9 @@ background-color: var(--primary-accent-color);
 }
 .layout-height-40vh {
 	min-height: 40vh;
+}
+.layout-height-20vh {
+	min-height: 20vh;
 }
 
 /* Aligns Block Title Border */
