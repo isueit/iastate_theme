@@ -33,49 +33,70 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %} {# If the menu has only one level. #}
-      <ul role="menubar" {{ attributes.addClass('nav navbar-nav menubar') }}>
+      <ul {{ attributes.addClass('nav navbar-nav menubar') }}>
 	{% elseif menu_level == 1 %}
-      <ul role="menu" class="isu-dropdown-menu">
+      {# Long first-level dropdowns (more than 5 children) split into two columns on desktop. #}
+      <ul class="isu-dropdown-menu{{ items|length > 5 ? ' isu-dropdown-menu--two-col' }}" aria-hidden="true">
 	{% else %}
-	  <ul role="submenu" class="isu-dropdown-menu isu-dropdown-submenu">
+	  <ul class="isu-dropdown-menu isu-dropdown-submenu" aria-hidden="true">
     {% endif %}
 
     {# Output the parent page link as the first item in first-level dropdowns when it has a real URL. #}
     {% if menu_level == 1 and parent_item is not null %}
       {% set parent_url = parent_item.url|render|trim %}
       {% if parent_url and parent_url != '#' %}
-        <li role="menuitem" class="isu-dropdown-item isu-dropdown-parent-item">
-          <a class="nav-link isu-nav-link isu-dropdown-parent-link" href="{{ parent_url }}">{{ parent_item.title }} <span class="arrow"></span></a>
+        <li class="isu-dropdown-item isu-dropdown-parent-item">
+          <a class="nav-link isu-nav-link isu-dropdown-parent-link" href="{{ parent_url }}">{{ parent_item.title }} <span class="arrow" aria-hidden="true"></span></a>
         </li>
       {% endif %}
     {% endif %}
 
-    {% for item in items %}
-      {# Assign classes based on if the item is an open parent, closed parent,
-      active, or a has a submenu. #}
-      {%
-        set li_classes = [
-          menu_level ? 'dropdown-item isu-dropdown-item' : 'nav-item',
-          item.below ? 'isu-dropdown',
-        ]
-      %}
-
-      {% if item.below %} {# If the item has children, it will be a dropdown. #}
-        <li role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-expanded', 'false').setAttribute('aria-haspopup', 'true') }}>
-          <div role="none" class="isu-dropdown-toggle_wrapper {{ (menu_level) ? 'divsub' }}">
-			<a class="nav-link isu-nav-link isu-dropdown-toggle {{ (menu_level) ? 'sub' }}" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}</a>
-			<button class="isu-dropdown-toggle_mobile"><span class="fa fa-angle-down"></span><span class="sr-only">Open dropdown menu</span></button>
-          </div>
-
-          {{ menus.menu_links(item.below, item.attributes, menu_level + 1, (menu_level == 0) ? item : null) }}
-      {% else %} {# If the item does not have children, it will not be a dropdown. #}
-        <li role="menuitem" {{ item.attributes.addClass(li_classes).setAttribute('aria-haspopup', 'false') }}>
-		  <a class="nav-link isu-nav-link" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}</a>
-      {% endif %}
-	  </li>
-
-    {% endfor %}
+    {% if menu_level == 1 and items|length > 5 %}
+      {# Two columns: each is its own list so an expanded third level only
+         lengthens its own column (no row gaps), and reading order runs down
+         the left column, then the right. #}
+      {% set column_size = (items|length / 2)|round(0, 'ceil') %}
+      {% for column in items|batch(column_size) %}
+        <li class="isu-dropdown-col">
+          <ul class="isu-dropdown-col__list">
+            {% for item in column %}
+              {{ menus.menu_item(item, menu_level) }}
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    {% else %}
+      {% for item in items %}
+        {{ menus.menu_item(item, menu_level) }}
+      {% endfor %}
+    {% endif %}
     </ul>
   {% endif %}
+{% endmacro %}
+
+{% macro menu_item(item, menu_level) %}
+  {% import _self as menus %}
+  {# Assign classes based on if the item is an open parent, closed parent,
+  active, or a has a submenu. #}
+  {%
+    set li_classes = [
+      menu_level ? 'dropdown-item isu-dropdown-item' : 'nav-item',
+      item.below ? 'isu-dropdown',
+    ]
+  %}
+
+  {% if item.below %} {# If the item has children, it will be a dropdown. #}
+    <li {{ item.attributes.addClass(li_classes) }}>
+      <div class="isu-dropdown-toggle_wrapper {{ (menu_level) ? 'divsub' }}">
+        <a class="nav-link isu-nav-link isu-dropdown-toggle {{ (menu_level) ? 'sub' }}" href="{{ item.url|render|trim ?: '#' }}" role="button" aria-expanded="false">{{ item.title }}</a>
+        <button type="button" class="isu-dropdown-toggle_mobile" aria-expanded="false"><span class="fa fa-angle-down"></span><span class="sr-only">{{ item.title }} submenu</span></button>
+      </div>
+
+      {{ menus.menu_links(item.below, item.attributes, menu_level + 1, (menu_level == 0) ? item : null) }}
+  {% else %} {# If the item does not have children, it will not be a dropdown. #}
+    <li {{ item.attributes.addClass(li_classes) }}>
+      <a class="nav-link isu-nav-link" href="{{ item.url|render|trim ?: '#' }}">{{ item.title }}{% if menu_level %}<span class="arrow" aria-hidden="true"></span>{% endif %}</a>
+  {% endif %}
+    </li>
 {% endmacro %}
 

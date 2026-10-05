@@ -14,7 +14,8 @@
 
 	  if ($toggler.hasClass('isu-menu-navbar_toggler_open')) {
 	    // Closing: animate out, then remove classes
-	    $toggler.removeClass('isu-menu-navbar_toggler_open isu-ext-mobile-menu');
+	    $toggler.removeClass('isu-menu-navbar_toggler_open isu-ext-mobile-menu').attr('aria-expanded', 'false');
+	    setPageInert(false);
 	    $navbar.addClass('isu-menu-navbar--closing');
 	    setTimeout(function() {
 	      $navbar.removeClass('isu-menu-navbar--closing');
@@ -23,12 +24,18 @@
 	    }, 220);
 	  } else {
 	    // Opening: add classes immediately, animation handled by CSS
-	    $toggler.addClass('isu-menu-navbar_toggler_open isu-ext-mobile-menu');
+	    $toggler.addClass('isu-menu-navbar_toggler_open isu-ext-mobile-menu').attr('aria-expanded', 'true');
+	    setPageInert(true);
 	    $collapse.addClass('isu-menu-navbar_show');
 	    $('#isu-sitelinks_collapse').addClass('isu-sitelinks_show');
 	  }
 	});
 
+	// While the full-screen mobile menu is open, keep keyboard and screen reader
+	// users inside it by making the page content behind it inert.
+	function setPageInert(inert) {
+	  $('.isu-page-wrap').children('main, footer').prop('inert', inert);
+	}
 	// Toggle Search on Mobile
 	$('#isu-search_toggler').click(function() {
 	  $('#isu-search_toggler').toggleClass('isu-search_toggler_open');
@@ -39,6 +46,21 @@
 	(function() {
 		var $collapse = $('#isu-menu-navbar_collapse');
 		var panelsBuilt = false;
+		var $navPlaceholder = $();
+
+		// Cloned markup would duplicate ids (breaking label/for and ARIA references),
+		// so suffix them and update anything that points at them.
+		function uniqueIds($clone) {
+			$clone.find('[id]').addBack('[id]').each(function() {
+				var oldId = this.id;
+				var newId = oldId + '-mobile';
+				this.id = newId;
+				$clone.find('label[for="' + oldId + '"]').attr('for', newId);
+				$clone.find('[aria-labelledby="' + oldId + '"]').attr('aria-labelledby', newId);
+				$clone.find('[aria-describedby="' + oldId + '"]').attr('aria-describedby', newId);
+				$clone.find('[aria-controls="' + oldId + '"]').attr('aria-controls', newId);
+			});
+		}
 
 		function buildMobilePanels() {
 			if (panelsBuilt) return;
@@ -49,8 +71,17 @@
 
 			var $wrap = $('<div class="isu-mobile-panels"></div>');
 			var $main = $('<div class="isu-mobile-panel isu-mobile-panel--main"></div>');
-			var $nav = $('<nav aria-label="Main navigation"></nav>');
-			$menubar.detach().appendTo($nav);
+			// Move the menu block's own <nav> (keeps its label and keyboard handlers)
+			// rather than wrapping the menu in a second navigation landmark.
+			var $nav = $menubar.closest('nav');
+			if ($nav.length) {
+				// Remember where the nav lived so it can be put back on desktop
+				$navPlaceholder = $('<span class="isu-mobile-nav-placeholder" hidden></span>').insertBefore($nav);
+				$nav.detach();
+			} else {
+				$nav = $('<nav aria-label="Main navigation"></nav>');
+				$menubar.detach().appendTo($nav);
+			}
 			$main.append($nav);
 			$wrap.append($main);
 			$collapse.prepend($wrap);
@@ -58,6 +89,7 @@
 			// Append ISU quicklinks below the menu pills
 			var $isuNav = $('.isu-navbar').clone();
 			$isuNav.find('.isu-navbar_break').remove();
+			uniqueIds($isuNav);
 			var $quicklinks = $('<div class="isu-mobile-quicklinks"></div>');
 			$quicklinks.append($isuNav);
 			$main.append($quicklinks);
@@ -67,6 +99,7 @@
 
 			var $searchClone = $('#isu-search_collapse').clone();
 			$searchClone.removeAttr('id').addClass('isu-mobile-search');
+			uniqueIds($searchClone);
 			$headerExtras.append($searchClone);
 
 			var knownDomains = [
@@ -98,29 +131,119 @@
 
 			$main.append($headerExtras);
 
-			$main.find('li.isu-dropdown').each(function(i) {
-				var $li   = $(this);
-				var $a    = $li.find('> .isu-dropdown-toggle_wrapper > a.isu-dropdown-toggle');
-				var label = $a.text().trim();
-				var href  = $a.attr('href') || '#';
-				var id    = 'isu-mp-' + i;
-
-				$li.data('subpanel', id);
-
-				var $sub = $('<div class="isu-mobile-panel isu-mobile-panel--sub" id="' + id + '"></div>');
-				$sub.append('<button class="isu-mobile-back" type="button"><span class="isu-mobile-back__icon" aria-hidden="true">&lt;</span><span class="isu-mobile-back__label">Back</span><span class="sr-only"> to top level of menu</span></button>');
-				$sub.append('<a class="isu-mobile-parent-heading" href="' + href + '">' + label + '<span class="arrow" aria-hidden="true"></span></a>');
-
-				var $subnav = $('<nav aria-label="' + label + ' sub-navigation"></nav>');
-				var $list = $('<ul class="isu-mobile-subitems"></ul>');
-				$li.find('> .isu-dropdown-menu > li.isu-dropdown-item').each(function() {
-					var $subA = $(this).find('a').first();
-					$list.append('<li><a href="' + ($subA.attr('href') || '#') + '">' + $subA.text().trim() + '<span class="arrow" aria-hidden="true"></span></a></li>');
-				});
-				$subnav.append($list);
-				$sub.append($subnav);
-				$wrap.append($sub);
+			$main.find('ul.menubar > li.isu-dropdown').each(function() {
+				var $li = $(this);
+				var $toggle = $li.children('.isu-dropdown-toggle_wrapper').children('a.isu-dropdown-toggle');
+				$li.data('subpanel', buildSubPanel($wrap, $li, $toggle));
 			});
+		}
+
+		var panelCount = 0;
+
+		// A dropdown's items sit directly in its menu, or inside column lists for
+		// two-column dropdowns. The parent link is skipped: it becomes the heading.
+		function menuItemsOf($li) {
+			var $menu = $li.children('.isu-dropdown-menu');
+			return $menu.children('li.isu-dropdown-item')
+				.add($menu.children('li.isu-dropdown-col').children('ul').children('li.isu-dropdown-item'))
+				.not('.isu-dropdown-parent-item');
+		}
+
+		// Build the sub-panel for one top-level dropdown. $opener is the control
+		// that opens it; returns the panel id.
+		function buildSubPanel($wrap, $li, $opener) {
+			var id    = 'isu-mp-' + (panelCount++);
+			var label = $opener.text().trim();
+			var href  = $opener.attr('href');
+
+			$opener.attr('aria-controls', id);
+
+			var $sub = $('<div class="isu-mobile-panel isu-mobile-panel--sub"></div>').attr('id', id);
+			$sub.append('<button class="isu-mobile-back" type="button"><span class="isu-mobile-back__icon" aria-hidden="true">&lt;</span><span class="isu-mobile-back__label">Back</span><span class="sr-only"> to top level of menu</span></button>');
+
+			// Heading links to the section page when there is one
+			var $heading = (href && href !== '#')
+				? $('<a class="isu-mobile-parent-heading"></a>').attr('href', href).text(label).append('<span class="arrow" aria-hidden="true"></span>')
+				: $('<span class="isu-mobile-parent-heading"></span>').text(label);
+			$sub.append($heading);
+
+			var $subnav = $('<nav></nav>').attr('aria-label', label + ' sub-navigation');
+			var $list = $('<ul class="isu-mobile-subitems"></ul>');
+			buildSubItems($li, $list);
+			$subnav.append($list);
+			$sub.append($subnav);
+			$wrap.append($sub);
+
+			return id;
+		}
+
+		// Fill $list with the items of a dropdown. Items with their own children
+		// get a toggle that expands their items inline (same as the desktop menu).
+		function buildSubItems($li, $list) {
+			menuItemsOf($li).each(function() {
+				var $item = $(this);
+				if ($item.hasClass('isu-dropdown')) {
+					var $childToggle = $item.children('.isu-dropdown-toggle_wrapper').children('a.isu-dropdown-toggle');
+					var nestedId = 'isu-mp-' + (panelCount++);
+					var $toggle = $('<a class="isu-mobile-subtoggle" role="button" aria-expanded="false"></a>')
+						.attr('href', $childToggle.attr('href') || '#')
+						.attr('aria-controls', nestedId)
+						.text($childToggle.text().trim());
+					var $nested = $('<ul class="isu-mobile-subitems isu-mobile-subitems--nested" hidden></ul>').attr('id', nestedId);
+					buildSubItems($item, $nested);
+					$list.append($('<li></li>').append($toggle, $nested));
+				} else {
+					var $itemLink = $item.children('a').first();
+					$list.append($('<li></li>').append(
+						$('<a></a>').attr('href', $itemLink.attr('href') || '#')
+							.text($itemLink.text().trim())
+							.append('<span class="arrow" aria-hidden="true"></span>')
+					));
+				}
+			});
+		}
+
+		// Collapse every inline-expanded list inside $scope
+		function collapseSubItems($scope) {
+			$scope.find('.isu-mobile-subtoggle').attr('aria-expanded', 'false');
+			$scope.find('.isu-mobile-subitems--nested').prop('hidden', true);
+		}
+
+		// Undo everything the mobile menu changed, so the desktop menu is restored
+		// when the viewport grows past the breakpoint (no reload needed).
+		function destroyMobilePanels() {
+			var $toggler = $('#isu-menu-navbar_toggler');
+			$toggler.removeClass('isu-menu-navbar_toggler_open isu-ext-mobile-menu').attr('aria-expanded', 'false');
+			$('.isu-menu-navbar').removeClass('isu-menu-navbar--closing');
+			$collapse.removeClass('isu-menu-navbar_show');
+			$('#isu-sitelinks_collapse').removeClass('isu-sitelinks_show');
+			setPageInert(false);
+
+			if (!panelsBuilt) return;
+			var $wrap = $collapse.find('.isu-mobile-panels');
+			var $nav = $wrap.find('.isu-mobile-panel--main > nav').first();
+			$nav.find('a.isu-dropdown-toggle').removeAttr('aria-controls').attr('aria-expanded', 'false');
+			if ($navPlaceholder.length) {
+				$navPlaceholder.replaceWith($nav.detach());
+				$navPlaceholder = $();
+			} else {
+				// No original nav (fallback wrapper was created): put the menu list back
+				$nav.find('ul.menubar').first().detach().prependTo($collapse);
+			}
+			$wrap.remove();
+			panelsBuilt = false;
+		}
+
+		var desktopMQ = window.matchMedia('(min-width: 1200px)');
+		var onBreakpointChange = function(mq) {
+			if (mq.matches) {
+				destroyMobilePanels();
+			}
+		};
+		if (desktopMQ.addEventListener) {
+			desktopMQ.addEventListener('change', onBreakpointChange);
+		} else {
+			desktopMQ.addListener(onBreakpointChange); // Safari < 14
 		}
 
 		$('#isu-menu-navbar_toggler').on('click.mobilePanels', function() {
@@ -130,25 +253,76 @@
 				setTimeout(function() {
 					$collapse.find('.isu-mobile-panel--active').removeClass('isu-mobile-panel--active');
 					$collapse.find('.isu-mobile-panels').removeClass('isu-mobile-panels--drilled');
+					$collapse.find('.isu-mobile-panel--main a.isu-dropdown-toggle').attr('aria-expanded', 'false');
+					collapseSubItems($collapse);
 				}, 220);
 			}
 		});
 
+		// Show the panel $opener controls (only one panel is visible at a time)
+		function openSubPanel($panels, $opener) {
+			var $sub = $panels.find('#' + $opener.attr('aria-controls'));
+			if (!$sub.length) return;
+			$panels.find('.isu-mobile-panel--active').removeClass('isu-mobile-panel--active');
+			$panels.addClass('isu-mobile-panels--drilled');
+			$sub.addClass('isu-mobile-panel--active');
+			$opener.attr('aria-expanded', 'true');
+			// The previous panel is now hidden, so move focus into the new one
+			$sub.find('.isu-mobile-back').focus();
+		}
+
+		// Back to the main panel, returning focus to the item that opened the sub-panel
+		function closeSubPanel($panels) {
+			var $active = $panels.find('.isu-mobile-panel--active');
+			if (!$active.length) return false;
+			var $opener = $panels.find('a.isu-dropdown-toggle[aria-controls="' + $active.attr('id') + '"]');
+			collapseSubItems($active);
+			$active.removeClass('isu-mobile-panel--active');
+			$panels.removeClass('isu-mobile-panels--drilled');
+			$opener.attr('aria-expanded', 'false').focus();
+			return true;
+		}
+
 		$(document).on('click.mobilePanels', '.isu-mobile-panel--main .isu-dropdown-toggle_wrapper', function(e) {
-			if ($(window).width() > 1199) return;
+			if (window.innerWidth >= 1200) return;
 			e.preventDefault();
 			e.stopPropagation();
-			var id = $(this).closest('li').data('subpanel');
-			if (!id) return;
-			var $panels = $(this).closest('.isu-mobile-panels');
-			$panels.addClass('isu-mobile-panels--drilled');
-			$panels.find('#' + id).addClass('isu-mobile-panel--active');
+			openSubPanel($(this).closest('.isu-mobile-panels'), $(this).children('a.isu-dropdown-toggle'));
+		});
+
+		// Expand/collapse a third level (or deeper) inline
+		$(document).on('click.mobilePanels', '.isu-mobile-subtoggle', function(e) {
+			e.preventDefault();
+			var $toggle = $(this);
+			var expand = $toggle.attr('aria-expanded') !== 'true';
+			var $nested = $('#' + $toggle.attr('aria-controls'));
+			if (!expand) {
+				collapseSubItems($nested);
+			}
+			$toggle.attr('aria-expanded', expand ? 'true' : 'false');
+			$nested.prop('hidden', !expand);
+		});
+
+		// Sub-toggles have role="button", so Space must activate them like Enter
+		$(document).on('keydown.mobilePanels', '.isu-mobile-subtoggle', function(e) {
+			if (e.keyCode === 32) {
+				e.preventDefault();
+				this.click();
+			}
 		});
 
 		$(document).on('click.mobilePanels', '.isu-mobile-back', function() {
-			var $panels = $(this).closest('.isu-mobile-panels');
-			$panels.find('.isu-mobile-panel--active').removeClass('isu-mobile-panel--active');
-			$panels.removeClass('isu-mobile-panels--drilled');
+			closeSubPanel($(this).closest('.isu-mobile-panels'));
+		});
+
+		// Escape: close an open sub-panel first, otherwise close the mobile menu
+		$(document).on('keydown.mobilePanels', function(e) {
+			if (e.keyCode !== 27 || window.innerWidth >= 1200) return;
+			var $toggler = $('#isu-menu-navbar_toggler');
+			if (!$toggler.hasClass('isu-menu-navbar_toggler_open')) return;
+			if (!closeSubPanel($collapse.find('.isu-mobile-panels'))) {
+				$toggler.trigger('click').focus();
+			}
 		});
 	})();
 
