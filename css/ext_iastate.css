@@ -1328,12 +1328,12 @@ div#edit-moderation-state-wrapper .form-item__label {
 }
 
 /* Eyebrow */
-.isueo-eyebrow {
+.isueo-eyebrow, p.isueo-eyebrow {
 	font-size: 1rem;
 	font-weight: 700;
 	letter-spacing: .12em;
 	text-transform: uppercase;
-	color: #c8102e;
+	color: var(--primary-color);
 	margin-bottom: 8px;
 }
 .isueo-eyebrow + h2 {
