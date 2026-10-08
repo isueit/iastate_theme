@@ -1389,6 +1389,41 @@ ol.list-circles + p {
 	flex-direction: column;
 	flex: 1;
 }
+
+/* Image in block used as half of section "background" */
+#isueo-hero--half {
+	position: relative;
+	overflow: hidden;
+}
+#isueo-hero--half > .layout-content {
+  display: flex;
+  align-items: stretch;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+#isueo-hero--half  .layout__region--first {
+  flex: 0 0 60%;
+  padding: 2rem;
+}
+#isueo-hero--half .layout__region--second {
+  flex: 0 0 40%;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static;
+  overflow: visible;
+  min-height: 300px;
+}
+#isueo-hero--half .layout__region--second img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* --------------------------------------  */
 /* ## RESPONSIVE
 /* --------------------------------------  */
@@ -1424,6 +1459,24 @@ ol.list-circles + p {
 	#isueo-here-with-you .plp-topic-pills ul.d-flex {
 		flex-wrap: wrap;
 	}
+	#isueo-hero--half > .layout-content {
+    	flex-direction: column;
+  	}
+  	#isueo-hero--half .layout__region--first,
+  	#isueo-hero--half .layout__region--second {
+    	flex: 0 0 auto;
+   		width: 100%;
+  	}
+  	#isueo-hero--half .layout__region--second {
+    	min-height: 250px;
+  	}
+  	#isueo-hero--half .layout__region--second img {
+    	position: relative;
+    	width: 100%;
+    	height: 250px;
+    	right: auto;
+    	top: auto;
+  	}
 }
 /* --------------------------------------  */
 /* ## CARD MODAL

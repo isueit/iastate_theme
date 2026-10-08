@@ -31,7 +31,7 @@
     'isu-block'
   ]
 %}
-{% set block_title = label ?: content['#block_content'].label() %}
+{% set block_title = configuration.label_display ? (label ?: content['#block_content'].label()) : '' %}
 
 <div{{ attributes.addClass(block_classes) }}>
   <div class="feature-with-large-image">

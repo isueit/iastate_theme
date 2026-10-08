@@ -723,7 +723,7 @@ body.cke_editable table[border] tr:nth-child(2n), body.cke_editable table tr:nth
 
 /* Layout tables (CKEditor 5 "Table type: Layout") are structural only —
  * strip the visual table chrome so they read as plain content, not a table. */
-.table.layout-table, table.isu-table-none {
+.table.layout-table, .table.isu-table-none, .table.layout-table tbody td, .table.isu-table-none tbody td {
 	border: none !important;
 }
 .table.layout-table th[colspan]:not([colspan="1"]),
