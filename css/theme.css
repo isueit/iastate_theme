@@ -936,9 +936,12 @@ div#edit-search-broadness {
   top: -.1375rem;
   transform: rotate(45deg);
 }
-/* Parent link: arrow stretches on hover/focus (iastate22-link-secondary) */
+/* Parent link: arrow stretches on hover/focus (iastate22-link-secondary).
+   Same for the overview link at the top of third-level menus. */
 .isu-dropdown-item a.isu-dropdown-parent-link:hover .arrow,
-.isu-dropdown-item a.isu-dropdown-parent-link:focus .arrow {
+.isu-dropdown-item a.isu-dropdown-parent-link:focus .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link:hover .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link:focus .arrow {
   width: 1.375rem;
 }
 /* Child links: arrow fades in on hover/focus (the parent link's arrow is always shown) */
@@ -946,7 +949,8 @@ div#edit-search-broadness {
   opacity: 0;
 }
 .isu-dropdown-item a:not(.isu-dropdown-parent-link):hover .arrow,
-.isu-dropdown-item a:not(.isu-dropdown-parent-link):focus .arrow {
+.isu-dropdown-item a:not(.isu-dropdown-parent-link):focus .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link .arrow {
   opacity: 1;
 }
 /* Desktop dropdown sizing — matches iastate22-frontend site-header (xl / xxl) */
@@ -1453,8 +1457,10 @@ div#edit-search-broadness {
     line-height: 1.7619;
   }
 
-  /* CSS-drawn arrow (same as the desktop parent link); stretches on hover/focus */
-  .isu-mobile-parent-heading .arrow {
+  /* CSS-drawn arrow (same as the desktop parent link); stretches on hover/focus.
+     Also used by the overview link at the top of an inline third level. */
+  .isu-mobile-parent-heading .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow {
     position: relative;
     flex-shrink: 0;
     width: 0.75rem;
@@ -1464,24 +1470,31 @@ div#edit-search-broadness {
     transition: width 0.2s ease-in-out;
   }
   .isu-mobile-parent-heading .arrow::before,
-  .isu-mobile-parent-heading .arrow::after {
+  .isu-mobile-parent-heading .arrow::after,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::before,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::after {
     content: "";
+    opacity: 1;
     position: absolute;
     right: -0.1875rem;
     width: 0.5rem;
     height: 0.125rem;
     background-color: currentColor;
   }
-  .isu-mobile-parent-heading .arrow::before {
+  .isu-mobile-parent-heading .arrow::before,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::before {
     top: 0.125rem;
     transform: rotate(-45deg);
   }
-  .isu-mobile-parent-heading .arrow::after {
+  .isu-mobile-parent-heading .arrow::after,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::after {
     top: -0.1375rem;
     transform: rotate(45deg);
   }
   a.isu-mobile-parent-heading:hover .arrow,
-  a.isu-mobile-parent-heading:focus .arrow {
+  a.isu-mobile-parent-heading:focus .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link:hover .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link:focus .arrow {
     width: 1.375rem;
   }
 

@@ -196,6 +196,7 @@
 					var $itemLink = $item.children('a').first();
 					$list.append($('<li></li>').append(
 						$('<a></a>').attr('href', $itemLink.attr('href') || '#')
+							.toggleClass('isu-dropdown-overview-link', $itemLink.hasClass('isu-dropdown-overview-link'))
 							.text($itemLink.text().trim())
 							.append('<span class="arrow" aria-hidden="true"></span>')
 					));
