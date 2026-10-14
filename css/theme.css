@@ -157,6 +157,13 @@ body,
   align-items: center;
   margin-top: -15px;
 }
+/* Extra breathing room when the header has no search bar (e.g. hidden on the homepage) */
+@media screen and (min-width: 1200px) {
+  .isu-site-navbar:not(:has(.isu-search, #porkgateway-search-bar)) .isu-row-site-navbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+}
 .isu-col-header-first {
   flex: 1 1 0px;
   text-align: center;
