@@ -58,3 +58,12 @@ iastate_theme.settings:
     default_social_footer:
       type: boolean
       label: "Show social media footer links block"
+    default_font_settings:
+      type: boolean
+      label: "Use the fonts supplied by the theme"
+    sans_font:
+      type: string
+      label: "Sans-serif font stack"
+    serif_font:
+      type: string
+      label: "Serif font stack"

@@ -293,6 +293,37 @@ function iastate_theme_preprocess_html(&$variables) {
   ];
 
   $variables['#attached']['html_head'][] = [$element, 'custom_theme_colors'];
+
+  // Only load the Merriweather web font when it is the serif font in use
+  $fonts_overridden = !(theme_get_setting('default_font_settings') ?? 1);
+  $serif_font = theme_get_setting('serif_font');
+  if (!$fonts_overridden || empty($serif_font) || stripos($serif_font, 'merriweather') !== FALSE) {
+    $variables['#attached']['library'][] = 'iastate_theme/fonts';
+  }
+
+  // Use theme settings for the sans-serif and serif fonts when overridden
+  if ($fonts_overridden) {
+    $font_variables = [];
+    foreach (['sans_font' => '--sans-font', 'serif_font' => '--serif-font'] as $setting => $css_variable) {
+      // Only allow characters used in a font stack
+      $font = preg_replace('/[^A-Za-z0-9 ,\'"-]/', '', (string) theme_get_setting($setting));
+      if ($font !== '') {
+        $font_variables[] = "{$css_variable}: {$font};";
+      }
+    }
+
+    if ($font_variables) {
+      // html:root outranks the :root font variables in the theme stylesheets,
+      // which load after this inline style in the page head
+      $font_styles = 'html:root { ' . implode(' ', $font_variables) . ' }';
+      $variables['#attached']['html_head'][] = [[
+        '#type' => 'html_tag',
+        '#tag' => 'style',
+        '#value' => $font_styles,
+        '#attributes' => ['type' => 'text/css'],
+      ], 'custom_theme_fonts'];
+    }
+  }
 }
 
 /**

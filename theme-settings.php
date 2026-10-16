@@ -232,6 +232,71 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     ];
   }
 
+  // Default fonts for the theme, these match --sans-font and --serif-font in
+  // css/base.css so the defaults stay selected in the dropdowns.
+  $default_sans_font = "'Arial', 'Helvetica Neue', sans-serif";
+  $default_serif_font = "'Merriweather', serif";
+
+  // Create a section for font settings
+  $form['iastate_font_settings'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Font Settings'),
+    '#weight' => -970,
+    '#open' => TRUE,
+  ];
+
+  // Set up the checkbox for the default fonts
+  $form['iastate_font_settings']['default_font_settings'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Use the fonts supplied by the theme'),
+    '#default_value' => theme_get_setting('default_font_settings') ?? 1,
+  ];
+
+  // This container will be hidden when the checkbox is checked.
+  $form['iastate_font_settings']['settings'] = [
+    '#type' => 'container',
+    '#states' => [
+      'visible' => [
+        ':input[name="default_font_settings"]' => ['checked' => FALSE],
+      ],
+    ],
+  ];
+
+  // Web safe font stacks, keyed by the CSS value that gets saved
+  $sans_font_options = [
+    $default_sans_font => t('Arial (theme default)'),
+    "'Helvetica Neue', Helvetica, Arial, sans-serif" => t('Helvetica'),
+    "Verdana, Geneva, sans-serif" => t('Verdana'),
+    "Tahoma, Verdana, sans-serif" => t('Tahoma'),
+    "'Trebuchet MS', Helvetica, sans-serif" => t('Trebuchet MS'),
+    "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" => t('System UI'),
+  ];
+  $serif_font_options = [
+    $default_serif_font => t('Merriweather (theme default)'),
+    "Georgia, 'Times New Roman', serif" => t('Georgia'),
+    "'Times New Roman', Times, serif" => t('Times New Roman'),
+    "'Palatino Linotype', Palatino, 'Book Antiqua', serif" => t('Palatino'),
+    "Garamond, Baskerville, 'Baskerville Old Face', serif" => t('Garamond'),
+  ];
+
+  // Create font selector for the sans-serif font, Arial is the default
+  $form['iastate_font_settings']['settings']['sans_font'] = [
+    '#type' => 'select',
+    '#title' => t('Sans-serif Font'),
+    '#description' => t('Controls body text and most interface text'),
+    '#options' => $sans_font_options,
+    '#default_value' => theme_get_setting('sans_font') ?? $default_sans_font,
+  ];
+
+  // Create font selector for the serif font, Merriweather is the default
+  $form['iastate_font_settings']['settings']['serif_font'] = [
+    '#type' => 'select',
+    '#title' => t('Serif Font'),
+    '#description' => t('Controls headings and other text using the serif font'),
+    '#options' => $serif_font_options,
+    '#default_value' => theme_get_setting('serif_font') ?? $default_serif_font,
+  ];
+
   // Include the logo default and fields for custom logo
   $form['logo']['#weight'] = -950;
 

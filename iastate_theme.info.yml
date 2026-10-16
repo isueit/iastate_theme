@@ -6,7 +6,6 @@ base theme: stable9
 libraries:
   - iastate_theme/global-css
   - iastate_theme/global-js
-  - iastate_theme/fonts
   - iastate_theme/font-awesome
   - iastate_theme/academicons
 ckeditor5-stylesheets:
