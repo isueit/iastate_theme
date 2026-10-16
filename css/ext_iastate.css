@@ -884,7 +884,7 @@ a.bean-card_link {
 .bean-card_label {
 	display: flex;
 	padding: 0.75rem 1rem;
-	background: var(--btn-danger-color);
+	background: var(--primary-color);
 	font-size: 1.5rem;
 	position: absolute;
 	left: 0;
@@ -970,16 +970,16 @@ div.fontawesome-icon i {
 	background-color: var(--btn-success-color);
 }
 .bean-card_label.Dk.Red {
-	background: var(--btn-secondary-color);
+	background: var(--secondary-color);
 }
 .bean-card_label.Partial.Dk.Red {
-	background-color: var(--btn-secondary-color);
+	background-color: var(--secondary-color);
 }
 .bean-card_label.Dark.Blue {
-	background: var(--btn-primary-color);
+	background: var(--tertiary-color);
 }
 .bean-card_label.Partial.Dk.Blue {
-	background-color: var(--btn-primary-color);
+	background-color: var(--tertiary-color);
 }
 
 /* Changes color of border depending on selected label color) */
@@ -987,10 +987,10 @@ div.fontawesome-icon i {
 	border-color: var(--btn-success-color);
 }
 .bean-card_body.Dark.Red {
-	border-color: var(--btn-secondary-color);
+	border-color: var(--secondary-color);
 }
 .bean-card_body.Dark.Blue {
-	border-color: var(--btn-primary-color);
+	border-color: var(--tertiary-color);
 }
 
 /*
@@ -999,7 +999,7 @@ div.fontawesome-icon i {
 /*
 */
 .bean-card_label.Blue {
-	background: var(--btn-primary-color);
+	background: var(--tertiary-color);
 }
 .bean-card_label.Dark.Green {
 	background: #3E4827;
@@ -1014,7 +1014,7 @@ div.fontawesome-icon i {
 	background: rgba(0,0,0,0.75);
 }
 .bean-card_body.Blue{
-	border-color: var(--btn-primary-color);
+	border-color: var(--tertiary-color);
 }
 .bean-card_body.Dark.Green {
 	border-color: #3E4827;

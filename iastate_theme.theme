@@ -247,16 +247,20 @@ function iastate_theme_preprocess_page(&$variables)
  * Implements hook_preprocess_html().
  */
 function iastate_theme_preprocess_html(&$variables) {
-  // Use theme settings for the primary, secondary, and accent colors
-  $primary = theme_get_setting('primary_color') ?? '#c8102e';
-  $secondary = theme_get_setting('secondary_color') ?? '#7c2529';
-  $tertiary = theme_get_setting('tertiary_color') ?? '#003d4c';
-  $accent = theme_get_setting('primary_accent_color') ?? '#f1be48';
-  $link = theme_get_setting('link_color') ?? '#7c2529';
-  $btn_success = theme_get_setting('btn_success_color') ?? '#008540';
-  $btn_danger = theme_get_setting('btn_danger_color') ?? '#c8102e';
-  $btn_primary = theme_get_setting('btn_primary_color') ?? '#003d4c';
-  $btn_secondary = theme_get_setting('btn_secondary_color') ?? '#7c2529';
+  // Use theme settings for the primary, secondary, and accent colors. When
+  // "Use the colors supplied by the theme" is checked the defaults are used,
+  // but the custom colors stay saved for when it is unchecked again
+  $custom_colors = !(theme_get_setting('default_color_settings') ?? 1);
+  $color = fn($setting, $default) => $custom_colors ? (theme_get_setting($setting) ?? $default) : $default;
+  $primary = $color('primary_color', '#c8102e');
+  $secondary = $color('secondary_color', '#7c2529');
+  $tertiary = $color('tertiary_color', '#003d4c');
+  $accent = $color('primary_accent_color', '#f1be48');
+  $link = $color('link_color', '#7c2529');
+  $btn_success = $color('btn_success_color', '#008540');
+  $btn_danger = $color('btn_danger_color', '#c8102e');
+  $btn_primary = $color('btn_primary_color', '#003d4c');
+  $btn_secondary = $color('btn_secondary_color', '#7c2529');
   // Remove old variable names after local styles have been updated
   $cardinal = theme_get_setting('cardinal') ?? '#c8102e';
   $green = theme_get_setting('btn_green') ?? '#008540';
