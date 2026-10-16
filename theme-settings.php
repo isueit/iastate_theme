@@ -115,7 +115,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for primary color, cardinal is the default
   $form['iastate_color_settings']['settings']['primary_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Primary Color'),
     '#description' => t('Controls things like footer background color and heading colors'),
     '#default_value' => theme_get_setting('primary_color') ?? $default_primary,
@@ -123,7 +123,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for secondary color, burgundy is the default
   $form['iastate_color_settings']['settings']['secondary_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Secondary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
     '#default_value' => theme_get_setting('secondary_color') ?? $default_secondary,
@@ -131,7 +131,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for tertiary color, midnight is the default
   $form['iastate_color_settings']['settings']['tertiary_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Tertiary Color'),
     '#description' => t('Controls things like link color and smaller heading colors'),
     '#default_value' => theme_get_setting('tertiary_color') ?? $default_tertiary,
@@ -139,7 +139,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for primary accent color, gold is the default
   $form['iastate_color_settings']['settings']['primary_accent_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Primary Accent Color'),
     '#description' => t('Controls decorative colors like the line under block headings'),
     '#default_value' => theme_get_setting('primary_accent_color') ?? $default_accent,
@@ -147,7 +147,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for link color, burgundy is the default
   $form['iastate_color_settings']['settings']['link_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Link Color'),
     '#description' => t('Controls color of links'),
     '#default_value' => theme_get_setting('link_color') ?? $default_link,
@@ -155,7 +155,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for success button color, green is the default
   $form['iastate_color_settings']['settings']['btn_success_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Bootstrap Success Button Color'),
     '#description' => t('Controls the bootstrap success btn color'),
     '#default_value' => theme_get_setting('btn_success_color') ?? $default_btn_success,
@@ -163,7 +163,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for success button color, green is the default
   $form['iastate_color_settings']['settings']['btn_danger_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Bootstrap Danger Button Color'),
     '#description' => t('Controls the bootstrap danger btn color'),
     '#default_value' => theme_get_setting('btn_danger_color') ?? $default_btn_danger,
@@ -171,7 +171,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for primary button color, midnight is the default
   $form['iastate_color_settings']['settings']['btn_primary_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Bootstrap Primary Color'),
     '#description' => t('Controls the bootstrap primary btn color'),
     '#default_value' => theme_get_setting('btn_primary_color') ?? $default_btn_primary,
@@ -179,44 +179,58 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
 
   // Create color selector for secondary button color, burgundy is the default
   $form['iastate_color_settings']['settings']['btn_secondary_color'] = [
-    '#type' => 'textfield',
+    '#type' => 'color',
     '#title' => t('Bootstrap Secondary Color'),
     '#description' => t('Controls the bootstrap secondary btn color'),
     '#default_value' => theme_get_setting('btn_secondary_color') ?? $default_btn_secondary,
   ];
 
-  // Attach the shared inline WCAG contrast checker to each color field.
-  // No 'palettes' key is passed, so the preset-palette chooser stays dormant.
-  $button_color_settings = ['btn_success_color', 'btn_danger_color', 'btn_primary_color', 'btn_secondary_color'];
-  $color_setting_defaults = [
-    'primary_color' => $default_primary,
-    'secondary_color' => $default_secondary,
-    'tertiary_color' => $default_tertiary,
-    'primary_accent_color' => $default_accent,
-    'link_color' => $default_link,
-    'btn_success_color' => $default_btn_success,
-    'btn_danger_color' => $default_btn_danger,
-    'btn_primary_color' => $default_btn_primary,
-    'btn_secondary_color' => $default_btn_secondary,
-  ];
-  $color_picker_fields = [];
-  foreach ($color_setting_defaults as $field_name => $default) {
-    $color_picker_fields[] = [
-      'fieldName' => $field_name,
-      'inputSelector' => 'input[name="' . $field_name . '"]',
-      'default' => theme_get_setting($field_name) ?? $default,
-      'isButton' => in_array($field_name, $button_color_settings),
+  // Replace the native color inputs with the shared ISUEO color picker
+  // (Spectrum + inline WCAG contrast checker) when that module is enabled.
+  // Sites without it keep the native color inputs above.
+  if (\Drupal::moduleHandler()->moduleExists('isueo_color_picker')) {
+    // No 'palettes' key is passed, so the preset-palette chooser stays dormant.
+    $button_color_settings = ['btn_success_color', 'btn_danger_color', 'btn_primary_color', 'btn_secondary_color'];
+    $color_setting_defaults = [
+      'primary_color' => $default_primary,
+      'secondary_color' => $default_secondary,
+      'tertiary_color' => $default_tertiary,
+      'primary_accent_color' => $default_accent,
+      'link_color' => $default_link,
+      'btn_success_color' => $default_btn_success,
+      'btn_danger_color' => $default_btn_danger,
+      'btn_primary_color' => $default_btn_primary,
+      'btn_secondary_color' => $default_btn_secondary,
+    ];
+    $color_picker_fields = [];
+    foreach ($color_setting_defaults as $field_name => $default) {
+      // Spectrum binds to a plain text input. The saved value carries over as
+      // the default, and the validator keeps it stored as #rrggbb like the
+      // native color input did.
+      $element = &$form['iastate_color_settings']['settings'][$field_name];
+      $element['#type'] = 'textfield';
+      $element['#size'] = 10;
+      $element['#maxlength'] = 7;
+      $element['#element_validate'][] = 'iastate_theme_color_setting_validate';
+      unset($element);
+
+      $color_picker_fields[] = [
+        'fieldName' => $field_name,
+        'inputSelector' => 'input[name="' . $field_name . '"]',
+        'default' => theme_get_setting($field_name) ?? $default,
+        'isButton' => in_array($field_name, $button_color_settings),
+      ];
+    }
+    $form['#attached']['library'][] = 'isueo_color_picker/color_picker';
+    $form['#attached']['drupalSettings']['colorPickerWidget'] = [
+      'fields' => $color_picker_fields,
+      // Enables the Spectrum picker (isueo_color_picker/js/color-picker.js) on
+      // these fields. regcytes must NOT set this — its group color fields
+      // already get Spectrum from the color_field module's own widget, and
+      // initializing it twice on the same input is unsupported.
+      'initSpectrum' => TRUE,
     ];
   }
-  $form['#attached']['library'][] = 'isueo_color_picker/color_picker';
-  $form['#attached']['drupalSettings']['colorPickerWidget'] = [
-    'fields' => $color_picker_fields,
-    // Enables the Spectrum picker (isueo_color_picker/js/color-picker.js) on
-    // these fields. regcytes must NOT set this — its group color fields
-    // already get Spectrum from the color_field module's own widget, and
-    // initializing it twice on the same input is unsupported.
-    'initSpectrum' => TRUE,
-  ];
 
   // Include the logo default and fields for custom logo
   $form['logo']['#weight'] = -950;
@@ -397,4 +411,20 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   // Weight variable affects ordering
   $form['favicon']['#weight'] = -700;
 
+}
+
+/**
+ * Element validator for the color picker settings.
+ *
+ * Accepts #rgb or #rrggbb (with or without the #) and stores the value as a
+ * lowercase #rrggbb string, matching what the native color input saved.
+ */
+function iastate_theme_color_setting_validate(array &$element, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $value = trim((string) $element['#value']);
+  if (!\Drupal\Component\Utility\Color::validateHex($value)) {
+    $form_state->setError($element, t('%title must be a hex color such as #c8102e.', ['%title' => $element['#title']]));
+    return;
+  }
+  $hex = \Drupal\Component\Utility\Color::rgbToHex(\Drupal\Component\Utility\Color::hexToRgb($value));
+  $form_state->setValueForElement($element, strtolower($hex));
 }
