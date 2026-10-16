@@ -381,3 +381,31 @@ function iastate_theme_theme_suggestions_page_alter(array &$suggestions, array $
     }
   }
 }
+
+/**
+ * Returns the site's short name, derived from the directory that contains
+ * the Drupal root. Anything after the first dot is dropped, so
+ * "porkgateway", "porkgateway.preview.extension.iastate.edu" and
+ * "porkgateway.iastate.edu" all return "porkgateway".
+ */
+function _iastate_theme_site_folder()
+{
+  $folders = explode('/', \Drupal::root());
+  if (count($folders) < 2) {
+    return 'unknown';
+  }
+  return strtolower(explode('.', $folders[count($folders) - 2])[0]);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Allow site-specific block templates, e.g.
+ * block--views-block--resource-details-block-1--porkgateway.html.twig
+ */
+function iastate_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  $site = preg_replace('/[^a-z0-9_]/', '_', _iastate_theme_site_folder());
+  foreach ($suggestions as $suggestion) {
+    $suggestions[] = $suggestion . '__' . $site;
+  }
+}

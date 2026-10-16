@@ -1235,22 +1235,18 @@ div#edit-moderation-state-wrapper .form-item__label {
 	font-size: clamp(2rem, 5vw, 3.5rem);
 	padding-bottom: 0;
 }
-#isueo-here-with-you--hero-text h2.hero-wrapper,
-#isueo-homepage--hero-section h2.hero-wrapper {
-	font-size: clamp(1.5rem, 4.5vw, 3rem);
-	padding: 0.4em 0.8em;
-	margin: 0;
-	font-family: revert;
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-}
 #isueo-homepage--hero-section h2.hero-wrapper {
 	padding: 0;
 }
 #isueo-here-with-you--hero-text span.hero-thin,
 #isueo-homepage--hero-section span.hero-thin {
 	font-weight: normal;
+	font-size: clamp(1.5rem, 4.5vw, 3rem);
+	margin: 0;
+	font-family: var(--sans-font);
+	position: relative;
+	display: inline-block;
+	width: fit-content;
 }
 #isueo-here-with-you--hero-text .isueo-callout-stat {
 	box-sizing: border-box;
@@ -1332,12 +1328,12 @@ div#edit-moderation-state-wrapper .form-item__label {
 }
 
 /* Eyebrow */
-.isueo-eyebrow {
+.isueo-eyebrow, p.isueo-eyebrow {
 	font-size: 1rem;
 	font-weight: 700;
 	letter-spacing: .12em;
 	text-transform: uppercase;
-	color: #c8102e;
+	color: var(--primary-color);
 	margin-bottom: 8px;
 }
 .isueo-eyebrow + h2 {
@@ -1393,6 +1389,41 @@ ol.list-circles + p {
 	flex-direction: column;
 	flex: 1;
 }
+
+/* Image in block used as half of section "background" */
+#isueo-hero--half {
+	position: relative;
+	overflow: hidden;
+}
+#isueo-hero--half > .layout-content {
+  display: flex;
+  align-items: stretch;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+#isueo-hero--half  .layout__region--first {
+  flex: 0 0 60%;
+  padding: 2rem;
+}
+#isueo-hero--half .layout__region--second {
+  flex: 0 0 40%;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static;
+  overflow: visible;
+  min-height: 300px;
+}
+#isueo-hero--half .layout__region--second img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* --------------------------------------  */
 /* ## RESPONSIVE
 /* --------------------------------------  */
@@ -1428,6 +1459,24 @@ ol.list-circles + p {
 	#isueo-here-with-you .plp-topic-pills ul.d-flex {
 		flex-wrap: wrap;
 	}
+	#isueo-hero--half > .layout-content {
+    	flex-direction: column;
+  	}
+  	#isueo-hero--half .layout__region--first,
+  	#isueo-hero--half .layout__region--second {
+    	flex: 0 0 auto;
+   		width: 100%;
+  	}
+  	#isueo-hero--half .layout__region--second {
+    	min-height: 250px;
+  	}
+  	#isueo-hero--half .layout__region--second img {
+    	position: relative;
+    	width: 100%;
+    	height: 250px;
+    	right: auto;
+    	top: auto;
+  	}
 }
 /* --------------------------------------  */
 /* ## CARD MODAL
@@ -1621,6 +1670,17 @@ ol.list-circles + p {
 	height: 0.9em;
 	font-size: 0.9em;     /* sizes the webfont <i> fallback */
 	vertical-align: -0.1em;
+}
+/* Audience / standard chips (field_intended_audience, field_educational_standard)
+   get their own colors so they read as a different category of info than the
+   date/location chips above. */
+.isueo-card-modal__chip--audience {
+	color: #1b4965;
+	background: #e3eef7;
+}
+.isueo-card-modal__chip--standard {
+	color: #6b4c00;
+	background: #fbedc9;
 }
 .isueo-card-modal__excerpt {
 	margin: 0;
