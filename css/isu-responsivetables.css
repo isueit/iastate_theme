@@ -33,6 +33,56 @@ article table::-webkit-scrollbar-track {
   background-color: #fff;
   border-radius: 8px;
 }
+
+/* Scroll container added around each table by isu-responsivetables.js */
+.isu-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+.isu-table-scroll > table {
+  margin-bottom: 0;
+}
+.isu-table-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.isu-table-scroll::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+.isu-table-scroll::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.isu-table-scroll::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Layout tables shrink to fit the page instead of scrolling */
+article table.layout-table,
+article table.isu-table-none {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+}
+article table.layout-table td,
+article table.layout-table th,
+article table.isu-table-none td,
+article table.isu-table-none th {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+article table.layout-table img,
+article table.layout-table iframe,
+article table.layout-table video,
+article table.isu-table-none img,
+article table.isu-table-none iframe,
+article table.isu-table-none video {
+  max-width: 100%;
+  height: auto;
+}
    
 @media (min-width: 801px) {
   .isu-row-header {

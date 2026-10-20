@@ -9,7 +9,7 @@ $(document).ready(function() {
   
   // Find tables in content
   var table = $('article table');
-  
+
 /* 
  * First, check the table structure and assign classes.
  */
@@ -63,6 +63,13 @@ $(document).ready(function() {
   var thRowFreeze = $(table.has('th[rowspan]'));
       thRowFreeze.addClass('isu-table-freeze');
       thRowFreeze.removeClass(responsiveClasses);
+
+  // Wrap data tables in a horizontal scroll container. Overflow has no
+  // effect on an element with display: table, so wide tables would
+  // otherwise push past the edge of the page. Layout tables are left
+  // unwrapped; they shrink to fit instead (see isu-responsivetables.css).
+  table.not('.layout-table, .isu-table-none, .isu-table-scroll > table')
+    .wrap('<div class="isu-table-scroll"></div>');
 
 /* 
  * Now apply any jQuery needed to make the tables responsive
