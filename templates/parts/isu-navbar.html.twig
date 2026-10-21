@@ -9,10 +9,16 @@
  *
  * Other required files:
  * - css/isu-navbar.css
- * - js/isu-navbar.js 
+ * - js/isu-navbar.js
+ *
+ * When the ISU navbar theme setting is "Local file", isu_navbar_html holds
+ * the contents of local/isu-navbar.htm and replaces the default markup.
 */
 #}
 
+{% if isu_navbar_html %}
+{{ isu_navbar_html }}
+{% else %}
 <nav class="isu-navbar" aria-label="Iowa State University quicklinks">
    <ul class="isu-navbar_container" id="isu-navbar">
       <li class="isu-navbar_break" aria-hidden="true"></li>
@@ -23,3 +29,4 @@
       <li><a class="isu-header-utility-button" href="{{ support_extension }}">Give</a></li>
    </ul>
 </nav>
+{% endif %}

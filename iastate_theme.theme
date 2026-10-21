@@ -80,6 +80,7 @@ function iastate_theme_preprocess_links(&$variables)
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 
 function iastate_theme_form_alter(array &$form, FormStateInterface $form_state, $form_id)
 {
@@ -180,7 +181,17 @@ function iastate_theme_preprocess_page(&$variables)
 {
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');
-  $variables['isu_navbar'] = theme_get_setting('isu_navbar');
+  // ISU navbar: none, default, or local (local/isu-navbar.htm)
+  // Older sites stored this as a 1/0 checkbox value
+  $isu_navbar = theme_get_setting('isu_navbar');
+  if (!in_array($isu_navbar, ['none', 'default', 'local'], TRUE)) {
+    $isu_navbar = ($isu_navbar === NULL || $isu_navbar) ? 'default' : 'none';
+  }
+  $variables['isu_navbar'] = $isu_navbar != 'none';
+  $variables['isu_navbar_html'] = '';
+  if ($isu_navbar == 'local' && file_exists(DRUPAL_ROOT . '/local/isu-navbar.htm')) {
+    $variables['isu_navbar_html'] = Markup::create(file_get_contents(DRUPAL_ROOT . '/local/isu-navbar.htm'));
+  }
  
   // Donation Link
   $support_extension = theme_get_setting('support_extension');

@@ -49,12 +49,23 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#open' => TRUE,
   );
 
-  // Set up the checkbox to include/not include the ISU navbar
+  // Set up the select to choose which ISU navbar to show, if any
+  // Older sites stored this as a 1/0 checkbox value
+  $isu_navbar = theme_get_setting('isu_navbar');
+  if (!in_array($isu_navbar, ['none', 'default', 'local'], TRUE)) {
+    $isu_navbar = ($isu_navbar === NULL || $isu_navbar) ? 'default' : 'none';
+  }
+  $local_navbar_exists = file_exists(DRUPAL_ROOT . '/local/isu-navbar.htm');
   $form['iastate_theme_settings']['isu_navbar'] = array(
-    '#type'         => 'checkbox',
-    '#title'        => t('Show ISU navbar'),
-    '#default_value' => theme_get_setting('isu_navbar'),
-    '#description'  => t('Check this option if you\'d like to show the ISU navbar.'),
+    '#type'         => 'select',
+    '#title'        => t('ISU navbar'),
+    '#options'      => [
+      'none'    => t('None'),
+      'default' => t('ISU default'),
+      'local'   => t('Local file (local/isu-navbar.htm)'),
+    ],
+    '#default_value' => $isu_navbar,
+    '#description'  => t('Choose which navbar to show above the site header.') . ($local_navbar_exists ? '' : ' ' . t('No local/isu-navbar.htm file was found, so "Local file" will show the ISU default navbar.')),
   );
 
   // Set up the checkbox to show/hide the gold border on the Site Header
@@ -83,7 +94,7 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description'  => t('Add an absolute URL for a custom Support Extension link.'),
      '#states' => [
       'visible' => [
-        ':input[name="isu_navbar"]' => ['checked' => TRUE],
+        ':input[name="isu_navbar"]' => ['value' => 'default'],
       ],
     ],
   );
