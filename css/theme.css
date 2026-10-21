@@ -149,6 +149,10 @@ body,
   padding: 0;
   margin-top: 0.5rem;
 }
+/* Extra top spacing when the ISU navbar is disabled in theme settings */
+.isu-page-wrap:not(:has(.isu-navbar)) .isu-site-navbar {
+  margin-top: 2.5rem;
+}
 /* The gold border is optional and can be hidden in theme settings */
 .isu-gold-border_hidden {
   border: 0;
@@ -156,6 +160,13 @@ body,
 .isu-row-site-navbar {
   align-items: center;
   margin-top: -15px;
+}
+/* Extra breathing room when the header has no search bar (e.g. hidden on the homepage) */
+@media screen and (min-width: 1200px) {
+  .isu-site-navbar:not(:has(.isu-search, #porkgateway-search-bar)) .isu-row-site-navbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
 }
 .isu-col-header-first {
   flex: 1 1 0px;
@@ -698,6 +709,7 @@ div#edit-search-broadness {
 	line-height: 1.625;
 	color: var(--link-color);
 	font-weight: 700;
+  text-underline-offset: .0625rem;
 }
 .navbar-expand-lg .navbar-nav .nav-link:hover {
 	color: var(--primary-color);
@@ -844,20 +856,16 @@ div#edit-search-broadness {
 }
 .isu-dropdown-menu {
   position: absolute;
-  min-width: 25rem;
+  min-width: 25.3125rem;
   margin: 0;
-  padding: 1rem;
+  padding: 2.5rem 3.25rem;
   border: 0;
   border-radius: 0;
-  background: #fff;
+  background: var(--lt-gray);
   z-index: 9999;
-  box-shadow: 0.5rem 0.5rem 1.25rem rgba(0,0,0,0.2);
-	transition: max-height 1s;
+  box-shadow: 0.5625rem 0.5625rem 1.25rem rgba(0,0,0,0.2);
 }
-.isu-dropdown-menu a:hover {
-	text-decoration: none;
-}
-.isu-dropdown[aria-expanded='false'] .isu-dropdown-menu {
+.isu-dropdown-menu[aria-hidden='true'] {
   display: none;
 }
 .isu-dropdown-item {
@@ -874,30 +882,320 @@ div#edit-search-broadness {
 }
 .isu-dropdown-item a {
   display: block;
-  padding: 0.75rem 1rem;
-  color: #333333;
+  padding: 0.5rem 0;
+  color: var(--link-color);
+  font-weight: 700;
   text-decoration: underline;
-  transition: background 0.5s;
-	text-underline-offset: 0.05rem;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.1rem;
+  transition: text-decoration-color 0.2s ease-in-out;
+  position: relative;
 }
 .isu-dropdown-item a:focus,
-.isu-dropdown-item a:hover,
-.isu-dropdown-item a.active,
-.isu-dropdown-item a:active {
+.isu-dropdown-item a:hover {
   background: transparent;
-	color: var(--primary-color);
+  color: var(--link-color);
+  text-decoration-color: transparent;
 }
-/* Third Level Menu */
-.isu-dropdown-submenu {
-  top: auto;
-  margin-left: 268px;
+/* Parent link at top of first-level dropdown menus */
+.isu-dropdown-parent-item {
+  border-bottom: 0.125rem solid var(--primary-accent-color);
+  padding-bottom: 1.5625rem;
+  margin-bottom: 1.5625rem;
+  width: 100% !important;
+  margin-top: 0;
+}
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  text-decoration-color: currentColor;
+  padding: 0.5rem 0;
+  line-height: 1.72222;
+}
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:hover,
+.isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:focus {
+  background: transparent;
+  color: var(--secondary-color);
+  text-decoration-color: transparent;
+}
+.isu-dropdown-item .arrow {
+  background-color: currentColor;
+  /* Sit the arrow on the middle of the link's last line: bottom padding + half its line box */
+  bottom: 1.25rem;
+  bottom: calc(0.5rem + 0.5lh);
+  margin-left: .6875rem;
+  width: .75rem;
+  height: .125rem;
+  transition: width .2s ease-in-out, right .2s ease-in-out, opacity .2s ease-in-out;
   position: absolute;
-  margin-top: -47px;
 }
-a.isu-dropdown-submenu {
-  display: block;
-  background: #fff;
-  padding: 10px 12px;
+.isu-dropdown-item .arrow::before, .isu-dropdown-item .arrow::after {
+  background-color: currentColor;
+  content: "";
+  width: .5rem;
+  height: .125rem;
+  position: absolute;
+  right: -.1875rem;
+}
+.isu-dropdown-item .arrow::before {
+  top: .125rem;
+  transform: rotate(-45deg);
+}
+.isu-dropdown-item .arrow::after {
+  top: -.1375rem;
+  transform: rotate(45deg);
+}
+/* Parent link: arrow stretches on hover/focus (iastate22-link-secondary).
+   Same for the overview link at the top of third-level menus. */
+.isu-dropdown-item a.isu-dropdown-parent-link:hover .arrow,
+.isu-dropdown-item a.isu-dropdown-parent-link:focus .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link:hover .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link:focus .arrow {
+  width: 1.375rem;
+}
+/* Child links: arrow fades in on hover/focus (the parent link's arrow is always shown) */
+.isu-dropdown-item a:not(.isu-dropdown-parent-link) .arrow {
+  opacity: 0;
+}
+.isu-dropdown-item a:not(.isu-dropdown-parent-link):hover .arrow,
+.isu-dropdown-item a:not(.isu-dropdown-parent-link):focus .arrow,
+.isu-dropdown-item a.isu-dropdown-overview-link .arrow {
+  opacity: 1;
+}
+/* Desktop dropdown sizing — matches iastate22-frontend site-header (xl / xxl) */
+@media screen and (min-width: 1200px) {
+  /* Top-level items: spacing lives on the li so the link (and its underline) hugs the text */
+  .navbar-expand-lg .navbar-nav > li {
+    padding: 0.4375rem 2.5rem 0.4375rem 0;
+  }
+  .navbar-expand-lg .navbar-nav > li:last-child {
+    padding-right: 0;
+  }
+  .navbar-expand-lg .navbar-nav > li > a.nav-link,
+  .navbar-expand-lg .navbar-nav > li > .isu-dropdown-toggle_wrapper > a.nav-link {
+    position: relative;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.85714;
+    letter-spacing: normal;
+  }
+  /* Chevron: CSS-drawn, rotates up while the dropdown is open */
+  .navbar-expand-lg .navbar-nav > li > .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle:after {
+    content: "";
+    font-family: inherit;
+    position: absolute;
+    top: 0.4375rem;
+    right: -0.8125rem;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    margin: 0;
+    border-right: 0.125rem solid currentColor;
+    border-bottom: 0.125rem solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out, top 0.2s ease-in-out;
+  }
+  .navbar-expand-lg .navbar-nav > .isu-dropdown > .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle[aria-expanded='true']:after {
+    top: 0.625rem;
+    transform: rotate(225deg);
+  }
+  /* Gold underline on the open item, overlapping the li's bottom padding */
+  .navbar-expand-lg .navbar-nav > .isu-dropdown > .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle[aria-expanded='true']:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.4375rem;
+    height: 0.4375rem;
+    background: var(--primary-accent-color);
+  }
+  /* Dropdown panel: sits at the bottom of the underline, offset left of its item */
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu {
+    top: 100%;
+    left: -7.5rem;
+    right: auto;
+  }
+  .navbar-nav > li.isu-dropdown:nth-last-child(-n+2) > .isu-dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+  /* Fade/slide in instead of toggling display (visibility keeps closed links out of the tab order) */
+  .isu-dropdown > .isu-dropdown-menu {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  .isu-dropdown > .isu-dropdown-menu[aria-hidden='true'] {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(0, 1.875rem, 0);
+  }
+  .isu-dropdown > .isu-dropdown-menu[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+  /* Two-column dropdown for more than 5 children; the parent link still spans both columns.
+     Each column is its own list, so an open third level only lengthens its own column. */
+  .isu-dropdown > .isu-dropdown-menu.isu-dropdown-menu--two-col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0 2.5rem;
+    min-width: 45.4375rem;
+  }
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu--two-col {
+    left: -15.1875rem;
+  }
+  .isu-dropdown-menu--two-col > .isu-dropdown-col {
+    display: block;
+    width: calc(50% - 1.25rem);
+  }
+  .isu-dropdown-col__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .isu-dropdown-col__list > .isu-dropdown-item {
+    margin-bottom: 0.8125rem;
+    white-space: normal;
+  }
+  .isu-dropdown-col__list > .isu-dropdown-item:last-child {
+    margin-bottom: 0;
+  }
+  /* Keep panels inside the viewport: size to the longest item, wrap only past the viewport */
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu {
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+  }
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu.isu-dropdown-menu--two-col {
+    width: auto;
+  }
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu > .isu-dropdown-item {
+    white-space: normal;
+  }
+  /* Set by isu-main-menu.js when a panel would run off the edge of the viewport */
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu.isu-dropdown-menu--align-right {
+    left: auto;
+    right: 0;
+  }
+  .navbar-nav > li.isu-dropdown > .isu-dropdown-menu.isu-dropdown-menu--align-left {
+    left: 0;
+    right: auto;
+  }
+  /* Dropdown links keep their color on hover/focus (only the underline and arrow change);
+     overrides the top-level .nav-link:hover color */
+  .navbar-expand-lg .navbar-nav .isu-dropdown-menu .nav-link:hover,
+  .navbar-expand-lg .navbar-nav .isu-dropdown-menu .nav-link:focus {
+    color: var(--link-color);
+  }
+  .navbar-expand-lg .navbar-nav .isu-dropdown-menu .isu-dropdown-parent-link:hover,
+  .navbar-expand-lg .navbar-nav .isu-dropdown-menu .isu-dropdown-parent-link:focus {
+    color: var(--secondary-color);
+  }
+  /* Child links: flush with the parent link (overrides .nav-link side padding) */
+  .isu-dropdown-menu .isu-dropdown-item a.nav-link:not(.isu-dropdown-parent-link) {
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: normal;
+  }
+  .isu-dropdown-menu > .isu-dropdown-item:not(.isu-dropdown-parent-item) {
+    margin-bottom: 0.8125rem;
+  }
+  .isu-dropdown-menu > .isu-dropdown-item:last-child {
+    margin-bottom: 0;
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6875;
+    letter-spacing: normal;
+  }
+  /* Dropdown links have no vertical padding on desktop */
+  .isu-dropdown-item .arrow {
+    bottom: 0.75rem;
+    bottom: 0.5lh;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .navbar-expand-lg .navbar-nav > li > a.nav-link,
+  .navbar-expand-lg .navbar-nav > li > .isu-dropdown-toggle_wrapper > a.nav-link {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+  .navbar-expand-lg .navbar-nav > li > .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle:after {
+    top: 0.3125rem;
+    right: -1rem;
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+  .isu-dropdown-menu .isu-dropdown-item a.nav-link:not(.isu-dropdown-parent-link) {
+    font-size: 1.125rem;
+    line-height: 1.44444;
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+    font-size: 1.125rem;
+    line-height: 1.72222;
+  }
+}
+/* Third-level menus (desktop): expand inline inside the dropdown panel, under their item */
+@media screen and (min-width: 1200px) {
+  .isu-dropdown-menu .isu-dropdown-submenu {
+    position: static;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    margin: 0.8125rem 0 0;
+    padding: 0 0 0 1rem;
+    border-left: 0.125rem solid var(--primary-accent-color);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+  }
+  /* Takes up space when shown, so hide with display rather than visibility */
+  .isu-dropdown-menu .isu-dropdown > .isu-dropdown-submenu[aria-hidden='true'] {
+    display: none;
+  }
+  .isu-dropdown-menu .isu-dropdown > .isu-dropdown-submenu[aria-hidden='false'] {
+    display: block;
+  }
+  .isu-dropdown-submenu > .isu-dropdown-item {
+    margin-bottom: 0.8125rem;
+    white-space: normal;
+  }
+  .isu-dropdown-submenu > .isu-dropdown-item:last-child {
+    margin-bottom: 0;
+  }
+  /* Third-level toggle: same CSS chevron as the top-level items, flips when open */
+  .isu-dropdown-menu .isu-dropdown-toggle:after {
+    content: "";
+    font-family: inherit;
+    display: inline-block;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    margin: 0 0 0 0.625rem;
+    vertical-align: 0.25rem;
+    border-right: 0.125rem solid currentColor;
+    border-bottom: 0.125rem solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+  .isu-dropdown-menu .isu-dropdown-toggle[aria-expanded='true']:after {
+    transform: rotate(225deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .isu-dropdown > .isu-dropdown-menu,
+  .navbar-expand-lg .navbar-nav > li > .isu-dropdown-toggle_wrapper > .isu-dropdown-toggle:after,
+  .isu-dropdown-menu .isu-dropdown-toggle:after,
+  .isu-mobile-subtoggle::after {
+    transition: none;
+  }
+  .isu-dropdown > .isu-dropdown-menu[aria-hidden='true'] {
+    transform: none;
+  }
 }
 /* --------------------------------------  */
 /* ## Responsive
@@ -913,12 +1211,7 @@ a.isu-dropdown-submenu {
     margin-left: 0;
   }
 }
-/* Large */
-@media screen and (min-width: 992px) {
-  .isu-dropdown:hover > .isu-dropdown-menu {
-    display: block;
-  }
-}
+/* Large — dropdowns open on click via JS, not hover */
 
 /* Mobile Dropdown Toggles */
 @media screen and (max-width : 1199px) {
@@ -976,7 +1269,7 @@ a.isu-dropdown-submenu {
   .isu-dropdown-toggle_mobile .svg-inline--fa {
     display: none;
   }
-	.isu-dropdown[aria-expanded="true"] .isu-dropdown-toggle_mobile::before {
+	.isu-dropdown-toggle_mobile[aria-expanded="true"]::before {
 		content: "\f100";
 		position: absolute;
 		top: 0;
@@ -998,19 +1291,39 @@ a.isu-dropdown-submenu {
 	.dropdown-item {
 		width: 0px;
 	}
-  .isu-dropdown[aria-expanded='false'] .isu-dropdown-menu {
+  .isu-dropdown-menu[aria-hidden='true'] {
     display: block;
   }
   .isu-dropdown-item a {
     margin: .675rem;
     padding: 0;
+    color: #fff;
     text-decoration: underline;
+    text-decoration-color: currentColor;
   }
-  .isu-dropdown-item a.nav-link.isu-nav-link {
+  .isu-dropdown-item a::after {
+    display: none;
+  }
+  .isu-dropdown-item a:hover,
+  .isu-dropdown-item a:focus {
+    color: #fff;
+    text-decoration-color: transparent;
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item {
+    border-bottom-color: var(--primary-accent-color);
+  }
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link {
+    color: #fff;
+    font-size: 1.125rem;
+    margin: .675rem;
+    padding: 0;
     text-decoration: underline;
+    text-decoration-color: currentColor;
   }
-  .isu-dropdown-item a.nav-link.isu-nav-link:hover {
-    text-decoration: none;
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:hover,
+  .isu-dropdown-item.isu-dropdown-parent-item a.isu-dropdown-parent-link:focus {
+    color: #fff;
+    text-decoration-color: transparent;
   }
 }
 
@@ -1155,11 +1468,45 @@ a.isu-dropdown-submenu {
     line-height: 1.7619;
   }
 
-  .isu-mobile-parent-heading .arrow::after {
-    content: "\f061";
-    font-family: "FontAwesome";
-    font-size: 1rem;
+  /* CSS-drawn arrow (same as the desktop parent link); stretches on hover/focus.
+     Also used by the overview link at the top of an inline third level. */
+  .isu-mobile-parent-heading .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow {
+    position: relative;
     flex-shrink: 0;
+    width: 0.75rem;
+    height: 0.125rem;
+    margin-left: 0.3125rem;
+    background-color: currentColor;
+    transition: width 0.2s ease-in-out;
+  }
+  .isu-mobile-parent-heading .arrow::before,
+  .isu-mobile-parent-heading .arrow::after,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::before,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::after {
+    content: "";
+    opacity: 1;
+    position: absolute;
+    right: -0.1875rem;
+    width: 0.5rem;
+    height: 0.125rem;
+    background-color: currentColor;
+  }
+  .isu-mobile-parent-heading .arrow::before,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::before {
+    top: 0.125rem;
+    transform: rotate(-45deg);
+  }
+  .isu-mobile-parent-heading .arrow::after,
+  .isu-mobile-subitems .isu-dropdown-overview-link .arrow::after {
+    top: -0.1375rem;
+    transform: rotate(45deg);
+  }
+  a.isu-mobile-parent-heading:hover .arrow,
+  a.isu-mobile-parent-heading:focus .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link:hover .arrow,
+  .isu-mobile-subitems .isu-dropdown-overview-link:focus .arrow {
+    width: 1.375rem;
   }
 
   .isu-mobile-subitems .arrow::after {
@@ -1171,8 +1518,9 @@ a.isu-dropdown-submenu {
     transition: opacity 0.15s ease;
   }
 
-  .isu-mobile-parent-heading:hover {
-    color: rgba(255, 255, 255, 0.85);
+  .isu-mobile-parent-heading:hover,
+  .isu-mobile-parent-heading:focus {
+    color: #fff;
     text-decoration: none;
   }
 
@@ -1208,6 +1556,29 @@ a.isu-dropdown-submenu {
   }
   .isu-mobile-subitems > li > a:hover .arrow::after {
     opacity: 1;
+  }
+  /* Third level (and deeper): expands inline under its toggle, like the desktop menu */
+  .isu-mobile-subitems--nested {
+    margin: 0.625rem 0 0;
+    border-left: 0.125rem solid var(--primary-accent-color);
+  }
+  .isu-mobile-subitems--nested > li:last-child {
+    margin-bottom: 0;
+  }
+  .isu-mobile-subtoggle::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    margin: -0.25rem 0 0 0.25rem;
+    border-right: 0.125rem solid currentColor;
+    border-bottom: 0.125rem solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out, margin 0.2s ease-in-out;
+  }
+  .isu-mobile-subtoggle[aria-expanded='true']::after {
+    margin-top: 0.25rem;
+    transform: rotate(225deg);
   }
 
   /* ---- ISU Quicklinks in mobile main panel ---- */
@@ -1387,10 +1758,6 @@ a.isu-dropdown-submenu {
 }
 
 @media (min-width: 1200px) {
-	.menubar > li .isu-dropdown-submenu {
-		left: 0.5rem;
-		right: 0;
-	}
   .isu-menu-navbar_collapse {
     max-height: 100vh;
     overflow: visible;
@@ -1431,8 +1798,8 @@ a.isu-dropdown-submenu {
 }
 div#block-iastate-theme-page-title--2, div#block-iastate-theme-page-title {
   padding-left: 0%;
-  padding-right: 6%;
-  max-width: 1200px;
+  padding-right: 0;
+  max-width: 1140px;
   margin: auto;
 }
 div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
@@ -1442,6 +1809,10 @@ div#block-iastate-theme-local-tasks, div#block-iastate-theme-local-tasks--2 {
   padding-right: 6%;
   padding-top: 10px;
   max-width: 1140px;
+  margin: auto;
+}
+.isueo-taxonomy-term-content #block-iastate-theme-content--2 .views-row {
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -1500,7 +1871,7 @@ div#block-iastate-theme-content--2 p {
 .isu-user ~ div > .isu-submitted-by_name {
 	font-size: 0.85rem;
 }
-span.authored-on {
+span.authored-on, .authored-on {
 	font-style: oblique;
 	font-size: .9em;
 	color: var(--dk-gray);
@@ -1611,9 +1982,6 @@ li article:not(.isu-user):not(.isu-search_collapse) {
 
 .isu-sidebar .isu-block {
   margin-bottom: 1rem;
-}
-.isu-sidebar {
-  margin-top: 20%;
 }
 .isu-block-title {
   margin-bottom: 0.75rem;
