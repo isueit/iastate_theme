@@ -1,0 +1,230 @@
+{#
+/**
+ * @file
+ * Water Quality site override of the staff_profile module template
+ * node--staff-profile--full.html.twig (full view mode).
+ *
+ * Layout (desktop):
+ *   ┌──────────┬───────────────────────┬──────────────┐
+ *   │  Photo   │  Bio / About          │  Contact     │
+ *   └──────────┴───────────────────────┴──────────────┘
+ *   ┌────────────────────────┬─────────────────────────┐
+ *   │  Program Areas / Meta  │  Counties Served        │
+ *   └────────────────────────┴─────────────────────────┘
+ *   ┌─────────────────────────────────────────────────┐
+ *   │  Latest Articles (optional)                     │
+ *   └─────────────────────────────────────────────────┘
+ *
+ * Uses sp_fields / sp_values prepared in hook_preprocess_node() to work
+ * around Twig sandbox restrictions and field_group field removal.
+ */
+#}
+
+{%
+  set node_classes = [
+    'node',
+    'node--type-staff-profile',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(node_classes) }} itemscope itemtype="https://schema.org/Person">
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="staff-profile">
+
+    {# ── Row 1: Photo | Name+Bio | Contact ────────────────────────────── #}
+    <div class="staff-profile__top{{ not content.field_wq_bio|render|striptags|trim ? ' staff-profile__top--no-bio' }}">
+
+      {# Photo #}
+      <div class="staff-profile__photo">
+        {{ sp_fields.field_staff_profile_smugmug }}
+      </div>
+
+      {# Bio — name and title appear at the top of this column #}
+      <div class="staff-profile__bio">
+        <h1 class="staff-profile__name isu-block-title h4" itemprop="name">{{ sp_display_name }}</h1>
+        {% if sp_display_title %}
+          <p class="staff-profile__job-title" itemprop="jobTitle">
+            {{- sp_display_title -}}
+          </p>
+        {% endif %}
+        {% if content.field_wq_bio|render %}
+          <div class="staff-profile__bio-body" itemprop="description">
+            {{ content.field_wq_bio }}
+          </div>
+        {% endif %}
+      </div>
+
+      {# Contact + Teams & Groups (right column) #}
+      <div class="staff-profile__right-col">
+
+        {# Area of Expertise term labels, skipping any deleted terms. #}
+        {% set wq_expertise = [] %}
+        {% for item in node.field_area_of_expertise %}
+          {% if item.entity %}
+            {% set wq_expertise = wq_expertise|merge([item.entity.label]) %}
+          {% endif %}
+        {% endfor %}
+
+        {%
+          set wq_has_primary_contact = sp_values.field_staff_profile_email
+            or sp_display_phone
+            or sp_fields.field_staff_profile_addr|render
+        %}
+        {%
+          set wq_has_secondary_contact = sp_base_county_links
+            or sp_values.field_staff_profile_region
+            or wq_expertise
+            or sp_values.field_custodian_of_public_record
+        %}
+
+        {% if wq_has_primary_contact or wq_has_secondary_contact %}
+          <aside class="staff-profile__contact" aria-label="Contact information">
+            <h2 class="staff-profile__section-heading h3">Contact</h2>
+            <address class="staff-profile__address-block">
+              <div class="staff-profile__contact-wrapper-1">
+              {% if sp_values.field_staff_profile_email %}
+                <div class="staff-profile__contact-row">
+                  <span class="staff-profile__contact-icon" aria-hidden="true">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="visually-hidden">Email:</span>
+                  <a href="mailto:{{ sp_values.field_staff_profile_email }}"
+                     itemprop="email">
+                    {{- sp_values.field_staff_profile_email -}}
+                  </a>
+                </div>
+              {% endif %}
+
+              {% if sp_display_phone %}
+                <div class="staff-profile__contact-row">
+                  <span class="staff-profile__contact-icon" aria-hidden="true">
+                    <i class="fas fa-phone"></i>
+                  </span>
+                  <span class="visually-hidden">Phone:</span>
+                  <a href="tel:{{ sp_display_phone|replace({' ': '', '(': '', ')': '', '-': '', '.': ''}) }}"
+                     itemprop="telephone">
+                    {{- sp_display_phone -}}
+                  </a>
+                </div>
+              {% endif %}
+              </div>
+              {% if sp_fields.field_staff_profile_addr|render %}
+                <div class="staff-profile__contact-row address">
+                  <span class="staff-profile__contact-icon" aria-hidden="true">
+                    <i class="fas fa-location-dot"></i>
+                  </span>
+                  <span class="visually-hidden">Address:</span>
+                  {{ sp_fields.field_staff_profile_addr }}
+                </div>
+              {% endif %}
+
+              {% if wq_has_secondary_contact %}
+                {% if wq_has_primary_contact %}
+                  <hr class="staff-profile__contact-divider" aria-hidden="true">
+                {% endif %}
+                <div class="staff-profile__contact-secondary">
+
+                  {% if sp_base_county_links %}
+                    <div class="staff-profile__contact-secondary-row">
+                      <span class="staff-profile__contact-label">Based in:</span>
+                      {% for county in sp_base_county_links %}
+                        {% if county.url %}<a href="{{ county.url }}">{{ county.name }} County</a>{% else %}{{ county.name }} County{% endif %}{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  {% if sp_values.field_staff_profile_region %}
+                    <div class="staff-profile__contact-secondary-row">
+                      <span class="staff-profile__contact-label">Region:</span>
+                      {{ sp_values.field_staff_profile_region }}
+                    </div>
+                  {% endif %}
+
+                  {% if wq_expertise %}
+                    <div class="staff-profile__contact-secondary-row wq-staff-profile__expertise">
+                      <span class="staff-profile__contact-label">Area of Expertise:</span>
+                      {% for area in wq_expertise %}
+                        <span itemprop="knowsAbout">{{ area }}</span>{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  {% if sp_values.field_custodian_of_public_record %}
+                    <div class="staff-profile__contact-secondary-row isueo-custodian">
+                      Custodian of Public Record
+                    </div>
+                  {% endif %}
+
+                </div>
+              {% endif %}
+
+            </address>
+
+          </aside>
+        {% endif %}
+
+      </div>{# /.staff-profile__right-col #}
+
+    </div>{# /.staff-profile__top #}
+
+    {# ── Row 2: Counties Served + Teams & Groups ──────────────────────────── #}
+    {%
+      set has_details = sp_cty_served_links
+        or sp_base_county_links
+        or sp_fields.field_staff_profile_teams_groups|render
+    %}
+    {% if has_details %}
+      <div class="staff-profile__details">
+
+        {% if sp_cty_served_links or sp_base_county_links %}
+          <div class="staff-profile__details-col">
+            <h2 class="staff-profile__section-heading isu-block-title h4">Counties Served</h2>
+            <div class="staff-profile__county-body">
+              <div class="staff-profile__county-map">
+                {{ drupal_block('staff_profile_map') }}
+              </div>
+              {% if sp_cty_served_links %}
+                <ul class="staff-profile__county-list">
+                  {% for county in sp_cty_served_links %}
+                    <li>
+                      {% if county.url %}<a href="{{ county.url }}">{{ county.name }}<span class="arrow"></span></a>{% else %}{{ county.name }}{% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if sp_teams_groups %}
+          <div class="staff-profile__details-col staff-profile__details-col--teams">
+            <h2 class="staff-profile__section-heading isu-block-title h4">Affiliations</h2>
+            <ul class="staff-profile__teams-list">
+              {% for group in sp_teams_groups %}
+                <li>{{ group }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+      </div>{# /.staff-profile__details #}
+    {% endif %}
+
+    {# ── Row 3: Latest articles ────────────────────────────────────────── #}
+    {% if sp_has_articles_view and drupal_view_result('list_of_articles_by_author', 'block_1', node.id()) is not empty %}
+      <section class="staff-profile__articles"
+               aria-labelledby="staff-articles-heading-{{ node.id() }}">
+        <h2 id="staff-articles-heading-{{ node.id() }}"
+            class="staff-profile__articles-heading">News articles by {{ sp_values.field_staff_profile_pref_name ?: sp_values.field_staff_profile_first_name }}</h2>
+        {{ drupal_view('list_of_articles_by_author', 'block_1', node.id()) }}
+      </section>
+    {% endif %}
+
+  </div>{# /.staff-profile #}
+
+</article>

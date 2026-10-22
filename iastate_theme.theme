@@ -447,8 +447,23 @@ function _iastate_theme_site_folder()
  * Implements hook_theme_suggestions_HOOK_alter().
  * Allow site-specific block templates, e.g.
  * block--views-block--resource-details-block-1--porkgateway.html.twig
+ * Site-specific templates live in templates/sites/<site>/.
  */
 function iastate_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  $site = preg_replace('/[^a-z0-9_]/', '_', _iastate_theme_site_folder());
+  foreach ($suggestions as $suggestion) {
+    $suggestions[] = $suggestion . '__' . $site;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Allow site-specific node templates, e.g.
+ * node--staff-profile--full--waterquality.html.twig
+ * Site-specific templates live in templates/sites/<site>/.
+ */
+function iastate_theme_theme_suggestions_node_alter(array &$suggestions, array $variables)
 {
   $site = preg_replace('/[^a-z0-9_]/', '_', _iastate_theme_site_folder());
   foreach ($suggestions as $suggestion) {
