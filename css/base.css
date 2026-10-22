@@ -216,9 +216,9 @@ button:focus {
 
 /* Green Button */
 .btn-success { /* Overrides bootstrap.min.css */
-  background-color: #008540;
-	border-color: #008540;
-	border: 1px solid #008540;
+  background-color: var(--btn-success-color, #008540);
+	border-color: var(--btn-success-color, #008540);
+	border: 1px solid var(--btn-success-color, #008540);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -226,8 +226,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-success:hover {
-  background-color: #008540;
-  border: 1px solid #008540;
+  background-color: var(--btn-success-color, #008540);
+  border: 1px solid var(--btn-success-color, #008540);
   color: #fff;
 }
 .btn-success::after {
@@ -243,13 +243,13 @@ button:focus {
 }
 .btn-success:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .btn-success:not(:disabled):not(.disabled).active,
 .btn-success:not(:disabled):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
-  background-color: #008540;
-  border-color: #008540;
+  background-color: var(--btn-success-color, #008540);
+  border-color: var(--btn-success-color, #008540);
 }
 .layout--color--white[style^="background-image"] a.btn-success {
 	text-decoration: none;
@@ -259,8 +259,8 @@ button:focus {
 }
 /* Green Outline Button */
 .btn-outline-success {
-	color: #008540;
-	border: 1px solid #008540;
+	color: var(--btn-success-color, #008540);
+	border: 1px solid var(--btn-success-color, #008540);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -269,8 +269,8 @@ button:focus {
 }
 .btn-outline-success:hover {
 	background-color: #fff;
-	color: #008540;
-	border: 1px solid #008540;
+	color: var(--btn-success-color, #008540);
+	border: 1px solid var(--btn-success-color, #008540);
 }
 .btn-outline-success::after {
 	content: "";
@@ -285,26 +285,26 @@ button:focus {
 }
 .btn-outline-success:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show > .btn-outline-success.dropdown-toggle {
-  background-color: #008540;
-  border-color: #008540;
+  background-color: var(--btn-success-color, #008540);
+  border-color: var(--btn-success-color, #008540);
 }
 .layout--color--white[style^="background-image"] a.btn-outline-success {
-	color: #008540;
+	color: var(--btn-success-color, #008540);
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-success:hover {
-	color: #008540;
+	color: var(--btn-success-color, #008540);
 }
 
 /* Cardinal Button */
 .btn-danger {
-	background-color: #C8102E;
-	border-color: #C8102E;
+	background-color: var(--btn-danger-color, #c8102e);
+	border-color: var(--btn-danger-color, #c8102e);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -323,12 +323,12 @@ button:focus {
 	transition: width 0.3s ease-in-out;
 }
 .btn-danger:hover {
-	background-color: #C8102E;
-	border-color: #C8102E;
+	background-color: var(--btn-danger-color, #c8102e);
+	border-color: var(--btn-danger-color, #c8102e);
 }
 .btn-danger:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-danger {
 	text-decoration: none;
@@ -339,8 +339,8 @@ button:focus {
 
 /* Cardinal Outline Button */
 .btn-outline-danger {
-	color: #c8102e;
-	border-color: #c8102e;
+	color: var(--btn-danger-color, #c8102e);
+	border-color: var(--btn-danger-color, #c8102e);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -349,8 +349,8 @@ button:focus {
 }
 .btn-outline-danger:hover {
 	background-color: #fff;
-	color: #C8102E;
-	border-color: #C8102E;
+	color: var(--btn-danger-color, #c8102e);
+	border-color: var(--btn-danger-color, #c8102e);
 }
 .btn-outline-danger::after {
 	content: "";
@@ -365,20 +365,20 @@ button:focus {
 }
 .btn-outline-danger:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-outline-danger {
-	color: #C8102E;
+	color: var(--btn-danger-color, #c8102e);
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-danger:hover {
-	color: #C8102E;
+	color: var(--btn-danger-color, #c8102e);
 }
 
 /* Dark Blue Button */
 .btn-primary {
-	background-color: #003d4c;
-	border-color: #003d4c;
+	background-color: var(--btn-primary-color, #003d4c);
+	border-color: var(--btn-primary-color, #003d4c);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -386,7 +386,7 @@ button:focus {
 	overflow: hidden;
 }
 .btn-primary:hover {
-	background-color: #003d4c;
+	background-color: var(--btn-primary-color, #003d4c);
 	color: #fff;
 }
 .btn-primary::after {
@@ -402,7 +402,7 @@ button:focus {
 }
 .btn-primary:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-primary {
 	text-decoration: none;
@@ -413,8 +413,8 @@ button:focus {
 
 /* Dark Blue Outline Button */
 .btn-outline-primary {
-	color: #003D4C;
-	border: 1px solid #003D4C;
+	color: var(--btn-primary-color, #003d4c);
+	border: 1px solid var(--btn-primary-color, #003d4c);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -423,8 +423,8 @@ button:focus {
 }
 .btn-outline-primary:hover {
 	background-color: #fff;
-	color: #003D4C;
-	border: 1px solid #003D4C;
+	color: var(--btn-primary-color, #003d4c);
+	border: 1px solid var(--btn-primary-color, #003d4c);
 }
 .btn-outline-primary::after {
 	content: "";
@@ -439,21 +439,21 @@ button:focus {
 }
 .btn-outline-primary:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-outline-primary {
-	color: #003D4C;
+	color: var(--btn-primary-color, #003d4c);
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-primary:hover {
-	color: #003D4C;
+	color: var(--btn-primary-color, #003d4c);
 }
 
 /* Dark Red Button */
 .btn-secondary {
-	background-color: #7c2529;
-	border-color: #7c2529;
-	border: 1px solid #7c2529;
+	background-color: var(--btn-secondary-color, #7c2529);
+	border-color: var(--btn-secondary-color, #7c2529);
+	border: 1px solid var(--btn-secondary-color, #7c2529);
 	font-weight: 700;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -461,8 +461,8 @@ button:focus {
 	overflow: hidden;
 }
 .btn-secondary:hover {
-	background-color: #7c2529;
-	border: 1px solid #7c2529;
+	background-color: var(--btn-secondary-color, #7c2529);
+	border: 1px solid var(--btn-secondary-color, #7c2529);
 	color: #fff;
 }
 .btn-secondary::after {
@@ -478,7 +478,7 @@ button:focus {
 }
 .btn-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-secondary {
 	text-decoration: none;
@@ -489,8 +489,8 @@ button:focus {
 
 /* Dark Red Outline Button */
 .btn-outline-secondary {
-	color: #7c2529;
-	border: 1px solid #7c2529;
+	color: var(--btn-secondary-color, #7c2529);
+	border: 1px solid var(--btn-secondary-color, #7c2529);
 	border-radius: 2rem;
 	font-weight: 700;
 	cursor: pointer;
@@ -499,8 +499,8 @@ button:focus {
 }
 .btn-outline-secondary:hover {
 	background-color: #fff;
-	color: #7c2529;
-	border: 1px solid #7c2529;
+	color: var(--btn-secondary-color, #7c2529);
+	border: 1px solid var(--btn-secondary-color, #7c2529);
 }
 .btn-outline-secondary::after {
 	content: "";
@@ -515,14 +515,14 @@ button:focus {
 }
 .btn-outline-secondary:hover:after {
 	width: calc(100% + 10px);
-	background: #F1BE48;
+	background: var(--primary-accent-color, #f1be48);
 }
 .layout--color--white[style^="background-image"] a.btn-outline-secondary {
-	color: #7c2529;
+	color: var(--btn-secondary-color, #7c2529);
 	text-decoration: none;
 }
 .layout--color--white[style^="background-image"] a.btn-outline-secondary:hover {
-	color: #7c2529;
+	color: var(--btn-secondary-color, #7c2529);
 }
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */
