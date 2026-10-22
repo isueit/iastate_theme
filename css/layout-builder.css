@@ -284,7 +284,7 @@ div.isueo-callout-stat {
 	text-decoration-color: revert;
 }
 .isueo-callout-stat a.btn-outline-danger {
-	color: #c8102e;
+	color: var(--btn-danger-color, #c8102e);
 	text-decoration: none;
 }
 .isueo-callout-stat li a:hover, .isueo-callout-state a:hover {

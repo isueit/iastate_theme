@@ -524,6 +524,44 @@ button:focus {
 .layout--color--white[style^="background-image"] a.btn-outline-secondary:hover {
 	color: var(--btn-secondary-color, #7c2529);
 }
+/* Layout Builder's off-canvas editor reverts the background, color, and
+/* padding of everything in the editor (see offCanvasCss() in core's
+/* ckeditor5.js), so put the button styles back. Core copies .ck rules with
+/* the off-canvas prefix added, which is enough to override the reset, but
+/* skips any rule that already mentions #drupal-off-canvas */
+.ck.ck-content .btn {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	color: #fff;
+}
+.ck.ck-content .btn-success {
+	background-color: var(--btn-success-color, #008540);
+}
+.ck.ck-content .btn-danger {
+	background-color: var(--btn-danger-color, #c8102e);
+}
+.ck.ck-content .btn-primary {
+	background-color: var(--btn-primary-color, #003d4c);
+}
+.ck.ck-content .btn-secondary {
+	background-color: var(--btn-secondary-color, #7c2529);
+}
+.ck.ck-content [class*="btn-outline-"] {
+	background-color: #fff;
+}
+.ck.ck-content .btn-outline-success {
+	color: var(--btn-success-color, #008540);
+}
+.ck.ck-content .btn-outline-danger {
+	color: var(--btn-danger-color, #c8102e);
+}
+.ck.ck-content .btn-outline-primary {
+	color: var(--btn-primary-color, #003d4c);
+}
+.ck.ck-content .btn-outline-secondary {
+	color: var(--btn-secondary-color, #7c2529);
+}
+
 .btn-info { /* Overrides bootstrap.min.css */
   background-color: #128091; /* Sufficient contrast with white. */
   border-color: #128091;
