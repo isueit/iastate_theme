@@ -73,8 +73,8 @@ function openDropdowns() {
 
 $(document).ready(function() {
 
-  // Navigate with right and left arrow keys.
-  $('#block-iastate-theme-main-menu').on('keydown', function(event) {
+  // Navigate with right and left arrow keys (main menu and group menus).
+  $('ul.menubar').on('keydown', function(event) {
     if (event.keyCode === 39) { // RIGHT arrow key
       event.preventDefault();
 	  if ($(':focus').hasClass('sub')) {
