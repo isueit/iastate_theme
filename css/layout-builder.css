@@ -291,6 +291,41 @@ div.isueo-callout-stat {
 	text-decoration: none;
 }
 
+/* Gray Feature Card */
+.isueo-callout-stat--gray {
+	background: var(--lt-gray);
+	padding: 4.0625rem 2.5rem;
+	overflow: hidden;
+	position: relative;
+}
+div.isueo-callout-stat--gray {
+	color: #000;
+}
+.isueo-callout-stat--gray h2.isu-block-title.h4 {
+	color: var(--primary-color);
+}
+.isueo-callout-stat--gray h2.isu-block-title.h4:after {
+	display: none;
+}
+.isueo-callout-stat--gray .isu-block {
+	color: #000;
+}
+.isueo-callout-stat--gray:before {
+	border-bottom: 0.5rem solid var(--primary-accent-color);
+	content: "";
+	width: 3.5rem;
+	height: 0.5rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -1.75rem;
+	top: -.15rem;
+}
+.isueo-callout-stat--gray .ckeditor-accordion-container a {
+	color: var(--link-color);
+	text-decoration-color: revert;
+}
+
+
 /* Block backgrounds */
 .layout-block--background--gray {
 	background: var(--lt-gray);
