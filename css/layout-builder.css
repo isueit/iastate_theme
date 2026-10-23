@@ -302,7 +302,7 @@ div.isueo-callout-stat--gray {
 	color: #000;
 }
 .isueo-callout-stat--gray h2.isu-block-title.h4 {
-	color: var(--primary-color);
+	color: var(--primary-color) !important;
 }
 .isueo-callout-stat--gray h2.isu-block-title.h4:after {
 	display: none;
