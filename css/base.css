@@ -657,19 +657,39 @@ button:focus {
 	text-transform: uppercase;
 }
 .badge-light {
-	color: #7c2529;
+	color: var(--btn-secondary-color);
 }
 .badge-primary {
-	background-color: #003d4c;
+	background-color: var(--btn-primary-color);
+}
+.badge-primary.badge-outline {
+	background-color: revert;
+	color: var(--btn-primary-color);
+	border: 1px solid var(--btn-primary-color);
 }
 .badge-secondary {
-	background-color: #7c2529;
+	background-color: var(--btn-secondary-color);
+}
+.badge-secondary.badge-outline {
+	background-color: revert;
+	color: var(--btn-secondary-color);
+	border: 1px solid var(--btn-secondary-color);
 }
 .badge-success {
-	background-color: #008540;
+	background-color: var(--btn-success-color);
+}
+.badge-success.badge-outline {
+	background-color: revert;
+	color: var(--btn-success-color);
+	border: 1px solid var(--btn-success-color);
 }
 .badge-danger {
-	background-color: #c8102e;
+	background-color: var(--btn-danger-color);
+}
+.badge-danger.badge-outline {
+	background-color: revert;
+	color: var(--btn-danger-color);
+	border: 1px solid var(--btn-danger-color);
 }
 .badge + h2 {
 	margin-top: 0;
