@@ -73,7 +73,7 @@ s.parentNode.insertBefore(sz, s);
 				<div class="col-xl-6 col-md-6 isu-footer-top_col isu-footer-top_col-2 isu-footer-section-2">
 
 					{# For if social goes beside the wordmark #}
-					{% if default_social_footer %}
+					{% if default_social_footer and default_social_links %}
 						<div class="isu-social-menu-footer isu-social-menu site-footer__social-links-wrap">
 						<h2 class="isu-social-menu-footer__heading">Connect with ISU Extension and Outreach</h2>
 							<ul class="site-footer__social list-unstyled">
@@ -82,6 +82,17 @@ s.parentNode.insertBefore(sz, s);
 								<li><a href="https://www.linkedin.com/company/iowa-state-university-extension-and-outreach?trk=nmp_rec_act_company_name" aria-label="Join the ISU Extension network on LinkedIn"></a></li>
 								<li><a href="https://twitter.com/isuextension" aria-label="Follow ISU Extension on Twitter"></a></li>
 								<li><a href="https://www.youtube.com/user/IowaStateExtension" aria-label="Watch ISU Extension on YouTube"></a></li>
+							</ul>
+						</div>
+					{% elseif default_social_footer and social_links %}
+						<div class="isu-social-menu-footer isu-social-menu site-footer__social-links-wrap">
+						{% if social_links_heading %}
+							<h2 class="isu-social-menu-footer__heading">{{ social_links_heading }}</h2>
+						{% endif %}
+							<ul class="site-footer__social list-unstyled">
+								{% for link in social_links %}
+									<li><a href="{{ link.url }}" aria-label="{{ link.label }}"></a></li>
+								{% endfor %}
 							</ul>
 						</div>
 					{% endif %}

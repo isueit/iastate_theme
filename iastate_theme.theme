@@ -210,6 +210,18 @@ function iastate_theme_preprocess_page(&$variables)
 
   $variables['default_social_footer'] = theme_get_setting('default_social_footer');
 
+  $variables['default_social_links'] = theme_get_setting('default_social_links') ?? TRUE;
+  $variables['social_links_heading'] = theme_get_setting('social_links_heading') ?? 'Connect with ISU Extension and Outreach';
+  $social_links = [];
+  for ($i = 1; $i <= 8; $i++) {
+    $url = theme_get_setting('social_link_' . $i . '_url');
+    $label = theme_get_setting('social_link_' . $i . '_label');
+    if (!empty($url)) {
+      $social_links[] = ['url' => $url, 'label' => $label];
+    }
+  }
+  $variables['social_links'] = $social_links;
+
   $variables['default_quick_links'] = theme_get_setting('default_quick_links') ?? TRUE;
   $quick_links = [];
   for ($i = 1; $i <= 9; $i++) {

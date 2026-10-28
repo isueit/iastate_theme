@@ -58,6 +58,12 @@ iastate_theme.settings:
     default_social_footer:
       type: boolean
       label: "Show social media footer links block"
+    default_social_links:
+      type: boolean
+      label: "Use the social links supplied by the theme"
+    social_links_heading:
+      type: string
+      label: "Custom social links heading"
     default_font_settings:
       type: boolean
       label: "Use the fonts supplied by the theme"

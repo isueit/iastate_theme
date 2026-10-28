@@ -2711,6 +2711,10 @@ a.tabledrag-handle .handle {
 #block-staff-links {
   padding-top: 2rem;
 }
+/* Keep space above the sign-off when the staff links block isn't placed */
+.isu-footer-top:not(:has(.isueo-staff-links)) {
+  padding-bottom: 3rem;
+}
 .isu-legal-copyright {
 	display: flex;
 	justify-content: space-between;
@@ -2988,6 +2992,39 @@ ul.site-footer__social li a:focus-visible {
 .isu-copyright__statement.site-footer__copyright {
   font-size: 1.125rem;
 }
+
+/* Footer Menu styles */
+#block-iastate-theme-footer {
+  width: 100%;
+  margin: .625rem 0 2.1875rem;
+}
+#block-iastate-theme-footer ul {
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#block-iastate-theme-footer ul li {
+  border-bottom: .125rem solid var(--primary-accent-color);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 1.875rem;
+}
+#block-iastate-theme-footer ul li a {
+  margin: 1.0625rem auto;
+  text-align: center;
+  max-width: none;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.61905;
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+  position: relative;
+}
+
 @media (max-width: 1199px) {
   .isu-footer-bottom:before {
     background: var(--secondary-color);

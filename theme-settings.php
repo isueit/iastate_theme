@@ -84,6 +84,68 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#tree'		=> '',
   );
 
+  // This container will be hidden when the social footer icons are hidden.
+  $form['iastate_theme_settings']['social_footer'] = array(
+    '#type' => 'container',
+    '#states' => array(
+      'visible' => array(
+        'input[name="default_social_footer"]' => array(
+          'checked' => TRUE,
+        ),
+      ),
+    ),
+  );
+
+  // Set up checkbox for the default social links
+  $form['iastate_theme_settings']['social_footer']['default_social_links'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use the social links supplied by the theme'),
+    '#default_value' => theme_get_setting('default_social_links') ?? 1,
+    '#tree' => '',
+  );
+
+  $form['iastate_theme_settings']['social_footer']['settings'] = array(
+    '#type' => 'container',
+    '#states' => array(
+      'invisible' => array(
+        'input[name="default_social_links"]' => array(
+          'checked' => TRUE,
+        ),
+      ),
+    ),
+  );
+
+  // Set up textfield for the custom social links heading
+  $form['iastate_theme_settings']['social_footer']['settings']['social_links_heading'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Social links heading'),
+    '#description' => t('Leave blank to show no heading.'),
+    '#default_value' => theme_get_setting('social_links_heading') ?? 'Connect with ISU Extension and Outreach',
+  );
+
+  $form['iastate_theme_settings']['social_footer']['settings']['social_links_help'] = array(
+    '#markup' => '<p>' . t('The icon is chosen from the link URL (Facebook, Instagram, LinkedIn, X/Twitter, YouTube, Pinterest, Flickr, and others). Other URLs show a generic link icon. The label is read by screen readers, for example "Follow us on Instagram".') . '</p>',
+  );
+
+  for ($i = 1; $i <= 8; $i++) {
+    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i] = array(
+      '#type' => 'container',
+      '#attributes' => ['style' => 'display: flex; gap: 1rem; align-items: flex-end;'],
+    );
+    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i]['social_link_' . $i . '_url'] = array(
+      '#type' => 'url',
+      '#title' => t('Social Link @n URL', ['@n' => $i]),
+      '#default_value' => theme_get_setting('social_link_' . $i . '_url') ?? '',
+      '#size' => 50,
+    );
+    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i]['social_link_' . $i . '_label'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Social Link @n Label', ['@n' => $i]),
+      '#default_value' => theme_get_setting('social_link_' . $i . '_label') ?? '',
+      '#size' => 30,
+    );
+  }
+
 
   // Set up the field for the Support Extension link
   $support_extension = '';
