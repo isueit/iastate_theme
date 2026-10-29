@@ -124,25 +124,15 @@ function iastate_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   );
 
   $form['iastate_theme_settings']['social_footer']['settings']['social_links_help'] = array(
-    '#markup' => '<p>' . t('The icon is chosen from the link URL (Facebook, Instagram, LinkedIn, X/Twitter, YouTube, Pinterest, Flickr, and others). Other URLs show a generic link icon. The label is read by screen readers, for example "Follow us on Instagram".') . '</p>',
+    '#markup' => '<p>' . t('The icon is chosen from the link URL (Facebook, Instagram, Threads, LinkedIn, X/Twitter, YouTube, Pinterest, Flickr, and others). Other URLs show a generic link icon.') . '</p>',
   );
 
   for ($i = 1; $i <= 8; $i++) {
-    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i] = array(
-      '#type' => 'container',
-      '#attributes' => ['style' => 'display: flex; gap: 1rem; align-items: flex-end;'],
-    );
-    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i]['social_link_' . $i . '_url'] = array(
+    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i . '_url'] = array(
       '#type' => 'url',
       '#title' => t('Social Link @n URL', ['@n' => $i]),
       '#default_value' => theme_get_setting('social_link_' . $i . '_url') ?? '',
       '#size' => 50,
-    );
-    $form['iastate_theme_settings']['social_footer']['settings']['social_link_' . $i]['social_link_' . $i . '_label'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Social Link @n Label', ['@n' => $i]),
-      '#default_value' => theme_get_setting('social_link_' . $i . '_label') ?? '',
-      '#size' => 30,
     );
   }
 

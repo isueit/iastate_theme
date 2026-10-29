@@ -3024,6 +3024,9 @@ ul.site-footer__social li a:focus-visible {
   transition: color .2s ease-in-out;
   position: relative;
 }
+#block-iastate-theme-footer ul li:first-child {
+  padding-left: 0;
+}
 
 @media (max-width: 1199px) {
   .isu-footer-bottom:before {

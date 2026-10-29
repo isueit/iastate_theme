@@ -102,6 +102,16 @@ color: #fff;
 color: #fff;
 }
 
+.isu-social-menu a[href*='threads.net']:before,
+.isu-social-menu a[href*='threads.com']:before {
+  content: "\e618";
+}
+
+.isu-social-menu-red a[href*='threads.net']:before,
+.isu-social-menu-red a[href*='threads.com']:before {
+color: #fff;
+}
+
 .isu-social-menu a[href*='instagram.com']:before {
   content: "\f16d";
 }

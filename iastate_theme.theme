@@ -215,8 +215,11 @@ function iastate_theme_preprocess_page(&$variables)
   $social_links = [];
   for ($i = 1; $i <= 8; $i++) {
     $url = theme_get_setting('social_link_' . $i . '_url');
-    $label = theme_get_setting('social_link_' . $i . '_label');
     if (!empty($url)) {
+      // Icon-only links still need a name for screen readers, so use the
+      // site name from the URL (e.g. www.facebook.com becomes Facebook)
+      $host = preg_replace('/^www\./', '', (string) parse_url($url, PHP_URL_HOST));
+      $label = ucfirst(explode('.', $host)[0] ?? '');
       $social_links[] = ['url' => $url, 'label' => $label];
     }
   }
